@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>collector</title>
+    <link rel="stylesheet" type="text/css" href="easyui/themes/gray/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+</head>
+<body>
+	<body class="easyui-layout">
+		<div data-options="region:'north',split:true" class="easyui-tabs" style="height:100px;">
+				<div title="Home" style="padding:20px;display:none;">	
+				</div>
+				<div title="Initiated" style="overflow:auto;padding:20px;display:none;">
+				</div>
+			</div>
+		<div data-options="region:'south',title:'Error',split:true" style="height:100px;"></div>
+		<!-- 右侧 -->
+		<div data-options="region:'east',title:'Tips',split:true" style="width:200px;">
+		   <span>The Data Entry Tool is used to collect Member System data based on the specific ICD version.
+			It helps supplier validate their data entry and export a MSD file.
+			</span>
+		</div>
+		<!-- 左侧 -->
+		<div data-options="region:'west',title:'Navagation',split:true" style="width:300px;">
+			<ul id="tt" class="easyui-tree">
+				<li><span>Start Page</span></li>
+				<li>
+					<span>ICD Information</span>
+					<ul>
+						<li><span>Member System Modeling Data</span></li>
+						<li><span>Data Load</span></li>
+						<li><span>OMS Communication Message</span></li>
+						<li><span>Member System Status</span></li>
+					</ul>
+				</li>
+				<li>
+					<span>Fault Reporting</span>
+					<ul>
+						<li><span>Basic Info</span></li>
+						<li><span>Downstream  Faults</span></li>
+					</ul>
+				</li>
+				<li><span>Failure Modeling Data</span></li>
+				<li>
+					<span>Initiated Test</span>
+					<ul>
+						<li><span>Basic Info</span></li>
+						<li><span>Interfering Initiated Test</span></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!-- 中间 -->
+		<div data-options="region:'center',title:'Data Entry'" style="padding:5px;background:#eee;">
+		     
+
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+	</script>
+</body>
+</html>
