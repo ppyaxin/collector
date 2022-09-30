@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>collector</title>
-    <link rel="stylesheet" type="text/css" href="easyui/themes/gray/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<style>
+		.disappear{
+			display: none;
+		}
+	</style>
 </head>
+
 <body>
+
 	<body class="easyui-layout">
+		<!-- 上面 -->
 		<div data-options="region:'north',split:true" class="easyui-tabs" style="height:100px;">
-				<div title="Home" style="padding:20px;display:none;">	
-				</div>
-				<div title="Initiated" style="overflow:auto;padding:20px;display:none;">
-				</div>
+			<div title="Home" style="padding:20px;display:none;">
 			</div>
+			<div title="Initiated" style="overflow:auto;padding:20px;display:none;">
+			</div>
+		</div>
 		<div data-options="region:'south',title:'Error',split:true" style="height:100px;"></div>
 		<!-- 右侧 -->
 		<div data-options="region:'east',title:'Tips',split:true" style="width:200px;">
-		   <span>The Data Entry Tool is used to collect Member System data based on the specific ICD version.
-			It helps supplier validate their data entry and export a MSD file.
+			<span>The Data Entry Tool is used to collect Member System data based on the specific ICD version.
+				It helps supplier validate their data entry and export a MSD file.
 			</span>
 		</div>
 		<!-- 左侧 -->
@@ -40,7 +49,7 @@
 					<span>Fault Reporting</span>
 					<ul>
 						<li><span>Basic Info</span></li>
-						<li><span>Downstream  Faults</span></li>
+						<li><span>Downstream Faults</span></li>
 					</ul>
 				</li>
 				<li><span>Failure Modeling Data</span></li>
@@ -55,12 +64,95 @@
 		</div>
 		<!-- 中间 -->
 		<div data-options="region:'center',title:'Data Entry'" style="padding:5px;background:#eee;">
-		     
+			<!-- Member System Modeling Data -->
+			<div id="msmd" class="easyui-tabs " style="height:100%;"  >
+				<div title="Basic Information" style="padding:20px;height:100%;">
+					<form id="ff" method="post">
+
+						<div style="margin-bottom:20px">
+							<input class="easyui-textbox" name="email" style="width:100%"
+								data-options="label:'Member System Name',labelWidth:300">
+						</div>
+						<div style="margin-bottom:20px">
+							<input class="easyui-textbox" name="email" style="width:100%"
+								data-options="label:'Member System ID',labelWidth:300">
+						</div>
+						<div style="margin-bottom:20px">
+							<input class="easyui-textbox" name="subject" style="width:100%"
+								data-options="label:'ATA System',labelWidth:300">
+						</div>
+						<div style="margin-bottom:20px">
+							<select class="easyui-combobox" name="language" label="Language" style="width:100%"
+								data-options="label:'Protocal type',labelWidth:300">
+								<option value="ar">Arabic</option>
+								<option value="bg">Bulgarian</option>
+								<option value="ca">Catalan</option>
+								<option value="zh-cht">Chinese Traditional</option>
+							</select>
+						</div>
+						<div style="margin-bottom:20px">
+							<input class="easyui-textbox" name="message" style="width:100%;height:60px"
+								data-options="label:'Member System Description',labelWidth:300,multiline:true">
+						</div>
+						<div style="margin-bottom:20px">
+							<span style="display:inline-block ;width:300px">Is Optional Equipment</span>
+							<input class="easyui-radiobutton"  name="fruit"  value="Option Equipment" label="Option Equipment" data-options="labelWidth:300,labelPosition:'after'">
+							<input class="easyui-radiobutton" name="fruit" value="Standard Equipment"label="Standard Equipment"data-options="labelWidth:300,labelPosition:'after'">
+						</div>
+						<div style="margin-bottom:20px">
+							<span style="display:inline-block ;width:300px">Transmits Reports During Power Up</span>
+							<input id="accept" type="checkbox" name="accept" value="true">
+						</div>
+		
+						<!-- functions -->
+						<div style="margin-bottom:20px">
+							<span style="display:inline-block ;width:300px">Supports Fault Reporting</span>
+							<input id="accept" type="checkbox"  name="accept" value="true">
+						</div>
+						<div style="margin-bottom:20px">
+							<span style="display:inline-block ;width:300px"> Supports Initiated Test</span>
+							<input id="accept" type="checkbox" name="accept" value="true">
+						</div>
+						<div style="margin-bottom:20px">
+							<span style="display:inline-block ;width:300px"> Supports Configuration Reporting</span>
+							<input id="accept" type="checkbox" name="accept" value="true">
+						</div>
+						<div style="margin-bottom:20px">
+							<span style="display:inline-block ;width:300px">Supports Data Load</span>
+							<input id="accept" type="checkbox" name="accept" value="true">
+						</div>
+						<div style="margin-bottom:20px">
+							<span style="display:inline-block ;width:300px">Supports Fault History Retrieval</span>
+							<input id="accept" type="checkbox" name="accept" value="true">
+						</div>
+						<div style="margin-bottom:20px">
+							<span style="display:inline-block ;width:300px">Type of Fault History Retrieval</span>
+							<input class="easyui-radiobutton"  name="fruit"  value="Option Equipment" label="Multiple" data-options="labelWidth:220,labelPosition:'after'">
+							<input class="easyui-radiobutton" name="fruit" value="Standard Equipment"label="Single"data-options="labelWidth:220,labelPosition:'after'">
+						</div>
+						<div style="margin-bottom:20px">
+							<span style="display:inline-block ;width:300px">Transmits Reports During Power Up</span>
+							<input id="accept" type="checkbox" name="accept" value="true">
+						</div>
+						<div style="margin-bottom:20px">
+							<span style="display:inline-block ;width:300px">Supports Fault History Reset</span>
+							<input id="accept" type="checkbox" name="accept" value="true">
+						</div>
+					</form>
+				</div>
+				<div title="ARINC 429" style="overflow:auto;padding:20px;display:none;">
+				</div>
+			</div>
+
 
 		</div>
 	</body>
 	<script type="text/javascript">
-		
+       function showMSMD(){
+		  console.log("hhhhhhhh")
+		  document.getElementById("msmd").style.display="none"
+	   }
 	</script>
 </body>
+
 </html>
