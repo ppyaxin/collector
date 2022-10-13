@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<style>
-		.disappear{
+		.disappear {
 			display: none;
 		}
 	</style>
@@ -63,26 +63,25 @@
 			</ul>
 		</div>
 		<!-- 中间 -->
-		<div data-options="region:'center',title:'Data Entry'" style="padding:5px;background:#eee;">
+		<div data-options="region:'center',title:'Data Entry'" style="padding:1px;background:#eee;">
 			<!-- Member System Modeling Data -->
-			<div id="msmd" class="easyui-tabs " style="height:100%;"  >
+			<div id="msmd" class="easyui-tabs " style="height:100%;width:100%;display: none;">
 				<div title="Basic Information" style="padding:20px;height:100%;">
 					<form id="ff" method="post">
-
 						<div style="margin-bottom:20px">
-							<input class="easyui-textbox" name="email" style="width:100%"
+							<input id="memName" class="easyui-textbox" name="e" style="width:800px"
 								data-options="label:'Member System Name',labelWidth:300">
 						</div>
 						<div style="margin-bottom:20px">
-							<input class="easyui-textbox" name="email" style="width:100%"
+							<input class="easyui-textbox" name="email" style="width:800px"
 								data-options="label:'Member System ID',labelWidth:300">
 						</div>
 						<div style="margin-bottom:20px">
-							<input class="easyui-textbox" name="subject" style="width:100%"
+							<input class="easyui-textbox" name="subject" style="width:800px"
 								data-options="label:'ATA System',labelWidth:300">
 						</div>
 						<div style="margin-bottom:20px">
-							<select class="easyui-combobox" name="language" label="Language" style="width:100%"
+							<select class="easyui-combobox" name="language" label="Language" style="width:800px"
 								data-options="label:'Protocal type',labelWidth:300">
 								<option value="ar">Arabic</option>
 								<option value="bg">Bulgarian</option>
@@ -91,23 +90,25 @@
 							</select>
 						</div>
 						<div style="margin-bottom:20px">
-							<input class="easyui-textbox" name="message" style="width:100%;height:60px"
+							<input class="easyui-textbox" name="message" style="width: 800px;height:60px"
 								data-options="label:'Member System Description',labelWidth:300,multiline:true">
 						</div>
 						<div style="margin-bottom:20px">
 							<span style="display:inline-block ;width:300px">Is Optional Equipment</span>
-							<input class="easyui-radiobutton"  name="fruit"  value="Option Equipment" label="Option Equipment" data-options="labelWidth:300,labelPosition:'after'">
-							<input class="easyui-radiobutton" name="fruit" value="Standard Equipment"label="Standard Equipment"data-options="labelWidth:300,labelPosition:'after'">
+							<input class="easyui-radiobutton" name="fruit" value="Option Equipment"
+								label="Option Equipment" data-options="labelWidth:300,labelPosition:'after'">
+							<input class="easyui-radiobutton" name="fruit" value="Standard Equipment"
+								label="Standard Equipment" data-options="labelWidth:300,labelPosition:'after'">
 						</div>
 						<div style="margin-bottom:20px">
 							<span style="display:inline-block ;width:300px">Transmits Reports During Power Up</span>
 							<input id="accept" type="checkbox" name="accept" value="true">
 						</div>
-		
+
 						<!-- functions -->
 						<div style="margin-bottom:20px">
 							<span style="display:inline-block ;width:300px">Supports Fault Reporting</span>
-							<input id="accept" type="checkbox"  name="accept" value="true">
+							<input id="accept" type="checkbox" name="accept" value="true">
 						</div>
 						<div style="margin-bottom:20px">
 							<span style="display:inline-block ;width:300px"> Supports Initiated Test</span>
@@ -127,8 +128,10 @@
 						</div>
 						<div style="margin-bottom:20px">
 							<span style="display:inline-block ;width:300px">Type of Fault History Retrieval</span>
-							<input class="easyui-radiobutton"  name="fruit"  value="Option Equipment" label="Multiple" data-options="labelWidth:220,labelPosition:'after'">
-							<input class="easyui-radiobutton" name="fruit" value="Standard Equipment"label="Single"data-options="labelWidth:220,labelPosition:'after'">
+							<input class="easyui-radiobutton" name="fruit" value="Option Equipment" label="Multiple"
+								data-options="labelWidth:220,labelPosition:'after'">
+							<input class="easyui-radiobutton" name="fruit" value="Standard Equipment" label="Single"
+								data-options="labelWidth:220,labelPosition:'after'">
 						</div>
 						<div style="margin-bottom:20px">
 							<span style="display:inline-block ;width:300px">Transmits Reports During Power Up</span>
@@ -143,15 +146,68 @@
 				<div title="ARINC 429" style="overflow:auto;padding:20px;display:none;">
 				</div>
 			</div>
+			<!-- Data Load -->
+			<div id="dl" style="height:100%;width:100%;background-color: #E0ECFF;display:none">
+				<form method="post" style="padding:20px;height:100%;">
+					<div style="margin-bottom:20px">
+						<input id="" class="easyui-textbox" name="e" style="width:900px"
+							data-options="label:'OADLF Protocal Type',labelWidth:200">
+					</div>
+					<div style="margin-bottom:20px">
+						<input id="resetTime" class="easyui-textbox" name="email" style="width:900px"
+							data-options="label:'Reset Time',labelWidth:200">
+					</div>
+					<div style="margin-bottom:20px">
+						<input class="easyui-textbox" name="subject" style="width:900px"
+							data-options="label:'Load Conditional Text',labelWidth:200">
+					</div>
 
-
+					<div style="margin-bottom:20px">
+						<input class="easyui-textbox" name="subject" style="width:900px"
+							data-options="label:'Load Attached Discrete',labelWidth:200">
+					</div>
+				</form>
+			</div>
 		</div>
 	</body>
 	<script type="text/javascript">
-       function showMSMD(){
-		  console.log("hhhhhhhh")
-		  document.getElementById("msmd").style.display="none"
-	   }
+
+		$('#tt').tree({
+			onClick: function (node) {
+				if (node.text == "Member System Modeling Data") {
+					document.getElementById("msmd").style.display = "block"
+				} else {
+					document.getElementById("msmd").style.display = "none"
+				}
+				if (node.text == "Data Load") {
+					document.getElementById("dl").style.display = "block"
+				} else {
+					document.getElementById("dl").style.display = "none"
+				}
+				//alert(node.text);  // alert node text property when clicked
+			}
+		});
+		let xml = {}
+		$.ajax({
+			type: 'GET',
+			url: "test.xml",
+			dataType: 'xml',
+			success: function (x) {
+				xml = x
+				let MemberSystemModelingData = xml.getElementsByTagName("MemberSystemModelingData")
+				let a = MemberSystemModelingData[0].attributes[1].value
+				console.log(MemberSystemModelingData, a)
+				$("#memName").textbox('setValue', a)
+				getARINC615OADLFData(xml)
+
+			}
+		})
+		function getARINC615OADLFData(xml) {
+			let ARINC615OADLFData = xml.getElementsByTagName("ARINC615OADLFData")[0].attributes
+			let resetTime = ARINC615OADLFData[1].value
+			$("#resetTime").textbox('setValue', resetTime)
+			console.log("ARINC615OADLFData", ARINC615OADLFData,resetTime)
+		}
 	</script>
 </body>
 
