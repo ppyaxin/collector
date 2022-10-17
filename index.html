@@ -158,7 +158,8 @@
 							data-options="label:'Reset Time',labelWidth:200">
 					</div>
 					<div style="margin-bottom:20px">
-						<input id="LoadConditionText" class="easyui-textbox" name="subject" style="width:900px"
+						<input id="LoadConditionText" class="easyui-textbox" name="subject"
+							style="width:900px;word-wrap:break-word;"
 							data-options="label:'Load Conditional Text',labelWidth:200">
 					</div>
 
@@ -176,26 +177,45 @@
 					style="width: 300px;height: 100%;">
 				</div>
 			</div> -->
-			
-			<div id="fualtReport" class="easyui-layout" data-options="fit:true" class="easyui-tabs" style="height: 100%;width:100%">
+
+			<div id="fualtReport" class="easyui-layout" data-options="fit:true" class="easyui-tabs"
+				style="height: 100%;width:100%">
+				<!-- 右侧 -->
 				<div data-options="region:'center',split:'true'," class="easyui-tabs"
 					style="width: 300px;height: 100%;">
+					<!-- 基础数据tab1 -->
 					<div title="Basic Data" style="padding:20px;display:none;">
 						<div style="margin-bottom:20px">
-							<input id="" class="easyui-textbox" name="e" style="width:700px"
+							<input id="Name" class="easyui-textbox" name="e" style="width:700px"
 								data-options="label:'Fault Report Name',labelWidth:300">
 						</div>
 						<div style="margin-bottom:20px">
-							<input id="memName" class="easyui-textbox" name="e" style="width:700px"
+							<input id="Type" class="easyui-textbox" name="e" style="width:700px"
 								data-options="label:'Fault Report Type',labelWidth:300">
 						</div>
 						<div style="margin-bottom:20px">
-							<input id="memName" class="easyui-textbox" name="e" style="width:700px"
+							<input id="Delay" class="easyui-textbox" name="e" style="width:700px"
 								data-options="label:'Fault Report Delay',labelWidth:300">
 						</div>
+						<div style="margin-bottom:20px">
+							<input id="Detect" class="easyui-textbox" name="e" style="width:700px"
+								data-options="label:'Time Delay(Detect)',labelWidth:300">
+							<span>Seconds</span>
+						</div>
+						<div style="margin-bottom:20px">
+							<input id="Clear" class="easyui-textbox" name="e" style="width:700px"
+								data-options="label:'Time Delay(Clear)',labelWidth:300">
+							<span>Seconds</span>
+						</div>
 					</div>
+					<!-- 可勾选列表tab2 -->
 					<div title="Storable Fight Phase" style="overflow:auto;padding:20px;display:none;">
+						<div class="easyui-panel" style="padding:5px">
+							<ul id="fightPhase" class="easyui-tree"
+								data-options="data:fightPhase,animate:true,checkbox:true"></ul>
+						</div>
 					</div>
+					<!-- tab3 -->
 					<div title="Fight Deck Effect" style="overflow:auto;padding:20px;display:none;">
 					</div>
 				</div>
@@ -225,9 +245,14 @@
 				}
 				if (node.text == "Fault Reporting") {
 					document.getElementById("fualtReport").style.display = "block"
-				}else{
+				} else if (node.text == "Basic Info") {
+					document.getElementById("fualtReport").style.display = "block"
+				}
+				else {
 					document.getElementById("fualtReport").style.display = "none"
 				}
+
+
 				//alert(node.text);  // alert node text property when clicked
 			}
 		});
@@ -252,10 +277,75 @@
 
 		function getFaultReporting(FaultReportingData) {
 			console.log(FaultReportingData)
+			let fightPhase = [{
+				"id": 1,
+				"text": "Wife"
+			}, {
+				"id": 2,
+				"text": "Wife"
+			},
+			{
+				"id": 3,
+				"text": "Wife"
+			}, {
+				"id": 4,
+				"text": "Wife"
+			}, {
+				"id": 5,
+				"text": "Wife"
+			}, {
+				"id": 6,
+				"text": "Wife"
+			}, {
+				"id": 7,
+				"text": "Wife"
+			}, {
+				"id": 8,
+				"text": "Wife"
+			}, {
+				"id": 9,
+				"text": "Wife"
+			}, {
+				"id": 10,
+				"text": "Wife"
+			}, {
+				"id": 11,
+				"text": "Wife"
+			}, {
+				"id": 12,
+				"text": "Wife"
+			}, {
+				"id": 13,
+				"text": "Wife"
+			}, {
+				"id": 14,
+				"text": "Wife"
+			}, {
+				"id": 15,
+				"text": "Wife"
+			}]
 			for (let i = 0; i < FaultReportingData.length; i++) {
 				let test = FaultReportingData[i].attributes[4].value
 				let a = $("<a href=\"#\" class=\"easyui-linkbutton l-btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").text(test)
+				$(a).click(function () {
+					console.log(FaultReportingData[i].attributes)
+					let temp = FaultReportingData[i].attributes
+					$("#Name").textbox('setValue', temp[4].value)
+					$("#Detect").textbox('setValue', temp[5].value)
+					$("#Clear").textbox('setValue', temp[6].value)
+					$("#Delay").textbox('setValue', temp[7].value)
+					let StorableFlightPhasesActiveFault = FaultReportingData[i].getElementsByTagName("StorableFlightPhasesActiveFault")
+					console.log(StorableFlightPhasesActiveFault)
+					for (let i = 0; i < StorableFlightPhasesActiveFault.length; i++) {
+						//console.log(StorableFlightPhasesActiveFault[i].textContent)
+						let id = StorableFlightPhasesActiveFault[i].textContent
+						fightPhase[id - 1].checked = true
+						console.log(fightPhase[id - 1])
+					}
+					$("#fightPhase").tree('append', { data: fightPhase })
+				})
 				$("#FaultReporting").append(a)
+
 			}
 		}
 
