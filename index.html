@@ -225,7 +225,53 @@
 		</div>
 	</body>
 	<script type="text/javascript">
-
+		let fightPhase = [{
+			"id": 1,
+			"text": "Wife"
+		}, {
+			"id": 2,
+			"text": "Wife"
+		},
+		{
+			"id": 3,
+			"text": "Wife"
+		}, {
+			"id": 4,
+			"text": "Wife"
+		}, {
+			"id": 5,
+			"text": "Wife"
+		}, {
+			"id": 6,
+			"text": "Wife"
+		}, {
+			"id": 7,
+			"text": "Wife"
+		}, {
+			"id": 8,
+			"text": "Wife"
+		}, {
+			"id": 9,
+			"text": "Wife"
+		}, {
+			"id": 10,
+			"text": "Wife"
+		}, {
+			"id": 11,
+			"text": "Wife"
+		}, {
+			"id": 12,
+			"text": "Wife"
+		}, {
+			"id": 13,
+			"text": "Wife"
+		}, {
+			"id": 14,
+			"text": "Wife"
+		}, {
+			"id": 15,
+			"text": "Wife"
+		}]
 		$('#tt').tree({
 			onClick: function (node) {
 				if (node.text == "Member System Modeling Data") {
@@ -277,53 +323,7 @@
 
 		function getFaultReporting(FaultReportingData) {
 			console.log(FaultReportingData)
-			let fightPhase = [{
-				"id": 1,
-				"text": "Wife"
-			}, {
-				"id": 2,
-				"text": "Wife"
-			},
-			{
-				"id": 3,
-				"text": "Wife"
-			}, {
-				"id": 4,
-				"text": "Wife"
-			}, {
-				"id": 5,
-				"text": "Wife"
-			}, {
-				"id": 6,
-				"text": "Wife"
-			}, {
-				"id": 7,
-				"text": "Wife"
-			}, {
-				"id": 8,
-				"text": "Wife"
-			}, {
-				"id": 9,
-				"text": "Wife"
-			}, {
-				"id": 10,
-				"text": "Wife"
-			}, {
-				"id": 11,
-				"text": "Wife"
-			}, {
-				"id": 12,
-				"text": "Wife"
-			}, {
-				"id": 13,
-				"text": "Wife"
-			}, {
-				"id": 14,
-				"text": "Wife"
-			}, {
-				"id": 15,
-				"text": "Wife"
-			}]
+
 			for (let i = 0; i < FaultReportingData.length; i++) {
 				let test = FaultReportingData[i].attributes[4].value
 				let a = $("<a href=\"#\" class=\"easyui-linkbutton l-btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").text(test)
@@ -335,14 +335,13 @@
 					$("#Clear").textbox('setValue', temp[6].value)
 					$("#Delay").textbox('setValue', temp[7].value)
 					let StorableFlightPhasesActiveFault = FaultReportingData[i].getElementsByTagName("StorableFlightPhasesActiveFault")
-					console.log(StorableFlightPhasesActiveFault)
 					for (let i = 0; i < StorableFlightPhasesActiveFault.length; i++) {
 						//console.log(StorableFlightPhasesActiveFault[i].textContent)
 						let id = StorableFlightPhasesActiveFault[i].textContent
 						fightPhase[id - 1].checked = true
-						console.log(fightPhase[id - 1])
 					}
-					$("#fightPhase").tree('append', { data: fightPhase })
+					//easyui数据绑定方式
+					$("#fightPhase").tree({ data: fightPhase })
 				})
 				$("#FaultReporting").append(a)
 
