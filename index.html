@@ -21,6 +21,8 @@
 		<!-- 上面 -->
 		<div data-options="region:'north',split:true" class="easyui-tabs" style="height:100px;">
 			<div title="Home" style="padding:20px;display:none;">
+				<a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-large-smartart'"
+					onclick="openFolder()">Open</a>
 			</div>
 			<div title="Initiated" style="overflow:auto;padding:20px;display:none;">
 			</div>
@@ -56,7 +58,7 @@
 				<li>
 					<span>Initiated Test</span>
 					<ul>
-						<li><span>Basic Info</span></li>
+						<li><span>Initiated Basic Info</span></li>
 						<li><span>Interfering Initiated Test</span></li>
 					</ul>
 				</li>
@@ -177,7 +179,19 @@
 					style="width: 300px;height: 100%;">
 				</div>
 			</div> -->
+			<!-- Failure Modeling Data -->
+			<div id="FailureModelingData" class="easyui-layout" data-options="fit:true" style="height: 100%;width:100%">
+				<div data-options="region:'center',split:'true',title:'Navagation'," style="width: 300px;height: 100%;">
+				</div>
+				<div data-options="region:'west',split:'true',title:'Navagation'" style="width: 400px;height: 100%;">
+					<div id="ppfmd" class="easyui-pagination" style="background:#efefef;border:1px solid #ccc;">
+					</div>
+					<div id="FailtureReportingfmd" class="easyui-panel" style="height: 560px;width:100%">
 
+					</div>
+				</div>
+			</div>
+			<!-- fualt Report -->
 			<div id="fualtReport" class="easyui-layout" data-options="fit:true" class="easyui-tabs"
 				style="height: 100%;width:100%">
 				<!-- 右侧 -->
@@ -210,6 +224,10 @@
 					</div>
 					<!-- 可勾选列表tab2 -->
 					<div title="Storable Fight Phase" style="overflow:auto;padding:20px;display:none;">
+						<div style="margin-bottom:20px;">
+							<a href="#" class="easyui-linkbutton" onclick="collapseAll()">ALL</a>
+							<a href="#" class="easyui-linkbutton" onclick="expandAll()">None</a>
+						</div>
 						<div class="easyui-panel" style="padding:5px">
 							<ul id="fightPhase" class="easyui-tree"
 								data-options="data:fightPhase,animate:true,checkbox:true"></ul>
@@ -219,22 +237,49 @@
 					<div title="Fight Deck Effect" style="overflow:auto;padding:20px;display:none;">
 					</div>
 				</div>
-				<div id="FaultReporting" data-options="region:'west',split:'true'" style="width: 300px;height: 100%;">
+				<!-- 左侧 -->
+				<div data-options="region:'west',split:'true'" style="width: 400px;height: 100%;position: relative;">
+					<div id="pp" class="easyui-pagination" style="background:#efefef;border:1px solid #ccc;">
+					</div>
+					<div id="FaultReporting" class="easyui-panel" style="height: 560px;width:100%">
+
+					</div>
 				</div>
 			</div>
 		</div>
 	</body>
 	<script type="text/javascript">
+
+
+		function openFolder() {
+			console.log("hhhhhhhhhhhhhhhhhhhhhhhhhh")
+			var inputObj = document.createElement('input')
+			inputObj.setAttribute('id', '_ef');
+			inputObj.setAttribute('type', 'file');
+
+			inputObj.setAttribute("style", 'visibility:hidden');
+			inputObj.setAttribute("accept", '.xml');
+
+			document.body.appendChild(inputObj);
+			inputObj.click();
+			let a=""
+			$("#_ef").change(function(){
+				a=document.getElementById('_ef').value
+				console.log("nnnnnn",a)
+			}) 
+			console.log(inputObj)
+		}
+
 		let fightPhase = [{
 			"id": 1,
-			"text": "Wife"
+			"text": "Power-On"
 		}, {
 			"id": 2,
-			"text": "Wife"
+			"text": "Engine Start"
 		},
 		{
 			"id": 3,
-			"text": "Wife"
+			"text": ""
 		}, {
 			"id": 4,
 			"text": "Wife"
@@ -297,7 +342,11 @@
 				else {
 					document.getElementById("fualtReport").style.display = "none"
 				}
-
+				if (node.text == "Failure Modeling Data") {
+					document.getElementById("FailureModelingData").style.display = "block"
+				} else {
+					document.getElementById("FailureModelingData").style.display = "none"
+				}
 
 				//alert(node.text);  // alert node text property when clicked
 			}
@@ -314,19 +363,73 @@
 				let BindingItems = MemberSystemModelingData[0].getElementsByTagName("BindingItems")
 				let FaultReporting = xml.getElementsByTagName("FaultReporting")
 				let FaultReportingData = FaultReporting[0].getElementsByTagName("FaultReportingData")
+				let FailureData = FaultReporting[0].getElementsByTagName("FailureData")
+				let InitiatedTestData = FaultReporting[0].getElementsByTagName("InitiatedTestData")
+				//console.log("failureData",FailureData)
 				getFaultReporting(FaultReportingData)
 				$("#memName").textbox('setValue', a)
 				getARINC615OADLFData(xml)
-
+				getFailureData(FailureData)
+				getInitiatedTest(InitiatedTestData)
 			}
 		})
 
-		function getFaultReporting(FaultReportingData) {
-			console.log(FaultReportingData)
+		function getInitiatedTest(InitiatedTestData) {
+			console.log(InitiatedTestData)
+		}
 
-			for (let i = 0; i < FaultReportingData.length; i++) {
+		//分页加载一部分类别
+		function getFailureDataList(pageNumber, pageSize, failureData) {
+			//FailtureReportingfmd
+			//清空之前的后代元素
+			$("#FailtureReportingfmd").empty()
+			let len = failureData.length
+			let start = (pageNumber - 1) * pageSize
+			let end = start + pageSize
+			console.log(pageNumber, pageSize, start, end)
+			for (let i = start; i < end; i++) {
+				let test = failureData[i].attributes[4].value
+				let FailureMessage = failureData[i].attributes[8].value
+				//let DownstreamFaultsLength = FaultReportingData[i].getElementsByTagName("DownstreamFaults").length
+				let a = $("<a href=\"#\" class=\"easyui-linkbutton l-btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").html(test +
+					'</br>' + FailureMessage)
+				$(a).click(function () {
+					console.log(failureData[i].attributes)
+					let temp = failureData[i].attributes
+
+				})
+				$("#FailtureReportingfmd").append(a)
+			}
+		}
+
+		function getFailureData(failureData) {
+			getFailureDataList(1, 10, failureData)
+			let len = failureData.length
+			$('#ppfmd').pagination({
+				layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep'],
+				beforePageText: 'Page',
+				afterPageText: 'of {pages}',
+				total: len,
+				pageList: [10, 20, 50, 100],
+				onSelectPage: function (pageNumber, pageSize) {
+					getFailureDataList(pageNumber, pageSize, failureData)
+				}
+			});
+		}
+		//分页加载一部分列表
+		function getFaultReportingList(pageNumber, pageSize, FaultReportingData) {
+			//清空之前的后代元素
+			$("#FaultReporting").empty()
+
+			let len = FaultReportingData.length
+			let start = (pageNumber - 1) * pageSize
+			let end = start + pageSize
+			console.log(pageNumber, pageSize, start, end)
+			for (let i = start; i < end; i++) {
 				let test = FaultReportingData[i].attributes[4].value
-				let a = $("<a href=\"#\" class=\"easyui-linkbutton l-btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").text(test)
+				let DownstreamFaultsLength = FaultReportingData[i].getElementsByTagName("DownstreamFaults").length
+				let a = $("<a href=\"#\" class=\"easyui-linkbutton l-btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").html(test +
+					'</br>' + DownstreamFaultsLength + '&nbsp' + 'DownstreamFaults')
 				$(a).click(function () {
 					console.log(FaultReportingData[i].attributes)
 					let temp = FaultReportingData[i].attributes
@@ -335,6 +438,7 @@
 					$("#Clear").textbox('setValue', temp[6].value)
 					$("#Delay").textbox('setValue', temp[7].value)
 					let StorableFlightPhasesActiveFault = FaultReportingData[i].getElementsByTagName("StorableFlightPhasesActiveFault")
+
 					for (let i = 0; i < StorableFlightPhasesActiveFault.length; i++) {
 						//console.log(StorableFlightPhasesActiveFault[i].textContent)
 						let id = StorableFlightPhasesActiveFault[i].textContent
@@ -344,8 +448,22 @@
 					$("#fightPhase").tree({ data: fightPhase })
 				})
 				$("#FaultReporting").append(a)
-
 			}
+		}
+
+		function getFaultReporting(FaultReportingData) {
+			getFaultReportingList(1, 10, FaultReportingData)
+			let len = FaultReportingData.length
+			$('#pp').pagination({
+				layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep'],
+				beforePageText: 'Page',
+				afterPageText: 'of {pages}',
+				total: len,
+				pageList: [10, 20, 50, 100],
+				onSelectPage: function (pageNumber, pageSize) {
+					getFaultReportingList(pageNumber, pageSize, FaultReportingData)
+				}
+			});
 		}
 
 		function getARINC615OADLFData(xml) {
