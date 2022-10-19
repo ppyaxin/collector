@@ -1,0 +1,1 @@
+修改配置文件 apache文件夹下  php.ini中 pload_max_filesize 选项限制的值
