@@ -6,11 +6,20 @@
 	<title>collector</title>
 	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+	<script src="font/iconfont.js"></script>
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<style>
-		.disappear {
-			display: none;
+		.icon {
+			width: 1.5em;
+			height: 1.5em;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+		}
+
+		.l-btn-text {
+			width: 100%;
 		}
 	</style>
 </head>
@@ -251,16 +260,25 @@
 		</div>
 		<!-- OMS Communication Message -->
 		<div id="OMSCommunicationMsg" class="easyui-layout" data-options="fit:true" style="height: 100%;width:100%">
-			<div data-options="region:'center',split:'true',title:'Navagation'," style="width: 300px;height: 100%;">
+			<div data-options="region:'center',split:'true',title:'ICD Messages'," style="width: 300px;height: 100%;">
 			</div>
 			<!-- 左侧 -->
-			<div  data-options="region:'west',split:'true',title:'Navagation'"
-				style="width: 500px;height: 100%;">
+			<div data-options="region:'west',split:'true'" style="width: 400px;height: 100%;">
 				<div id="ppoms" class="easyui-pagination" style="background:#efefef;border:1px solid #ccc;">
 				</div>
-
-				<div id="OmsMessages" class="easyui-panel" style="height: 480px;width:100%">
-
+				<div id="OmsMessages" class="easyui-panel" style="height: 400px;width:100%">
+					<a href="#" class="easyui-linkbutton"
+						style="width: 100%;padding:5px;word-wrap:break-word;position: relative;">
+						<div style=" display: flex;justify-content: space-between;">
+							<div style="width: 250px;">
+								11111</br>111111</div>
+							<div style="width: 50px;">
+								<svg class="icon" aria-hidden="true" style="height: 50px;line-height:50px;">
+									<use xlink:href="#icon-xiangzuo" color="#f4a460"></use>
+								</svg>
+							</div>
+						</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -401,21 +419,51 @@
 		})
 	}
 
+	
 	function getOmsMessageList(pageNumber, pageSize, OmsMessage) {
 		$("#OmsMessages").empty()
 		let len = OmsMessage.length
 		let start = (pageNumber - 1) * pageSize
 		let end = start + pageSize
-	
+
 		console.log(pageNumber, pageSize, start, end)
 		for (let i = start; i < end; i++) {
-			let test = OmsMessage[i].attributes[0].value 
-			let IsRp = OmsMessage[i].attributes[2].value 
-			let item=OmsMessage[i].getElementsByTagName("IcdMessageRef")
-			let len=item.length
+			let test = OmsMessage[i].attributes[0].value
+			let IsRp = OmsMessage[i].attributes[2].value
+			let item = OmsMessage[i].getElementsByTagName("IcdMessageRef")
+			let len = item.length
+			let a=""
+			if(IsRp=="true"){
+				a = $("<a href=\"#\" class=\"easyui-linkbutton  l-btn l-btn-small easyui-fluid\" style=\"width: 100%;padding:5px;word-wrap:break-word;position: relative;\">" +
+				"<div style=\" display: flex;justify-content: space-between;\">" +
+				"<div style=\"width: 300px;\">" + test +
+				"</br>" + "Item Count:" + len + "</div>" +
+				"<div style=\"width: 50px;\">" +
+				"<svg class=\"icon\" aria-hidden=\"true\" style=\"height: 50px;line-height:50px;\">" +
+				"<use xlink:href=\"#icon-xiangzuo\"color=\"#32cd32\">" + "</use>" +
+				"</svg>" +
+				"</div>" +
+				"</div>" +
+				"</a>")
+			}else{
+				a = $("<a href=\"#\" class=\"easyui-linkbutton  l-btn l-btn-small easyui-fluid\" style=\"width: 100%;padding:5px;word-wrap:break-word;position: relative;\">" +
+				"<div style=\" display: flex;justify-content: space-between;\">" +
+				"<div style=\"width: 300px;\">" + test +
+				"</br>" + "Item Count:" + len +  "</div>" +
+				"<div style=\"width: 50px;\">" +
+				"<svg class=\"icon\" aria-hidden=\"true\" style=\"height: 50px;line-height:50px;\">" +
+				"<use xlink:href=\"#icon-xiangyou\" color=\"#f4a460\">" + "</use>" +
+				"</svg>" +
+				"</div>" +
+				"</div>" +
+				"</a>")
+			}
+
+			
 			//let DownstreamFaultsLength = FaultReportingData[i].getElementsByTagName("DownstreamFaults").length
-			let a = $("<a href=\"#\" class=\"easyui-linkbutton l-btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").html(test +
-				'</br>' +"Item Count:"+ len+IsRp)
+			// let a = $("<a href=\"#\" class=\"easyui-linkbuttoln -btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").html(test +
+			// 	'</br>' + "Item Count:" + len + IsRp)
+
 			// $(a).click(function () {
 			// 	console.log(failureData[i].attributes)
 			// 	let temp = failureData[i].attributes
@@ -427,12 +475,12 @@
 	}
 
 	function getOmsMessage(OmsMessage) {
-		if(OmsMessage.length>10){
+		if (OmsMessage.length > 10) {
 			getOmsMessageList(1, 10, OmsMessage)
-		}else{
-			getOmsMessageList(1,OmsMessage.length,OmsMessage)
+		} else {
+			getOmsMessageList(1, OmsMessage.length, OmsMessage)
 		}
-		
+
 		let len = OmsMessage.length
 		$('#ppoms').pagination({
 			layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep'],

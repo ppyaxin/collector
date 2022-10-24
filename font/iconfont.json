@@ -1,0 +1,65 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1203",
+      "name": "向左",
+      "font_class": "xiangzuo",
+      "unicode": "f0112",
+      "unicode_decimal": 983314
+    },
+    {
+      "icon_id": "1205",
+      "name": "向右",
+      "font_class": "xiangyou",
+      "unicode": "f0114",
+      "unicode_decimal": 983316
+    },
+    {
+      "icon_id": "2076401",
+      "name": " 向下箭头粗小",
+      "font_class": "xiangxiajiantoucuxiao",
+      "unicode": "e8c8",
+      "unicode_decimal": 59592
+    },
+    {
+      "icon_id": "2125161",
+      "name": "创建服务",
+      "font_class": "chuangjianfuwu",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "2388039",
+      "name": "打开",
+      "font_class": "dakai",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "2389074",
+      "name": "另存为",
+      "font_class": "lingcunwei",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "7594808",
+      "name": "24gl-fileEmpty",
+      "font_class": "24gl-fileEmpty",
+      "unicode": "eabf",
+      "unicode_decimal": 60095
+    },
+    {
+      "icon_id": "7594875",
+      "name": "24gf-folderOpen",
+      "font_class": "24gf-folderOpen",
+      "unicode": "eac5",
+      "unicode_decimal": 60101
+    }
+  ]
+}
