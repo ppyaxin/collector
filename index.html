@@ -282,6 +282,59 @@
 				</div>
 			</div>
 		</div>
+		<!-- Member System Status -->
+		<div id="StatusMessage" class="easyui-layout" data-options="fit:true" class="easyui-tabs"
+			style="height: 100%;width:100%">
+			<!-- 右侧 -->
+			<div data-options="region:'center',split:'true'," style="height: 100%;">
+				<table class="easyui-datagrid" data-options="singleSelect:true,collapsible:true,method:'get'">
+					<thead>
+						<tr>
+							<th data-options="field:'bitPosition',width:80,align:'center'">Bit Position</th>
+							<th data-options="field:'name',width:150,align:'center'">Name</th>
+							<th data-options="field:'type',width:150,align:'center',
+							formatter:function(value,row){
+								return row.typeName;
+							},
+							editor:{
+								type:'combobox',
+								options:{
+									valueField:'typeId',
+									textField:'typeName',
+									required:true
+								}
+							}">Type</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<!-- 左侧 -->
+			<div data-options="region:'west',split:'true'" style="width: 480px;height: 480px;position: relative;">
+				<div id="ppsm" class="easyui-pagination" style="background:#efefef;border:1px solid #ccc;">
+				</div>
+
+				<div id="StatusMessageList" class="easyui-panel" style="height: 460px;width:470px">
+
+				</div>
+			</div>
+		</div>
+		<!-- Initiated Test -->
+		<div id="initiatedTest" class="easyui-layout" data-options="fit:true" class="easyui-tabs"
+		style="height: 100%;width:100%">
+		<!-- 右侧 -->
+		<div data-options="region:'center',split:'true'," style="height: 100%;">
+	
+		</div>
+		<!-- 左侧 -->
+		<div data-options="region:'west',split:'true'" style="width: 480px;height: 480px;position: relative;">
+			<div id="ppit" class="easyui-pagination" style="background:#efefef;border:1px solid #ccc;">
+			</div>
+
+			<div id="initiatedTestData" class="easyui-panel" style="height: 460px;width:470px">
+
+			</div>
+		</div>
+	</div>
 	</div>
 </body>
 <script type="text/javascript">
@@ -387,6 +440,18 @@
 			} else {
 				document.getElementById("OMSCommunicationMsg").style.display = "none"
 			}
+			if (node.text == "Member System Status") {
+				document.getElementById("StatusMessage").style.display = "block"
+			} else {
+				document.getElementById("StatusMessage").style.display = "none"
+			}
+			if(node.text=="Initiated Basic Info"){
+				document.getElementById("initiatedTest").style.display = "block"
+			} else if(node.text=="Initiated Test") {
+				document.getElementById("initiatedTest").style.display = "block"
+			}else{
+				document.getElementById("initiatedTest").style.display = "none"
+			}
 			//alert(node.text);  // alert node text property when clicked
 		}
 	});
@@ -404,22 +469,105 @@
 				let a = MemberSystemModelingData[0].attributes[1].value
 				let BindingItems = MemberSystemModelingData[0].getElementsByTagName("BindingItems")
 				let OmsMessage = MemberSystemModelingData[0].getElementsByTagName("OmsMessage")
+				let StatusMessage = MemberSystemModelingData[0].getElementsByTagName("StatusMessage")
 				let FaultReporting = xml.getElementsByTagName("FaultReporting")
 				let FaultReportingData = FaultReporting[0].getElementsByTagName("FaultReportingData")
 				let FailureData = FaultReporting[0].getElementsByTagName("FailureData")
-				let InitiatedTestData = FaultReporting[0].getElementsByTagName("InitiatedTestData")
-				//console.log("failureData",FailureData)
+				let InitiatedTestData=FaultReporting[0].getElementsByTagName("InitiatedTestData")
 				getFaultReporting(FaultReportingData)
 				$("#memName").textbox('setValue', a)
 				getARINC615OADLFData(xml)
 				getFailureData(FailureData)
-				getInitiatedTest(InitiatedTestData)
 				getOmsMessage(OmsMessage)
+				getStatusMessage(StatusMessage)
+				getInitiatedTest(InitiatedTestData)
 			}
 		})
 	}
+        
+    function getInitiatedTestList(pageNumber, pageSize, InitiatedTest){
+		//清空之前的后代元素
+		$("#initiatedTestData").empty()
+		let len = InitiatedTest.length
+		let start = (pageNumber - 1) * pageSize
+		let end = start + pageSize
+		for (let i = start; i < end; i++) {
+			let name = InitiatedTest[i].attributes[1].value
+			console.log("test",name)
+			let InterferingTests=InitiatedTest[i].getElementsByTagName("InterferingTests")
+			let FailingFaults=InitiatedTest[i].getElementsByTagName("FailingFaults")
+			//let DownstreamFaultsLength = FaultReportingData[i].getElementsByTagName("DownstreamFaults").length
+			let a = $("<a href=\"#\" class=\"easyui-linkbutton l-btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").html(name +
+				'</br>'+InterferingTests.length+"Interfering Initiated Tests"+'</br>'+FailingFaults.length+"Failing Faults" )
+			$(a).click(function () {
+				//console.log(StatusMessage[i])
 
-	
+			})
+			$("#initiatedTestData").append(a)
+		}
+	}
+
+    function getInitiatedTest(InitiatedTest){
+		console.log("ppppp", InitiatedTest)
+		if (InitiatedTest.length > 10) {
+			getInitiatedTestList(1, 10, InitiatedTest)
+		} else {
+			getInitiatedTestList(1, InitiatedTest.length, InitiatedTest)
+		}
+
+		let len = InitiatedTest.length
+		$('#ppit').pagination({
+			layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep'],
+			beforePageText: 'Page',
+			afterPageText: 'of {pages}',
+			total: len,
+			pageList: [10, 20, 50, 100],
+			onSelectPage: function (pageNumber, pageSize) {
+				getInitiatedTestList(pageNumber, pageSize, InitiatedTest)
+			}
+		});
+	}
+
+	function getStatusMessageList(pageNumber, pageSize, StatusMessage) {
+		//清空之前的后代元素
+		$("#StatusMessageList").empty()
+		let len = StatusMessage.length
+		let start = (pageNumber - 1) * pageSize
+		let end = start + pageSize
+		console.log(pageNumber, pageSize, start, end)
+		for (let i = start; i < end; i++) {
+			let test = StatusMessage[i].attributes[1].value
+			//let DownstreamFaultsLength = FaultReportingData[i].getElementsByTagName("DownstreamFaults").length
+			let a = $("<a href=\"#\" class=\"easyui-linkbutton l-btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").html(test +
+				'</br>' + "0 bits with blank")
+			$(a).click(function () {
+				//console.log(StatusMessage[i])
+
+			})
+			$("#StatusMessageList").append(a)
+		}
+	}
+	function getStatusMessage(StatusMessage) {
+		//console.log("ppppp", StatusMessage)
+		if (StatusMessage.length > 10) {
+			getStatusMessageList(1, 10, StatusMessage)
+		} else {
+			getStatusMessageList(1, StatusMessage.length, StatusMessage)
+		}
+
+		let len = StatusMessage.length
+		$('#ppsm').pagination({
+			layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep'],
+			beforePageText: 'Page',
+			afterPageText: 'of {pages}',
+			total: len,
+			pageList: [10, 20, 50, 100],
+			onSelectPage: function (pageNumber, pageSize) {
+				getStatusMessageList(pageNumber, pageSize, StatusMessage)
+			}
+		});
+	}
+
 	function getOmsMessageList(pageNumber, pageSize, OmsMessage) {
 		$("#OmsMessages").empty()
 		let len = OmsMessage.length
@@ -432,43 +580,33 @@
 			let IsRp = OmsMessage[i].attributes[2].value
 			let item = OmsMessage[i].getElementsByTagName("IcdMessageRef")
 			let len = item.length
-			let a=""
-			if(IsRp=="true"){
+			let a = ""
+			if (IsRp == "true") {
 				a = $("<a href=\"#\" class=\"easyui-linkbutton  l-btn l-btn-small easyui-fluid\" style=\"width: 100%;padding:5px;word-wrap:break-word;position: relative;\">" +
-				"<div style=\" display: flex;justify-content: space-between;\">" +
-				"<div style=\"width: 300px;\">" + test +
-				"</br>" + "Item Count:" + len + "</div>" +
-				"<div style=\"width: 50px;\">" +
-				"<svg class=\"icon\" aria-hidden=\"true\" style=\"height: 50px;line-height:50px;\">" +
-				"<use xlink:href=\"#icon-xiangzuo\"color=\"#32cd32\">" + "</use>" +
-				"</svg>" +
-				"</div>" +
-				"</div>" +
-				"</a>")
-			}else{
+					"<div style=\" display: flex;justify-content: space-between;\">" +
+					"<div style=\"width: 300px;\">" + test +
+					"</br>" + "Item Count:" + len + "</div>" +
+					"<div style=\"width: 50px;\">" +
+					"<svg class=\"icon\" aria-hidden=\"true\" style=\"height: 30px;line-height:30px;\">" +
+					"<use xlink:href=\"#icon-xiangzuo\"color=\"#32cd32\">" + "</use>" +
+					"</svg>" +
+					"</div>" +
+					"</div>" +
+					"</a>")
+			} else {
 				a = $("<a href=\"#\" class=\"easyui-linkbutton  l-btn l-btn-small easyui-fluid\" style=\"width: 100%;padding:5px;word-wrap:break-word;position: relative;\">" +
-				"<div style=\" display: flex;justify-content: space-between;\">" +
-				"<div style=\"width: 300px;\">" + test +
-				"</br>" + "Item Count:" + len +  "</div>" +
-				"<div style=\"width: 50px;\">" +
-				"<svg class=\"icon\" aria-hidden=\"true\" style=\"height: 50px;line-height:50px;\">" +
-				"<use xlink:href=\"#icon-xiangyou\" color=\"#f4a460\">" + "</use>" +
-				"</svg>" +
-				"</div>" +
-				"</div>" +
-				"</a>")
+					"<div style=\" display: flex;justify-content: space-between;\">" +
+					"<div style=\"width: 300px;\">" + test +
+					"</br>" + "Item Count:" + len + "</div>" +
+					"<div style=\"width: 50px;\">" +
+					"<svg class=\"icon\" aria-hidden=\"true\" style=\"height: 30px;line-height:30px;\">" +
+					"<use xlink:href=\"#icon-xiangyou\" color=\"#f4a460\">" + "</use>" +
+					"</svg>" +
+					"</div>" +
+					"</div>" +
+					"</a>")
 			}
 
-			
-			//let DownstreamFaultsLength = FaultReportingData[i].getElementsByTagName("DownstreamFaults").length
-			// let a = $("<a href=\"#\" class=\"easyui-linkbuttoln -btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").html(test +
-			// 	'</br>' + "Item Count:" + len + IsRp)
-
-			// $(a).click(function () {
-			// 	console.log(failureData[i].attributes)
-			// 	let temp = failureData[i].attributes
-
-			// })
 			$("#OmsMessages").append(a)
 		}
 
@@ -494,9 +632,7 @@
 		});
 	}
 
-	function getInitiatedTest(InitiatedTestData) {
-		console.log(InitiatedTestData)
-	}
+
 
 	//分页加载一部分类别
 	function getFailureDataList(pageNumber, pageSize, failureData) {
