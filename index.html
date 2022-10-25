@@ -26,14 +26,26 @@
 
 <body class="easyui-layout">
 	<!-- 上面 -->
-	<div data-options="region:'north',split:true" class="easyui-tabs" style="height:120px;">
+	<div data-options="region:'north',split:true" class="easyui-tabs" style="height:140px;">
+
 		<div title="Home" style="padding-top: 10px; padding-left:10px;display:none;">
-			<button style="width: 100px;height: 60px;border-color: #95B8E7;background-color:#E0ECFF ;">
-				<form id="openxml" method="post" enctype="multipart/form-data">
-					<input style="width: 90px;height: 60px;border: 0;" id="up" type="file" name="file1" accept=".xml"
-						onchange="send()">
-				</form>
+			<button  style="width: 60px;height: 60px;border-color: #eef0f2;position: relative;margin: 10px;">
+				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
+					<use xlink:href="#icon-chuangjianfuwu"></use>
+				  </svg>
+				  <span>New</span>
 			</button>
+			<button onclick="clickFile()" style="width: 60px;height: 60px;border-color: #eef0f2;position: relative;">
+				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
+					<use xlink:href="#icon-dakai"></use>
+				  </svg>
+				  <span>Open</span>
+			</button>
+			<form id="openxml" method="post" enctype="multipart/form-data" style="display: none;">	
+				<input id="up" type="file" name="file1" accept=".xml"
+					onchange="send()">
+			</form>
+
 		</div>
 		<div title="Initiated" style="overflow:auto;padding:20px;display:none;">
 		</div>
@@ -320,24 +332,29 @@
 		</div>
 		<!-- Initiated Test -->
 		<div id="initiatedTest" class="easyui-layout" data-options="fit:true" class="easyui-tabs"
-		style="height: 100%;width:100%">
-		<!-- 右侧 -->
-		<div data-options="region:'center',split:'true'," style="height: 100%;">
-	
-		</div>
-		<!-- 左侧 -->
-		<div data-options="region:'west',split:'true'" style="width: 480px;height: 480px;position: relative;">
-			<div id="ppit" class="easyui-pagination" style="background:#efefef;border:1px solid #ccc;">
-			</div>
-
-			<div id="initiatedTestData" class="easyui-panel" style="height: 460px;width:470px">
+			style="height: 100%;width:100%">
+			<!-- 右侧 -->
+			<div data-options="region:'center',split:'true'," style="height: 100%;">
 
 			</div>
+			<!-- 左侧 -->
+			<div data-options="region:'west',split:'true'" style="width: 480px;height: 480px;position: relative;">
+				<div id="ppit" class="easyui-pagination" style="background:#efefef;border:1px solid #ccc;">
+				</div>
+
+				<div id="initiatedTestData" class="easyui-panel" style="height: 460px;width:470px">
+
+				</div>
+			</div>
 		</div>
-	</div>
 	</div>
 </body>
 <script type="text/javascript">
+	function clickFile(){
+		const input=document.querySelector('#up')
+		console.log(input)
+		input.click()
+	}
 	let readurl = ""
 	// function init(){
 	// 	if(readurl!=""){
@@ -445,11 +462,11 @@
 			} else {
 				document.getElementById("StatusMessage").style.display = "none"
 			}
-			if(node.text=="Initiated Basic Info"){
+			if (node.text == "Initiated Basic Info") {
 				document.getElementById("initiatedTest").style.display = "block"
-			} else if(node.text=="Initiated Test") {
+			} else if (node.text == "Initiated Test") {
 				document.getElementById("initiatedTest").style.display = "block"
-			}else{
+			} else {
 				document.getElementById("initiatedTest").style.display = "none"
 			}
 			//alert(node.text);  // alert node text property when clicked
@@ -473,7 +490,7 @@
 				let FaultReporting = xml.getElementsByTagName("FaultReporting")
 				let FaultReportingData = FaultReporting[0].getElementsByTagName("FaultReportingData")
 				let FailureData = FaultReporting[0].getElementsByTagName("FailureData")
-				let InitiatedTestData=FaultReporting[0].getElementsByTagName("InitiatedTestData")
+				let InitiatedTestData = FaultReporting[0].getElementsByTagName("InitiatedTestData")
 				getFaultReporting(FaultReportingData)
 				$("#memName").textbox('setValue', a)
 				getARINC615OADLFData(xml)
@@ -484,8 +501,8 @@
 			}
 		})
 	}
-        
-    function getInitiatedTestList(pageNumber, pageSize, InitiatedTest){
+
+	function getInitiatedTestList(pageNumber, pageSize, InitiatedTest) {
 		//清空之前的后代元素
 		$("#initiatedTestData").empty()
 		let len = InitiatedTest.length
@@ -493,12 +510,12 @@
 		let end = start + pageSize
 		for (let i = start; i < end; i++) {
 			let name = InitiatedTest[i].attributes[1].value
-			console.log("test",name)
-			let InterferingTests=InitiatedTest[i].getElementsByTagName("InterferingTests")
-			let FailingFaults=InitiatedTest[i].getElementsByTagName("FailingFaults")
+			console.log("test", name)
+			let InterferingTests = InitiatedTest[i].getElementsByTagName("InterferingTests")
+			let FailingFaults = InitiatedTest[i].getElementsByTagName("FailingFaults")
 			//let DownstreamFaultsLength = FaultReportingData[i].getElementsByTagName("DownstreamFaults").length
 			let a = $("<a href=\"#\" class=\"easyui-linkbutton l-btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").html(name +
-				'</br>'+InterferingTests.length+"Interfering Initiated Tests"+'</br>'+FailingFaults.length+"Failing Faults" )
+				'</br>' + InterferingTests.length + "Interfering Initiated Tests" + '</br>' + FailingFaults.length + "Failing Faults")
 			$(a).click(function () {
 				//console.log(StatusMessage[i])
 
@@ -507,7 +524,7 @@
 		}
 	}
 
-    function getInitiatedTest(InitiatedTest){
+	function getInitiatedTest(InitiatedTest) {
 		console.log("ppppp", InitiatedTest)
 		if (InitiatedTest.length > 10) {
 			getInitiatedTestList(1, 10, InitiatedTest)
