@@ -3,7 +3,6 @@
 // $xmlDoc->load("test.xml");
          $file=$_FILES['file1'];  
         $fileName=$file['name'];
-        //echo json_encode($file);
         move_uploaded_file($file['tmp_name'],$fileName);
          //给文件重命名，尽量不要起中文名字,如下以时间戳+随机数重命名  
         // $filename=time().rand(0,1000);  

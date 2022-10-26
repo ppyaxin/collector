@@ -21,30 +21,46 @@
 		.l-btn-text {
 			width: 100%;
 		}
+		.radiobutton-inner{
+			background-color: dimgray;
+		}
+		.radiobutton{
+			border: 1px solid black;
+		}
 	</style>
 </head>
 
 <body class="easyui-layout">
+
 	<!-- 上面 -->
 	<div data-options="region:'north',split:true" class="easyui-tabs" style="height:140px;">
 
 		<div title="Home" style="padding-top: 10px; padding-left:10px;display:none;">
-			<button  style="width: 60px;height: 60px;border-color: #eef0f2;position: relative;margin: 10px;">
+			<button
+				style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
 				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
 					<use xlink:href="#icon-chuangjianfuwu"></use>
-				  </svg>
-				  <span>New</span>
+				</svg>
+				<span>New</span>
 			</button>
-			<button onclick="clickFile()" style="width: 60px;height: 60px;border-color: #eef0f2;position: relative;">
+			<a href="writexml.php?fileName = text.xml">下载a.jpg</a>
+			<button onclick="clickFile()"
+				style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
 				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
 					<use xlink:href="#icon-dakai"></use>
-				  </svg>
-				  <span>Open</span>
+				</svg>
+				<span>Open</span>
 			</button>
-			<form id="openxml" method="post" enctype="multipart/form-data" style="display: none;">	
-				<input id="up" type="file" name="file1" accept=".xml"
-					onchange="send()">
+			<form id="openxml" method="post" enctype="multipart/form-data" style="display: none;">
+				<input id="up" type="file" name="file1" accept=".xml" onchange="send()">
 			</form>
+			<button onclick="save()"
+				style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
+				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
+					<use xlink:href="#icon-lingcunwei"></use>
+				</svg>
+				<span>Saveas</span>
+			</button>
 
 		</div>
 		<div title="Initiated" style="overflow:auto;padding:20px;display:none;">
@@ -107,7 +123,7 @@
 					</div>
 					<div style="margin-bottom:20px">
 						<select class="easyui-combobox" name="language" label="Language" style="width:800px"
-							data-options="label:'Protocal type',labelWidth:300">
+							data-options="label:'Protocal type',labelWidth:300,panelHeight:120">
 							<option value="ar">Arabic</option>
 							<option value="bg">Bulgarian</option>
 							<option value="ca">Catalan</option>
@@ -120,9 +136,9 @@
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Is Optional Equipment</span>
-						<input class="easyui-radiobutton" name="fruit" value="Option Equipment" label="Option Equipment"
-							data-options="labelWidth:300,labelPosition:'after'">
-						<input class="easyui-radiobutton" name="fruit" value="Standard Equipment"
+						<input class="easyui-radiobutton" name="1" value="Option Equipment" label="Option Equipment" style="color: rgb(133,133,133);width: 15px;height: 15px;"
+							data-options="labelWidth:200,labelPosition:'after'">
+						<input class="easyui-radiobutton" name="1" value="Standard Equipment" style="color: rgb(133,133,133);width: 15px;height: 15px;"
 							label="Standard Equipment" data-options="labelWidth:300,labelPosition:'after'">
 					</div>
 					<div style="margin-bottom:20px">
@@ -153,9 +169,9 @@
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Type of Fault History Retrieval</span>
-						<input class="easyui-radiobutton" name="fruit" value="Option Equipment" label="Multiple"
+						<input class="easyui-radiobutton" name="3" value="Option Equipment" label="Multiple" style="color: rgb(133,133,133);width: 15px;height: 15px;"
 							data-options="labelWidth:220,labelPosition:'after'">
-						<input class="easyui-radiobutton" name="fruit" value="Standard Equipment" label="Single"
+						<input class="easyui-radiobutton" name="3" value="Standard Equipment" label="Single" style="color: rgb(133,133,133);width: 15px;height: 15px;"
 							data-options="labelWidth:220,labelPosition:'after'">
 					</div>
 					<div style="margin-bottom:20px">
@@ -334,15 +350,68 @@
 		<div id="initiatedTest" class="easyui-layout" data-options="fit:true" class="easyui-tabs"
 			style="height: 100%;width:100%">
 			<!-- 右侧 -->
-			<div data-options="region:'center',split:'true'," style="height: 100%;">
+			<div data-options="region:'center',split:'true'," class="easyui-tabs" style="height: 100%;">
+				<!-- 基础数据tab1 -->
+				<div title="Basic Data" style="padding:20px;display:none;">
+					<div style="margin-bottom:20px">
+						<input id="tm" class="easyui-textbox" name="e" style="width:500px"
+							data-options="label:'Test Name',labelWidth:180">
+					</div>
+					<div style="margin-bottom:20px">
+						<input id="" class="easyui-textbox" name="e" style="width:500px"
+							data-options="label:'Test Identification Code',labelWidth:180">
+					</div>
+					<div style="margin-bottom:20px">
+						<input id="" class="easyui-textbox" name="e" style="width:500px"
+							data-options="label:'Test Type',labelWidth:180">
+					</div>
+					<div style="margin-bottom:20px">
+						<input id="" class="easyui-textbox" name="e" style="width:500px"
+							data-options="label:'Test Duration Time',labelWidth:180">
+						<span>Minutes</span>
+					</div>
+					<div style="margin-bottom:20px">
+						<span style="display:inline-block ;width:170px"> Test Is Abortable</span>
+						<input id="accept" type="checkbox" name="accept" value="true">
+						<span>True</span>
+					</div>
+					<div style="margin-bottom:20px">
+						<span style="display:inline-block ;width:170px"> Able To Test Bit Applies</span>
+						<input id="accept" type="checkbox" name="accept" value="true">
+						<span>Enable</span>
+					</div>
+					<div style="margin-bottom:20px">
+						<span style="display:inline-block ;width:170px"> Is Interactive Test</span>
+						<input id="accept" type="checkbox" name="accept" value="true">
+						<span>Enable</span>
+					</div>
+					<div style="margin-bottom:20px">
+						<span style="display:inline-block ;width:170px">Pass/Fail Detection Method</span>
+						<input class="easyui-radiobutton" name="4" value="Automatic" label="Automatic" style="color: rgb(133,133,133);width: 15px;height: 15px;"
+							data-options="labelWidth:150,labelPosition:'after'">
+						<input class="easyui-radiobutton" name="4" value="None" label="None" style="color: rgb(133,133,133);width: 15px;height: 15px;"
+							data-options="labelWidth:150,labelPosition:'after'">
+					</div>
+				</div>
+				<!-- tab2 -->
+				<div title="Failing Faults" style="padding:20px;display:none;">
 
+				</div>
+				<!-- tab3 -->
+				<div title="Precondition" style="padding:20px;display:none;">
+
+				</div>
+				<!-- tab3 -->
+				<div title="Inhibit Condition" style="padding:20px;display:none;">
+
+				</div>
 			</div>
 			<!-- 左侧 -->
-			<div data-options="region:'west',split:'true'" style="width: 480px;height: 480px;position: relative;">
-				<div id="ppit" class="easyui-pagination" style="background:#efefef;border:1px solid #ccc;">
+			<div data-options="region:'west',split:'true'" style="width: 300px;height: 480px;position: relative;">
+				<div id="ppit" class="easyui-pagination" style="background:#efefef;padding:1px solid #ccc;">
 				</div>
 
-				<div id="initiatedTestData" class="easyui-panel" style="height: 460px;width:470px">
+				<div id="initiatedTestData" class="easyui-panel" style="height: 380px;width:295px">
 
 				</div>
 			</div>
@@ -350,8 +419,15 @@
 	</div>
 </body>
 <script type="text/javascript">
-	function clickFile(){
-		const input=document.querySelector('#up')
+	function save() {
+		// $.get("writexml.php",function(result){
+		// 	console.log("success")
+		// })
+		let bool = document.execCommand("open",true)
+		console.log("hhhhhhhh", bool)
+	}
+	function clickFile() {
+		const input = document.querySelector('#up')
 		console.log(input)
 		input.click()
 	}
