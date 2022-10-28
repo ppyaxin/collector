@@ -1,0 +1,17 @@
+      <FaultReportingData Id="ac2f56b6b-efb8-4add-9a85-88bb188a3608a" Name="" Author="Parker FSD" Timestamp="2015-09-25T05:15:02.3106259+08:00" FaultReportName="L_Lane1_Dens_Pickup_Shield_Fail" TimeDelayDetect="2" TimeDelayClear="2" FaultReportDelay="2" FaultReportParameterSize="true" FaultReportType="Internal" AppliesToExternalSystem="false" ExternalSystemId="0">
+        <StorableFlightPhasesActiveFault>1</StorableFlightPhasesActiveFault>
+        <StorableFlightPhasesActiveFault>2</StorableFlightPhasesActiveFault>
+        <StorableFlightPhasesActiveFault>3</StorableFlightPhasesActiveFault>
+        <StorableFlightPhasesActiveFault>4</StorableFlightPhasesActiveFault>
+        <StorableFlightPhasesActiveFault>5</StorableFlightPhasesActiveFault>
+        <StorableFlightPhasesActiveFault>6</StorableFlightPhasesActiveFault>
+        <StorableFlightPhasesActiveFault>7</StorableFlightPhasesActiveFault>
+        <StorableFlightPhasesActiveFault>8</StorableFlightPhasesActiveFault>
+        <StorableFlightPhasesActiveFault>9</StorableFlightPhasesActiveFault>
+        <StorableFlightPhasesActiveFault>10</StorableFlightPhasesActiveFault>
+        <StorableFlightPhasesActiveFault>13</StorableFlightPhasesActiveFault>
+        <StorableFlightPhasesActiveFault>14</StorableFlightPhasesActiveFault>
+        <StorableFlightPhasesActiveFault>11</StorableFlightPhasesActiveFault>
+        <StorableFlightPhasesActiveFault>12</StorableFlightPhasesActiveFault>
+        <StorableFlightPhasesActiveFault>15</StorableFlightPhasesActiveFault>
+      </FaultReportingData>
