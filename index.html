@@ -29,6 +29,9 @@
 		.radiobutton {
 			border: 1px solid black;
 		}
+		#IcdMessageRef:hover{
+			background-color: #E0ECFF;;
+		}
 	</style>
 </head>
 
@@ -45,7 +48,7 @@
 				</svg>
 				<span>New</span>
 			</button>
-			<a href="writexml.php">下载a.jpg</a>
+			<!-- <a href="writexml.php">下载a.jpg</a> -->
 			<button onclick="clickFile()"
 				style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
 				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
@@ -221,18 +224,18 @@
 						data-options="label:'OADLF Protocal Type',labelWidth:200,readonly:true">
 				</div>
 				<div style="margin-bottom:20px">
-					<input id="resetTime" class="easyui-textbox" name="email" style="width:900px"
+					<input id="resetTime" class="easyui-textbox" name="email" style="width:900px;"
 						data-options="label:'Reset Time',labelWidth:200">
 				</div>
 				<div style="margin-bottom:20px">
 					<input id="LoadConditionText" class="easyui-textbox" name="subject"
-						style="width:900px;word-wrap:break-word;"
-						data-options="label:'Load Conditional Text',labelWidth:200">
+						style="width:900px;word-wrap:break-word;height: 50px;"
+						data-options="label:'Load Conditional Text',labelWidth:200,multiline:true">
 				</div>
 
 				<div style="margin-bottom:20px">
 					<input class="easyui-textbox" name="subject" style="width:900px"
-						data-options="label:'Load Attached Discrete',labelWidth:200,">
+						data-options="label:'Load Attached Discrete',labelWidth:200,multiline:true">
 				</div>
 			</form>
 		</div>
@@ -253,7 +256,6 @@
 				<div id="ppfmd" class="easyui-pagination" style="background:#efefef;border:1px solid #ccc;">
 				</div>
 				<div id="FailtureReportingfmd" class="easyui-panel" style="height: 560px;width:100%">
-
 				</div>
 			</div>
 		</div>
@@ -315,6 +317,21 @@
 		<!-- OMS Communication Message -->
 		<div id="OMSCommunicationMsg" class="easyui-layout" data-options="fit:true" style="height: 100%;width:100%">
 			<div data-options="region:'center',split:'true',title:'ICD Messages'," style="width: 300px;height: 100%;">
+				<div class="easyui-layout" data-options="fit:true">
+					<div data-options="region:'west'" style="width:300px"></div>
+					<div data-options="region:'center'">
+                        <!-- 每一行的信息 -->
+						<div id="IcdMessageRef" style=" display: flex;justify-content: space-between;height: 30px;">
+							<div style="width: 250px;height: 30px;line-height:30px;padding-left: 10px;">
+								11111</div>
+							<div style="width: 50px;" >
+								<svg class="icon" aria-hidden="true" style="height: 25px;line-height:25px;">
+									<use xlink:href="#icon-xiangzuo" color="#f4a460"></use>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<!-- 左侧 -->
 			<div data-options="region:'west',split:'true'" style="width: 400px;height: 100%;">
@@ -335,6 +352,8 @@
 					</a>
 				</div>
 			</div>
+
+
 		</div>
 		<!-- Member System Status -->
 		<div id="StatusMessage" class="easyui-layout" data-options="fit:true" class="easyui-tabs"
@@ -439,7 +458,7 @@
 
 				<!-- 右侧2 -->
 				<div id="itRight2"  class="easyui-tabs" >
-                  				<!-- tab1 -->
+                	<!-- tab1 -->
 					<div title="Please Config The Interfering Tests" style="padding:20px;display:none;width: 100%;">
 
 					</div>
@@ -619,6 +638,7 @@
 				let FaultReportingData = FaultReporting[0].getElementsByTagName("FaultReportingData")
 				let FailureData = FaultReporting[0].getElementsByTagName("FailureData")
 				let InitiatedTestData = FaultReporting[0].getElementsByTagName("InitiatedTestData")
+				let FlightDeckEffectData=xml.getElementsByTagName("FlightDeckEffectData")
 				getFaultReporting(FaultReportingData)
 				$("#memName").textbox('setValue', a)
 				getARINC615OADLFData(xml)
@@ -626,8 +646,20 @@
 				getOmsMessage(OmsMessage)
 				getStatusMessage(StatusMessage)
 				getInitiatedTest(InitiatedTestData)
+				getFlightDeckEffectData(FlightDeckEffectData)
 			}
 		})
+	}
+
+    function getFlightDeckEffectData(FlightDeckEffectData){
+		
+		let FlightDeckEffectsType=FlightDeckEffectData[0].getElementsByTagName("FlightDeckEffectsType")
+		for(let i=0;i<FlightDeckEffectsType.length;i++){
+			let num=FlightDeckEffectsType[i].attributes[0].value
+			let FDEClass=FlightDeckEffectsType[i].attributes[2].value
+            console.log(num,FDEClass)
+		}
+		
 	}
 
 	function getInitiatedTestList(pageNumber, pageSize, InitiatedTest) {
@@ -745,6 +777,7 @@
 			let test = OmsMessage[i].attributes[0].value
 			let IsRp = OmsMessage[i].attributes[2].value
 			let item = OmsMessage[i].getElementsByTagName("IcdMessageRef")
+			console.log("item",item)
 			let len = item.length
 			let a = ""
 			if (IsRp == "true") {
@@ -834,7 +867,7 @@
 			total: len,
 			pageList: [10, 20, 50, 100],
 			onSelectPage: function (pageNumber, pageSize) {
-				getFailureDataList(pageNumber, pageSize, failureData)
+				getFailureDataList(pageNumber, pageSize, failureData,FlightDeckEffectData)
 			}
 		});
 	}

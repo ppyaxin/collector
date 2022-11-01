@@ -1,7 +1,8 @@
 <?php
 // $xmlDoc=new DOMDocument();
 // $xmlDoc->load("test.xml");
-         $file=$_FILES['file1'];  
+         
+         $file=$_FILES['file1']; 
         $fileName=$file['name'];
         move_uploaded_file($file['tmp_name'],$fileName);
          //给文件重命名，尽量不要起中文名字,如下以时间戳+随机数重命名  
