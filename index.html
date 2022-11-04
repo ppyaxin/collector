@@ -29,8 +29,10 @@
 		.radiobutton {
 			border: 1px solid black;
 		}
-		#IcdMessageRef:hover{
-			background-color: #E0ECFF;;
+
+		#IcdMessageRef:hover {
+			background-color: #E0ECFF;
+			;
 		}
 	</style>
 </head>
@@ -68,23 +70,24 @@
 			</button>
 
 		</div>
-		<div id="frTop" title="Fault Report" style="overflow:auto;padding:20px;display:none;" data-options="showHeader:true">
+		<div id="frTop" title="Fault Report" style="overflow:auto;padding:20px;display:none;"
+			data-options="showHeader:true">
 			<button
-			style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
-			<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
-				<use xlink:href="#icon-chuangjianfuwu"></use>
-			</svg>
-			<span>New</span>
-		</button>
+				style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
+				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
+					<use xlink:href="#icon-chuangjianfuwu"></use>
+				</svg>
+				<span>New</span>
+			</button>
 		</div>
 		<div id="eTop" title="Edit" style="overflow:auto;padding:20px;display:none;">
 			<button
-			style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
-			<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
-				<use xlink:href="#icon-chuangjianfuwu"></use>
-			</svg>
-			<span>New</span>
-		</button>
+				style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
+				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
+					<use xlink:href="#icon-chuangjianfuwu"></use>
+				</svg>
+				<span>New</span>
+			</button>
 		</div>
 		<div id="itTop" title="Initiated Test" style="overflow:auto;padding:20px;display:none;">
 		</div>
@@ -139,16 +142,16 @@
 							data-options="label:'Member System Name',labelWidth:300">
 					</div>
 					<div style="margin-bottom:20px">
-						<input class="easyui-textbox" name="email" style="width:800px"
+						<input id="msi" class="easyui-textbox" name="email" style="width:800px"
 							data-options="label:'Member System ID',labelWidth:300">
 					</div>
 					<div style="margin-bottom:20px">
-						<input class="easyui-textbox" name="subject" style="width:800px"
+						<input id="as" class="easyui-textbox" name="subject" style="width:800px"
 							data-options="label:'ATA System',labelWidth:300">
 					</div>
 					<div style="margin-bottom:20px">
-						<select class="easyui-combobox" name="language" label="Language" style="width:800px"
-							data-options="label:'Protocal type',labelWidth:300,panelHeight:120">
+						<select ID="Language" class="easyui-combobox" name="language" label="Language"
+							style="width:800px" data-options="label:'Protocal type',labelWidth:300,panelHeight:120">
 							<option value="ar">Arabic</option>
 							<option value="bg">Bulgarian</option>
 							<option value="ca">Catalan</option>
@@ -156,21 +159,21 @@
 						</select>
 					</div>
 					<div style="margin-bottom:20px">
-						<input class="easyui-textbox" name="message" style="width: 800px;height:60px"
+						<input ID="msd" class="easyui-textbox" name="message" style="width: 800px;height:60px"
 							data-options="label:'Member System Description',labelWidth:300,multiline:true">
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Is Optional Equipment</span>
-						<input class="easyui-radiobutton" name="1" value="Option Equipment" label="Option Equipment"
-							style="color: rgb(133,133,133);width: 15px;height: 15px;"
+						<input id="oe" class="easyui-radiobutton" name="1" value="Option Equipment"
+							label="Option Equipment" style="color: rgb(133,133,133);width: 15px;height: 15px;"
 							data-options="labelWidth:200,labelPosition:'after'">
-						<input class="easyui-radiobutton" name="1" value="Standard Equipment"
+						<input id="se" class="easyui-radiobutton" name="1" value="Standard Equipment"
 							style="color: rgb(133,133,133);width: 15px;height: 15px;" label="Standard Equipment"
 							data-options="labelWidth:300,labelPosition:'after'">
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Transmits Reports During Power Up</span>
-						<input id="accept" type="checkbox" name="accept" value="true">
+						<input id="trdpu" type="checkbox" name="accept">
 					</div>
 
 					<!-- functions -->
@@ -213,7 +216,15 @@
 					</div>
 				</form>
 			</div>
-			<div title="ARINC 429" style="overflow:auto;padding:20px;display:none;">
+			<div title="ARINC 429" style="overflow:auto;padding:2px;display:none;">
+
+				<div id="frl" title="Fault Reporting Lable" class="easyui-datalist" style="width:100%;height:100%"
+					data-options="
+					checkbox: true,
+					selectOnCheck: false,
+					onBeforeSelect: function(){return false;}
+					">
+				</div>
 			</div>
 		</div>
 		<!-- Data Load -->
@@ -234,8 +245,8 @@
 				</div>
 
 				<div style="margin-bottom:20px">
-					<input class="easyui-textbox" name="subject" style="width:900px"
-						data-options="label:'Load Attached Discrete',labelWidth:200,multiline:true">
+					<input id="LoadAttachedDiscrete" class="easyui-textbox" name="subject" style="width:900px"
+						data-options="label:'Load Attached Discrete',labelWidth:200,readonly:true">
 				</div>
 			</form>
 		</div>
@@ -302,6 +313,12 @@
 				</div>
 				<!-- tab3 -->
 				<div title="Fight Deck Effect" style="overflow:auto;padding:20px;display:none;">
+					<div id="fde" class="easyui-datalist" style="width:100%;height:100%" data-options="
+					checkbox: true,
+					selectOnCheck: false,
+					onBeforeSelect: function(){return false;}
+					">
+					</div>
 				</div>
 			</div>
 			<!-- 左侧 -->
@@ -309,7 +326,7 @@
 				<div id="pp" class="easyui-pagination" style="background:#efefef;border:1px solid #ccc;">
 				</div>
 
-				<div id="FaultReporting" class="easyui-panel" style="height: 480px;width:100%">
+				<div id="FaultReporting" class="easyui-panel" style="height: 430px;width:100%">
 
 				</div>
 			</div>
@@ -320,11 +337,11 @@
 				<div class="easyui-layout" data-options="fit:true">
 					<div data-options="region:'west'" style="width:300px"></div>
 					<div data-options="region:'center'">
-                        <!-- 每一行的信息 -->
+						<!-- 每一行的信息 -->
 						<div id="IcdMessageRef" style=" display: flex;justify-content: space-between;height: 30px;">
 							<div style="width: 250px;height: 30px;line-height:30px;padding-left: 10px;">
 								11111</div>
-							<div style="width: 50px;" >
+							<div style="width: 50px;">
 								<svg class="icon" aria-hidden="true" style="height: 25px;line-height:25px;">
 									<use xlink:href="#icon-xiangzuo" color="#f4a460"></use>
 								</svg>
@@ -455,12 +472,16 @@
 
 					</div>
 				</div>
-
 				<!-- 右侧2 -->
-				<div id="itRight2"  class="easyui-tabs" >
-                	<!-- tab1 -->
+				<div id="itRight2" class="easyui-tabs">
+					<!-- tab1 -->
 					<div title="Please Config The Interfering Tests" style="padding:20px;display:none;width: 100%;">
-
+						<div id="pcit" class="easyui-datalist" style="width:100%;height:100%" data-options="
+						checkbox: true,
+						selectOnCheck: false,
+						onBeforeSelect: function(){return false;}
+						">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -480,8 +501,8 @@
 <script type="text/javascript">
 	function save() {
 		$.post("./writexml.php", function (result) {
-			 //console.log(result)
-			 
+			//console.log(result)
+
 		})
 	}
 	function clickFile() {
@@ -495,6 +516,8 @@
 	// 		start(readurl)
 	// 	}
 	// }
+	let xml = {}
+
 	function send() {
 		$('#openxml').form({
 			url: "readxml.php",
@@ -502,7 +525,7 @@
 				//alert(data)
 				console.log(data)
 				readurl = data
-				start(data)
+				xml = start(data)
 			}
 		})
 
@@ -630,7 +653,7 @@
 			success: function (x) {
 				xml = x
 				let MemberSystemModelingData = xml.getElementsByTagName("MemberSystemModelingData")
-				let a = MemberSystemModelingData[0].attributes[1].value
+
 				let BindingItems = MemberSystemModelingData[0].getElementsByTagName("BindingItems")
 				let OmsMessage = MemberSystemModelingData[0].getElementsByTagName("OmsMessage")
 				let StatusMessage = MemberSystemModelingData[0].getElementsByTagName("StatusMessage")
@@ -638,79 +661,154 @@
 				let FaultReportingData = FaultReporting[0].getElementsByTagName("FaultReportingData")
 				let FailureData = FaultReporting[0].getElementsByTagName("FailureData")
 				let InitiatedTestData = FaultReporting[0].getElementsByTagName("InitiatedTestData")
-				let FlightDeckEffectData=xml.getElementsByTagName("FlightDeckEffectData")
+				let FlightDeckEffectData = xml.getElementsByTagName("FlightDeckEffectData")
+				let FaultReportingLabel = xml.getElementsByTagName("FaultReportingLabel")
+				getMemberSystemModelingData(MemberSystemModelingData[0])
 				getFaultReporting(FaultReportingData)
-				$("#memName").textbox('setValue', a)
+
 				getARINC615OADLFData(xml)
 				getFailureData(FailureData)
-				getOmsMessage(OmsMessage)
+				getOmsMessage(OmsMessage, xml)
 				getStatusMessage(StatusMessage)
 				getInitiatedTest(InitiatedTestData)
 				getFlightDeckEffectData(FlightDeckEffectData)
+				getFaultReportingLabel(FaultReportingLabel)
+
+				return xml
 			}
 		})
 	}
 
-    function getFlightDeckEffectData(FlightDeckEffectData){
-		
-		let FlightDeckEffectsType=FlightDeckEffectData[0].getElementsByTagName("FlightDeckEffectsType")
-		for(let i=0;i<FlightDeckEffectsType.length;i++){
-			let num=FlightDeckEffectsType[i].attributes[0].value
-			let FDEClass=FlightDeckEffectsType[i].attributes[2].value
-            console.log(num,FDEClass)
+
+
+	function getMemberSystemModelingData(MemberSystemModelingData) {
+		let attributes = MemberSystemModelingData.attributes
+		console.log("hhhhhhhhhhhhh", attributes)
+		let a = attributes[1].value
+		$("#memName").textbox('setValue', a)
+		let msi = attributes[4].value
+		$("#msi").textbox('setValue', msi)
+		let as = attributes[13].value
+		$("#as").textbox('setValue', as)
+		let msd = attributes[5].value
+		$("#msd").textbox('setValue', msd)
+		//document.getElementById("iit").checked = strtoBool(temp[9].value)
+		//  automatic
+		if (attributes[9].value == "false") {
+			$('#se').radiobutton('check')
+		} else {
+			$('#oe').radiobutton('check')
 		}
-		
+		document.getElementById("trdpu").checked = strtoBool(attributes[12].value)
+
 	}
 
-	function getInitiatedTestList(pageNumber, pageSize, InitiatedTest) {
+	function getFaultReportingLabel(FaultReportingLabel) {
+		str = []
+		for (let i = 0; i < FaultReportingLabel.length; i++) {
+
+			let label = FaultReportingLabel[i].innerHTML
+			let temp = {}
+			temp.text = label
+			//console.log("8888888888", temp)
+			str.push(temp)
+		}
+		$("#frl").datalist({ data: str })
+	}
+
+
+	//这个列表位于faultreport-->fight deck effect
+	function getFlightDeckEffectData(FlightDeckEffectData) {
+
+		let FlightDeckEffectsType = FlightDeckEffectData[0].getElementsByTagName("FlightDeckEffectsType")
+		let str = []
+		for (let i = 0; i < FlightDeckEffectsType.length; i++) {
+			let num = FlightDeckEffectsType[i].attributes[0].value
+			let FDEClass = FlightDeckEffectsType[i].attributes[2].value
+			let FDEText = FlightDeckEffectsType[i].getElementsByTagName("FDEText")[0].innerHTML
+
+			let temp = {}
+			temp.text = num + "&nbsp" + FDEText + "&nbsp" + FDEClass
+			str.push(temp)
+
+		}
+		//console.log("............", str)
+		$("#fde").datalist({ data: str })
+	}
+
+	function getInitiatedTestList(pageNumber, pageSize, InitiatedTest, idname) {
 		//清空之前的后代元素
 		$("#initiatedTestData").empty()
 		let len = InitiatedTest.length
 		let start = (pageNumber - 1) * pageSize
 		let end = start + pageSize
+
 		for (let i = start; i < end; i++) {
 			let name = InitiatedTest[i].attributes[1].value
-			console.log("test", name)
+
 			let InterferingTests = InitiatedTest[i].getElementsByTagName("InterferingTests")
+
 			let FailingFaults = InitiatedTest[i].getElementsByTagName("FailingFaults")
+			//console.log("test", InterferingTests)
 			//let DownstreamFaultsLength = FaultReportingData[i].getElementsByTagName("DownstreamFaults").length
 			let a = $("<a href=\"#\" class=\"easyui-linkbutton l-btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").html(name +
 				'</br>' + InterferingTests.length + "Interfering Initiated Tests" + '</br>' + FailingFaults.length + "Failing Faults")
 			$(a).click(function () {
-				console.log(InitiatedTest[i].attributes)
-                let temp=InitiatedTest[i].attributes
+				//console.log(InitiatedTest[i].attributes)
+				let temp = InitiatedTest[i].attributes
 				$("#tm").textbox('setValue', name)
-				 $("#tic").textbox('setValue', temp[3].value)
-				 $("#tst").textbox('setValue', temp[4].value)
-				 $("#tdt").textbox('setValue', temp[6].value)
-				 document.getElementById("tia").checked=strtoBool(temp[7].value) 
-				 document.getElementById("atba").checked=strtoBool(temp[8].value) 
-				 document.getElementById("iit").checked=strtoBool(temp[9].value)
+				$("#tic").textbox('setValue', temp[3].value)
+				$("#tst").textbox('setValue', temp[4].value)
+				$("#tdt").textbox('setValue', temp[6].value)
+				document.getElementById("tia").checked = strtoBool(temp[7].value)
+				document.getElementById("atba").checked = strtoBool(temp[8].value)
+				document.getElementById("iit").checked = strtoBool(temp[9].value)
 				//  automatic
-				if(temp[5].value=="automatic"){
+				if (temp[5].value == "automatic") {
 					$('#auto').radiobutton('check')
-				}else{
+				} else {
 					$('#none').radiobutton('check')
 				}
-				
+				//第二个页面test列表
+				let names = []
+				for (let j = 0; j < InterferingTests.length; j++) {
+					let id = InterferingTests[j].attributes[0].value
+					let name = idname[id]
+					//console.log("llllllllllllllll", name)
+					let temp = {}
+					temp.text = name
+					names.push(temp)
+				}
+				//console.log("nnnames......",names)
+				$("#pcit").datalist({ data: names })
 			})
 
 			$("#initiatedTestData").append(a)
 		}
 	}
-    function strtoBool(str){
-		if(str=="true"||str=="True"){
+	function getidtoName(a) {
+		//console.log("ppppp", a)
+		let str = {}
+		for (let i = 0; i < a.length; i++) {
+			//console.log("hhhh",a[i].attributes)
+			str[a[i].attributes[0].value] = a[i].attributes[1].value
+		}
+		//console.log(str)
+		return str
+	}
+	function strtoBool(str) {
+		if (str == "true" || str == "True") {
 			return true
-		}else{
+		} else {
 			return false
 		}
 	}
 	function getInitiatedTest(InitiatedTest) {
-		console.log("ppppp", InitiatedTest)
+		let idname = getidtoName(InitiatedTest)
 		if (InitiatedTest.length > 10) {
-			getInitiatedTestList(1, 10, InitiatedTest)
+			getInitiatedTestList(1, 10, InitiatedTest, idname)
 		} else {
-			getInitiatedTestList(1, InitiatedTest.length, InitiatedTest)
+			getInitiatedTestList(1, InitiatedTest.length, InitiatedTest, idname)
 		}
 
 		let len = InitiatedTest.length
@@ -732,7 +830,7 @@
 		let len = StatusMessage.length
 		let start = (pageNumber - 1) * pageSize
 		let end = start + pageSize
-		console.log(pageNumber, pageSize, start, end)
+		//console.log(pageNumber, pageSize, start, end)
 		for (let i = start; i < end; i++) {
 			let test = StatusMessage[i].attributes[1].value
 			//let DownstreamFaultsLength = FaultReportingData[i].getElementsByTagName("DownstreamFaults").length
@@ -766,18 +864,21 @@
 		});
 	}
 
-	function getOmsMessageList(pageNumber, pageSize, OmsMessage) {
+	function getOmsMessageList(pageNumber, pageSize, OmsMessage, xml) {
 		$("#OmsMessages").empty()
 		let len = OmsMessage.length
 		let start = (pageNumber - 1) * pageSize
 		let end = start + pageSize
-
-		console.log(pageNumber, pageSize, start, end)
+		//为了获取右边的列表数据
+		let dp = getRPdpa429('DP', xml)
+		let rp = getRPdpa429('RP', xml)
+		let a429 = getRPdpa429('A429Word', xml)
+		//console.log(pageNumber, pageSize, start, end)
 		for (let i = start; i < end; i++) {
 			let test = OmsMessage[i].attributes[0].value
 			let IsRp = OmsMessage[i].attributes[2].value
 			let item = OmsMessage[i].getElementsByTagName("IcdMessageRef")
-			console.log("item",item)
+			//console.log("item", item)
 			let len = item.length
 			let a = ""
 			if (IsRp == "true") {
@@ -805,17 +906,36 @@
 					"</div>" +
 					"</a>")
 			}
-
+			$(a).click(function () {
+				let str = []
+				for (let j = 0; j < item.length; j++) {
+					let id = item[j].attributes[0].value
+					let type = item[j].attributes[1].value
+					type = type.replace(/\s*/g, "")
+					//console.log("fffind",find)
+					let temp = {}
+					if (type == "DP") {
+						//console.log(dp)
+						temp.text = dp[id]
+					} else if (type == "RP") {
+						console.log(rp,id,rp.id)
+						temp.text = rp[id]
+					} else if (type == "A429Word") {
+						temp.text = a429[id]
+					} str.push(temp)
+				}
+              console.log("strstr",str)
+			})
 			$("#OmsMessages").append(a)
 		}
 
 	}
 
-	function getOmsMessage(OmsMessage) {
+	function getOmsMessage(OmsMessage, xml) {
 		if (OmsMessage.length > 10) {
-			getOmsMessageList(1, 10, OmsMessage)
+			getOmsMessageList(1, 10, OmsMessage, xml)
 		} else {
-			getOmsMessageList(1, OmsMessage.length, OmsMessage)
+			getOmsMessageList(1, OmsMessage.length, OmsMessage, xml)
 		}
 
 		let len = OmsMessage.length
@@ -826,7 +946,7 @@
 			total: len,
 			pageList: [10, 20, 50, 100],
 			onSelectPage: function (pageNumber, pageSize) {
-				getOmsMessageList(pageNumber, pageSize, OmsMessage)
+				getOmsMessageList(pageNumber, pageSize, OmsMessage, xml)
 			}
 		});
 	}
@@ -841,7 +961,7 @@
 		let len = failureData.length
 		let start = (pageNumber - 1) * pageSize
 		let end = start + pageSize
-		console.log(pageNumber, pageSize, start, end)
+		//console.log(pageNumber, pageSize, start, end)
 		for (let i = start; i < end; i++) {
 			let test = failureData[i].attributes[4].value
 			let FailureMessage = failureData[i].attributes[8].value
@@ -867,7 +987,7 @@
 			total: len,
 			pageList: [10, 20, 50, 100],
 			onSelectPage: function (pageNumber, pageSize) {
-				getFailureDataList(pageNumber, pageSize, failureData,FlightDeckEffectData)
+				getFailureDataList(pageNumber, pageSize, failureData, FlightDeckEffectData)
 			}
 		});
 	}
@@ -881,14 +1001,14 @@
 		let len = FaultReportingData.length
 		let start = (pageNumber - 1) * pageSize
 		let end = start + pageSize
-		console.log(pageNumber, pageSize, start, end)
+		//console.log(pageNumber, pageSize, start, end)
 		for (let i = start; i < end; i++) {
 			let test = FaultReportingData[i].attributes[4].value
 			let DownstreamFaultsLength = FaultReportingData[i].getElementsByTagName("DownstreamFaults").length
 			let a = $("<a href=\"#\" class=\"easyui-linkbutton l-btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").html(test +
 				'</br>' + DownstreamFaultsLength + '&nbsp' + 'DownstreamFaults')
 			$(a).click(function () {
-				console.log(FaultReportingData[i].attributes)
+				//console.log("22222222", FaultReportingData[i])
 				let temp = FaultReportingData[i].attributes
 				$("#Name").textbox('setValue', temp[4].value)
 				$("#Detect").textbox('setValue', temp[5].value)
@@ -903,6 +1023,7 @@
 				}
 				//easyui数据绑定方式
 				$("#fightPhase").tree({ data: fightPhase })
+
 			})
 			$("#FaultReporting").append(a)
 		}
@@ -924,15 +1045,49 @@
 	}
 
 	function getARINC615OADLFData(xml) {
-		let ARINC615OADLFData = xml.getElementsByTagName("ARINC615OADLFData")[0].attributes
+		let temp = xml.getElementsByTagName("ARINC615OADLFData")[0]
+		let ARINC615OADLFData = temp.attributes
 		let resetTime = ARINC615OADLFData[1].value
 		let ProtocolType = ARINC615OADLFData[2].value
 		let LoadConditionText = ARINC615OADLFData[0].value
 		$("#resetTime").textbox('setValue', resetTime)
 		$("#ProtocolType").textbox('setValue', ProtocolType)
 		$("#LoadConditionText").textbox('setValue', LoadConditionText)
-		console.log("ARINC615OADLFData", ARINC615OADLFData, resetTime)
+		let LoaderAttachedDiscrete = temp.getElementsByTagName("LoaderAttachedDiscrete")[0]
+		let id = LoaderAttachedDiscrete.attributes[0].value
+
+		let rp = xml.getElementsByTagName("RP")
+		//console.log('33333333', rp,id)
+		for (let i = 0; i < rp.length; i++) {
+			//console.log(rp[i].attributes[0],id)
+			if (rp[i].attributes[0].value == id) {
+				console.log(rp[i])
+				$('#LoadAttachedDiscrete').textbox('setValue', rp[i].attributes[2].value)
+			}
+		}
+		//console.log("ARINC615OADLFData", ARINC615OADLFData, resetTime)
 	}
+
+
+	//获取所有rp或者dp或者a429，组成id name键值对
+	function getRPdpa429(dataName, xml) {
+
+		let data = xml.getElementsByTagName(dataName)
+		let str = []
+		for (let i = 0; i < data.length; i++) {
+			let temp = {}
+			let id = data[i].attributes[0].value
+			let name = data[i].attributes[1].value
+			temp[id] = name
+			str.push(temp)
+		}
+		//console.log(data,str)
+		return str
+	}
+
+
+
+
 </script>
 
 
