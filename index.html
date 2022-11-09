@@ -30,9 +30,8 @@
 			border: 1px solid black;
 		}
 
-		#IcdMessageRef:hover {
+		.IcdMessageRef:hover {
 			background-color: #E0ECFF;
-			;
 		}
 	</style>
 </head>
@@ -336,9 +335,9 @@
 			<div data-options="region:'center',split:'true',title:'ICD Messages'," style="width: 300px;height: 100%;">
 				<div class="easyui-layout" data-options="fit:true">
 					<div data-options="region:'west'" style="width:300px"></div>
-					<div data-options="region:'center'">
+					<div id="rightOMS" data-options="region:'center'">
 						<!-- 每一行的信息 -->
-						<div id="IcdMessageRef" style=" display: flex;justify-content: space-between;height: 30px;">
+						<div class="IcdMessageRef" style=" display: flex;justify-content: space-between;height: 30px;">
 							<div style="width: 250px;height: 30px;line-height:30px;padding-left: 10px;">
 								11111</div>
 							<div style="width: 50px;">
@@ -377,23 +376,12 @@
 			style="height: 100%;width:100%">
 			<!-- 右侧 -->
 			<div data-options="region:'center',split:'true'," style="height: 100%;">
-				<table class="easyui-datagrid" data-options="singleSelect:true,collapsible:true,method:'get'">
+				<table id="A429" class="easyui-datagrid" data-options="singleSelect:true,collapsible:true,method:'get'">
 					<thead>
 						<tr>
 							<th data-options="field:'bitPosition',width:80,align:'center'">Bit Position</th>
-							<th data-options="field:'name',width:150,align:'center'">Name</th>
-							<th data-options="field:'type',width:150,align:'center',
-							formatter:function(value,row){
-								return row.typeName;
-							},
-							editor:{
-								type:'combobox',
-								options:{
-									valueField:'typeId',
-									textField:'typeName',
-									required:true
-								}
-							}">Type</th>
+							<th data-options="field:'Name',width:250,align:'center'">Name</th>
+							<th data-options="field:'type',width:150,align:'center'">Type</th>
 						</tr>
 					</thead>
 				</table>
@@ -669,7 +657,7 @@
 				getARINC615OADLFData(xml)
 				getFailureData(FailureData)
 				getOmsMessage(OmsMessage, xml)
-				getStatusMessage(StatusMessage)
+				getStatusMessage(StatusMessage, xml)
 				getInitiatedTest(InitiatedTestData)
 				getFlightDeckEffectData(FlightDeckEffectData)
 				getFaultReportingLabel(FaultReportingLabel)
@@ -824,9 +812,11 @@
 		});
 	}
 
-	function getStatusMessageList(pageNumber, pageSize, StatusMessage) {
+	function getStatusMessageList(pageNumber, pageSize, StatusMessage, xml) {
 		//清空之前的后代元素
 		$("#StatusMessageList").empty()
+		//获取所有的A429words
+		let A429Words = xml.getElementsByTagName("A429Word")
 		let len = StatusMessage.length
 		let start = (pageNumber - 1) * pageSize
 		let end = start + pageSize
@@ -837,18 +827,34 @@
 			let a = $("<a href=\"#\" class=\"easyui-linkbutton l-btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").html(test +
 				'</br>' + "0 bits with blank")
 			$(a).click(function () {
+				let str = []
 				//console.log(StatusMessage[i])
+				for (let j = 0; j < A429Words.length; j++) {
+					let name = A429Words[j].attributes[2].value
+					if (name == test) {
+						let dp = A429Words[j].getElementsByTagName("DP")
+						for (let k = 0; k < dp.length; k++) {
+							let temp = {}
+							temp.Name = dp[k].attributes[1].value
+							temp.type=dp[k].attributes[9].value
+							console.log(temp)
+							str.push(temp)
+						}
+						
+					}
+				}
+				$("#A429").datagrid({ data: str })
 
 			})
 			$("#StatusMessageList").append(a)
 		}
 	}
-	function getStatusMessage(StatusMessage) {
+	function getStatusMessage(StatusMessage, xml) {
 		//console.log("ppppp", StatusMessage)
 		if (StatusMessage.length > 10) {
-			getStatusMessageList(1, 10, StatusMessage)
+			getStatusMessageList(1, 10, StatusMessage, xml)
 		} else {
-			getStatusMessageList(1, StatusMessage.length, StatusMessage)
+			getStatusMessageList(1, StatusMessage.length, StatusMessage, xml)
 		}
 
 		let len = StatusMessage.length
@@ -859,7 +865,7 @@
 			total: len,
 			pageList: [10, 20, 50, 100],
 			onSelectPage: function (pageNumber, pageSize) {
-				getStatusMessageList(pageNumber, pageSize, StatusMessage)
+				getStatusMessageList(pageNumber, pageSize, StatusMessage, xml)
 			}
 		});
 	}
@@ -907,7 +913,7 @@
 					"</a>")
 			}
 			$(a).click(function () {
-				let str = []
+				$("#rightOMS").empty()
 				for (let j = 0; j < item.length; j++) {
 					let id = item[j].attributes[0].value
 					let type = item[j].attributes[1].value
@@ -918,13 +924,22 @@
 						//console.log(dp)
 						temp.text = dp[id]
 					} else if (type == "RP") {
-						console.log(rp,id,rp.id)
+						console.log(rp, id, rp.id)
 						temp.text = rp[id]
 					} else if (type == "A429Word") {
 						temp.text = a429[id]
-					} str.push(temp)
+					}
+					let b = $("<div class=\"IcdMessageRef\" style=\" display: flex;justify-content: space-between;height: 30px;\">" +
+						"<div style=\"width: 250px;height: 30px;line-height:30px;padding-left: 10px;\">" + temp.text + "</div>" +
+						"<div style=\"width: 50px;\">" +
+						"<svg class=\"icon\" aria-hidden=\"true\" style=\"height: 25px;line-height:25px;\">" +
+						"<use xlink:href=\"#icon-xiangzuo\" color=\"#f4a460\"></use>" +
+						"</svg>" +
+						"</div>" +
+						"</div >")
+					$("#rightOMS").append(b)
+
 				}
-              console.log("strstr",str)
 			})
 			$("#OmsMessages").append(a)
 		}
@@ -1073,16 +1088,14 @@
 	function getRPdpa429(dataName, xml) {
 
 		let data = xml.getElementsByTagName(dataName)
-		let str = []
+		let temp = {}
 		for (let i = 0; i < data.length; i++) {
-			let temp = {}
 			let id = data[i].attributes[0].value
 			let name = data[i].attributes[1].value
 			temp[id] = name
-			str.push(temp)
 		}
 		//console.log(data,str)
-		return str
+		return temp
 	}
 
 

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>智能搜索框</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+    <script src="font/iconfont.js"></script>
+    <script type="text/javascript" src="easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+    <style>
+        .search {
+            left: 0;
+            position: relative;
+            width: 100%;
+            border-color: #74c0f9;
+        }
+
+        #auto_div {
+            display: none;
+            width: 300px;
+            border: 1px #74c0f9 solid;
+            background: #FFF;
+            position: absolute;
+            top: 24px;
+            left: 0;
+            color: #323232;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        <input type="text" id="search_text" />
+        <div id="auto_div">
+        </div>
+    </div>
+    <span class="easyui-draggable" >111111111111111</span>
+
+    <script type="text/javascript">
+        //测试用的数据，这里可以用AJAX获取服务器数据
+        var test_list = ["前方高能", "前戏", "前端学什么", "前端周末班", "前端和后端的区别", "前端开发", "java是什么", "javascript", "java面试题及答案2020", "java语言", "jsk是什么意思", "js是什么意思", "javascript和java的区别", "java吧", "css"];
+        //智能补全
+        function AutoComplete(auto, search, mylist) {
+            var autoNode = $("#" + auto);   //缓存对象（弹出框）
+            var completeList = new Array();
+            var n = 0;
+            var old_value = $("#" + search).val();
+            for (var i in mylist) {
+                if (mylist[i].indexOf(old_value) == 0) {  // 若匹配项需要以输入的内容开头，用==;否则用>=
+                    completeList[n++] = mylist[i];
+                }
+            }
+            if (completeList.length == 0) {
+                autoNode.hide();
+                return;
+            }
+            autoNode.empty();  //清空上次的记录
+            for (var i in completeList) {
+                var wordNode = completeList[i];   //弹出框里的每一条内容
+                var newDivNode = $("<div>").attr("id", i);    //设置每个节点的id值
+                newDivNode.attr("style", "font:14px/25px arial;height:25px;padding:0 8px;cursor: pointer;");
+                newDivNode.html(wordNode).appendTo(autoNode);  //追加到弹出框
+                //鼠标移入高亮，移开不高亮
+                newDivNode.mouseover(function () {
+                    $(this).css("background-color", "#ebebeb");
+                });
+                newDivNode.mouseout(function () {
+                    $(this).css("background-color", "white");
+                });
+                //鼠标点击文字上屏
+                newDivNode.click(function () {
+                    autoNode.hide();
+                    //取出高亮节点的文本内容
+                    var comText = $(this).text();
+                    //文本框中的内容变成高亮节点的内容
+                    $("#" + search).val(comText);
+                    //加上一个可以拖拽的组件
+                    let a= $("<div class=\"easyui-draggable\" style=\"width:100px;height:15px;background:#fafafa;border:1px solid #ccc\"></div>") 
+                      
+                });
+                //如果返回值有内容就显示出来
+                autoNode.show();
+            }
+            //点击页面隐藏自动补全提示框
+            document.onclick = function (e) {
+                var e = e ? e : window.event;
+                var tar = e.srcElement || e.target;
+                if (tar.id != search) {
+                    if ($("#" + auto).is(":visible")) {
+                        $("#" + auto).css("display", "none");
+                    }
+                }
+            }
+        }
+        $(function () {
+            $("#search_text").focus(function () {
+                AutoComplete("auto_div", "search_text", test_list);
+            });
+            $("#search_text").keyup(function () {
+                AutoComplete("auto_div", "search_text", test_list);
+            });
+        });
+    </script>
+</body>
+
+</html>
