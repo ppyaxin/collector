@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--The information in this document is GE AVIC Civil Avionics Systems Company 
+Limited ('AVIAGE SYSTEMS') proprietary information and is disclosed in 
+confidence. It is the property of AVIAGE SYSTEMS (and/or third parties) and 
+must not be used, disclosed to others or reproduced without the express written 
+consent of AVIAGE SYSTEMS. If consent is given for reproduction in whole or in 
+part, this notice must appear in any such reproduction in whole or in part. 
+
+This document contains China and/or US origin technical data under applicable 
+export control laws and regulations. This technical data can be used for civil 
+only end-use and must not be transferred to Syria, Iran, North Korea, Cuba or 
+Sudan or other US denied party listed entities. 
+
+ - - - - - - - - - - - - - - - - - - - - - - - -
+
+MODEL IDENTIFIER: MBD-->
+<HostedFunction Name="HF_FTIS_LRM" Guid="a36062bbf-e5a2-413c-b46f-db5c329dacc2a" NameDef="HF_FTIS_LRMCLASS" GuidDef="a94a8f8ba-e3df-425d-8989-b09e8dc23387a" XsdVersion="8.8" Hardware="FTIS_LRM">
+  <AnalogPort Name="piDISC_ProgEnable" Guid="a60df94e9-10ad-4168-a0ce-09ebf3affc72a" NameDef="HF_FTIS_LRMCLASS.piDISC_ProgEnable" GuidDef="a09d6a369-9786-4a56-a9b9-45f3aee444aaa" Physical="FTIS_LRM.piDISC_ProgEnable">
+    <RP Name="DATALOAD_ProgEnable" Guid="ad164b342-02af-47df-9058-ba942d77fd13a" NameDef="HF_FTIS_LRMCLASS.DATALOAD_ProgEnable" GuidDef="aca8d80ff-8bbf-4966-877e-2396274ec4f7a">
+      <Pub_Ref SrcName="HF_AHMUINSTANCE.AHMU_A429_DL_Discrete_Message.DS_1.FTIS_DL_Discrete" SrcGuid="a9e8a6ded-3fd4-420e-94ed-a351c6507b08a" />
+      <Emb_Ref SrcName="EF_OMS_Embeddedfunction3.DATALOAD_ProgEnable" SrcGuid="a51525125-e344-43a1-a324-3ec0047508c5a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poAnalog_40012_B01_HF_FTIS_LRM" SrcGuid="aba2065e5-f85b-4cdb-aee5-3d5373211fe3a" />
+  </AnalogPort>
+  <A429Port Name="pi429_A1_114" Guid="ac78557e3-3fb6-41a2-9504-151ad205cba8a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_114" GuidDef="a17eeed91-c338-493f-b932-278965734713a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L114_A1" Guid="a278087c6-306f-4df9-8912-6f3d933d1d01a" NameDef="HF_FTIS_LRMCLASS.L114_A1" GuidDef="a622bdfd5-4eda-4c08-92e3-41422f47a877a">
+      <Pub_Ref SrcName="HF_AHMUINSTANCE.AHMU_FTIS_DL_Message.DS_1.Data_Block" SrcGuid="a1d0373d6-9aa8-4dcc-ab92-5d4360f9142aa" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_BLK_40006_B02_HF_FTIS_LRM_1" SrcGuid="a41b29e90-1c26-4604-bc47-1dc75e73c3dfa" />
+  </A429Port>
+  <A429Port Name="pi429_A1_126" Guid="a319b89cd-3e33-4db6-8ae1-a3cbb76f1756a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_126" GuidDef="ac9918efb-7fbe-43fa-b0fd-cdf3be5e8f87a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L126_A1" Guid="a92a60e3d-781d-44f3-aec5-e3df87dd402fa" NameDef="HF_FTIS_LRMCLASS.L126_A1" GuidDef="aa96a9820-3613-4084-8813-6e243a16c1a1a">
+      <Pub_Ref SrcName="HF_AHMUINSTANCE.A429_Aircraft_Status_Msg.DS_5.L126_OMS_Flight_Leg_Global_Abort_Flag" SrcGuid="a35974edc-be80-4771-812e-de6559da0016a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_1" SrcGuid="a613a0266-e30b-414b-a1c0-b0fe5738d7a3a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_227" Guid="a702eed44-b05c-4ddc-ab68-e4908fc6f32ba" NameDef="HF_FTIS_LRMCLASS.pi429_A1_227" GuidDef="a8da2ba78-5b52-415c-93e4-a8355906281da" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L227_A1" Guid="a1caa3207-51d7-46d4-9d88-39b5fe6226dea" NameDef="HF_FTIS_LRMCLASS.L227_A1" GuidDef="a37e3fd63-6760-40ad-8420-9958cb65ff6aa">
+      <Pub_Ref SrcName="HF_AHMUINSTANCE.FTIS_A1_CMD_Message.DS_1.L227_FTIS_A1" SrcGuid="acbd4e390-ebdc-4d5b-9f7b-6d23eabe9c6ea" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_BLK_40006_B02_HF_FTIS_LRM_2" SrcGuid="ac2ea4eca-8b01-446c-80d2-5d722846a9b0a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_230" Guid="a0f5e2d43-a75a-4fa6-85c2-ed7a74a09c4ba" NameDef="HF_FTIS_LRMCLASS.pi429_A1_230" GuidDef="a707bf90d-84c2-4e2a-be38-43cb3967331ca" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L230_A1" Guid="a69544e41-c6ae-4a56-b7fe-eb8a5fe45566a" NameDef="HF_FTIS_LRMCLASS.L230_A1" GuidDef="a953673ad-6a99-422f-9bf9-e4c6a3dca4cea">
+      <Pub_Ref SrcName="HF_AHMUINSTANCE.FTIS_A1_CMD_Message.DS_1.L230_FTIS_A1" SrcGuid="a226e20ba-ae54-4bc3-8d3e-dda1ef4a2ebaa" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_BLK_40006_B02_HF_FTIS_LRM_2" SrcGuid="ac2ea4eca-8b01-446c-80d2-5d722846a9b0a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_356" Guid="a40305616-fbb0-41f4-81a1-cc0dfd3f5e76a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_356" GuidDef="a3eb219db-e509-4414-8ffe-929058b8251aa" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L356_A1" Guid="a990e6a25-611c-487e-b382-a6c046002514a" NameDef="HF_FTIS_LRMCLASS.L356_A1" GuidDef="aac06f749-1ad4-4297-8719-fac2fbfee1e4a">
+      <Pub_Ref SrcName="HF_AHMUINSTANCE.FTIS_A1_CMD_Message.DS_1.L356_FTIS_A1" SrcGuid="a750bf1db-6fbb-4abe-a256-7225d2e3bb6da" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_BLK_40006_B02_HF_FTIS_LRM_2" SrcGuid="ac2ea4eca-8b01-446c-80d2-5d722846a9b0a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_114" Guid="a0aeb87d0-377a-406e-b2cb-b3e9dc923217a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_114" GuidDef="ada299bc8-6bae-4250-bf9a-f35468fc196ba" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L114_B1" Guid="a71d32faf-b29e-4a3c-aac4-ead0b3d6a3e0a" NameDef="HF_FTIS_LRMCLASS.L114_B1" GuidDef="ab59255c0-b4d9-4e35-9d40-fd1202ff9bd1a">
+      <Pub_Ref SrcName="HF_AHMUINSTANCE.AHMU_FTIS_DL_Message.DS_1.Data_Block" SrcGuid="a1d0373d6-9aa8-4dcc-ab92-5d4360f9142aa" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_BLK_40006_B03_HF_FTIS_LRM_1" SrcGuid="a89645f9f-aeb4-4033-b4ad-459f9f652a0da" />
+  </A429Port>
+  <A429Port Name="pi429_B1_126" Guid="a38d4e982-97ca-4c73-a317-be56c00a85eba" NameDef="HF_FTIS_LRMCLASS.pi429_B1_126" GuidDef="a17da1dee-a48b-427c-9dbe-bde23a93bf0da" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L126_B1" Guid="abc7f773d-7314-4212-8db7-7d0fb5dc12c9a" NameDef="HF_FTIS_LRMCLASS.L126_B1" GuidDef="a95773143-b732-45e6-b305-d9dcbfb6e752a">
+      <Pub_Ref SrcName="HF_AHMUINSTANCE.A429_Aircraft_Status_Msg.DS_5.L126_OMS_Flight_Leg_Global_Abort_Flag" SrcGuid="a35974edc-be80-4771-812e-de6559da0016a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_1" SrcGuid="a36fd962a-5475-4242-825e-077b67403d84a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_227" Guid="a9dd3c875-d430-4e68-8d5f-dbbd868713bba" NameDef="HF_FTIS_LRMCLASS.pi429_B1_227" GuidDef="a21402a19-a77d-49b2-99b6-eea1fb6c67eea" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L227_B1" Guid="a356da3be-82a4-429d-b635-a2433917c21aa" NameDef="HF_FTIS_LRMCLASS.L227_B1" GuidDef="ac47811ae-efd7-4947-bb38-b677b8617c21a">
+      <Pub_Ref SrcName="HF_AHMUINSTANCE.FTIS_A1_CMD_Message.DS_1.L227_FTIS_A1" SrcGuid="acbd4e390-ebdc-4d5b-9f7b-6d23eabe9c6ea" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_BLK_40006_B03_HF_FTIS_LRM_2" SrcGuid="aea5584c9-f04c-4da2-ada3-6fd20048dfb1a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_230" Guid="a1cdca4f6-aa96-4465-b45f-c9566090b93da" NameDef="HF_FTIS_LRMCLASS.pi429_B1_230" GuidDef="a85005681-0681-407b-93bf-2e1a8fdc6640a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L230_B1" Guid="a7b698ada-b10e-4d4e-8690-1aac1e149764a" NameDef="HF_FTIS_LRMCLASS.L230_B1" GuidDef="a37c09b44-9cc6-4f75-aaea-fb7e68c09967a">
+      <Pub_Ref SrcName="HF_AHMUINSTANCE.FTIS_A1_CMD_Message.DS_1.L230_FTIS_A1" SrcGuid="a226e20ba-ae54-4bc3-8d3e-dda1ef4a2ebaa" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_BLK_40006_B03_HF_FTIS_LRM_2" SrcGuid="aea5584c9-f04c-4da2-ada3-6fd20048dfb1a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_356" Guid="aa5c7e154-72c1-4f86-9659-94f61ec2743aa" NameDef="HF_FTIS_LRMCLASS.pi429_B1_356" GuidDef="a6f02260e-2f90-4590-81c1-1d17b8d93f8ea" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L356_B1" Guid="a6e65de5e-ccba-4a5e-8722-af64a152e39aa" NameDef="HF_FTIS_LRMCLASS.L356_B1" GuidDef="aba9de932-3045-43a5-98b7-8836d7922fbca">
+      <Pub_Ref SrcName="HF_AHMUINSTANCE.FTIS_A1_CMD_Message.DS_1.L356_FTIS_A1" SrcGuid="a750bf1db-6fbb-4abe-a256-7225d2e3bb6da" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_BLK_40006_B03_HF_FTIS_LRM_2" SrcGuid="aea5584c9-f04c-4da2-ada3-6fd20048dfb1a" />
+  </A429Port>
+  <A429Port Name="po429_A1_BLOCK" Guid="ab32dbf33-8c98-485f-a289-53ee7aaedc8aa" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK" GuidDef="ad5f72ccf-9a8b-4450-8d4e-0ea5250c6a8fa" Physical="FTIS_LRM.po429_A1">
+    <A429Channel Name="po429_A1_BLOCK_Msg" Guid="a2edfe4ae-79d4-4b87-9d01-655c1009f835a" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg" GuidDef="a177c6657-14a0-424e-ab9d-4cb2af3add3aa">
+      <A429Word Name="L357_FTIS_Config" Guid="a051c000f-bd49-4e77-86ca-b54c06ecf0efa" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg.L357_FTIS_Config" GuidDef="ab59b2f8b-38f4-46c7-b919-8008e0985c87a">
+        <DP Name="LABEL" Guid="a8b72a8eb-e5de-495a-bd9f-5c8e78dd331ca" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg.L357_FTIS_Config.LABEL" GuidDef="a5f041c24-279b-4381-8002-d39bf62bb3a5a" />
+        <DP Name="FTIS_A604_Config_Reply_Word" Guid="a380f7537-174b-4736-9a0f-d0914556d9d6a" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg.L357_FTIS_Config.FTIS_A604_Config_Reply_Word" GuidDef="a80d2fc30-abb8-4915-bdc4-e9d66a77c72ba" />
+        <DP Name="PARITY" Guid="a5e31e614-baf6-44c3-8bc3-fa3160488eb0a" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg.L357_FTIS_Config.PARITY" GuidDef="a71932fb7-ebf2-4468-9e02-9a95ff3b2068a" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <A429Port Name="po429_A1" Guid="a11505533-7adf-4af0-952b-194969fb2b26a" NameDef="HF_FTIS_LRMCLASS.po429_A1" GuidDef="a37cadc43-58ed-4b1f-a162-73d14d3a8ba0a" Physical="FTIS_LRM.po429_A1">
+    <A429Channel Name="po429_A1_Msg" Guid="a9ec17933-70ae-4e85-8c6a-aeae99187ac4a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg" GuidDef="a72502521-d193-437b-a387-339b592c302ea">
+      <A429Word Name="L271_FTIS_CAS_Message" Guid="accc583d9-05c6-4423-84f4-29ef4d067466a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L271_FTIS_CAS_Message" GuidDef="a987066e0-eb65-41f6-922d-17c45716bd1fa">
+        <DP Name="LABEL" Guid="a30ce231c-1417-4fd3-93ce-faf213207e80a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L271_FTIS_CAS_Message.LABEL" GuidDef="ab74490f7-8a56-4103-9842-11085ef1a45ba" />
+        <DP Name="SDI" Guid="ac35f3d68-476a-42f0-94c0-9b5b08d7227ea" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L271_FTIS_CAS_Message.SDI" GuidDef="a8e1005be-b24e-4baf-af6b-e6c668650a75a" CodedSet="1=FTIS LRM" />
+        <DP Name="FTIS_Inoperative" Guid="aad9b135e-828e-40cb-982a-657771552590a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L271_FTIS_CAS_Message.FTIS_Inoperative" GuidDef="afdbe07b0-eaca-4fcf-8741-1744961da48da" />
+        <DP Name="SSM" Guid="addcb348d-1bd0-4e1f-bfb9-a560cda05cdfa" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L271_FTIS_CAS_Message.SSM" GuidDef="a8fa58abb-de00-412f-a24b-06a5321c8baba" />
+        <DP Name="PARITY" Guid="a293a5368-978a-46fd-8532-a130baf4875da" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L271_FTIS_CAS_Message.PARITY" GuidDef="a0677c365-6aa5-4a9d-9c51-a984a3029b7ea" />
+      </A429Word>
+      <A429Word Name="L272_FTIS_TempCtrlValve_Posn" Guid="a98cbafd3-9b4b-4c32-a329-7a8cf33e57dfa" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L272_FTIS_TempCtrlValve_Posn" GuidDef="a63d9a4df-8d4b-4812-babb-0062b59e2e5da">
+        <DP Name="LABEL" Guid="a28a917c6-f871-4bc2-b337-7f2b63c5675aa" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L272_FTIS_TempCtrlValve_Posn.LABEL" GuidDef="a63226fa1-22fc-4955-861d-22278be9f650a" />
+        <DP Name="SDI" Guid="a5a2d0146-50dc-4456-af51-650655eea4a9a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L272_FTIS_TempCtrlValve_Posn.SDI" GuidDef="a783aa4cd-63ed-48c1-944d-4e72063a6d7ea" CodedSet="1=FTIS LRM" />
+        <DP Name="Temp_Control_Valve_Position" Guid="aec9471b5-9fc8-4260-9617-54b97dd0a348a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L272_FTIS_TempCtrlValve_Posn.Temp_Control_Valve_Position" GuidDef="a03a88cd8-45e0-4943-a458-a27bf7bedc4aa" />
+        <DP Name="SSM" Guid="a59fd4248-cc24-41b8-8385-5a30cb919abea" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L272_FTIS_TempCtrlValve_Posn.SSM" GuidDef="ab43a0a1a-9b78-4cd0-926a-80c64f57f585a" />
+        <DP Name="PARITY" Guid="aaa5ef3f4-d555-42a1-9bfa-0910419846e7a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L272_FTIS_TempCtrlValve_Posn.PARITY" GuidDef="ad3bd0658-0bbe-4ea2-a90f-9cb4a0b65d3aa" />
+      </A429Word>
+      <A429Word Name="L330_FTIS_HeatExchng_OBTemp_T1B" Guid="aef88fab5-0e62-41aa-b95b-9da08859568ea" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L330_FTIS_HeatExchng_OBTemp_T1B" GuidDef="aab73b7ae-aa7d-430b-b449-fcb9a603f760a">
+        <DP Name="LABEL" Guid="a50031c50-78e6-4800-98b2-acc2368dcd9aa" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L330_FTIS_HeatExchng_OBTemp_T1B.LABEL" GuidDef="a7de8b465-15af-48dc-b911-4a9443a177a2a" />
+        <DP Name="SDI" Guid="a1821dbce-2bc3-4a8c-b6bd-c2e90bfe36e8a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L330_FTIS_HeatExchng_OBTemp_T1B.SDI" GuidDef="a20f877f0-6dd7-46d5-a070-42a5f76fde2aa" CodedSet="1=FTIS LRM" />
+        <DP Name="Bleed_Air_Temperature_T1B" Guid="a8c2dcd2c-4b40-46d6-93cc-64ac78dc7d91a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L330_FTIS_HeatExchng_OBTemp_T1B.Bleed_Air_Temperature_T1B" GuidDef="ade0c25af-4dee-434b-b28f-2e3a10f52a6da" />
+        <DP Name="SSM" Guid="a4bf90038-e52c-4b4b-bd17-c6d62b85e6a9a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L330_FTIS_HeatExchng_OBTemp_T1B.SSM" GuidDef="a4d6d3524-7af4-4af9-aa83-936ca46593a4a" />
+        <DP Name="PARITY" Guid="a8f350050-4bb3-4a9f-b3d3-1204af47c03ca" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L330_FTIS_HeatExchng_OBTemp_T1B.PARITY" GuidDef="a0fcf8f59-dabb-42bb-a7ab-03c32cbe37bba" />
+      </A429Word>
+      <A429Word Name="L331_FTIS_ASM_InletAirtemp_T2B" Guid="a16284768-7566-4ac8-b052-44f5bc4d2a87a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L331_FTIS_ASM_InletAirtemp_T2B" GuidDef="a84f5da08-5cba-4103-895b-6f17d6e1c19ca">
+        <DP Name="LABEL" Guid="a911a6942-0fc3-4ef9-9826-58130a4bc8eca" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L331_FTIS_ASM_InletAirtemp_T2B.LABEL" GuidDef="aef6ef1fd-7021-43bd-8aa8-ef87a9c4284ea" />
+        <DP Name="SDI" Guid="aa2d7f1c9-90a9-48fd-9e32-cfeada80dc77a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L331_FTIS_ASM_InletAirtemp_T2B.SDI" GuidDef="a94d9a8fa-70ba-4a86-97d3-b9eca34bcc0fa" CodedSet="1=FTIS LRM" />
+        <DP Name="Bleed_Air_Temperature_T2B" Guid="a24d37417-7938-41ac-908f-986858cb4553a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L331_FTIS_ASM_InletAirtemp_T2B.Bleed_Air_Temperature_T2B" GuidDef="a37d7b3ce-105f-4deb-bdb3-8e1e2e7bf481a" />
+        <DP Name="SSM" Guid="a9de92b8a-bdfb-49d7-986d-e9a466641e3da" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L331_FTIS_ASM_InletAirtemp_T2B.SSM" GuidDef="a3686eb26-97b2-462b-aab9-e1fd0829f019a" />
+        <DP Name="PARITY" Guid="a5887c947-d16c-4f6a-a559-2a6716c9bd25a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L331_FTIS_ASM_InletAirtemp_T2B.PARITY" GuidDef="a231df51f-f094-49f6-9947-524d6a5e0d96a" />
+      </A429Word>
+      <A429Word Name="L332_FTIS_HeatExchng_OBTemp_T1A" Guid="a29b724c6-cc3c-4768-80c0-a0018430482fa" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L332_FTIS_HeatExchng_OBTemp_T1A" GuidDef="a6575c22b-e219-45ec-a3ec-7985015e87e8a">
+        <DP Name="LABEL" Guid="a3ae96a2c-0426-48f1-9c39-0cf97050a7e3a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L332_FTIS_HeatExchng_OBTemp_T1A.LABEL" GuidDef="a68862287-bcf3-4b0b-81e1-b20aaf20ace3a" />
+        <DP Name="SDI" Guid="acb052e86-eea0-4101-80cb-ae88760b12b6a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L332_FTIS_HeatExchng_OBTemp_T1A.SDI" GuidDef="ad53870e5-e712-4ada-b0ac-1bee345c9654a" CodedSet="1=FTIS LRM" />
+        <DP Name="Bleed_Air_Temperature_T1A" Guid="a5ba1ad83-5c51-4276-97b5-165dab16860ba" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L332_FTIS_HeatExchng_OBTemp_T1A.Bleed_Air_Temperature_T1A" GuidDef="a2b84f933-2e5e-4f39-a858-49e98f4bb70da" />
+        <DP Name="SSM" Guid="af6a1e6a0-2978-405a-abf1-87640cdd947ca" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L332_FTIS_HeatExchng_OBTemp_T1A.SSM" GuidDef="a23118e1c-f5b7-4531-84fc-1456c8cf9afca" />
+        <DP Name="PARITY" Guid="a861cd942-140f-4d99-b90b-6de95ccdaa37a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L332_FTIS_HeatExchng_OBTemp_T1A.PARITY" GuidDef="a704c6df7-9b4c-4a8b-b0ee-5d44eeb17caba" />
+      </A429Word>
+      <A429Word Name="L333_FTIS_ASM_InletAirtemp_T2A" Guid="a9838b275-9fdf-42bc-93be-12fe097c6209a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L333_FTIS_ASM_InletAirtemp_T2A" GuidDef="a4387fc8b-7465-4a64-8f0c-c4870337a4dda">
+        <DP Name="LABEL" Guid="aa5e5f812-6d94-436b-8bc7-c5d44fca1700a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L333_FTIS_ASM_InletAirtemp_T2A.LABEL" GuidDef="a105d9603-05f7-4d02-80c1-4731e4a4817da" />
+        <DP Name="SDI" Guid="a6eb545ea-8f9f-4cf7-8ce3-d756a7f92123a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L333_FTIS_ASM_InletAirtemp_T2A.SDI" GuidDef="a9c338729-392a-47d2-a8bb-deb22c1e1253a" CodedSet="1=FTIS LRM" />
+        <DP Name="Bleed_Air_Temperature_T2A" Guid="a6e12e181-6e88-4217-9d1d-e927f5ffb9baa" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L333_FTIS_ASM_InletAirtemp_T2A.Bleed_Air_Temperature_T2A" GuidDef="aa4d34e6d-28c4-4e39-8a3b-ee3636d184cea" />
+        <DP Name="SSM" Guid="aef515e23-e878-4a5b-90e1-9778b595732fa" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L333_FTIS_ASM_InletAirtemp_T2A.SSM" GuidDef="a4c669d4a-0849-457a-87b6-43fd8f58c54ea" />
+        <DP Name="PARITY" Guid="a578c8df2-baff-4bcf-b204-dde15deb7a73a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L333_FTIS_ASM_InletAirtemp_T2A.PARITY" GuidDef="a595a96d5-0871-4e5f-98b2-807b300ab882a" />
+      </A429Word>
+      <A429Word Name="L334_FTIS_ASM_InletAir_Press_P1" Guid="abcb7f9d2-7a4b-42cd-93a9-8594d043ca4ba" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L334_FTIS_ASM_InletAir_Press_P1" GuidDef="aaaf9dc84-992f-4e22-895e-188725cbe007a">
+        <DP Name="LABEL" Guid="a584fe8cf-7bc7-4262-bcdb-446e2e9cee72a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L334_FTIS_ASM_InletAir_Press_P1.LABEL" GuidDef="ac440526d-b7e2-42e8-a802-4ec14fe13abfa" />
+        <DP Name="SDI" Guid="af1110b51-61ed-498d-8b12-4d2c11dc7a76a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L334_FTIS_ASM_InletAir_Press_P1.SDI" GuidDef="a98a0c28c-a7ce-48d8-acf8-5e2bc45f3fc2a" CodedSet="1=FTIS LRM" />
+        <DP Name="FTIS_ASM_InletAir_Press_P1" Guid="a2591ca93-51ac-446a-852f-309a8adad7d9a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L334_FTIS_ASM_InletAir_Press_P1.FTIS_ASM_InletAir_Press_P1" GuidDef="a9cfc3725-d495-428d-b643-db4d411db65ba" />
+        <DP Name="SSM" Guid="a3717ff41-1e49-4d87-9c64-4a9cba5db70da" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L334_FTIS_ASM_InletAir_Press_P1.SSM" GuidDef="a93ff7a07-bf7c-4049-96ec-431b71f14b81a" />
+        <DP Name="PARITY" Guid="aee79a961-a75d-4fd0-9104-b8f66267e4c7a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L334_FTIS_ASM_InletAir_Press_P1.PARITY" GuidDef="a64d5acfe-b9de-4f17-84a1-c6b289165eb6a" />
+      </A429Word>
+      <A429Word Name="L335_FTIS_ASM_NEA_Outlet_PressP2" Guid="a3d5f5e9d-5cd8-4bea-b3e0-8b36964943d8a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L335_FTIS_ASM_NEA_Outlet_PressP2" GuidDef="ae4999a22-92ba-468c-9263-1f51d7e4e22ea">
+        <DP Name="LABEL" Guid="ad43a00ed-16af-4b4c-b4bd-e72198f43541a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L335_FTIS_ASM_NEA_Outlet_PressP2.LABEL" GuidDef="a0f1c46c6-2ac9-4385-880e-e5d5668f8a49a" />
+        <DP Name="SDI" Guid="a5615c210-fece-45b5-a4c5-f70f5d8c123ea" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L335_FTIS_ASM_NEA_Outlet_PressP2.SDI" GuidDef="a5f79ae37-ab71-4d8d-8331-ffd80414d278a" CodedSet="1=FTIS LRM" />
+        <DP Name="FTIS_ASM_NEA_Outlet_Press_P2" Guid="a07618be5-efdf-4377-b2a4-24d8c607b58fa" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L335_FTIS_ASM_NEA_Outlet_PressP2.FTIS_ASM_NEA_Outlet_Press_P2" GuidDef="a80dbc28f-4c3c-402e-9c97-3be5706fc1b3a" />
+        <DP Name="SSM" Guid="a40aaf4a0-c585-4c97-9440-1bf117bcf3d8a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L335_FTIS_ASM_NEA_Outlet_PressP2.SSM" GuidDef="a0e4c4035-01e5-48a2-9286-eb6a30b5ad70a" />
+        <DP Name="PARITY" Guid="af939acd6-f360-4ad5-b457-0e983f025f10a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L335_FTIS_ASM_NEA_Outlet_PressP2.PARITY" GuidDef="a8f0f9522-41b3-4a1d-829e-f5c49e404cc1a" />
+      </A429Word>
+      <A429Word Name="L336_FTIS_NEA_Oxyg_Concentration" Guid="aa99baefe-5976-4fa8-a430-571f1adaafeaa" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L336_FTIS_NEA_Oxyg_Concentration" GuidDef="a35ec339c-e303-48f2-bce7-6f9e49ac068fa">
+        <DP Name="LABEL" Guid="a13cff332-902b-4da3-8965-9998e6d9b409a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L336_FTIS_NEA_Oxyg_Concentration.LABEL" GuidDef="a3ca9dd9d-1d04-40b8-8830-7e94d2def11aa" />
+        <DP Name="SDI" Guid="a156f3850-0756-4313-a9fa-fda7ee2700c4a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L336_FTIS_NEA_Oxyg_Concentration.SDI" GuidDef="a51a4b7b5-2883-4a8f-8abe-71137c41ea76a" CodedSet="1=FTIS LRM" />
+        <DP Name="Percentage_Oxygen" Guid="ae650b46d-1f89-426e-b1c2-2322ade2a574a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L336_FTIS_NEA_Oxyg_Concentration.Percentage_Oxygen" GuidDef="ae3e1072d-dbcc-4f9a-8bdf-3be2f92945aca" />
+        <DP Name="SSM" Guid="ace2edd8a-94ec-4a87-8a65-0468465db4d0a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L336_FTIS_NEA_Oxyg_Concentration.SSM" GuidDef="a1ebb0d17-c82a-4794-8a74-c54c60af6552a" />
+        <DP Name="PARITY" Guid="a7bd50283-643a-4ad8-b436-2e009008da1ca" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L336_FTIS_NEA_Oxyg_Concentration.PARITY" GuidDef="a6d476f47-8fd4-44ab-a736-fe3c9192523ea" />
+      </A429Word>
+      <A429Word Name="L350_FTIS_Faults_1" Guid="a1ae2bdea-d621-4466-9729-2ad887309d9fa" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1" GuidDef="abefb1c14-be65-426e-820d-7820088afeefa">
+        <DP Name="LABEL" Guid="ab8f9bbbf-ea81-4fa1-b553-54cecd204dd7a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1.LABEL" GuidDef="a853d8596-4538-4876-b71f-92abc7477f40a" />
+        <DP Name="SDI" Guid="a2e71aa47-4b05-4db5-9faa-f5ac41b4e249a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1.SDI" GuidDef="adfd82ccc-4bb9-46dd-b0b5-72b010ce0baea" CodedSet="1=FTIS LRM" />
+        <DP Name="FTIS_ILRM_Internal_Fault" Guid="ac405ef9a-11bc-4962-a6a8-988ca05c20b0a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1.FTIS_ILRM_Internal_Fault" GuidDef="aecd3e2cf-96d3-4258-a345-e261ca0270f3a" />
+        <DP Name="FTIS_GCF_Relay_Fault" Guid="a38233caf-d3a2-4aae-a00f-0344dc01b8daa" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1.FTIS_GCF_Relay_Fault" GuidDef="a61a750c8-1b71-477e-9e31-7ccf179fc493a" />
+        <DP Name="FTIS_GCF_FAULT_OFF" Guid="a17a601c2-5c51-4b9b-9a3f-6494e8a881cda" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1.FTIS_GCF_FAULT_OFF" GuidDef="a5c503176-8214-49c1-a967-692fb05c5c48a" />
+        <DP Name="FTIS_GCF_FAULT_ON" Guid="a5d54db0b-e343-4edc-a174-fcec3387f34ca" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1.FTIS_GCF_FAULT_ON" GuidDef="ae920c997-6e5f-42af-add4-9c783132e376a" />
+        <DP Name="FTIS_Over_temp_T2A_T2B" Guid="a7b6c06a6-a320-4238-98e3-3a515694fc5da" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1.FTIS_Over_temp_T2A_T2B" GuidDef="a96fe82b0-9791-44c6-ae5e-ba7c9cdf27f6a" />
+        <DP Name="FTIS_Over_temp_T1A_T1B" Guid="adc43b3c7-9a2c-44d8-8811-9c65d193c9f4a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1.FTIS_Over_temp_T1A_T1B" GuidDef="a9abf6a7c-ef1b-42cf-a607-8b1ccfc32d0da" />
+        <DP Name="FTIS_Over_pressure" Guid="a7510ab88-1537-4077-9ae0-18d8f9e38060a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1.FTIS_Over_pressure" GuidDef="aaea6411d-9a38-45df-8f44-308ef2c8d9dda" />
+        <DP Name="RDIU7_Bus_Status" Guid="a47579f9c-9885-42cf-97ae-3a8608590c34a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1.RDIU7_Bus_Status" GuidDef="aa7cf66c4-f715-48e1-b43a-81a715f3b2bfa" />
+        <DP Name="RDIU9_Bus_Status" Guid="a9669685d-78f3-47f6-9bd5-19c245bb7034a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1.RDIU9_Bus_Status" GuidDef="a1fbd161c-09d9-4a76-a3a6-eedd21a317daa" />
+        <DP Name="ASM_HM_Failed_Three_Consecutive_Flights" Guid="ab049a881-d0d2-43b3-afee-a2b051e4734ba" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1.ASM_HM_Failed_Three_Consecutive_Flights" GuidDef="ad7cc6012-5a7b-46c2-a90f-be2d9a6eaaf7a" />
+        <DP Name="FTIS_LatchShutdown_Status" Guid="a850b6580-efdf-4756-b64b-bc9b7b32b6d6a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1.FTIS_LatchShutdown_Status" GuidDef="aaa2affa0-c909-46bc-bc35-b013e1587405a" />
+        <DP Name="SSM" Guid="abfdb6787-e33a-4acd-b85f-71a4725df288a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1.SSM" GuidDef="ac36e25bc-43e5-4946-a243-ac762898c437a" />
+        <DP Name="PARITY" Guid="afad3c1eb-c483-4c34-8284-99f95d65fe1ba" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L350_FTIS_Faults_1.PARITY" GuidDef="a9f5c1497-878b-49ac-a903-46d6cc98a6daa" />
+      </A429Word>
+      <A429Word Name="L351_FTIS_Faults_2" Guid="a16a9a059-8919-4ace-a773-82713384e209a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2" GuidDef="a6f323b43-bb56-4dd5-8a94-0af2d939a68aa">
+        <DP Name="LABEL" Guid="a5e65ed13-972d-4422-a1d7-1f3851c5b3ada" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.LABEL" GuidDef="a3aae3008-0460-47d6-9aa8-747f2fbb84f7a" />
+        <DP Name="SDI" Guid="acdb2b94a-6efc-4d87-af47-f602a1bd2efca" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.SDI" GuidDef="ab7b3ec76-cf95-4093-942e-90d5e869a15da" CodedSet="1=FTIS LRM" />
+        <DP Name="FTIS_IIVFault_Disparity" Guid="a44e9bc57-eaf8-4d47-803e-9ce108c5ffbda" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.FTIS_IIVFault_Disparity" GuidDef="a4eb71204-440e-40aa-8b38-960f6fc6c6dda" />
+        <DP Name="FTIS_IIVFault_CurrentLimit" Guid="a84dbd787-fbe2-499f-ae1f-9bc3d9f42eb5a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.FTIS_IIVFault_CurrentLimit" GuidDef="a51dea99c-f8ac-4dda-bd47-7ddc1ad4baa7a" />
+        <DP Name="FTIS_TIVFault_Disparity" Guid="a7dbc144f-0ed9-40b1-9494-e3065f2a4f64a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.FTIS_TIVFault_Disparity" GuidDef="ab364229c-27d1-4a97-afe2-b809c883b873a" />
+        <DP Name="FTIS_TIVFault_CurrentLimit" Guid="a8f3e3dc4-3850-456a-bf55-2eb7d9e19770a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.FTIS_TIVFault_CurrentLimit" GuidDef="a40e1defc-d199-4810-b9a6-5830e5f680e6a" />
+        <DP Name="FTIS_DFSOVFault_Lo_Disparity" Guid="ab3cd9832-9770-4695-8af4-8f8a5090e488a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.FTIS_DFSOVFault_Lo_Disparity" GuidDef="a634188b7-aa05-458a-a37d-ade905bfb520a" />
+        <DP Name="FTIS_DFSOVFault_Lo_CurrentLimit" Guid="a50a9bbcf-d3f6-4a92-ba4f-e76c0dda0773a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.FTIS_DFSOVFault_Lo_CurrentLimit" GuidDef="a004985a4-8a65-4749-a435-a11027c3f141a" />
+        <DP Name="FTIS_DFSOVFault_Mid_Disparity" Guid="a85efe1e9-e0ef-4bc5-934f-dc7ad1101c9da" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.FTIS_DFSOVFault_Mid_Disparity" GuidDef="a17f5b36f-b3a0-466e-b8ab-162ab908f0b4a" />
+        <DP Name="FTIS_DFSOVFault_Mid_CurrentLimit" Guid="a09aa1fcd-b327-451a-84ff-224c01d5b874a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.FTIS_DFSOVFault_Mid_CurrentLimit" GuidDef="a54ed8f44-168e-4241-ba71-3765e262c799a" />
+        <DP Name="FTIS_DFSOVFault_Disparity" Guid="ab4c92938-f366-47f7-b677-418a8979785ea" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.FTIS_DFSOVFault_Disparity" GuidDef="aaea52e93-ec97-4c86-a5c7-9dd987d1d265a" />
+        <DP Name="FTIS_DFSOVFault_CurrentLimit" Guid="a97e17df9-5f59-4ca3-82e4-6f7b7b195146a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.FTIS_DFSOVFault_CurrentLimit" GuidDef="ac3aede7e-0ef8-410b-b88c-0733ec6af2e8a" />
+        <DP Name="T1_TempSensor_AtoB_Disparity" Guid="a0507792e-e85a-4100-a62e-1834422fab75a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.T1_TempSensor_AtoB_Disparity" GuidDef="a71af4159-5a37-49e1-a489-b73c13349017a" />
+        <DP Name="T1_TempSensor_AtoB_OutofRange" Guid="a6eabf884-00a2-47c5-a8e9-0d8d85e6beb7a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.T1_TempSensor_AtoB_OutofRange" GuidDef="a585d3457-c218-4fa8-b53b-454e2429f230a" />
+        <DP Name="T2_TempSensor_AtoB_Disparity" Guid="a6ec00e6c-44f5-4200-b134-05fcbe158489a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.T2_TempSensor_AtoB_Disparity" GuidDef="a7da0d451-a687-4d1e-bb5d-cae0542b87b5a" />
+        <DP Name="T2_TempSensor_AtoB_OutofRange" Guid="a3b1e102e-c25a-483f-a03f-4e8e54de727ea" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.T2_TempSensor_AtoB_OutofRange" GuidDef="ae5dc42fc-bd0d-4abf-8034-0e80e879852ba" />
+        <DP Name="PressureSensor_OutofRange" Guid="a03b4e170-60fc-47bb-8b84-04a1ced3d842a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.PressureSensor_OutofRange" GuidDef="a58d3f4dc-39dc-4ff5-b92d-51d47a03e77da" />
+        <DP Name="O2SensorConcen_OutofRange" Guid="a51aa40ee-e6ae-49af-875f-3ac5eb4bcbe4a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.O2SensorConcen_OutofRange" GuidDef="a8a3fad90-5298-4f42-9735-50f043c16ceba" />
+        <DP Name="O2SensorPressure_OutofRange" Guid="afd5cf683-0a79-459e-85f6-3ef9ecd722fba" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.O2SensorPressure_OutofRange" GuidDef="a08596a1b-8431-4bc0-9e61-f5da75f29774a" />
+        <DP Name="SSM" Guid="a0a55bc24-ba84-4839-a158-57e4a51bda16a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.SSM" GuidDef="ab5842a8c-1487-4581-ad0b-b8af94a36066a" />
+        <DP Name="PARITY" Guid="aeb3ed572-6bcb-44c8-8964-1ea85278a08ca" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L351_FTIS_Faults_2.PARITY" GuidDef="a40cab140-7253-4db9-b137-5b7f17427782a" />
+      </A429Word>
+      <A429Word Name="L352_FTIS_Status" Guid="a13aae081-3c05-4a7d-b0ea-96b318214036a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status" GuidDef="ab51ad01f-80e2-4995-a99e-b4dc03417976a">
+        <DP Name="LABEL" Guid="abe0b5c8e-ce36-4e53-be34-b28b395c7937a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.LABEL" GuidDef="af79681cf-f819-486d-93d0-898e5f65f985a" />
+        <DP Name="SDI" Guid="abd948c88-5a96-47e7-b8f3-2047e31f599da" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.SDI" GuidDef="a7b3dbef8-54ec-467c-983a-9556459d39c3a" CodedSet="1=FTIS LRM" />
+        <DP Name="GCF_Command" Guid="aa5059698-2944-4d91-b88e-901f401cdd46a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.GCF_Command" GuidDef="a3004881b-585c-499a-896c-d0130f986063a" />
+        <DP Name="IIV_Command" Guid="a77f336f6-859c-4804-a56a-638754e22a73a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.IIV_Command" GuidDef="ad2c09f6c-4b6a-40ad-8157-a99484dec941a" />
+        <DP Name="TIV_Command" Guid="ad73bd072-f754-4f68-9222-63d21795be35a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.TIV_Command" GuidDef="ae1c13972-0250-40fd-965c-933268e13798a" />
+        <DP Name="DFSOV_Low_Command" Guid="a2d86bfb6-8153-42f6-97af-90f7a4d935a9a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.DFSOV_Low_Command" GuidDef="adf31aa59-4ebe-44f7-8716-517b68952079a" />
+        <DP Name="DFSOV_Mid_Command" Guid="a1b786601-86ea-41eb-a276-d42f9f9478a5a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.DFSOV_Mid_Command" GuidDef="a64666962-0647-4faa-9c68-ff9fc537fccca" />
+        <DP Name="TCV_Fully_Open_Status" Guid="a00796873-44e6-4c7e-b20d-5164020bcd7aa" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.TCV_Fully_Open_Status" GuidDef="a0314502a-bc09-450b-9f86-93559f65af40a" />
+        <DP Name="TCV_Fully_Closed_Status" Guid="a67395a2e-707b-43d2-953b-868d72e70a91a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.TCV_Fully_Closed_Status" GuidDef="a8f050c74-0ad0-4a5d-828d-15b3bf605285a" />
+        <DP Name="GCF_Status" Guid="aa47dd3f1-ac95-4d58-a7b9-b57908129251a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.GCF_Status" GuidDef="ae62e0a40-d662-4c42-80b5-994a63b07d8ba" />
+        <DP Name="TIV_Status" Guid="a06e7df17-7f92-4973-a17a-42b64eb07c8ca" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.TIV_Status" GuidDef="a22dac170-9f4e-4fcc-8995-f912db3b5bfda" />
+        <DP Name="DFSOV_Low_Status" Guid="affc6d0d1-fbc0-4f71-b34b-2b0bdb079ac4a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.DFSOV_Low_Status" GuidDef="af53d8cf9-0ce9-4af3-9dc6-fc2691f7477da" />
+        <DP Name="DFSOV_Mid_Status" Guid="a882a649d-6726-44d8-af93-40420717dba8a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.DFSOV_Mid_Status" GuidDef="af27ab959-7f33-4ae5-8255-573e49004a64a" />
+        <DP Name="Bleed_Air_Available" Guid="a9e6fb290-d619-4729-84e3-c9a43d898db9a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.Bleed_Air_Available" GuidDef="a30811b8a-577f-462c-a253-b828fd694492a" />
+        <DP Name="FTIS_IIVStatus" Guid="a955200e0-e18a-4218-b177-e9d09f969b96a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.FTIS_IIVStatus" GuidDef="accaa94ef-848c-4a4b-b4b8-d32a11a133d2a" />
+        <DP Name="FTIS_Inhibit_Status" Guid="a915342d0-795b-4164-836a-70f7e429064aa" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.FTIS_Inhibit_Status" GuidDef="ac42aef19-a3aa-4903-8186-b9e59a873a0ca" />
+        <DP Name="FTIS_IBIT_Complete" Guid="a4d77a737-2efa-4e6b-84f8-fe0a7ca3a960a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.FTIS_IBIT_Complete" GuidDef="a5a10946e-5e89-4729-857c-4606d1581027a" />
+        <DP Name="SSM" Guid="abea52cf2-3827-415d-9f72-130d88a0ddfca" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.SSM" GuidDef="aadd7535c-b86c-4b21-8ef3-e47cc853511ca" />
+        <DP Name="PARITY" Guid="a073029fa-b1b7-41e8-b3d3-f4818c5f8b00a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L352_FTIS_Status.PARITY" GuidDef="af697132d-cfa7-47ce-aea2-84457ecbb99fa" />
+      </A429Word>
+      <A429Word Name="L353_FTIS_RDIU_Input_Status" Guid="a460c8c25-6823-4555-8bf2-7bfe3bf278e2a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status" GuidDef="ab8b3ce44-6b36-489e-82dc-2768e52fe7cea">
+        <DP Name="LABEL" Guid="ad1d5bde1-5cf1-40fb-b1e1-cbdcb15c9074a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.LABEL" GuidDef="a49b42829-7213-4d49-8738-a4ef017f19caa" />
+        <DP Name="SDI" Guid="adb13bef3-3fa1-4fbc-877b-72b96b76fe07a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.SDI" GuidDef="ac9813130-bc76-4d26-bae1-61024e10ab1ea" CodedSet="1=FTIS LRM" />
+        <DP Name="DATE_Label260_Status" Guid="ab2df6d2a-6391-4985-b94f-b6a5081f4339a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.DATE_Label260_Status" GuidDef="a65da76a5-b22c-4e74-b085-963849b9acada" />
+        <DP Name="UTC_Label150_Status" Guid="ac5995e49-0642-4ccd-b3e1-5ca47e8ac671a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.UTC_Label150_Status" GuidDef="ac94bb9a5-f67f-45dd-b5f7-cfb7e7a1bc18a" />
+        <DP Name="FlightPhase_Label271_Status" Guid="adefb341a-b0d9-40dd-86e6-3c5ad37a6b68a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.FlightPhase_Label271_Status" GuidDef="a15879805-7959-4ca9-8f53-134a9215981fa" />
+        <DP Name="FTIS_Inhibit_Demand_Label304_Status" Guid="a2c14a38e-1418-4b0a-8d68-e35f2caea6ada" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.FTIS_Inhibit_Demand_Label304_Status" GuidDef="a86b99088-e1ea-40be-ac93-aa0185576087a" />
+        <DP Name="FuelInertingAreaOVHT_Label270_Status" Guid="a6499d3c0-4eab-42c6-a18c-e514c00b2386a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.FuelInertingAreaOVHT_Label270_Status" GuidDef="ade23d5ed-61ca-4ec8-a8df-5d2036904176a" />
+        <DP Name="Fuel_Status_L273_Status" Guid="ae68f58b2-7151-4ae1-a003-6e9b24c2a3c5a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.Fuel_Status_L273_Status" GuidDef="a9196298f-1564-4baa-8f65-e431c9fbeac8a" />
+        <DP Name="OMS_L126_L227_L230_Status" Guid="a6e3dc992-6201-4037-9ffd-a7e25d3d2813a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.OMS_L126_L227_L230_Status" GuidDef="a6e0fc7c3-588f-454e-ab5c-19c764fb9799a" />
+        <DP Name="Bleed_Pressure_Label220_Status" Guid="a24c4a343-9abb-4da0-a68b-92bdb5824b7da" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.Bleed_Pressure_Label220_Status" GuidDef="a26966c99-b2f9-497c-a33f-df291cf7e104a" />
+        <DP Name="IBIT_Inhibit_Ground_Oper_Active" Guid="a6d46ea94-115f-4d18-a8b5-f8b3c299da08a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.IBIT_Inhibit_Ground_Oper_Active" GuidDef="ad196403c-578d-4ed0-adfe-613293d103e1a" />
+        <DP Name="IBIT_Inhibit_FTIS_Inhibit_Demand" Guid="aae68f71f-02ec-4474-9e47-b82c10e41f2ea" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.IBIT_Inhibit_FTIS_Inhibit_Demand" GuidDef="af972783e-4c18-46f5-a741-2594ece8f5daa" />
+        <DP Name="IBIT_Inhibit_Area_OVHT" Guid="acb51c018-42bc-4a6e-ab57-7cc2d5ed3170a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.IBIT_Inhibit_Area_OVHT" GuidDef="a14788535-1a1a-4d66-954a-a78c4bea2fb4a" />
+        <DP Name="Ambient_Static_Pressure_Label246_Status" Guid="aafd022d4-3333-4be9-922e-38048291a186a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.Ambient_Static_Pressure_Label246_Status" GuidDef="a6b3bd815-62d8-4b50-8fac-b12c2bd63eb5a" />
+        <DP Name="Altitude_Change_Rate_Label212_Status" Guid="a8159480a-10c9-4f37-8563-7d8eb8fd643ca" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.Altitude_Change_Rate_Label212_Status" GuidDef="acd2ca54c-5aa3-4bd8-b2f2-b8f462b3e3bea" />
+        <DP Name="IBIT_Inhibit_Bleed_Pressure_Less20" Guid="a2f6a9076-ee08-413d-91ff-0571a5a938aca" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.IBIT_Inhibit_Bleed_Pressure_Less20" GuidDef="ad66f0bf5-1a25-4c2a-9b52-582527ec1645a" />
+        <DP Name="Voted_Computed_Airspeed_Status" Guid="a8671e45e-53e8-4846-8db2-f97dcef21e4aa" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.Voted_Computed_Airspeed_Status" GuidDef="a2de29c10-e228-44e9-b124-d440a9488bf7a" />
+        <DP Name="IBIT_Inhibit_Airspeed_45" Guid="abd2e65fc-86f4-4cec-9c40-ee8fb54463e9a" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.IBIT_Inhibit_Airspeed_45" GuidDef="aaa2be726-f0fa-4474-a26b-cb73f1ca4f17a" />
+        <DP Name="SSM" Guid="a215b6e0c-d78c-4469-9a00-ff4687de922ca" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.SSM" GuidDef="adc64b3ab-8f39-4b1c-95e9-05b2f50a4b05a" />
+        <DP Name="PARITY" Guid="ad78526ea-dcd2-4881-b9bc-a8502231e2cca" NameDef="HF_FTIS_LRMCLASS.po429_A1_Msg.L353_FTIS_RDIU_Input_Status.PARITY" GuidDef="ae1392205-dd1c-44fb-ac1f-b8b1cc555612a" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <A429Port Name="po429_A1_BLOCK_1000_DL" Guid="a109126da-5c4f-468f-9b60-c5d24cab63f6a" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_1000_DL" GuidDef="a4f7a4445-b96c-45fa-a69c-60b04abb69c0a" Physical="FTIS_LRM.po429_A1">
+    <A429Channel Name="po429_A1_BLOCK_Msg_1000_DL" Guid="ade520105-7eed-47a1-80aa-168858c3f20ea" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg_1000_DL" GuidDef="a5f8606d0-a3f7-4638-84eb-df090019973ca">
+      <A429Word Name="L226_A615_SW_UploadResponse" Guid="a50250deb-3094-4062-88d8-7be7e9bdfc4aa" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg_1000_DL.L226_A615_SW_UploadResponse" GuidDef="afc5671f3-252e-4022-a0bc-9a113bd4818da">
+        <DP Name="LABEL" Guid="a77c6beda-4cc6-41d6-a567-0bd5be0f7b84a" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg_1000_DL.L226_A615_SW_UploadResponse.LABEL" GuidDef="a107cee78-90f7-41b1-a51c-ddd8cd61818fa" />
+        <DP Name="A615_SW_UploadResponse" Guid="a417e4eca-3dba-4c3b-a2ee-cae658e4a7d9a" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg_1000_DL.L226_A615_SW_UploadResponse.A615_SW_UploadResponse" GuidDef="ab8c15fbc-f75e-45be-bcce-ba41ea0009fea" />
+        <DP Name="PARITY" Guid="a22c1986e-2603-409d-8b16-503c006441a2a" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg_1000_DL.L226_A615_SW_UploadResponse.PARITY" GuidDef="a87c6acde-8e3b-4f0d-a4de-ca6ddd0ceb28a" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <A429Port Name="po429_A1_BLOCK_1000" Guid="add0070fc-7b78-4baa-ac85-6a901c745f92a" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_1000" GuidDef="a66ee71de-381c-4526-bbea-6e0a7bfc8ff6a" Physical="FTIS_LRM.po429_A1">
+    <A429Channel Name="po429_A1_BLOCK_Msg_1000" Guid="af88af16b-4cc1-4076-8c40-5728a9e9e138a" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg_1000" GuidDef="ab8ea561a-8a06-4fb4-a4fe-c3538c8238b2a">
+      <A429Word Name="L356_FTIS_A604_Maint_Reply_Word" Guid="a905d59a0-693d-416c-81f8-46be95e62c15a" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg_1000.L356_FTIS_A604_Maint_Reply_Word" GuidDef="a2ad352db-7734-4551-9aa3-23423d8b2c55a">
+        <DP Name="LABEL" Guid="ad41db374-cf50-4016-a276-010eaecf4c69a" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg_1000.L356_FTIS_A604_Maint_Reply_Word.LABEL" GuidDef="a7e6f7547-9f36-4aff-b363-66eb2ad53e09a" />
+        <DP Name="FTIS_A604_Maint_Reply_Word" Guid="a16e2d61d-ae9a-40f7-88d9-2d53e033d774a" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg_1000.L356_FTIS_A604_Maint_Reply_Word.FTIS_A604_Maint_Reply_Word" GuidDef="a763a1eb9-8546-49c8-8723-10446ee6681fa" />
+        <DP Name="CODE" Guid="a90e6fc38-7d2f-456d-94d6-059c3a8e470aa" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg_1000.L356_FTIS_A604_Maint_Reply_Word.CODE" GuidDef="afabbfb94-11ca-4932-8267-ccd5cce3521ea" />
+        <DP Name="PARITY" Guid="a7b1b9076-e810-437e-8501-503a5442b5a7a" NameDef="HF_FTIS_LRMCLASS.po429_A1_BLOCK_Msg_1000.L356_FTIS_A604_Maint_Reply_Word.PARITY" GuidDef="a6fbc9fe2-f7a3-43fb-a11c-1015452e7abca" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <A429Port Name="pi429_A1_150" Guid="a4a0ff985-bcc3-49ec-b0dd-b3f4c9016db5a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_150" GuidDef="a00008c0d-bd57-4953-9280-7cd6a1e2c844a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L150_1_Time_A1" Guid="a9a83da55-8a1e-4e97-ac72-f7a94155445fa" NameDef="HF_FTIS_LRMCLASS.L150_1_Time_A1" GuidDef="a5cd04d0f-0c3f-4da1-a6f8-00b0497805aba">
+      <Pub_Ref SrcName="HF_GLU_925_L.po429_GNSS_2_Msg_1000.L150_UTC_BNR" SrcGuid="a078572b5-69a6-4049-81af-0b32de427b1ea" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_12" SrcGuid="aec78dfca-e9c7-4a81-b2e3-875303f0b3fba" />
+  </A429Port>
+  <A429Port Name="pi429_A1_206" Guid="a3e02bb85-964d-4c69-9da4-c302ca2c3850a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_206" GuidDef="a2cc390bb-7f21-47f1-91ea-5d7c6fcbef62a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L206_1_Voted_Calibrated_AirSpeed_A1" Guid="a605b9a31-649a-4cde-8961-a68146ca7aeca" NameDef="HF_FTIS_LRMCLASS.L206_1_Voted_Calibrated_AirSpeed_A1" GuidDef="a72200ea7-3a68-4e22-a7da-ce86dbad4335a">
+      <Pub_Ref SrcName="HF_FCM_1.FCS_Output_ADA20.DS46.L206_Voted_Calibrated_Airspeed" SrcGuid="af53c3e6c-1f41-4e81-9bbf-060248863dc8a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_17" SrcGuid="a5de98713-5803-4b21-a66d-162d0b5fd884a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_212" Guid="a2ff0c062-fa5b-42c3-8ecc-85824013b0a7a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_212" GuidDef="a144fa5c4-87fb-4110-8b8c-4d6032fccd1da" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L212_1_Voted_Altitude_Rate_A1" Guid="a817cb84b-3b2b-4d99-9c8c-1543ebb4c623a" NameDef="HF_FTIS_LRMCLASS.L212_1_Voted_Altitude_Rate_A1" GuidDef="ac8a61a4a-1635-477e-a9c4-e0c4a9b97c8da">
+      <Pub_Ref SrcName="HF_FCM_1.FCS_Output_ADA20.DS42.L212_Voted_Altitude_Rate" SrcGuid="a34fd84da-6a74-417c-a701-a823891a79faa" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_18" SrcGuid="a9308745d-6a6d-4abb-b742-668cb7a54914a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_220" Guid="a60ac9c82-05d3-484e-b56b-e4d36b882d92a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_220" GuidDef="ad75fafae-c12a-4dbf-a768-28f3386631bba" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L220_1_BAS_BleedPress_IAMS_A1" Guid="a839e974a-9567-45a8-aaca-2ca22bd671c1a" NameDef="HF_FTIS_LRMCLASS.L220_1_BAS_BleedPress_IAMS_A1" GuidDef="a817370ba-4179-4a31-a785-04f8631c3a77a">
+      <Pub_Ref SrcName="HF_IASC1.po429_OA_Msg_500.L220_BAS_Bleed_Pressure" SrcGuid="adf651ac3-38b1-4906-886b-95875f53c3efa" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_19" SrcGuid="a3ccf478d-bf0e-4faa-8408-51734f7f8f33a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_246" Guid="ad27dbdd9-7710-47d5-80b2-71c944ad5ad8a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_246" GuidDef="a0f5dc4a5-4ffc-487e-b735-8eadb256b352a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L246_1_Voted_Static_Pressure_A1" Guid="a14b23c44-e80a-41b4-a821-bd059930e7dca" NameDef="HF_FTIS_LRMCLASS.L246_1_Voted_Static_Pressure_A1" GuidDef="ad6f28479-9ec5-4be6-9015-72d6f271dc03a">
+      <Pub_Ref SrcName="HF_FCM_1.FCS_Output_ADA20.DS52.L246_Voted_Static_Pressure" SrcGuid="acd0f70d5-7e0b-41e2-a2c0-56c69998d458a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_20" SrcGuid="ac549b059-e210-4644-9870-8debf0720cd3a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_260" Guid="afcf7a6ad-fb04-4623-aa7c-92e65ccd02f2a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_260" GuidDef="accb59d4b-964a-4c41-9231-90930405b5f9a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L260_1_Date_A1" Guid="a84e32dc2-081e-43df-af06-a66830dc4129a" NameDef="HF_FTIS_LRMCLASS.L260_1_Date_A1" GuidDef="a4cc79f1f-58b4-460f-9a64-5f4fca3a1a76a">
+      <Pub_Ref SrcName="HF_GLU_925_L.po429_GNSS_2_Msg_1000.L260_Date" SrcGuid="a56ceea3f-41e7-47b4-9a1f-16f902d16d8fa" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_21" SrcGuid="ac91f58fb-408c-4955-94fb-50178efbed3fa" />
+  </A429Port>
+  <A429Port Name="pi429_A1_270" Guid="a1d154ef2-76a7-4100-8e2a-20bb35e65e76a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_270" GuidDef="a8192ce08-3e0e-4ed2-ad5c-c3c05a8c4908a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L270_1_FUEL_INERTING_AREA_OVHT_A1" Guid="a4a5ab75b-82c8-4edb-acc6-edbb6d1971c7a" NameDef="HF_FTIS_LRMCLASS.L270_1_FUEL_INERTING_AREA_OVHT_A1" GuidDef="af5885704-1a07-40aa-87e5-9abd52eeee75a">
+      <Pub_Ref SrcName="HF_IHDC.po429_TxA_Msg.L270_Fire_Overheat_Alarms_1" SrcGuid="a7ee53d3c-4e9e-4c40-b595-7f3527543542a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_22" SrcGuid="a4690d5de-33e0-4cc6-af3c-1783df3b8592a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_270_sp1" Guid="a71358328-7bc5-4a02-a79c-d84ba494e74fa" NameDef="HF_FTIS_LRMCLASS.pi429_A1_270_sp1" GuidDef="a970fd236-7b5e-45aa-9812-0cbc310763eba" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L270_1_FUEL_INERTING_AREA_OVHT_A2" Guid="ae8c38fe0-8c3d-4f27-a744-ce066dec6978a" NameDef="HF_FTIS_LRMCLASS.L270_1_FUEL_INERTING_AREA_OVHT_A2" GuidDef="a84c21121-cca8-42b1-aede-3f8e13a557b9a">
+      <Pub_Ref SrcName="HF_IHDC.po429_TxB_Msg.L270_Fire_Overheat_Alarms_1" SrcGuid="a4bc6ce54-f5b2-48fd-bdd4-9929d7c4e9fca" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_23" SrcGuid="a1e3a2a08-1c5a-4b7c-85f4-c23d179762e6a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_272" Guid="a18f73f37-b7d3-49bd-9674-5fa0124c311ca" NameDef="HF_FTIS_LRMCLASS.pi429_A1_272" GuidDef="a0a1f5e26-c443-48b3-a8e4-3bc89451b85aa" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L272_1_Left_Starter_Command_ON_A1" Guid="acc58c150-d4c3-4b93-85b5-fe2cb1d5b7e7a" NameDef="HF_FTIS_LRMCLASS.L272_1_Left_Starter_Command_ON_A1" GuidDef="a574b7b1c-2d87-40c8-b92f-f3fa692cd18aa" SSM="DIS">
+      <Pub_Ref SrcName="HF_FADEC_L_CHA.A664_Msg_FADEC_A429.DS8.Label274_Starter_Command_On" SrcGuid="a121b10f4-7cbb-4b5a-83e9-b706ad5f4ae7a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_2" SrcGuid="a3d1ea679-f7dd-4e30-bbd2-59d4416b84c7a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_304" Guid="a5e8e80b9-3b79-49a6-ab7f-55aa688cfff7a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_304" GuidDef="a18f5781a-3adc-477c-976f-26728bca1ad3a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L304_1_FTIS_Inhibit_from_IASC_A1" Guid="a7d7c824a-e67d-4e32-80af-1d05864ebce7a" NameDef="HF_FTIS_LRMCLASS.L304_1_FTIS_Inhibit_from_IASC_A1" GuidDef="a9ff4fd3b-be41-44d9-acab-6c1e72c12195a">
+      <Pub_Ref SrcName="HF_IASC1.po429_OA_Msg_500.L304_External_Command_Word" SrcGuid="a7881b9da-0e54-47c4-b6ee-d372f5c2d222a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_3" SrcGuid="a5f81c4f1-73cf-4180-8990-b1c2162d79d1a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_150" Guid="a03a89629-acc2-4e4a-a745-3f99d30414ada" NameDef="HF_FTIS_LRMCLASS.pi429_B1_150" GuidDef="a7f990e90-0892-405d-a33e-9d3106d1084fa" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L150_2_Time_B1" Guid="aea48567e-6579-4728-a979-4f4f3b703904a" NameDef="HF_FTIS_LRMCLASS.L150_2_Time_B1" GuidDef="ac6e6c325-5079-40c7-a4f1-22d50567da18a">
+      <Pub_Ref SrcName="HF_GLU_925_R.po429_GNSS_2_Msg_1000.L150_UTC_BNR" SrcGuid="a7c80b4bc-8c48-409f-9931-39139698b15ba" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_12" SrcGuid="a8b5c6a97-4dcd-4fa0-9b34-a773363a5546a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_206" Guid="a1c833391-1b9c-4447-a608-d1f3a0302227a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_206" GuidDef="a714f2642-6363-4d26-8d19-2c09e64c6282a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L206_2_Voted_Calibrated_AirSpeed_B1" Guid="acd7bfcb3-c686-4101-9f11-ac51a974301ca" NameDef="HF_FTIS_LRMCLASS.L206_2_Voted_Calibrated_AirSpeed_B1" GuidDef="a08c860de-17e7-4419-95f3-49a72890ee72a">
+      <Pub_Ref SrcName="HF_FCM_2.FCS_Output_ADA20.DS46.L206_Voted_Calibrated_Airspeed" SrcGuid="aa114dea9-3107-4cfb-a834-6ce3e4c61a2fa" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_18" SrcGuid="a5d141f2e-d075-4bba-a3d2-2c244ecbad1ea" />
+  </A429Port>
+  <A429Port Name="pi429_B1_212" Guid="ab43428bc-8aa3-4f6b-af10-e853f77ce82fa" NameDef="HF_FTIS_LRMCLASS.pi429_B1_212" GuidDef="acd682ad5-441b-4d60-b3e4-002f5cecffdda" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L212_2_Voted_Altitude_Rate_B1" Guid="a22be25d3-9f50-4a89-bd48-47e893c5a352a" NameDef="HF_FTIS_LRMCLASS.L212_2_Voted_Altitude_Rate_B1" GuidDef="ab3c109ad-64ac-4dbf-8413-52bc76fea764a">
+      <Pub_Ref SrcName="HF_FCM_2.FCS_Output_ADA20.DS42.L212_Voted_Altitude_Rate" SrcGuid="a1626e794-4df1-47fa-9787-1b408aec3697a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_19" SrcGuid="a27fc8836-0291-42fb-bdd6-e398152a41b3a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_220" Guid="ae7e7409e-3e59-410e-b084-3b83dce734e3a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_220" GuidDef="ae8fe184c-d518-4185-875c-03ea88319574a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L220_2_BAS_BleedPress_IAMS_B1" Guid="a586a73aa-b2f2-4a5a-a255-75efb3ee4839a" NameDef="HF_FTIS_LRMCLASS.L220_2_BAS_BleedPress_IAMS_B1" GuidDef="ad5f8c4dc-2381-4abf-a169-a1a0d494cfcda">
+      <Pub_Ref SrcName="HF_IASC2.po429_OA_Msg_500.L220_BAS_Bleed_Pressure" SrcGuid="a1e3dd5ef-bc9b-42d4-b53e-7377343bdd24a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_20" SrcGuid="af5e05fec-064c-4cf5-9cbf-22483de90b2aa" />
+  </A429Port>
+  <A429Port Name="pi429_B1_246" Guid="a7926e33c-491f-45f7-82ed-e48450849271a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_246" GuidDef="a80d18f13-f29d-40f4-99ba-06d07883d031a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L246_2_Voted_Static_Pressure_B1" Guid="abf558226-71ca-4493-a6ea-25619388a474a" NameDef="HF_FTIS_LRMCLASS.L246_2_Voted_Static_Pressure_B1" GuidDef="abf561727-3d6c-4f72-bb5e-d0791024ac2da">
+      <Pub_Ref SrcName="HF_FCM_2.FCS_Output_ADA20.DS52.L246_Voted_Static_Pressure" SrcGuid="a63012bd5-695b-40bd-b518-af0f6eb09158a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_21" SrcGuid="ab4b80e24-27b9-4650-bea7-0ce33effdda6a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_260" Guid="a80481214-8f6b-4933-80be-ee71210977c7a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_260" GuidDef="a03f7cb18-ca4d-464f-b33f-4d576138d977a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L260_2_Date_B1" Guid="a137d655a-ad16-4365-b0f0-88ad682454e4a" NameDef="HF_FTIS_LRMCLASS.L260_2_Date_B1" GuidDef="a2ee89467-7da9-4098-a509-e0c66083a010a">
+      <Pub_Ref SrcName="HF_GLU_925_R.po429_GNSS_2_Msg_1000.L260_Date" SrcGuid="ab26df36c-534e-4f17-a22d-9f26353ab457a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_22" SrcGuid="a59201311-5ff7-4439-8b6a-8f8f4a74fe96a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_270" Guid="a132e3586-46ee-4aeb-8d47-d436ddb97f08a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_270" GuidDef="af762bc8d-3f2a-4644-a807-f4218348c326a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L270_2_INERT_BLEED_LEAK_INHIBIT_B1" Guid="ad59f1742-119a-4c5a-bf84-0fbe7dbc41e6a" NameDef="HF_FTIS_LRMCLASS.L270_2_INERT_BLEED_LEAK_INHIBIT_B1" GuidDef="a79ccdf3e-334c-400f-b593-5d8d643b91a4a">
+      <Pub_Ref SrcName="HF_IHDC.po429_TxB_Msg.L270_Fire_Overheat_Alarms_1" SrcGuid="a4bc6ce54-f5b2-48fd-bdd4-9929d7c4e9fca" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_23" SrcGuid="ac494d46f-c3b4-4dd2-8e0e-1df0a5b536c6a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_270_sp1" Guid="a2180d915-5c4e-412b-970c-a171cb42b9dea" NameDef="HF_FTIS_LRMCLASS.pi429_B1_270_sp1" GuidDef="ab9519816-efec-4757-9f71-b616b54de859a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L270_2_INERT_BLEED_LEAK_INHIBIT_B2" Guid="a1cefb5db-f5d5-4b22-a31f-e929fad79880a" NameDef="HF_FTIS_LRMCLASS.L270_2_INERT_BLEED_LEAK_INHIBIT_B2" GuidDef="a0b5425bc-7216-45a1-932d-9d2f01ffe1a0a">
+      <Pub_Ref SrcName="HF_IHDC.po429_TxA_Msg.L270_Fire_Overheat_Alarms_1" SrcGuid="a7ee53d3c-4e9e-4c40-b595-7f3527543542a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_NonA664_In.poA429_40006_B03_HF_FTIS_LRM_4" SrcGuid="aff0805ba-2c2a-41d1-b0f9-c6ce37d06052a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_272" Guid="a825a06b1-d645-4568-af1a-bfccb9e16f22a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_272" GuidDef="ac50daf9e-8f5b-44d9-bd1d-c4b23910c750a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L272_1_Right_Starter_Command_On_B1" Guid="a223e3406-0465-4912-ac2d-5351040c6b95a" NameDef="HF_FTIS_LRMCLASS.L272_1_Right_Starter_Command_On_B1" GuidDef="a1ec117ba-133f-4354-98a0-6b2ee04712daa" SSM="DIS">
+      <Pub_Ref SrcName="HF_FADEC_R_CHA.A664_Msg_FADEC_A429.DS8.Label274_Starter_Command_On" SrcGuid="aca0aba02-fd29-4465-8fe9-a389759b7383a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_24" SrcGuid="aec80bb1f-5a9a-4293-ad73-d8b33f08fbf0a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_304" Guid="a0a2259b5-145f-4a9f-b1e4-48a4fdad137aa" NameDef="HF_FTIS_LRMCLASS.pi429_B1_304" GuidDef="a1ddce205-8398-450b-86b0-dff24fa4be62a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L304_2_FTIS_Inhibit_from_IASC_B1" Guid="a3caaee3d-e8e1-4877-abd9-c386b978fddaa" NameDef="HF_FTIS_LRMCLASS.L304_2_FTIS_Inhibit_from_IASC_B1" GuidDef="a1f4cd9c5-af26-4a4a-8686-85fe07944d2ca">
+      <Pub_Ref SrcName="HF_IASC2.po429_OA_Msg_500.L304_External_Command_Word" SrcGuid="a2a2aa71d-0bc0-43ab-ba53-eb04fb29484ba" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_2" SrcGuid="a20f0bbcd-095e-410a-9905-31932c6bdca1a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_271_s1" Guid="a6eec8f54-9e73-4db8-ae75-97f2d14c7f14a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_271_s1" GuidDef="a2d7c27e9-e45d-4408-a1dd-93e533fe540ca" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L271_1_Flight_Phase_A1" Guid="a0ec9d36e-af06-470c-adea-dcfeba17d437a" NameDef="HF_FTIS_LRMCLASS.L271_1_Flight_Phase_A1" GuidDef="ab985c7f4-2003-4805-aeaa-fae8b88f1647a">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARINC429_MIX_MSG_CORE.DS1_CORE.L270_Intent_Status" SrcGuid="a08a4ee02-f1d8-47f6-8978-b93740e6be81a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_4" SrcGuid="a4e17fd77-384a-4fb6-a5a3-c395cb16efc0a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_271_s1" Guid="aa3370e16-0f2a-496f-9e8c-551166b1613ba" NameDef="HF_FTIS_LRMCLASS.pi429_B1_271_s1" GuidDef="a16acadd8-11f2-4f3f-8475-a49a6a106845a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L271_2_Flight_Phase_B1" Guid="a35043416-59d5-4b91-bd44-27c1fdef3f29a" NameDef="HF_FTIS_LRMCLASS.L271_2_Flight_Phase_B1" GuidDef="a9f42f75e-f020-4e29-b877-86eeb6c95f6fa">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.ARINC429_MIX_MSG_CORE.DS1_CORE.L270_Intent_Status" SrcGuid="acce56335-3e70-4276-ae92-6ef9dd55c0b1a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_3" SrcGuid="a4a2dfb33-9b4a-4178-a23d-dd280579ab14a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_272_sp1" Guid="a776d3846-37d1-4a76-aec3-bb64ac7d23bca" NameDef="HF_FTIS_LRMCLASS.pi429_A1_272_sp1" GuidDef="a40d8d258-0076-4f96-be15-6753dfa5c5d6a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L272_2_Left_Starter_Command_On_A1" Guid="ac2e2b326-b38f-4e88-8e3f-1587e3e046e4a" NameDef="HF_FTIS_LRMCLASS.L272_2_Left_Starter_Command_On_A1" GuidDef="a914be19e-803c-4853-bb1c-da3143ae6124a" SSM="DIS">
+      <Pub_Ref SrcName="HF_FADEC_L_CHB.A664_Msg_FADEC_A429.DS8.Label274_Starter_Command_On" SrcGuid="a355c1125-d6ba-4a15-96fb-bb16f8e8dcf8a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_5" SrcGuid="a9bd1d78e-ee7b-489c-a047-a59f722c38eba" />
+  </A429Port>
+  <A429Port Name="pi429_B1_272_sp1" Guid="a9d52dba2-69b1-4645-abc1-963db3d68241a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_272_sp1" GuidDef="a8d158f07-c684-4cbb-9416-e7aedb520958a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L272_2_Right_Starter_Command_ON_B1" Guid="ac0b550d6-133a-4c4c-afd9-08532482cd52a" NameDef="HF_FTIS_LRMCLASS.L272_2_Right_Starter_Command_ON_B1" GuidDef="ad78cd0c9-bea1-4588-8cd0-9f0ce5397f7ca" SSM="DIS">
+      <Pub_Ref SrcName="HF_FADEC_R_CHB.A664_Msg_FADEC_A429.DS8.Label274_Starter_Command_On" SrcGuid="affb0fa6b-08c8-4c05-826c-b000c53ebf3ba" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_4" SrcGuid="a3fde70ab-3f27-40a1-be13-d71215e41c0da" />
+  </A429Port>
+  <A429Port Name="pi429_A1_273_1" Guid="aeaa96c00-d625-4e4e-8bbd-2ec948f215e0a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_273_1" GuidDef="ae543cabb-42bf-40ef-ada3-4be61eda50bda" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L273_1_IBIT_Inhibit_Fuel_A" Guid="ab7629761-2866-46db-a8c0-66c46a4dcf95a" NameDef="HF_FTIS_LRMCLASS.L273_1_IBIT_Inhibit_Fuel_A" GuidDef="adfe240e3-1078-490f-b59c-11804642757ca">
+      <Pub_Ref SrcName="HF_FUEL_LRM.po429_A1_Msg.L273_FuelSystem_Status" SrcGuid="add55f06f-4acf-45fc-8176-00bc5ecefe29a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_NonA664_In.poA429_40006_B02_HF_FTIS_LRM_1" SrcGuid="ade1b6963-e8b9-4976-a252-e26a95b52beba" />
+  </A429Port>
+  <A429Port Name="pi429_A1_273_2" Guid="a352ff34e-7177-4471-b976-97a70aa49206a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_273_2" GuidDef="a0942f85d-3013-404d-8ef5-0c0932961ff1a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L273_1_IBIT_Inhibit_Fuel_B" Guid="a7174f9bb-e0ac-49d4-ad2a-f0a296a04ed7a" NameDef="HF_FTIS_LRMCLASS.L273_1_IBIT_Inhibit_Fuel_B" GuidDef="a8eeae1f8-d222-4149-a4da-f92f964a6fd4a">
+      <Pub_Ref SrcName="HF_FUEL_LRM.po429_B1_Msg.L273_FuelSystem_Status" SrcGuid="a3993e5e4-4297-44e0-9e8b-d2ed550c0a06a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_NonA664_In.poA429_40006_B02_HF_FTIS_LRM_6" SrcGuid="a49773d6f-4526-4b50-9b74-60c6665531cfa" />
+  </A429Port>
+  <A429Port Name="pi429_B1_273_1" Guid="af41c44aa-863d-498c-8096-3a439d17c5e8a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_273_1" GuidDef="a8d07d399-f840-4317-bfc0-d36fa4354911a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L273_2_IBIT_Inhibit_Fuel_A" Guid="a06fb0bb3-08e6-49de-9910-91e98ace7cd3a" NameDef="HF_FTIS_LRMCLASS.L273_2_IBIT_Inhibit_Fuel_A" GuidDef="a8c04a190-d39a-4710-98a5-e45fc1be30a8a">
+      <Pub_Ref SrcName="HF_FUEL_LRM.po429_A1_Msg.L273_FuelSystem_Status" SrcGuid="add55f06f-4acf-45fc-8176-00bc5ecefe29a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_NonA664_In.poA429_40006_B03_HF_FTIS_LRM_1" SrcGuid="a8d6ac74f-0090-4269-8c4b-07d106936af0a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_273_2" Guid="ae19c32b7-42da-4d73-9301-1483e727d0b2a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_273_2" GuidDef="ac1161f06-c223-4989-bf85-e609a307c4b3a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L273_2_IBIT_Inhibit_Fuel_B" Guid="a70f89939-b425-41b4-bc54-710d252c3a8da" NameDef="HF_FTIS_LRMCLASS.L273_2_IBIT_Inhibit_Fuel_B" GuidDef="a39e57456-0458-47c2-b1a5-82ae8cab23e5a">
+      <Pub_Ref SrcName="HF_FUEL_LRM.po429_B1_Msg.L273_FuelSystem_Status" SrcGuid="a3993e5e4-4297-44e0-9e8b-d2ed550c0a06a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_NonA664_In.poA429_40006_B03_HF_FTIS_LRM_5" SrcGuid="a68de893b-05f5-45e4-be3f-dece9a7dc180a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_206_s2" Guid="afd5ddf45-618b-4874-8731-4668b0cc8f44a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_206_s2" GuidDef="a613622df-5c4e-4520-91fd-7d433cbc57b3a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L206_2_Voted_Calibrated_AirSpeed_A1" Guid="a75326c37-7cb0-4ff4-a03c-be54d106a6e9a" NameDef="HF_FTIS_LRMCLASS.L206_2_Voted_Calibrated_AirSpeed_A1" GuidDef="ae34b3a3c-caf5-4612-b00c-7c42dfe889a4a">
+      <Pub_Ref SrcName="HF_FCM_2.FCS_Output_ADA20.DS46.L206_Voted_Calibrated_Airspeed" SrcGuid="aa114dea9-3107-4cfb-a834-6ce3e4c61a2fa" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_6" SrcGuid="a0c276ee2-9930-4f0b-bb28-b041670b34dba" />
+  </A429Port>
+  <A429Port Name="pi429_A1_206_s3" Guid="a75144ae2-724d-49ee-9d0d-08b1220667c8a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_206_s3" GuidDef="a21313c4e-6dbd-4d31-b338-ad2ddefcf2f2a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L206_3_Voted_Calibrated_AirSpeed_A1" Guid="a7b516e86-110f-4e6a-a5f3-25505e68e982a" NameDef="HF_FTIS_LRMCLASS.L206_3_Voted_Calibrated_AirSpeed_A1" GuidDef="a5faff72f-7f40-4824-9673-86424e1ee100a">
+      <Pub_Ref SrcName="HF_FCM_3.FCS_Output_ADA20.DS46.L206_Voted_Calibrated_Airspeed" SrcGuid="af7439ee0-6f47-4456-b2cc-5136acdfea44a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_7" SrcGuid="aa949d800-6f2f-463e-83e0-848625137ad2a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_206_s1" Guid="ac40909e8-8ca7-4877-be59-ec517c57e4fda" NameDef="HF_FTIS_LRMCLASS.pi429_B1_206_s1" GuidDef="a302232ca-7d2b-4f53-9599-2749140ab1f1a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L206_1_Voted_Calibrated_AirSpeed_B1" Guid="a5ee744f9-67fa-4716-afa5-43bbf65a1d33a" NameDef="HF_FTIS_LRMCLASS.L206_1_Voted_Calibrated_AirSpeed_B1" GuidDef="aaa822aac-1e2d-48e4-b7d7-0d3071973692a">
+      <Pub_Ref SrcName="HF_FCM_1.FCS_Output_ADA20.DS46.L206_Voted_Calibrated_Airspeed" SrcGuid="af53c3e6c-1f41-4e81-9bbf-060248863dc8a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_5" SrcGuid="aeeb4c2ac-2e6a-4523-a47c-b6338a8178faa" />
+  </A429Port>
+  <A429Port Name="pi429_B1_206_s3" Guid="ae3344f82-9edf-4647-8f3d-5915edcc0de8a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_206_s3" GuidDef="aea9e8e57-9085-4d77-ad75-a95a0e742b1ba" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L206_3_Voted_Calibrated_AirSpeed_B1" Guid="a9cb4f1f3-ccae-4d18-8f00-94706d084300a" NameDef="HF_FTIS_LRMCLASS.L206_3_Voted_Calibrated_AirSpeed_B1" GuidDef="ae22f4d24-8e9d-4045-ad8d-64bd1f428d67a">
+      <Pub_Ref SrcName="HF_FCM_3.FCS_Output_ADA20.DS46.L206_Voted_Calibrated_Airspeed" SrcGuid="af7439ee0-6f47-4456-b2cc-5136acdfea44a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_6" SrcGuid="a4d5ae87d-ab79-4cf7-b0f4-36b3316f46cda" />
+  </A429Port>
+  <A429Port Name="pi429_A1_212_s2" Guid="a81437807-3f3d-4228-8f9e-fa65376ee29da" NameDef="HF_FTIS_LRMCLASS.pi429_A1_212_s2" GuidDef="a870d0966-7a9a-49c2-a427-01cde82fb4d9a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L212_2_Voted_Altitude_Rate_A1" Guid="a3c48e9a9-8050-4cc6-93e5-755ed1b896dba" NameDef="HF_FTIS_LRMCLASS.L212_2_Voted_Altitude_Rate_A1" GuidDef="ab28baef0-623e-4e47-b118-6092688cd1c8a">
+      <Pub_Ref SrcName="HF_FCM_2.FCS_Output_ADA20.DS42.L212_Voted_Altitude_Rate" SrcGuid="a1626e794-4df1-47fa-9787-1b408aec3697a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_8" SrcGuid="ad8ffd28b-c965-4a51-8e3d-eac1684cd18ca" />
+  </A429Port>
+  <A429Port Name="pi429_A1_212_s3" Guid="a491e3c1b-7309-4a9c-a826-f7e9b1f921e4a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_212_s3" GuidDef="a6bc12f7d-dd3a-4451-bcf3-230a45f355f6a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L212_3_Voted_Altitude_Rate_A1" Guid="aaf3dd40d-0e83-466c-a0d1-a96d4896e5cfa" NameDef="HF_FTIS_LRMCLASS.L212_3_Voted_Altitude_Rate_A1" GuidDef="a0f969437-87cb-4140-934e-2cbf16a89963a">
+      <Pub_Ref SrcName="HF_FCM_3.FCS_Output_ADA20.DS42.L212_Voted_Altitude_Rate" SrcGuid="a913d7e42-9f46-4765-ba33-277e6f4a576ea" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_9" SrcGuid="a73b226e0-33ab-4bee-8a40-86e1bf5d296ba" />
+  </A429Port>
+  <A429Port Name="pi429_B1_212_s1" Guid="a327ab1ff-dca1-48e1-abbe-d363e0abe9b5a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_212_s1" GuidDef="a468c1d5b-a09b-4d50-8c9b-6c9e69f48b35a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L212_1_Voted_Altitude_Rate_B1" Guid="aa13485b1-cbf2-4977-912e-22fc723c4b42a" NameDef="HF_FTIS_LRMCLASS.L212_1_Voted_Altitude_Rate_B1" GuidDef="aca130eea-0b12-46dd-abd5-2345009c9adba">
+      <Pub_Ref SrcName="HF_FCM_1.FCS_Output_ADA20.DS42.L212_Voted_Altitude_Rate" SrcGuid="a34fd84da-6a74-417c-a701-a823891a79faa" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_7" SrcGuid="a85a7c2c4-4ff8-493c-a5b7-188708d22f6aa" />
+  </A429Port>
+  <A429Port Name="pi429_B1_212_s3" Guid="aea9aeeb4-d877-4388-9c83-3bc268312366a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_212_s3" GuidDef="a15c7aae4-12ec-43fd-88e6-988cc557bcafa" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L212_3_Voted_Altitude_Rate_B1" Guid="a75fb94bc-1035-43ae-9c36-b1250f3515daa" NameDef="HF_FTIS_LRMCLASS.L212_3_Voted_Altitude_Rate_B1" GuidDef="a25a65cfb-af93-40dd-9be4-38e469be5037a">
+      <Pub_Ref SrcName="HF_FCM_3.FCS_Output_ADA20.DS42.L212_Voted_Altitude_Rate" SrcGuid="a913d7e42-9f46-4765-ba33-277e6f4a576ea" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_8" SrcGuid="a212a863d-3fe3-4f2a-ae0b-6f5b286f4dc8a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_246_s2" Guid="ab593d6e0-3712-4d20-8225-3c6f864dd26ea" NameDef="HF_FTIS_LRMCLASS.pi429_A1_246_s2" GuidDef="a3d8b92f2-c000-42a9-9923-b3a536c7c9b8a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L246_2_Voted_Static_Pressure_A1" Guid="a9bc005d9-1ab5-4589-9081-3b12a11b35d0a" NameDef="HF_FTIS_LRMCLASS.L246_2_Voted_Static_Pressure_A1" GuidDef="aeaa176d1-cfa6-477e-b6b2-bc8215c09bdea">
+      <Pub_Ref SrcName="HF_FCM_2.FCS_Output_ADA20.DS52.L246_Voted_Static_Pressure" SrcGuid="a63012bd5-695b-40bd-b518-af0f6eb09158a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_10" SrcGuid="a33fcceb2-81ba-468a-9a3e-fdd7def683e4a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_246_s3" Guid="a8d192468-b317-475f-b75d-be4461886c44a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_246_s3" GuidDef="a3a9908fc-dfbe-4505-a33e-2058cca58061a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L246_3_Voted_Static_Pressure_A1" Guid="aa6bd12e9-4286-497f-a743-5d3b87ad6a7ea" NameDef="HF_FTIS_LRMCLASS.L246_3_Voted_Static_Pressure_A1" GuidDef="a5dce9d9c-925a-497e-9f39-41b66d516feaa">
+      <Pub_Ref SrcName="HF_FCM_3.FCS_Output_ADA20.DS52.L246_Voted_Static_Pressure" SrcGuid="a50ff2716-7455-4437-8290-5f791a9b190ea" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_11" SrcGuid="a61120747-e1c1-42cd-a757-c9f18dffedd5a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_246_s1" Guid="ac3736ecd-b7eb-48ab-8960-017daf40c132a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_246_s1" GuidDef="ad92ce3c3-5b8b-434d-91c5-f6f1fb0c9314a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L246_1_Voted_Static_Pressure_B1" Guid="ae4a03820-6fb2-4548-a544-432cbf9a329da" NameDef="HF_FTIS_LRMCLASS.L246_1_Voted_Static_Pressure_B1" GuidDef="a8404dfbd-1ef0-4743-b029-7339ab9520b9a">
+      <Pub_Ref SrcName="HF_FCM_1.FCS_Output_ADA20.DS52.L246_Voted_Static_Pressure" SrcGuid="acd0f70d5-7e0b-41e2-a2c0-56c69998d458a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_9" SrcGuid="a0891c203-01b1-43d9-b990-11b73605ae65a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_246_s3" Guid="a80113a86-6390-418d-9b6d-97bcfd7ae4e6a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_246_s3" GuidDef="af6206f0f-15c2-497a-8c12-c7ea217b2d81a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L246_3_Voted_Static_Pressure_B1" Guid="a6c20a50a-072f-4726-ae39-69770d4ea54ca" NameDef="HF_FTIS_LRMCLASS.L246_3_Voted_Static_Pressure_B1" GuidDef="a2a553da0-953c-4087-b10b-1caf9ab1b3c0a">
+      <Pub_Ref SrcName="HF_FCM_3.FCS_Output_ADA20.DS52.L246_Voted_Static_Pressure" SrcGuid="a50ff2716-7455-4437-8290-5f791a9b190ea" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_10" SrcGuid="a3321a050-bdb2-45af-aba5-da0f469a840aa" />
+  </A429Port>
+  <A429Port Name="pi429_A1_220_s2" Guid="a65f617c3-6229-4362-b80a-86512a5d5136a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_220_s2" GuidDef="ac3b927b4-6088-4016-9ec7-82ce6b0063a6a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L220_2_BAS_BleedPress_IAMS_A1" Guid="afeb20b34-e438-4686-9234-db3659a57877a" NameDef="HF_FTIS_LRMCLASS.L220_2_BAS_BleedPress_IAMS_A1" GuidDef="a25d14264-639f-40f4-964c-0782cf90410da">
+      <Pub_Ref SrcName="HF_IASC1.po429_OB_Msg_500.L220_BAS_Bleed_Pressure" SrcGuid="a44767b0a-0564-4ac2-b71d-ab473c636a7aa" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_13" SrcGuid="a818098fd-4c27-499c-951d-19f54fe5c96ea" />
+  </A429Port>
+  <A429Port Name="pi429_A1_220_s3" Guid="a9f2b06e5-013f-4cea-9447-35f06f5ba50da" NameDef="HF_FTIS_LRMCLASS.pi429_A1_220_s3" GuidDef="a17ae48ae-a7d6-492e-bd34-3e637e83ea89a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L220_3_BAS_BleedPress_IAMS_A1" Guid="afeb49ae0-2035-47c8-81e0-f0fd3a4c4609a" NameDef="HF_FTIS_LRMCLASS.L220_3_BAS_BleedPress_IAMS_A1" GuidDef="a030d3625-7eb7-4095-b5be-6f257060b815a">
+      <Pub_Ref SrcName="HF_IASC2.po429_OA_Msg_500.L220_BAS_Bleed_Pressure" SrcGuid="a1e3dd5ef-bc9b-42d4-b53e-7377343bdd24a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_NonA664_In.poA429_40006_B02_HF_FTIS_LRM_2" SrcGuid="a0ceee115-9655-48de-b8c3-eba4f141dad1a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_220_s4" Guid="aef477786-b662-4734-b76d-8d610699e778a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_220_s4" GuidDef="abec636ae-3d10-4216-a833-67cbd68c2ca0a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L220_4_BAS_BleedPress_IAMS_A1" Guid="a22f4f0d9-a9c9-4965-a963-fd10e5845943a" NameDef="HF_FTIS_LRMCLASS.L220_4_BAS_BleedPress_IAMS_A1" GuidDef="ab50bac96-dd4d-46ed-895c-0516109de3baa">
+      <Pub_Ref SrcName="HF_IASC2.po429_OB_Msg_500.L220_BAS_Bleed_Pressure" SrcGuid="a740d056e-f34d-4ce2-8ca6-d97366813aada" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_NonA664_In.poA429_40006_B02_HF_FTIS_LRM_4" SrcGuid="a672c190a-2c4f-46db-8701-ec841cc8d7b2a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_220_s1" Guid="ac8265250-187a-405c-9c6c-afe2cd987643a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_220_s1" GuidDef="aca04fc76-417c-467e-a770-d1a3cbe75f1ea" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L220_1_BAS_BleedPress_IAMS_B1" Guid="a2d82fbe2-923d-423a-a5a4-fb0207eed8ffa" NameDef="HF_FTIS_LRMCLASS.L220_1_BAS_BleedPress_IAMS_B1" GuidDef="a9f217849-a3f4-4d31-89d6-10346248d7e1a">
+      <Pub_Ref SrcName="HF_IASC1.po429_OA_Msg_500.L220_BAS_Bleed_Pressure" SrcGuid="adf651ac3-38b1-4906-886b-95875f53c3efa" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_16" SrcGuid="a2a983f79-a415-4829-94c0-5c76bb08b0c7a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_220_s2" Guid="a6e26f0b6-858b-4272-a514-a659b84a130fa" NameDef="HF_FTIS_LRMCLASS.pi429_B1_220_s2" GuidDef="ac4e4e7f0-4ee2-4503-bf72-506e5e679fb9a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L220_2_BAS_BleedPress_IAMS_B1_s2" Guid="a04210544-15df-4e68-b7f0-c0628784ba94a" NameDef="HF_FTIS_LRMCLASS.L220_2_BAS_BleedPress_IAMS_B1_s2" GuidDef="a625737a0-46ce-482f-8532-81c66bdc805ba">
+      <Pub_Ref SrcName="HF_IASC1.po429_OB_Msg_500.L220_BAS_Bleed_Pressure" SrcGuid="a44767b0a-0564-4ac2-b71d-ab473c636a7aa" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_NonA664_In.poA429_40006_B03_HF_FTIS_LRM_2" SrcGuid="a350232a4-39c8-4098-9ace-15d4f1881180a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_220_s4" Guid="a848e66c3-8966-4a16-858b-6ad90d2dab83a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_220_s4" GuidDef="acd9ff2d1-d60c-4ebf-85ee-d9f43a9a249ba" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L220_4_BAS_BleedPress_IAMS_B1" Guid="a63bc14e4-b885-4732-be7c-1a7d7827bee1a" NameDef="HF_FTIS_LRMCLASS.L220_4_BAS_BleedPress_IAMS_B1" GuidDef="aa36a2173-aba3-4d7b-8945-a90e804164f6a">
+      <Pub_Ref SrcName="HF_IASC2.po429_OB_Msg_500.L220_BAS_Bleed_Pressure" SrcGuid="a740d056e-f34d-4ce2-8ca6-d97366813aada" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_11" SrcGuid="a9f102b97-a62d-42f0-9d9f-ff1c28c72b16a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_304_s2" Guid="a6cbfc7a0-503f-4671-b34f-fb82fcd3c291a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_304_s2" GuidDef="a63576208-e0e9-420e-867c-16f17110cd08a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L304_2_FTIS_Inhibit_from_IASC_A1" Guid="aa64df6b0-7779-479b-8260-b5cef97fbe30a" NameDef="HF_FTIS_LRMCLASS.L304_2_FTIS_Inhibit_from_IASC_A1" GuidDef="a7692f073-b0da-4812-9439-27bc623a8866a">
+      <Pub_Ref SrcName="HF_IASC1.po429_OB_Msg_500.L304_External_Command_Word" SrcGuid="af593b094-9c29-4c49-968d-84cd6691379da" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_14" SrcGuid="a4fe3f03b-6daa-4991-9bc9-195e51c6f8b1a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_304_s3" Guid="ad02306f7-ec27-422a-a43d-e9a2e1b981eda" NameDef="HF_FTIS_LRMCLASS.pi429_A1_304_s3" GuidDef="a4bdc0b2f-207d-4134-934c-67db6c602db2a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L304_3_FTIS_Inhibit_from_IASC_A1" Guid="ae7b03fb1-9c43-4f55-b7ff-e6c288cb5c80a" NameDef="HF_FTIS_LRMCLASS.L304_3_FTIS_Inhibit_from_IASC_A1" GuidDef="a57735d3c-01ab-49dc-a8f7-d49858da00d0a">
+      <Pub_Ref SrcName="HF_IASC2.po429_OA_Msg_500.L304_External_Command_Word" SrcGuid="a2a2aa71d-0bc0-43ab-ba53-eb04fb29484ba" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_NonA664_In.poA429_40006_B02_HF_FTIS_LRM_3" SrcGuid="a4ecd83a6-6f21-4d99-a8d7-b045d88bba2ea" />
+  </A429Port>
+  <A429Port Name="pi429_A1_304_s4" Guid="a931edbfe-ab6a-49ba-be19-ec1c68619f97a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_304_s4" GuidDef="a1d9cd571-b109-4dc6-bfa5-482cbe265b3ba" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L304_4_FTIS_Inhibit_from_IASC_A1" Guid="a40224877-6f85-48d6-a48d-1537387dfc3fa" NameDef="HF_FTIS_LRMCLASS.L304_4_FTIS_Inhibit_from_IASC_A1" GuidDef="a2cfe3991-eea4-4caf-a3d2-116534e1831ca">
+      <Pub_Ref SrcName="HF_IASC2.po429_OB_Msg_500.L304_External_Command_Word" SrcGuid="a79020a36-6bc8-4b4f-9c9a-092daff18809a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_NonA664_In.poA429_40006_B02_HF_FTIS_LRM_5" SrcGuid="a20852fdf-f7b7-4b82-aab4-3ecdfb15527fa" />
+  </A429Port>
+  <A429Port Name="pi429_B1_304_s1" Guid="a6fd3403b-72b8-49b4-ba78-709ab7b1c198a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_304_s1" GuidDef="ad6baa3ee-8007-4d9b-94c1-709e22a3bf43a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L304_1_FTIS_Inhibit_from_IASC_B1" Guid="ac1e161fc-7d72-48f5-80bf-1b5af06ba74aa" NameDef="HF_FTIS_LRMCLASS.L304_1_FTIS_Inhibit_from_IASC_B1" GuidDef="a8f3b531c-5372-4dba-8f25-cb5cdfcf310ba">
+      <Pub_Ref SrcName="HF_IASC1.po429_OA_Msg_500.L304_External_Command_Word" SrcGuid="a7881b9da-0e54-47c4-b6ee-d372f5c2d222a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_17" SrcGuid="aac1033f3-b207-4ac8-ad8d-ac8aa681f9cda" />
+  </A429Port>
+  <A429Port Name="pi429_B1_304_s2" Guid="a01b578bc-3cd4-4e9f-964a-67e27152bb1ca" NameDef="HF_FTIS_LRMCLASS.pi429_B1_304_s2" GuidDef="a7a5cea8d-1a01-4001-a0fb-7b2043d7c0c5a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L304_2_FTIS_Inhibit_from_IASC_B1_s2" Guid="a80b7a6e7-1bc0-43a3-b65d-98183047cbc8a" NameDef="HF_FTIS_LRMCLASS.L304_2_FTIS_Inhibit_from_IASC_B1_s2" GuidDef="a0520923c-1527-4c8d-9c3f-15bd5378b06ea">
+      <Pub_Ref SrcName="HF_IASC1.po429_OB_Msg_500.L304_External_Command_Word" SrcGuid="af593b094-9c29-4c49-968d-84cd6691379da" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_NonA664_In.poA429_40006_B03_HF_FTIS_LRM_3" SrcGuid="a3800a739-98a2-4c87-8921-d92ba3743392a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_304_s4" Guid="a31078377-3cfb-4130-830e-26e772a70fbaa" NameDef="HF_FTIS_LRMCLASS.pi429_B1_304_s4" GuidDef="a22465b0f-b9cb-4b81-be19-a72c01067e19a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L304_4_FTIS_Inhibit_from_IASC_B1" Guid="aab565984-a251-4ade-ae8f-b26f71e1b062a" NameDef="HF_FTIS_LRMCLASS.L304_4_FTIS_Inhibit_from_IASC_B1" GuidDef="aef3877aa-791d-44c1-aef6-dabb28fffcdea">
+      <Pub_Ref SrcName="HF_IASC2.po429_OB_Msg_500.L304_External_Command_Word" SrcGuid="a79020a36-6bc8-4b4f-9c9a-092daff18809a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_13" SrcGuid="aae172eb8-59ba-42a3-b750-90b9d73fe3b5a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_272_s3" Guid="aa45388e6-8cd6-41a7-9519-d74b37c20b4ca" NameDef="HF_FTIS_LRMCLASS.pi429_A1_272_s3" GuidDef="a36686a0c-f3fc-4d08-b617-6f612de07426a" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L272_3_Left_Starter_Command_On_A1" Guid="af9ba3c88-91e6-49e0-b0a0-4f19c3b0d4aba" NameDef="HF_FTIS_LRMCLASS.L272_3_Left_Starter_Command_On_A1" GuidDef="acbb50792-33c9-4ded-9110-f4bb66a1e3e3a" SSM="DIS">
+      <Pub_Ref SrcName="HF_FADEC_R_CHA.A664_Msg_FADEC_A429.DS8.Label274_Starter_Command_On" SrcGuid="aca0aba02-fd29-4465-8fe9-a389759b7383a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_15" SrcGuid="a57db37ef-dd60-4651-a5d3-5f89d9c12043a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_272_s4" Guid="aa796ede5-58ec-407b-b6ed-49294a630583a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_272_s4" GuidDef="a790c24a1-862a-4d95-9f4b-ce3f9e2866afa" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L272_4_Left_Starter_Command_On_A1" Guid="ad00b53f6-ae34-4c21-9665-828277e12617a" NameDef="HF_FTIS_LRMCLASS.L272_4_Left_Starter_Command_On_A1" GuidDef="a520a8b58-6b68-4d08-958f-f19f21224a2fa" SSM="DIS">
+      <Pub_Ref SrcName="HF_FADEC_R_CHB.A664_Msg_FADEC_A429.DS8.Label274_Starter_Command_On" SrcGuid="affb0fa6b-08c8-4c05-826c-b000c53ebf3ba" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_16" SrcGuid="a1fc54727-6261-4cf8-a599-af1ba3320edda" />
+  </A429Port>
+  <A429Port Name="pi429_B1_272_s3" Guid="ae804532e-56a7-4c5c-a38f-444ab9cf3ce4a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_272_s3" GuidDef="ad8648779-105a-46f3-b82c-027ed1dc21ffa" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L272_3_Left_Starter_Command_On_B1" Guid="a2b871012-62a9-4001-86ab-498771eb40f8a" NameDef="HF_FTIS_LRMCLASS.L272_3_Left_Starter_Command_On_B1" GuidDef="a47a0b426-b957-4673-887e-d648f63d898aa" SSM="DIS">
+      <Pub_Ref SrcName="HF_FADEC_L_CHA.A664_Msg_FADEC_A429.DS8.Label274_Starter_Command_On" SrcGuid="a121b10f4-7cbb-4b5a-83e9-b706ad5f4ae7a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_14" SrcGuid="a7bf459d0-3e4f-4a50-8c69-bed5978b8d8ca" />
+  </A429Port>
+  <A429Port Name="pi429_B1_272_s4" Guid="af24b41cf-abd8-4fc6-91e1-39f254f03f44a" NameDef="HF_FTIS_LRMCLASS.pi429_B1_272_s4" GuidDef="a7fbc3521-7f88-4101-ab28-e58b51818439a" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L272_4_Left_Starter_Command_On_B1" Guid="af642cc26-decd-4855-9acf-56fcc97cad34a" NameDef="HF_FTIS_LRMCLASS.L272_4_Left_Starter_Command_On_B1" GuidDef="aef8bfece-5529-4b1d-bea1-63ad1cc9d5a1a" SSM="DIS">
+      <Pub_Ref SrcName="HF_FADEC_L_CHB.A664_Msg_FADEC_A429.DS8.Label274_Starter_Command_On" SrcGuid="a355c1125-d6ba-4a15-96fb-bb16f8e8dcf8a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_15" SrcGuid="ada643abf-b756-4d2c-948b-8ef86ef2aa56a" />
+  </A429Port>
+  <A429Port Name="pi429_A1_271" Guid="a1b887283-a9d9-47d3-8495-e66011782334a" NameDef="HF_FTIS_LRMCLASS.pi429_A1_271" GuidDef="a7d0f1ff2-f556-4caa-bc38-a5db5a6f42fda" Physical="FTIS_LRM.pi429_A1">
+    <RP Name="L271_1_Flight_Phase_B1" Guid="a27c0132e-d2e3-443a-b36c-2c88eb265003a" NameDef="HF_FTIS_LRMCLASS.L271_1_Flight_Phase_B1" GuidDef="ae5f8713f-e76c-4f9d-9aa6-7b61b5a77e23a">
+      <Pub_Ref SrcName="APP_FMS_CORE_2.ARINC429_MIX_MSG_CORE.DS1_CORE.L270_Intent_Status" SrcGuid="acce56335-3e70-4276-ae92-6ef9dd55c0b1a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW09_A664_In.poA429_40006_B02_HF_FTIS_LRM_24" SrcGuid="ab61fee88-4105-4b2d-a89f-2f0e827c3f62a" />
+  </A429Port>
+  <A429Port Name="pi429_B1_271" Guid="ae0998c62-7f7c-4e81-bb9f-601de51c668ba" NameDef="HF_FTIS_LRMCLASS.pi429_B1_271" GuidDef="a72790338-e495-4b19-b141-eb24e700ac1ea" Physical="FTIS_LRM.pi429_B1">
+    <RP Name="L271_2_Flight_Phase_A1" Guid="ad9ef5d03-833a-4a4e-8cff-07931efd3b39a" NameDef="HF_FTIS_LRMCLASS.L271_2_Flight_Phase_A1" GuidDef="a7fae5c38-e8b2-4d28-a3e5-fde99147839aa">
+      <Pub_Ref SrcName="APP_FMS_CORE_1.ARINC429_MIX_MSG_CORE.DS1_CORE.L270_Intent_Status" SrcGuid="a08a4ee02-f1d8-47f6-8978-b93740e6be81a" />
+    </RP>
+    <Dataflow_Ref SrcName="RGW07_A664_In.poA429_40006_B03_HF_FTIS_LRM_25" SrcGuid="ad3ef73de-bc53-4559-b6dd-6308102f1feea" />
+  </A429Port>
+</HostedFunction>

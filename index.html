@@ -9,6 +9,7 @@
 	<script src="font/iconfont.js"></script>
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="readicd.js"></script>
 	<style>
 		.icon {
 			width: 1.5em;
@@ -39,7 +40,7 @@
 <body class="easyui-layout">
 
 	<!-- 上面 -->
-	<div data-options="region:'north',split:true" class="easyui-tabs" style="height:140px;">
+	<div id="toptabs" data-options="region:'north',split:true" class="easyui-tabs" style="height:140px;">
 
 		<div id="hmTop" title="Home" style="padding-top: 10px; padding-left:10px;display:none;">
 			<button
@@ -49,6 +50,7 @@
 				</svg>
 				<span>New</span>
 			</button>
+
 			<!-- <a href="writexml.php">下载a.jpg</a> -->
 			<button onclick="clickFile()"
 				style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
@@ -58,7 +60,7 @@
 				<span>Open</span>
 			</button>
 			<form id="openxml" method="post" enctype="multipart/form-data" style="display: none;">
-				<input id="up" type="file" name="file1" accept=".xml" onchange="send()">
+				<input id="up" type="file" name="file1" accept=".xml" onchange="send(value)">
 			</form>
 			<button onclick="save()"
 				style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
@@ -71,22 +73,18 @@
 		</div>
 		<div id="frTop" title="Fault Report" style="overflow:auto;padding:20px;display:none;"
 			data-options="showHeader:true">
-			<button
-				style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
-				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
-					<use xlink:href="#icon-chuangjianfuwu"></use>
-				</svg>
-				<span>New</span>
-			</button>
 		</div>
 		<div id="eTop" title="Edit" style="overflow:auto;padding:20px;display:none;">
-			<button
-				style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
+			<button onclick="clickicdFile()"
+				style="width:70px;height: 70px;border-color: #eef0f2;position: relative;margin: 1px;margin-left: 0;">
 				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
-					<use xlink:href="#icon-chuangjianfuwu"></use>
+					<use xlink:href="#icon-dakai"></use>
 				</svg>
-				<span>New</span>
+				<span>OpenICD</span>
 			</button>
+			<form id="openicd" method="post" enctype="multipart/form-data" style="display: none;">
+				<input id="new" type="file" name="file1" accept=".xml" onchange="sendicd(value)">
+			</form>
 		</div>
 		<div id="itTop" title="Initiated Test" style="overflow:auto;padding:20px;display:none;">
 		</div>
@@ -132,6 +130,34 @@
 	</div>
 	<!-- 中间 -->
 	<div data-options="region:'center',title:'Data Entry'" style="padding:1px;background:#eee;">
+		<!-- icd information -->
+		<div id="icdinfo" style="height:100%;width:100%;background-color: #E0ECFF;display:none">
+			<form method="post" style="padding:20px;height:100%;">
+				<div style="margin-bottom:20px">
+					<input id="" class="easyui-textbox" name="e" style="width:900px"
+						data-options="label:'ICD Instance File Location',labelWidth:200,readonly:true">
+				</div>
+				<div style="margin-bottom:20px">
+					<input id="" class="easyui-textbox" name="email" style="width:900px;"
+						data-options="label:'ICD Class File Locaton',labelWidth:200">
+				</div>
+				<div style="margin-bottom:20px">
+					<input id="" class="easyui-textbox" name="subject" style="width:900px;"
+						data-options="label:'Block Point',labelWidth:200">
+				</div>
+
+				<div style="margin-bottom:20px">
+					<input id="" class="easyui-textbox" name="subject" style="width:900px"
+						data-options="label:'Data Produced',labelWidth:200,readonly:true">
+				</div>
+
+
+				<div style="margin-bottom:20px">
+					<input id="" class="easyui-textbox" name="subject" style="width:900px"
+						data-options="label:'Schema Revison',labelWidth:200,readonly:true">
+				</div>
+			</form>
+		</div>
 		<!-- Member System Modeling Data -->
 		<div id="msmd" class="easyui-tabs " style="height:100%;width:100%;display: none;">
 			<div title="Basic Information" style="padding:20px;height:100%;">
@@ -338,10 +364,12 @@
 		<div id="OMSCommunicationMsg" class="easyui-layout" data-options="fit:true" style="height: 100%;width:100%">
 			<div data-options="region:'center',split:'true',title:'ICD Messages',tools:'#ttt'"
 				style="width: 300px;height: 100%;">
-				<div class="easyui-layout" data-options="fit:true">
-					<div data-options="region:'west'" style="width:300px"></div>
-					<div id="rightOMS" data-options="region:'center'">
-						<!-- 每一行的信息 -->
+				<div class="easyui-panel" data-options="fit:true">
+					<!-- <div data-options="region:'west'" style="width:100%"> -->
+					<ul id="omslist" class="easyui-tree" data-options="collapsed:true"></ul>
+					<!-- </div> -->
+					<!-- <div id="rightOMS" data-options="region:'center'">
+						 每一行的信息 
 						<div class="IcdMessageRef" style=" display: flex;justify-content: space-between;height: 30px;">
 							<div style="width: 250px;height: 30px;line-height:30px;padding-left: 10px;">
 								11111</div>
@@ -351,7 +379,7 @@
 								</svg>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 			<!-- 左侧 -->
@@ -373,8 +401,6 @@
 					</a>
 				</div>
 			</div>
-
-
 		</div>
 		<!-- Member System Status -->
 		<div id="StatusMessage" class="easyui-layout" data-options="fit:true" class="easyui-tabs"
@@ -556,7 +582,6 @@
 				xml = start(data)
 			}
 		})
-
 		$('#openxml').submit()
 	}
 
@@ -611,16 +636,14 @@
 		onClick: function (node) {
 			if (node.text == "Member System Modeling Data") {
 				document.getElementById("msmd").style.display = "block"
-				document.getElementById("frTop").style.display = "none"
-				document.getElementById("itTop").style.display = "none"
-				document.getElementById("fTop").style.display = "none"
 			} else {
 				document.getElementById("msmd").style.display = "none"
 			}
-			if (node.text == "Data Load") {
-				document.getElementById("dl").style.display = "block"
+			if (node.text == "ICD Information") {
+				document.getElementById("icdinfo").style.display = "block"
+				$("#toptabs").tabs('select', "Edit")
 			} else {
-				document.getElementById("dl").style.display = "none"
+				document.getElementById("icdinfo").style.display = "none"
 			}
 			if (node.text == "Data Load") {
 				document.getElementById("dl").style.display = "block"
@@ -977,7 +1000,7 @@
 		//let text=[]
 		for (let i = 0; i < data.length; i++) {
 			//let t={}
-			
+
 
 		}
 		//console.log(data,str)
@@ -990,13 +1013,12 @@
 			"</svg>" +
 			"</div>" +
 			"</div >")
+
 		$("#rightOMS").append(b)
 		return temp
 	}
-	//nameref树
-	function makeTree(tree,nameNode){
 
-	}
+
 	function getOmsMessageList(pageNumber, pageSize, OmsMessage, xml) {
 		$("#OmsMessages").empty()
 		let len = OmsMessage.length
@@ -1041,25 +1063,39 @@
 			}
 			$(a).click(function () {
 				$("#rightOMS").empty()
-				let tree=[]
+				let len = 0
+				let tree = []
 				for (let j = 0; j < item.length; j++) {
 					let id = item[j].attributes[0].value
 					let type = item[j].attributes[1].value
 					type = type.replace(/\s*/g, "")
 					let nameNode = getDPRP(type, id, xml).split(".")
-                    console.log("nameNode",nameNode)
-					if(tree.length==0||tree==null){
-						tree=nameNode
-					}else{
-						tree=makeTree(tree,nameNode)
-					}
+					mergeTree(tree, nameNode)
+					$("#omslist").tree({ data: tree })
 				}
+				console.log("tree", tree)
 			})
 			$("#OmsMessages").append(a)
 		}
 
 	}
+	//nameref树,tree是js对象数组
+	function mergeTree(tree, nameNode) {
 
+		if (nameNode.length == 0) {
+			return
+		}
+		//如果这一层已经这个节点值了
+		for (let i = 0; i < tree.length; i++) {
+			if (tree[i].text == nameNode[0]) {
+				mergeTree(tree[i].children, nameNode.slice(1))
+				return
+			}
+		}
+		tree.push({ text: nameNode[0], children: [] })
+		mergeTree(tree[tree.length - 1].children, nameNode.slice(1))
+		return
+	}
 	function getOmsMessage(OmsMessage, xml) {
 		if (OmsMessage.length > 10) {
 			getOmsMessageList(1, 10, OmsMessage, xml)
@@ -1105,7 +1141,6 @@
 			$("#FailtureReportingfmd").append(a)
 		}
 	}
-
 	function getFailureData(failureData) {
 		getFailureDataList(1, 10, failureData)
 		let len = failureData.length
@@ -1120,7 +1155,6 @@
 			}
 		});
 	}
-
 
 	//分页加载一部分列表
 	function getFaultReportingList(pageNumber, pageSize, FaultReportingData) {
@@ -1196,16 +1230,11 @@
 		}
 		//console.log("ARINC615OADLFData", ARINC615OADLFData, resetTime)
 	}
-
-
-
-
 	function numSorter(a, b) {
 		a = parseFloat(a);
 		b = parseFloat(b);
 		return a == b ? 0 : (a > b ? 1 : -1);
 	}
-
 
 </script>
 
