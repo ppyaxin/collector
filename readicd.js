@@ -1,25 +1,13 @@
-function getPath(obj) {
-    if (obj) {
-    if (window.navigator.userAgent.indexOf("MSIE") >= 1) {
-    
-    obj.select();
-    return document.selection.createRange().text;
-    }else if (window.navigator.userAgent.indexOf("Firefox") >= 1) {
-    
-    if (obj.files) {
-    
-    return obj.files.item(0).getAsDataURL();
-    }
-    return obj.value;
-    }
-    return obj.value;
-    }
-    }
-    
-function sendicd(value) {
-    console.log("icdicd",value)
-    let n = document.getElementById("new").files[0]
-    console.log("nnnn",n)
+let dom = {}
+
+function sendicd(v) {
+
+    console.log("icdicd", v)
+    let n = document.getElementById("new").files.item(0)
+    let m = window.URL.createObjectURL(n)
+    $("#InstanceLoc").textbox('setValue', m)
+    //console.log("pppppp",window.URL.createObjectURL(n))
+    //console.log("UUU",v.value)
     $('#openicd').form({
         url: "readxml.php",
         success: function (data) {
@@ -45,18 +33,45 @@ function readicd(data) {
         dataType: 'xml',
         success: function (x) {
             icd = x
-           // console.log("icdicd",icd)
+            // console.log("icdicd",icd)
+            makeVirtualDom(icd)
             return icd
         }
     })
 }
 
 
-function makeVirtualDom(icd){
-   let A429portDom= icd.getElementsByTagName("A429Port")
-   
+function makeVirtualDom(icd) {
+    let A429portDom = icd.getElementsByTagName("A429Port")
+    //console.log(A429portDom)
+    getA429portDom(A429portDom)
+    let DP = icd.getElementsByTagName("DP")
+    getDPDom(DP)
 }
-let A429port=[]
-function getA429portDom(A429portDom){
+let A429port = []
 
+function getA429portDom(A429portDom) {
+    for (let i = 0; i < A429portDom.length; i++) {
+        let obj = {}
+        obj.Id = A429portDom[i].attributes[1].value
+        obj.Name = A429portDom[i].attributes[0].value
+        obj.NameDef = A429portDom[i].attributes[2].value
+        obj.IdDef = A429portDom[i].attributes[3].value
+        A429port.push(obj)
+        //console.log(A429port)
+    }
 }
+
+let dptree=[]
+
+function getDPDom(DP) {
+    for(let i=0;i<DP.length;i++){
+        let obj={}
+        let path=DP[i].attributes[2].value.split('.')
+        mergeTree(dptree, path)
+    }
+    console.log(dptree)
+    $("#icdlist").tree({ data: dptree })
+}
+
+

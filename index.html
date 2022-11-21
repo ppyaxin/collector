@@ -134,24 +134,22 @@
 		<div id="icdinfo" style="height:100%;width:100%;background-color: #E0ECFF;display:none">
 			<form method="post" style="padding:20px;height:100%;">
 				<div style="margin-bottom:20px">
-					<input id="" class="easyui-textbox" name="e" style="width:900px"
+					<input id="InstanceLoc" class="easyui-textbox" name="e" style="width:900px"
 						data-options="label:'ICD Instance File Location',labelWidth:200,readonly:true">
 				</div>
 				<div style="margin-bottom:20px">
-					<input id="" class="easyui-textbox" name="email" style="width:900px;"
+					<input id="classLoc" class="easyui-textbox" name="email" style="width:900px;"
 						data-options="label:'ICD Class File Locaton',labelWidth:200">
 				</div>
 				<div style="margin-bottom:20px">
-					<input id="" class="easyui-textbox" name="subject" style="width:900px;"
-						data-options="label:'Block Point',labelWidth:200">
+					<label for="username" style="width:195px;display: inline-block;" class="label-top">Block
+						Point</label>
+					<input id="username" class="easyui-validatebox textbox  tb" style="width:700px;height: 28px;line-height: 28px;" data-options="required:true,validType:'minLength[1]'">
 				</div>
-
 				<div style="margin-bottom:20px">
 					<input id="" class="easyui-textbox" name="subject" style="width:900px"
 						data-options="label:'Data Produced',labelWidth:200,readonly:true">
 				</div>
-
-
 				<div style="margin-bottom:20px">
 					<input id="" class="easyui-textbox" name="subject" style="width:900px"
 						data-options="label:'Schema Revison',labelWidth:200,readonly:true">
@@ -524,22 +522,17 @@
 	<div id="w" class="easyui-window" title="Window Layout" data-options="iconCls:'icon-save',closed:true"
 		style="width:900px;height:600px;padding:5px;">
 		<div class="easyui-layout" data-options="fit:true">
-			<div data-options="region:'east',split:true" style="width:400px">
-				<div id="iime" class="easyui-datalist" style="width:100%;" data-options="
-				checkbox: true,
-				selectOnCheck: false,
-				onBeforeSelect: function(){return false;}
-				">
-				</div>
+			<div data-options="region:'east',split:true" style="width:100%">
+				<ul id="icdlist" class="easyui-tree" data-options="collapsed:true"></ul>
 			</div>
-			<div data-options="region:'center'" style="padding:15px;width:100%;">
+			<!-- <div data-options="region:'center'" style="padding:15px;width:100%;">
 				<div id="iimc" class="easyui-datalist" style="width:100%;" data-options="
 				checkbox: true,
 				selectOnCheck: false,
 				onBeforeSelect: function(){return false;}
 				">
 				</div>
-			</div>
+			</div> -->
 			<div data-options="region:'south'" style="text-align:center;height: 100px;">
 				<div id="iims" class="easyui-datalist" style="width:100%;" data-options="
 				">
