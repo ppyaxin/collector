@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--The information in this document is GE AVIC Civil Avionics Systems Company 
+Limited ('AVIAGE SYSTEMS') proprietary information and is disclosed in 
+confidence. It is the property of AVIAGE SYSTEMS (and/or third parties) and 
+must not be used, disclosed to others or reproduced without the express written 
+consent of AVIAGE SYSTEMS. If consent is given for reproduction in whole or in 
+part, this notice must appear in any such reproduction in whole or in part. 
+
+This document contains China and/or US origin technical data under applicable 
+export control laws and regulations. This technical data can be used for civil 
+only end-use and must not be transferred to Syria, Iran, North Korea, Cuba or 
+Sudan or other US denied party listed entities. 
+
+ - - - - - - - - - - - - - - - - - - - - - - - -
+
+MODEL IDENTIFIER: MBD-->
+<HostedFunctionClass Name="HF_FTIS_LRMCLASS" Guid="a94a8f8ba-e3df-425d-8989-b09e8dc23387a" XsdVersion="8.8" ATA="47xxxx">
+  <AnalogPort Name="piDISC_ProgEnable" Guid="a09d6a369-9786-4a56-a9b9-45f3aee444aaa" Direction="Destination" RIUTemplate="40012" SamplePeriod="1000" UDC="Command inversion=1">
+    <RP Name="DATALOAD_ProgEnable" Guid="aca8d80ff-8bbf-4966-877e-2396274ec4f7a" DataFormatType="DIS" ParameterSize="1" SysLatencyWCLimit="1000" />
+  </AnalogPort>
+  <A429Port Name="pi429_A1_114" Guid="a17eeed91-c338-493f-b932-278965734713a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L114_A1" Guid="a622bdfd5-4eda-4c08-92e3-41422f47a877a" BitOffsetWithinMsg="0" DataFormatType="BLK" Label="114" ParameterSize="4096" SDIExpected="-1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_126" Guid="ac9918efb-7fbe-43fa-b0fd-cdf3be5e8f87a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L126_A1" Guid="aa96a9820-3613-4084-8813-6e243a16c1a1a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="126" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_227" Guid="a8da2ba78-5b52-415c-93e4-a8355906281da" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L227_A1" Guid="a37e3fd63-6760-40ad-8420-9958cb65ff6aa" BitOffsetWithinMsg="0" DataFormatType="OPAQUE" Label="227" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_230" Guid="a707bf90d-84c2-4e2a-be38-43cb3967331ca" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L230_A1" Guid="a953673ad-6a99-422f-9bf9-e4c6a3dca4cea" BitOffsetWithinMsg="0" DataFormatType="OPAQUE" Label="230" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_356" Guid="a3eb219db-e509-4414-8ffe-929058b8251aa" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L356_A1" Guid="aac06f749-1ad4-4297-8719-fac2fbfee1e4a" BitOffsetWithinMsg="0" DataFormatType="OPAQUE" Label="356" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_114" Guid="ada299bc8-6bae-4250-bf9a-f35468fc196ba" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L114_B1" Guid="ab59255c0-b4d9-4e35-9d40-fd1202ff9bd1a" BitOffsetWithinMsg="0" DataFormatType="BLK" Label="114" ParameterSize="4096" SDIExpected="-1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_126" Guid="a17da1dee-a48b-427c-9dbe-bde23a93bf0da" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L126_B1" Guid="a95773143-b732-45e6-b305-d9dcbfb6e752a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="126" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_227" Guid="a21402a19-a77d-49b2-99b6-eea1fb6c67eea" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L227_B1" Guid="ac47811ae-efd7-4947-bb38-b677b8617c21a" DataFormatType="OPAQUE" Label="227" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_230" Guid="a85005681-0681-407b-93bf-2e1a8fdc6640a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L230_B1" Guid="a37c09b44-9cc6-4f75-aaea-fb7e68c09967a" DataFormatType="OPAQUE" Label="230" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_356" Guid="a6f02260e-2f90-4590-81c1-1d17b8d93f8ea" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L356_B1" Guid="aba9de932-3045-43a5-98b7-8836d7922fbca" DataFormatType="OPAQUE" Label="356" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="po429_A1_BLOCK" Guid="ad5f72ccf-9a8b-4450-8d4e-0ea5250c6a8fa" ActivityTimeout="300" Direction="Source" RefreshPeriod="100">
+    <A429Channel Name="po429_A1_BLOCK_Msg" Guid="a177c6657-14a0-424e-ab9d-4cb2af3add3aa" A429ProtocolType="Block-Oriented" TransmissionIntervalMinimum="100">
+      <A429Word Name="L357_FTIS_Config" Guid="ab59b2f8b-38f4-46c7-b919-8008e0985c87a">
+        <DP Name="LABEL" Guid="a5f041c24-279b-4381-8002-d39bf62bb3a5a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="357" ParameterSize="8" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="FTIS_A604_Config_Reply_Word" Guid="a80d2fc30-abb8-4915-bdc4-e9d66a77c72ba" BitOffsetWithinDS="8" DataFormatType="OPAQUE" ParameterSize="23" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+        <DP Name="PARITY" Guid="a71932fb7-ebf2-4468-9e02-9a95ff3b2068a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="100" TransmissionIntervalMinimum="100" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <A429Port Name="po429_A1" Guid="a37cadc43-58ed-4b1f-a162-73d14d3a8ba0a" ActivityTimeout="3000" Direction="Source" RefreshPeriod="1000">
+    <A429Channel Name="po429_A1_Msg" Guid="a72502521-d193-437b-a387-339b592c302ea" A429ProtocolType="Standard Compliant" TransmissionIntervalMinimum="1000">
+      <A429Word Name="L271_FTIS_CAS_Message" Guid="a987066e0-eb65-41f6-922d-17c45716bd1fa">
+        <DP Name="LABEL" Guid="ab74490f7-8a56-4103-9842-11085ef1a45ba" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="271" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="SDI" Guid="a8e1005be-b24e-4baf-af6b-e6c668650a75a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FTIS LRM;2=Invalid;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="FTIS_Inoperative" Guid="afdbe07b0-eaca-4fcf-8741-1744961da48da" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Inoperative" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal" />
+        <DP Name="SSM" Guid="a8fa58abb-de00-412f-a24b-06a5321c8baba" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="PARITY" Guid="a0677c365-6aa5-4a9d-9c51-a984a3029b7ea" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+      </A429Word>
+      <A429Word Name="L272_FTIS_TempCtrlValve_Posn" Guid="a63d9a4df-8d4b-4812-babb-0062b59e2e5da">
+        <DP Name="LABEL" Guid="a63226fa1-22fc-4955-861d-22278be9f650a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="272" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="SDI" Guid="a783aa4cd-63ed-48c1-944d-4e72063a6d7ea" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FTIS LRM;2=Invalid;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="Temp_Control_Valve_Position" Guid="a03a88cd8-45e0-4943-a458-a27bf7bedc4aa" BitOffsetWithinDS="17" DataFormatType="BNR" FullScaleRngMax="153.525" FullScaleRngMin="-153.6" FuncRngMax="97.5" FuncRngMin="0" LsbRes="0.075" ParameterSize="12" PublishedLatency="1000" TransmissionIntervalMinimum="1000" Units="degrees" />
+        <DP Name="SSM" Guid="ab43a0a1a-9b78-4cd0-926a-80c64f57f585a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="PARITY" Guid="ad3bd0658-0bbe-4ea2-a90f-9cb4a0b65d3aa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+      </A429Word>
+      <A429Word Name="L330_FTIS_HeatExchng_OBTemp_T1B" Guid="aab73b7ae-aa7d-430b-b449-fcb9a603f760a">
+        <DP Name="LABEL" Guid="a7de8b465-15af-48dc-b911-4a9443a177a2a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="330" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="SDI" Guid="a20f877f0-6dd7-46d5-a070-42a5f76fde2aa" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FTIS LRM;2=Invalid;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="Bleed_Air_Temperature_T1B" Guid="ade0c25af-4dee-434b-b28f-2e3a10f52a6da" BitOffsetWithinDS="20" DataFormatType="BNR" FullScaleRngMax="255" FullScaleRngMin="-256" FuncRngMax="166" FuncRngMin="-60" LsbRes="1" ParameterSize="9" PublishedLatency="1000" TransmissionIntervalMinimum="1000" Units="degrees C" />
+        <DP Name="SSM" Guid="a4d6d3524-7af4-4af9-aa83-936ca46593a4a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="PARITY" Guid="a0fcf8f59-dabb-42bb-a7ab-03c32cbe37bba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+      </A429Word>
+      <A429Word Name="L331_FTIS_ASM_InletAirtemp_T2B" Guid="a84f5da08-5cba-4103-895b-6f17d6e1c19ca">
+        <DP Name="LABEL" Guid="aef6ef1fd-7021-43bd-8aa8-ef87a9c4284ea" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="331" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="SDI" Guid="a94d9a8fa-70ba-4a86-97d3-b9eca34bcc0fa" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FTIS LRM;2=Invalid;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="Bleed_Air_Temperature_T2B" Guid="a37d7b3ce-105f-4deb-bdb3-8e1e2e7bf481a" BitOffsetWithinDS="20" DataFormatType="BNR" FullScaleRngMax="255" FullScaleRngMin="-256" FuncRngMax="166" FuncRngMin="-60" LsbRes="1" ParameterSize="9" PublishedLatency="1000" TransmissionIntervalMinimum="1000" Units="degrees C" />
+        <DP Name="SSM" Guid="a3686eb26-97b2-462b-aab9-e1fd0829f019a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="PARITY" Guid="a231df51f-f094-49f6-9947-524d6a5e0d96a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+      </A429Word>
+      <A429Word Name="L332_FTIS_HeatExchng_OBTemp_T1A" Guid="a6575c22b-e219-45ec-a3ec-7985015e87e8a">
+        <DP Name="LABEL" Guid="a68862287-bcf3-4b0b-81e1-b20aaf20ace3a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="332" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="SDI" Guid="ad53870e5-e712-4ada-b0ac-1bee345c9654a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FTIS LRM;2=Invalid;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="Bleed_Air_Temperature_T1A" Guid="a2b84f933-2e5e-4f39-a858-49e98f4bb70da" BitOffsetWithinDS="20" DataFormatType="BNR" FullScaleRngMax="255" FullScaleRngMin="-256" FuncRngMax="166" FuncRngMin="-60" LsbRes="1" ParameterSize="9" PublishedLatency="1000" TransmissionIntervalMinimum="1000" Units="degrees C" />
+        <DP Name="SSM" Guid="a23118e1c-f5b7-4531-84fc-1456c8cf9afca" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="PARITY" Guid="a704c6df7-9b4c-4a8b-b0ee-5d44eeb17caba" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+      </A429Word>
+      <A429Word Name="L333_FTIS_ASM_InletAirtemp_T2A" Guid="a4387fc8b-7465-4a64-8f0c-c4870337a4dda">
+        <DP Name="LABEL" Guid="a105d9603-05f7-4d02-80c1-4731e4a4817da" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="333" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="SDI" Guid="a9c338729-392a-47d2-a8bb-deb22c1e1253a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FTIS LRM;2=Invalid;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="Bleed_Air_Temperature_T2A" Guid="aa4d34e6d-28c4-4e39-8a3b-ee3636d184cea" BitOffsetWithinDS="20" DataFormatType="BNR" FullScaleRngMax="255" FullScaleRngMin="-256" FuncRngMax="166" FuncRngMin="-60" LsbRes="1" ParameterSize="9" PublishedLatency="1000" TransmissionIntervalMinimum="1000" Units="degrees C" />
+        <DP Name="SSM" Guid="a4c669d4a-0849-457a-87b6-43fd8f58c54ea" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="PARITY" Guid="a595a96d5-0871-4e5f-98b2-807b300ab882a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+      </A429Word>
+      <A429Word Name="L334_FTIS_ASM_InletAir_Press_P1" Guid="aaaf9dc84-992f-4e22-895e-188725cbe007a">
+        <DP Name="LABEL" Guid="ac440526d-b7e2-42e8-a802-4ec14fe13abfa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="334" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="SDI" Guid="a98a0c28c-a7ce-48d8-acf8-5e2bc45f3fc2a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FTIS LRM;2=Invalid;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="FTIS_ASM_InletAir_Press_P1" Guid="a9cfc3725-d495-428d-b643-db4d411db65ba" BitOffsetWithinDS="20" DataFormatType="BNR" FullScaleRngMax="127" FullScaleRngMin="-128" FuncRngMax="90" FuncRngMin="0" LsbRes="0.5" ParameterSize="9" PublishedLatency="1000" TransmissionIntervalMinimum="1000" Units="PSIG" />
+        <DP Name="SSM" Guid="a93ff7a07-bf7c-4049-96ec-431b71f14b81a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="PARITY" Guid="a64d5acfe-b9de-4f17-84a1-c6b289165eb6a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+      </A429Word>
+      <A429Word Name="L335_FTIS_ASM_NEA_Outlet_PressP2" Guid="ae4999a22-92ba-468c-9263-1f51d7e4e22ea">
+        <DP Name="LABEL" Guid="a0f1c46c6-2ac9-4385-880e-e5d5668f8a49a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="335" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="SDI" Guid="a5f79ae37-ab71-4d8d-8331-ffd80414d278a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FTIS LRM;2=Invalid;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="FTIS_ASM_NEA_Outlet_Press_P2" Guid="a80dbc28f-4c3c-402e-9c97-3be5706fc1b3a" BitOffsetWithinDS="20" DataFormatType="BNR" FullScaleRngMax="127" FullScaleRngMin="-128" FuncRngMax="70" FuncRngMin="0" LsbRes="0.5" ParameterSize="9" PublishedLatency="1000" TransmissionIntervalMinimum="1000" Units="PSIG" />
+        <DP Name="SSM" Guid="a0e4c4035-01e5-48a2-9286-eb6a30b5ad70a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="PARITY" Guid="a8f0f9522-41b3-4a1d-829e-f5c49e404cc1a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+      </A429Word>
+      <A429Word Name="L336_FTIS_NEA_Oxyg_Concentration" Guid="a35ec339c-e303-48f2-bce7-6f9e49ac068fa">
+        <DP Name="LABEL" Guid="a3ca9dd9d-1d04-40b8-8830-7e94d2def11aa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="336" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="SDI" Guid="a51a4b7b5-2883-4a8f-8abe-71137c41ea76a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FTIS LRM;2=Invalid;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="Percentage_Oxygen" Guid="ae3e1072d-dbcc-4f9a-8bdf-3be2f92945aca" BitOffsetWithinDS="22" DataFormatType="BNR" FullScaleRngMax="127" FullScaleRngMin="-128" FuncRngMax="14" FuncRngMin="1" LsbRes="0.5" ParameterSize="7" PublishedLatency="1000" TransmissionIntervalMinimum="1000" Units="percent" />
+        <DP Name="SSM" Guid="a1ebb0d17-c82a-4794-8a74-c54c60af6552a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_BNR" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="PARITY" Guid="a6d476f47-8fd4-44ab-a736-fe3c9192523ea" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+      </A429Word>
+      <A429Word Name="L350_FTIS_Faults_1" Guid="abefb1c14-be65-426e-820d-7820088afeefa">
+        <DP Name="LABEL" Guid="a853d8596-4538-4876-b71f-92abc7477f40a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="350" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="SDI" Guid="adfd82ccc-4bb9-46dd-b0b5-72b010ce0baea" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FTIS LRM;2=Invalid;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="FTIS_ILRM_Internal_Fault" Guid="aecd3e2cf-96d3-4258-a345-e261ca0270f3a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_GCF_Relay_Fault" Guid="a61a750c8-1b71-477e-9e31-7ccf179fc493a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_GCF_FAULT_OFF" Guid="a5c503176-8214-49c1-a967-692fb05c5c48a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_GCF_FAULT_ON" Guid="ae920c997-6e5f-42af-add4-9c783132e376a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_Over_temp_T2A_T2B" Guid="a96fe82b0-9791-44c6-ae5e-ba7c9cdf27f6a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_Over_temp_T1A_T1B" Guid="a9abf6a7c-ef1b-42cf-a607-8b1ccfc32d0da" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_Over_pressure" Guid="aaea6411d-9a38-45df-8f44-308ef2c8d9dda" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="RDIU7_Bus_Status" Guid="aa7cf66c4-f715-48e1-b43a-81a715f3b2bfa" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="RDIU9_Bus_Status" Guid="a1fbd161c-09d9-4a76-a3a6-eedd21a317daa" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="ASM_HM_Failed_Three_Consecutive_Flights" Guid="ad7cc6012-5a7b-46c2-a90f-be2d9a6eaaf7a" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_LatchShutdown_Status" Guid="aaa2affa0-c909-46bc-bc35-b013e1587405a" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="SSM" Guid="ac36e25bc-43e5-4946-a243-ac762898c437a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="PARITY" Guid="a9f5c1497-878b-49ac-a903-46d6cc98a6daa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+      </A429Word>
+      <A429Word Name="L351_FTIS_Faults_2" Guid="a6f323b43-bb56-4dd5-8a94-0af2d939a68aa">
+        <DP Name="LABEL" Guid="a3aae3008-0460-47d6-9aa8-747f2fbb84f7a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="351" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="SDI" Guid="ab7b3ec76-cf95-4093-942e-90d5e869a15da" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FTIS LRM;2=Invalid;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="FTIS_IIVFault_Disparity" Guid="a4eb71204-440e-40aa-8b38-960f6fc6c6dda" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_IIVFault_CurrentLimit" Guid="a51dea99c-f8ac-4dda-bd47-7ddc1ad4baa7a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_TIVFault_Disparity" Guid="ab364229c-27d1-4a97-afe2-b809c883b873a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_TIVFault_CurrentLimit" Guid="a40e1defc-d199-4810-b9a6-5830e5f680e6a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_DFSOVFault_Lo_Disparity" Guid="a634188b7-aa05-458a-a37d-ade905bfb520a" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_DFSOVFault_Lo_CurrentLimit" Guid="a004985a4-8a65-4749-a435-a11027c3f141a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_DFSOVFault_Mid_Disparity" Guid="a17f5b36f-b3a0-466e-b8ab-162ab908f0b4a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_DFSOVFault_Mid_CurrentLimit" Guid="a54ed8f44-168e-4241-ba71-3765e262c799a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_DFSOVFault_Disparity" Guid="aaea52e93-ec97-4c86-a5c7-9dd987d1d265a" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="FTIS_DFSOVFault_CurrentLimit" Guid="ac3aede7e-0ef8-410b-b88c-0733ec6af2e8a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="T1_TempSensor_AtoB_Disparity" Guid="a71af4159-5a37-49e1-a489-b73c13349017a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="T1_TempSensor_AtoB_OutofRange" Guid="a585d3457-c218-4fa8-b53b-454e2429f230a" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="T2_TempSensor_AtoB_Disparity" Guid="a7da0d451-a687-4d1e-bb5d-cae0542b87b5a" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="T2_TempSensor_AtoB_OutofRange" Guid="ae5dc42fc-bd0d-4abf-8034-0e80e879852ba" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="PressureSensor_OutofRange" Guid="a58d3f4dc-39dc-4ff5-b92d-51d47a03e77da" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="O2SensorConcen_OutofRange" Guid="a8a3fad90-5298-4f42-9735-50f043c16ceba" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="O2SensorPressure_OutofRange" Guid="a08596a1b-8431-4bc0-9e61-f5da75f29774a" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=FAULT" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=No Fault" />
+        <DP Name="SSM" Guid="ab5842a8c-1487-4581-ad0b-b8af94a36066a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="PARITY" Guid="a40cab140-7253-4db9-b137-5b7f17427782a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+      </A429Word>
+      <A429Word Name="L352_FTIS_Status" Guid="ab51ad01f-80e2-4995-a99e-b4dc03417976a">
+        <DP Name="LABEL" Guid="af79681cf-f819-486d-93d0-898e5f65f985a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="352" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="SDI" Guid="a7b3dbef8-54ec-467c-983a-9556459d39c3a" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FTIS LRM;2=Invalid;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="GCF_Command" Guid="a3004881b-585c-499a-896c-d0130f986063a" BitOffsetWithinDS="10" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=OFF" />
+        <DP Name="IIV_Command" Guid="ad2c09f6c-4b6a-40ad-8157-a99484dec941a" BitOffsetWithinDS="11" DataFormatType="DIS" OneState="1=OPEN" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Closed" />
+        <DP Name="TIV_Command" Guid="ae1c13972-0250-40fd-965c-933268e13798a" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=OPEN" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Closed" />
+        <DP Name="DFSOV_Low_Command" Guid="adf31aa59-4ebe-44f7-8716-517b68952079a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=OPEN" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Closed" />
+        <DP Name="DFSOV_Mid_Command" Guid="a64666962-0647-4faa-9c68-ff9fc537fccca" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=OPEN" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Closed" />
+        <DP Name="TCV_Fully_Open_Status" Guid="a0314502a-bc09-450b-9f86-93559f65af40a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Fully Open" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Fully Open" />
+        <DP Name="TCV_Fully_Closed_Status" Guid="a8f050c74-0ad0-4a5d-828d-15b3bf605285a" BitOffsetWithinDS="16" DataFormatType="DIS" OneState="1=Fully Closed" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Fully Closed" />
+        <DP Name="GCF_Status" Guid="ae62e0a40-d662-4c42-80b5-994a63b07d8ba" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=ON" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=OFF" />
+        <DP Name="TIV_Status" Guid="a22dac170-9f4e-4fcc-8995-f912db3b5bfda" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=OPEN" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Closed" />
+        <DP Name="DFSOV_Low_Status" Guid="af53d8cf9-0ce9-4af3-9dc6-fc2691f7477da" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=OPEN" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Closed" />
+        <DP Name="DFSOV_Mid_Status" Guid="af27ab959-7f33-4ae5-8255-573e49004a64a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=OPEN" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Closed" />
+        <DP Name="Bleed_Air_Available" Guid="a30811b8a-577f-462c-a253-b828fd694492a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=Too low to inert" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal" />
+        <DP Name="FTIS_IIVStatus" Guid="accaa94ef-848c-4a4b-b4b8-d32a11a133d2a" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=Open" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Closed" />
+        <DP Name="FTIS_Inhibit_Status" Guid="ac42aef19-a3aa-4903-8186-b9e59a873a0ca" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=Inhibit" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Not Inhibit" />
+        <DP Name="FTIS_IBIT_Complete" Guid="a5a10946e-5e89-4729-857c-4606d1581027a" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=FALSE" />
+        <DP Name="SSM" Guid="aadd7535c-b86c-4b21-8ef3-e47cc853511ca" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="PARITY" Guid="af697132d-cfa7-47ce-aea2-84457ecbb99fa" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+      </A429Word>
+      <A429Word Name="L353_FTIS_RDIU_Input_Status" Guid="ab8b3ce44-6b36-489e-82dc-2768e52fe7cea">
+        <DP Name="LABEL" Guid="a49b42829-7213-4d49-8738-a4ef017f19caa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="353" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="SDI" Guid="ac9813130-bc76-4d26-bae1-61024e10ab1ea" BitOffsetWithinDS="8" CodedSet="0=Invalid;1=FTIS LRM;2=Invalid;3=Invalid" DataFormatType="A429SDI" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="DATE_Label260_Status" Guid="a65da76a5-b22c-4e74-b085-963849b9acada" BitOffsetWithinDS="12" DataFormatType="DIS" OneState="1=Not Available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal" />
+        <DP Name="UTC_Label150_Status" Guid="ac94bb9a5-f67f-45dd-b5f7-cfb7e7a1bc18a" BitOffsetWithinDS="13" DataFormatType="DIS" OneState="1=Not Available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal" />
+        <DP Name="FlightPhase_Label271_Status" Guid="a15879805-7959-4ca9-8f53-134a9215981fa" BitOffsetWithinDS="14" DataFormatType="DIS" OneState="1=Not Available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal" />
+        <DP Name="FTIS_Inhibit_Demand_Label304_Status" Guid="a86b99088-e1ea-40be-ac93-aa0185576087a" BitOffsetWithinDS="15" DataFormatType="DIS" OneState="1=Not Available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal" />
+        <DP Name="FuelInertingAreaOVHT_Label270_Status" Guid="ade23d5ed-61ca-4ec8-a8df-5d2036904176a" BitOffsetWithinDS="17" DataFormatType="DIS" OneState="1=Not Available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal" />
+        <DP Name="Fuel_Status_L273_Status" Guid="a9196298f-1564-4baa-8f65-e431c9fbeac8a" BitOffsetWithinDS="18" DataFormatType="DIS" OneState="1=Not Available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal" />
+        <DP Name="OMS_L126_L227_L230_Status" Guid="a6e0fc7c3-588f-454e-ab5c-19c764fb9799a" BitOffsetWithinDS="19" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal" />
+        <DP Name="Bleed_Pressure_Label220_Status" Guid="a26966c99-b2f9-497c-a33f-df291cf7e104a" BitOffsetWithinDS="20" DataFormatType="DIS" OneState="1=Not Available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal" />
+        <DP Name="IBIT_Inhibit_Ground_Oper_Active" Guid="ad196403c-578d-4ed0-adfe-613293d103e1a" BitOffsetWithinDS="21" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=FALSE" />
+        <DP Name="IBIT_Inhibit_FTIS_Inhibit_Demand" Guid="af972783e-4c18-46f5-a741-2594ece8f5daa" BitOffsetWithinDS="22" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=FALSE" />
+        <DP Name="IBIT_Inhibit_Area_OVHT" Guid="a14788535-1a1a-4d66-954a-a78c4bea2fb4a" BitOffsetWithinDS="23" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=FALSE" />
+        <DP Name="Ambient_Static_Pressure_Label246_Status" Guid="a6b3bd815-62d8-4b50-8fac-b12c2bd63eb5a" BitOffsetWithinDS="24" DataFormatType="DIS" OneState="1=Not Available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal" />
+        <DP Name="Altitude_Change_Rate_Label212_Status" Guid="acd2ca54c-5aa3-4bd8-b2f2-b8f462b3e3bea" BitOffsetWithinDS="25" DataFormatType="DIS" OneState="1=Not Available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal" />
+        <DP Name="IBIT_Inhibit_Bleed_Pressure_Less20" Guid="ad66f0bf5-1a25-4c2a-9b52-582527ec1645a" BitOffsetWithinDS="26" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=FALSE" />
+        <DP Name="Voted_Computed_Airspeed_Status" Guid="a2de29c10-e228-44e9-b124-d440a9488bf7a" BitOffsetWithinDS="27" DataFormatType="DIS" OneState="1=Not Available" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=Normal" />
+        <DP Name="IBIT_Inhibit_Airspeed_45" Guid="aaa2be726-f0fa-4474-a26b-cb73f1ca4f17a" BitOffsetWithinDS="28" DataFormatType="DIS" OneState="1=True" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" ZeroState="0=FALSE" />
+        <DP Name="SSM" Guid="adc64b3ab-8f39-4b1c-95e9-05b2f50a4b05a" BitOffsetWithinDS="29" DataFormatType="A429_SSM_DIS" ParameterSize="2" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="PARITY" Guid="ae1392205-dd1c-44fb-ac1f-b8b1cc555612a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <A429Port Name="po429_A1_BLOCK_1000_DL" Guid="a4f7a4445-b96c-45fa-a69c-60b04abb69c0a" ActivityTimeout="3000" Direction="Source" RefreshPeriod="1000">
+    <A429Channel Name="po429_A1_BLOCK_Msg_1000_DL" Guid="a5f8606d0-a3f7-4638-84eb-df090019973ca" A429ProtocolType="Block-Oriented" TransmissionIntervalMinimum="1000">
+      <A429Word Name="L226_A615_SW_UploadResponse" Guid="afc5671f3-252e-4022-a0bc-9a113bd4818da">
+        <DP Name="LABEL" Guid="a107cee78-90f7-41b1-a51c-ddd8cd61818fa" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="226" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="A615_SW_UploadResponse" Guid="ab8c15fbc-f75e-45be-bcce-ba41ea0009fea" BitOffsetWithinDS="8" DataFormatType="OPAQUE" ParameterSize="23" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="PARITY" Guid="a87c6acde-8e3b-4f0d-a4de-ca6ddd0ceb28a" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <A429Port Name="po429_A1_BLOCK_1000" Guid="a66ee71de-381c-4526-bbea-6e0a7bfc8ff6a" ActivityTimeout="3000" Direction="Source" RefreshPeriod="1000">
+    <A429Channel Name="po429_A1_BLOCK_Msg_1000" Guid="ab8ea561a-8a06-4fb4-a4fe-c3538c8238b2a" A429ProtocolType="Block-Oriented" TransmissionIntervalMinimum="1000">
+      <A429Word Name="L356_FTIS_A604_Maint_Reply_Word" Guid="a2ad352db-7734-4551-9aa3-23423d8b2c55a">
+        <DP Name="LABEL" Guid="a7e6f7547-9f36-4aff-b363-66eb2ad53e09a" BitOffsetWithinDS="0" DataFormatType="A429OCTLBL" Label="356" ParameterSize="8" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="FTIS_A604_Maint_Reply_Word" Guid="a763a1eb9-8546-49c8-8723-10446ee6681fa" BitOffsetWithinDS="8" DataFormatType="OPAQUE" ParameterSize="16" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="CODE" Guid="afabbfb94-11ca-4932-8267-ccd5cce3521ea" BitOffsetWithinDS="24" DataFormatType="ISO-5" ParameterSize="7" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+        <DP Name="PARITY" Guid="a6fbc9fe2-f7a3-43fb-a11c-1015452e7abca" BitOffsetWithinDS="31" DataFormatType="A429PARITY" ParameterSize="1" PublishedLatency="1000" TransmissionIntervalMinimum="1000" />
+      </A429Word>
+    </A429Channel>
+  </A429Port>
+  <A429Port Name="pi429_A1_150" Guid="a00008c0d-bd57-4953-9280-7cd6a1e2c844a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L150_1_Time_A1" Guid="a5cd04d0f-0c3f-4da1-a6f8-00b0497805aba" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="150" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_206" Guid="a2cc390bb-7f21-47f1-91ea-5d7c6fcbef62a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L206_1_Voted_Calibrated_AirSpeed_A1" Guid="a72200ea7-3a68-4e22-a7da-ce86dbad4335a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="206" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_212" Guid="a144fa5c4-87fb-4110-8b8c-4d6032fccd1da" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L212_1_Voted_Altitude_Rate_A1" Guid="ac8a61a4a-1635-477e-a9c4-e0c4a9b97c8da" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="212" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_220" Guid="ad75fafae-c12a-4dbf-a768-28f3386631bba" Direction="Destination" SamplePeriod="500">
+    <RP Name="L220_1_BAS_BleedPress_IAMS_A1" Guid="a817370ba-4179-4a31-a785-04f8631c3a77a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="220" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="2250" />
+  </A429Port>
+  <A429Port Name="pi429_A1_246" Guid="a0f5dc4a5-4ffc-487e-b735-8eadb256b352a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L246_1_Voted_Static_Pressure_A1" Guid="ad6f28479-9ec5-4be6-9015-72d6f271dc03a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="246" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_260" Guid="accb59d4b-964a-4c41-9231-90930405b5f9a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L260_1_Date_A1" Guid="a4cc79f1f-58b4-460f-9a64-5f4fca3a1a76a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="260" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_270" Guid="a8192ce08-3e0e-4ed2-ad5c-c3c05a8c4908a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L270_1_FUEL_INERTING_AREA_OVHT_A1" Guid="af5885704-1a07-40aa-87e5-9abd52eeee75a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="270" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="1350" />
+  </A429Port>
+  <A429Port Name="pi429_A1_270_sp1" Guid="a970fd236-7b5e-45aa-9812-0cbc310763eba" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L270_1_FUEL_INERTING_AREA_OVHT_A2" Guid="a84c21121-cca8-42b1-aede-3f8e13a557b9a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="270" ParameterSize="32" SDIExpected="2" SysLatencyWCLimit="1350" />
+  </A429Port>
+  <A429Port Name="pi429_A1_272" Guid="a0a1f5e26-c443-48b3-a8e4-3bc89451b85aa" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L272_1_Left_Starter_Command_ON_A1" Guid="a574b7b1c-2d87-40c8-b92f-f3fa692cd18aa" BitOffsetWithinMsg="28" DataFormatType="DIS" Label="272" ParameterSize="1" SDIExpected="0" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_304" Guid="a18f5781a-3adc-477c-976f-26728bca1ad3a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L304_1_FTIS_Inhibit_from_IASC_A1" Guid="a9ff4fd3b-be41-44d9-acab-6c1e72c12195a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="304" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="1250" />
+  </A429Port>
+  <A429Port Name="pi429_B1_150" Guid="a7f990e90-0892-405d-a33e-9d3106d1084fa" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L150_2_Time_B1" Guid="ac6e6c325-5079-40c7-a4f1-22d50567da18a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="150" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_206" Guid="a714f2642-6363-4d26-8d19-2c09e64c6282a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L206_2_Voted_Calibrated_AirSpeed_B1" Guid="a08c860de-17e7-4419-95f3-49a72890ee72a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="206" ParameterSize="32" SDIExpected="2" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_212" Guid="acd682ad5-441b-4d60-b3e4-002f5cecffdda" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L212_2_Voted_Altitude_Rate_B1" Guid="ab3c109ad-64ac-4dbf-8413-52bc76fea764a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="212" ParameterSize="32" SDIExpected="2" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_220" Guid="ae8fe184c-d518-4185-875c-03ea88319574a" Direction="Destination" SamplePeriod="500">
+    <RP Name="L220_2_BAS_BleedPress_IAMS_B1" Guid="ad5f8c4dc-2381-4abf-a169-a1a0d494cfcda" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="220" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="2250" />
+  </A429Port>
+  <A429Port Name="pi429_B1_246" Guid="a80d18f13-f29d-40f4-99ba-06d07883d031a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L246_2_Voted_Static_Pressure_B1" Guid="abf561727-3d6c-4f72-bb5e-d0791024ac2da" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="246" ParameterSize="32" SDIExpected="2" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_260" Guid="a03f7cb18-ca4d-464f-b33f-4d576138d977a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L260_2_Date_B1" Guid="a2ee89467-7da9-4098-a509-e0c66083a010a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="260" ParameterSize="32" SDIExpected="-1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_270" Guid="af762bc8d-3f2a-4644-a807-f4218348c326a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L270_2_INERT_BLEED_LEAK_INHIBIT_B1" Guid="a79ccdf3e-334c-400f-b593-5d8d643b91a4a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="270" ParameterSize="32" SDIExpected="2" SysLatencyWCLimit="1350" />
+  </A429Port>
+  <A429Port Name="pi429_B1_270_sp1" Guid="ab9519816-efec-4757-9f71-b616b54de859a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L270_2_INERT_BLEED_LEAK_INHIBIT_B2" Guid="a0b5425bc-7216-45a1-932d-9d2f01ffe1a0a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="270" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="1350" />
+  </A429Port>
+  <A429Port Name="pi429_B1_272" Guid="ac50daf9e-8f5b-44d9-bd1d-c4b23910c750a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L272_1_Right_Starter_Command_On_B1" Guid="a1ec117ba-133f-4354-98a0-6b2ee04712daa" BitOffsetWithinMsg="28" DataFormatType="DIS" Label="272" LsbRes="-1" Multiplier="1" ParameterSize="1" SDIExpected="2" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_304" Guid="a1ddce205-8398-450b-86b0-dff24fa4be62a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L304_2_FTIS_Inhibit_from_IASC_B1" Guid="a1f4cd9c5-af26-4a4a-8686-85fe07944d2ca" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="304" ParameterSize="32" SDIExpected="2" SysLatencyWCLimit="1250" />
+  </A429Port>
+  <A429Port Name="pi429_A1_271_s1" Guid="a2d7c27e9-e45d-4408-a1dd-93e533fe540ca" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L271_1_Flight_Phase_A1" Guid="ab985c7f4-2003-4805-aeaa-fae8b88f1647a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="271" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_271_s1" Guid="a16acadd8-11f2-4f3f-8475-a49a6a106845a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L271_2_Flight_Phase_B1" Guid="a9f42f75e-f020-4e29-b877-86eeb6c95f6fa" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="271" ParameterSize="32" SDIExpected="2" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_272_sp1" Guid="a40d8d258-0076-4f96-be15-6753dfa5c5d6a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L272_2_Left_Starter_Command_On_A1" Guid="a914be19e-803c-4853-bb1c-da3143ae6124a" BitOffsetWithinMsg="28" DataFormatType="DIS" Label="272" LsbRes="-1" Multiplier="1" ParameterSize="1" SDIExpected="1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_272_sp1" Guid="a8d158f07-c684-4cbb-9416-e7aedb520958a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L272_2_Right_Starter_Command_ON_B1" Guid="ad78cd0c9-bea1-4588-8cd0-9f0ce5397f7ca" BitOffsetWithinMsg="28" DataFormatType="DIS" Label="272" ParameterSize="1" SDIExpected="3" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_273_1" Guid="ae543cabb-42bf-40ef-ada3-4be61eda50bda" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L273_1_IBIT_Inhibit_Fuel_A" Guid="adfe240e3-1078-490f-b59c-11804642757ca" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="273" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="1200" />
+  </A429Port>
+  <A429Port Name="pi429_A1_273_2" Guid="a0942f85d-3013-404d-8ef5-0c0932961ff1a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L273_1_IBIT_Inhibit_Fuel_B" Guid="a8eeae1f8-d222-4149-a4da-f92f964a6fd4a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="273" ParameterSize="32" SDIExpected="2" SysLatencyWCLimit="1200" />
+  </A429Port>
+  <A429Port Name="pi429_B1_273_1" Guid="a8d07d399-f840-4317-bfc0-d36fa4354911a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L273_2_IBIT_Inhibit_Fuel_A" Guid="a8c04a190-d39a-4710-98a5-e45fc1be30a8a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="273" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="1200" />
+  </A429Port>
+  <A429Port Name="pi429_B1_273_2" Guid="ac1161f06-c223-4989-bf85-e609a307c4b3a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L273_2_IBIT_Inhibit_Fuel_B" Guid="a39e57456-0458-47c2-b1a5-82ae8cab23e5a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="273" ParameterSize="32" SDIExpected="2" SysLatencyWCLimit="1200" />
+  </A429Port>
+  <A429Port Name="pi429_A1_206_s2" Guid="a613622df-5c4e-4520-91fd-7d433cbc57b3a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L206_2_Voted_Calibrated_AirSpeed_A1" Guid="ae34b3a3c-caf5-4612-b00c-7c42dfe889a4a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="206" ParameterSize="32" SDIExpected="2" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_206_s3" Guid="a21313c4e-6dbd-4d31-b338-ad2ddefcf2f2a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L206_3_Voted_Calibrated_AirSpeed_A1" Guid="a5faff72f-7f40-4824-9673-86424e1ee100a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="206" ParameterSize="32" SDIExpected="3" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_206_s1" Guid="a302232ca-7d2b-4f53-9599-2749140ab1f1a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L206_1_Voted_Calibrated_AirSpeed_B1" Guid="aaa822aac-1e2d-48e4-b7d7-0d3071973692a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="206" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_206_s3" Guid="aea9e8e57-9085-4d77-ad75-a95a0e742b1ba" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L206_3_Voted_Calibrated_AirSpeed_B1" Guid="ae22f4d24-8e9d-4045-ad8d-64bd1f428d67a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="206" ParameterSize="32" SDIExpected="3" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_212_s2" Guid="a870d0966-7a9a-49c2-a427-01cde82fb4d9a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L212_2_Voted_Altitude_Rate_A1" Guid="ab28baef0-623e-4e47-b118-6092688cd1c8a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="212" ParameterSize="32" SDIExpected="2" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_212_s3" Guid="a6bc12f7d-dd3a-4451-bcf3-230a45f355f6a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L212_3_Voted_Altitude_Rate_A1" Guid="a0f969437-87cb-4140-934e-2cbf16a89963a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="212" ParameterSize="32" SDIExpected="3" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_212_s1" Guid="a468c1d5b-a09b-4d50-8c9b-6c9e69f48b35a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L212_1_Voted_Altitude_Rate_B1" Guid="aca130eea-0b12-46dd-abd5-2345009c9adba" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="212" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_212_s3" Guid="a15c7aae4-12ec-43fd-88e6-988cc557bcafa" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L212_3_Voted_Altitude_Rate_B1" Guid="a25a65cfb-af93-40dd-9be4-38e469be5037a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="212" ParameterSize="32" SDIExpected="3" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_246_s2" Guid="a3d8b92f2-c000-42a9-9923-b3a536c7c9b8a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L246_2_Voted_Static_Pressure_A1" Guid="aeaa176d1-cfa6-477e-b6b2-bc8215c09bdea" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="246" ParameterSize="32" SDIExpected="2" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_246_s3" Guid="a3a9908fc-dfbe-4505-a33e-2058cca58061a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L246_3_Voted_Static_Pressure_A1" Guid="a5dce9d9c-925a-497e-9f39-41b66d516feaa" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="246" ParameterSize="32" SDIExpected="3" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_246_s1" Guid="ad92ce3c3-5b8b-434d-91c5-f6f1fb0c9314a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L246_1_Voted_Static_Pressure_B1" Guid="a8404dfbd-1ef0-4743-b029-7339ab9520b9a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="246" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_246_s3" Guid="af6206f0f-15c2-497a-8c12-c7ea217b2d81a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L246_3_Voted_Static_Pressure_B1" Guid="a2a553da0-953c-4087-b10b-1caf9ab1b3c0a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="246" ParameterSize="32" SDIExpected="3" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_220_s2" Guid="ac3b927b4-6088-4016-9ec7-82ce6b0063a6a" Direction="Destination" SamplePeriod="500">
+    <RP Name="L220_2_BAS_BleedPress_IAMS_A1" Guid="a25d14264-639f-40f4-964c-0782cf90410da" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="220" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="2250" />
+  </A429Port>
+  <A429Port Name="pi429_A1_220_s3" Guid="a17ae48ae-a7d6-492e-bd34-3e637e83ea89a" Direction="Destination" SamplePeriod="500">
+    <RP Name="L220_3_BAS_BleedPress_IAMS_A1" Guid="a030d3625-7eb7-4095-b5be-6f257060b815a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="220" ParameterSize="32" SDIExpected="2" SysLatencyWCLimit="2250" />
+  </A429Port>
+  <A429Port Name="pi429_A1_220_s4" Guid="abec636ae-3d10-4216-a833-67cbd68c2ca0a" Direction="Destination" SamplePeriod="500">
+    <RP Name="L220_4_BAS_BleedPress_IAMS_A1" Guid="ab50bac96-dd4d-46ed-895c-0516109de3baa" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="220" ParameterSize="32" SDIExpected="3" SysLatencyWCLimit="2250" />
+  </A429Port>
+  <A429Port Name="pi429_B1_220_s1" Guid="aca04fc76-417c-467e-a770-d1a3cbe75f1ea" Direction="Destination" SamplePeriod="500">
+    <RP Name="L220_1_BAS_BleedPress_IAMS_B1" Guid="a9f217849-a3f4-4d31-89d6-10346248d7e1a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="220" ParameterSize="32" SDIExpected="0" SysLatencyWCLimit="2250" />
+  </A429Port>
+  <A429Port Name="pi429_B1_220_s2" Guid="ac4e4e7f0-4ee2-4503-bf72-506e5e679fb9a" Direction="Destination" SamplePeriod="500">
+    <RP Name="L220_2_BAS_BleedPress_IAMS_B1_s2" Guid="a625737a0-46ce-482f-8532-81c66bdc805ba" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="220" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="2250" />
+  </A429Port>
+  <A429Port Name="pi429_B1_220_s4" Guid="acd9ff2d1-d60c-4ebf-85ee-d9f43a9a249ba" Direction="Destination" SamplePeriod="500">
+    <RP Name="L220_4_BAS_BleedPress_IAMS_B1" Guid="aa36a2173-aba3-4d7b-8945-a90e804164f6a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="220" ParameterSize="32" SDIExpected="3" SysLatencyWCLimit="2250" />
+  </A429Port>
+  <A429Port Name="pi429_A1_304_s2" Guid="a63576208-e0e9-420e-867c-16f17110cd08a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L304_2_FTIS_Inhibit_from_IASC_A1" Guid="a7692f073-b0da-4812-9439-27bc623a8866a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="304" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="1250" />
+  </A429Port>
+  <A429Port Name="pi429_A1_304_s3" Guid="a4bdc0b2f-207d-4134-934c-67db6c602db2a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L304_3_FTIS_Inhibit_from_IASC_A1" Guid="a57735d3c-01ab-49dc-a8f7-d49858da00d0a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="304" ParameterSize="32" SDIExpected="2" SysLatencyWCLimit="1250" />
+  </A429Port>
+  <A429Port Name="pi429_A1_304_s4" Guid="a1d9cd571-b109-4dc6-bfa5-482cbe265b3ba" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L304_4_FTIS_Inhibit_from_IASC_A1" Guid="a2cfe3991-eea4-4caf-a3d2-116534e1831ca" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="304" ParameterSize="32" SDIExpected="3" SysLatencyWCLimit="1250" />
+  </A429Port>
+  <A429Port Name="pi429_B1_304_s1" Guid="ad6baa3ee-8007-4d9b-94c1-709e22a3bf43a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L304_1_FTIS_Inhibit_from_IASC_B1" Guid="a8f3b531c-5372-4dba-8f25-cb5cdfcf310ba" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="304" ParameterSize="32" SDIExpected="0" SysLatencyWCLimit="1250" />
+  </A429Port>
+  <A429Port Name="pi429_B1_304_s2" Guid="a7a5cea8d-1a01-4001-a0fb-7b2043d7c0c5a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L304_2_FTIS_Inhibit_from_IASC_B1_s2" Guid="a0520923c-1527-4c8d-9c3f-15bd5378b06ea" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="304" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="1250" />
+  </A429Port>
+  <A429Port Name="pi429_B1_304_s4" Guid="a22465b0f-b9cb-4b81-be19-a72c01067e19a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L304_4_FTIS_Inhibit_from_IASC_B1" Guid="aef3877aa-791d-44c1-aef6-dabb28fffcdea" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="304" ParameterSize="32" SDIExpected="3" SysLatencyWCLimit="1250" />
+  </A429Port>
+  <A429Port Name="pi429_A1_272_s3" Guid="a36686a0c-f3fc-4d08-b617-6f612de07426a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L272_3_Left_Starter_Command_On_A1" Guid="acbb50792-33c9-4ded-9110-f4bb66a1e3e3a" BitOffsetWithinMsg="28" DataFormatType="DIS" Label="272" LsbRes="-1" Multiplier="1" ParameterSize="1" SDIExpected="2" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_272_s4" Guid="a790c24a1-862a-4d95-9f4b-ce3f9e2866afa" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L272_4_Left_Starter_Command_On_A1" Guid="a520a8b58-6b68-4d08-958f-f19f21224a2fa" BitOffsetWithinMsg="28" DataFormatType="DIS" Label="272" LsbRes="-1" Multiplier="1" ParameterSize="1" SDIExpected="3" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_272_s3" Guid="ad8648779-105a-46f3-b82c-027ed1dc21ffa" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L272_3_Left_Starter_Command_On_B1" Guid="a47a0b426-b957-4673-887e-d648f63d898aa" BitOffsetWithinMsg="28" DataFormatType="DIS" Label="272" LsbRes="-1" Multiplier="1" ParameterSize="1" SDIExpected="0" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_272_s4" Guid="a7fbc3521-7f88-4101-ab28-e58b51818439a" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L272_4_Left_Starter_Command_On_B1" Guid="aef8bfece-5529-4b1d-bea1-63ad1cc9d5a1a" BitOffsetWithinMsg="28" DataFormatType="DIS" Label="272" LsbRes="-1" Multiplier="1" ParameterSize="1" SDIExpected="1" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_A1_271" Guid="a7d0f1ff2-f556-4caa-bc38-a5db5a6f42fda" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L271_1_Flight_Phase_B1" Guid="ae5f8713f-e76c-4f9d-9aa6-7b61b5a77e23a" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="271" ParameterSize="32" SDIExpected="2" SysLatencyWCLimit="1000" />
+  </A429Port>
+  <A429Port Name="pi429_B1_271" Guid="a72790338-e495-4b19-b141-eb24e700ac1ea" Direction="Destination" SamplePeriod="1000">
+    <RP Name="L271_2_Flight_Phase_A1" Guid="a7fae5c38-e8b2-4d28-a3e5-fde99147839aa" BitOffsetWithinMsg="-1" DataFormatType="OPAQUE" Label="271" ParameterSize="32" SDIExpected="1" SysLatencyWCLimit="1000" />
+  </A429Port>
+</HostedFunctionClass>

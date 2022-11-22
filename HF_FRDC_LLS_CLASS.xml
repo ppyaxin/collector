@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--The information in this document is GE AVIC Civil Avionics Systems Company 
+Limited ('AVIAGE SYSTEMS') proprietary information and is disclosed in 
+confidence. It is the property of AVIAGE SYSTEMS (and/or third parties) and 
+must not be used, disclosed to others or reproduced without the express written 
+consent of AVIAGE SYSTEMS. If consent is given for reproduction in whole or in 
+part, this notice must appear in any such reproduction in whole or in part. 
+
+This document contains China and/or US origin technical data under applicable 
+export control laws and regulations. This technical data can be used for civil 
+only end-use and must not be transferred to Syria, Iran, North Korea, Cuba or 
+Sudan or other US denied party listed entities. 
+
+ - - - - - - - - - - - - - - - - - - - - - - - -
+
+MODEL IDENTIFIER: MBD-->
+<HostedFunctionClass Name="HF_FRDC_LLS_CLASS" Guid="a1bbcaaad-c47a-4289-b0d6-c77ebeeac400a" XsdVersion="8.8" ATA="28xxxx">
+  <AnalogPort Name="poDISC_LLS_1" Guid="ae3193747-d061-49f2-98ca-81cabc909486a" Direction="Source" RefreshPeriod="5" RIUTemplate="40022" UDC="Confirmation period=1;Status inversion=1">
+    <AnalogDiscreteParameter Name="DISC_LLS_1" Guid="aea9eeb37-0649-4d44-b66f-a117706598c8a" PublishedLatency="0">
+      <DP Name="Status" Guid="a96a3e8e3-4516-4e54-a9d6-48b288bb766ca" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_LLS_2" Guid="ac26b8ab6-2377-4434-aafd-b045a37c6b85a" Direction="Source" RefreshPeriod="5" RIUTemplate="40022" UDC="Confirmation period=1;Status inversion=1">
+    <AnalogDiscreteParameter Name="DISC_LLS_2" Guid="a47c86c08-aa79-4338-9810-f802612a50e3a" PublishedLatency="0">
+      <DP Name="Status" Guid="a000744ff-2cb3-4223-8fa9-fd29ebfdfa89a" BitOffsetWithinDS="0" DataFormatType="DIS" ParameterSize="1" RIULabel="a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+</HostedFunctionClass>

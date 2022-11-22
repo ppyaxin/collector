@@ -80,10 +80,23 @@
 				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
 					<use xlink:href="#icon-dakai"></use>
 				</svg>
-				<span>OpenICD</span>
+				<span>instance</span>
 			</button>
+
 			<form id="openicd" method="post" enctype="multipart/form-data" style="display: none;">
 				<input id="new" type="file" name="file1" accept=".xml" onchange="sendicd(value)">
+			</form>
+
+			<button onclick="clickicdclassFile()"
+				style="width:70px;height: 70px;border-color: #eef0f2;position: relative;margin: 1px;margin-left: 0;">
+				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
+					<use xlink:href="#icon-dakai"></use>
+				</svg>
+				<span>class</span>
+			</button>
+
+			<form id="openclass" method="post" enctype="multipart/form-data" style="display: none;">
+				<input id="icdclass" type="file" name="file1" accept=".xml" onchange="sendicdclass(value)">
 			</form>
 		</div>
 		<div id="itTop" title="Initiated Test" style="overflow:auto;padding:20px;display:none;">
@@ -144,7 +157,9 @@
 				<div style="margin-bottom:20px">
 					<label for="username" style="width:195px;display: inline-block;" class="label-top">Block
 						Point</label>
-					<input id="username" class="easyui-validatebox textbox  tb" style="width:700px;height: 28px;line-height: 28px;" data-options="required:true,validType:'minLength[1]'">
+					<input id="username" class="easyui-validatebox textbox  tb"
+						style="width:700px;height: 28px;line-height: 28px;"
+						data-options="required:true,validType:'minLength[1]'">
 				</div>
 				<div style="margin-bottom:20px">
 					<input id="" class="easyui-textbox" name="subject" style="width:900px"
@@ -520,10 +535,10 @@
 
 	<!-- import icd message 从oms右侧进去 -->
 	<div id="w" class="easyui-window" title="Window Layout" data-options="iconCls:'icon-save',closed:true"
-		style="width:900px;height:600px;padding:5px;">
+		style="width:900px;height:700px;padding:5px;">
 		<div class="easyui-layout" data-options="fit:true">
-			<div data-options="region:'east',split:true" style="width:100%">
-				<ul id="icdlist" class="easyui-tree" data-options="collapsed:true"></ul>
+			<div data-options="region:'east',split:true" style="width:100%;height: 250px;">
+				<ul id="icdlist" class="easyui-tree" data-options="collapsed:true,checkbox:true"></ul>
 			</div>
 			<!-- <div data-options="region:'center'" style="padding:15px;width:100%;">
 				<div id="iimc" class="easyui-datalist" style="width:100%;" data-options="
@@ -533,11 +548,10 @@
 				">
 				</div>
 			</div> -->
-			<div data-options="region:'south'" style="text-align:center;height: 100px;">
-				<div id="iims" class="easyui-datalist" style="width:100%;" data-options="
-				">
+			<div data-options="region:'south'" style="text-align:center;height: 300px;">
+				<div id="iims" class="easyui-datalist" style="width:100%;height: 250px;margin-bottom: 5px;" data-options="	">
 				</div>
-				<a class="easyui-linkbutton" href="javascript:void(0)" onclick="javascript:alert('ok')"
+				<a class="easyui-linkbutton" href="javascript:void(0)" onclick="puticd()"
 					style="width:80px">Ok</a>
 				<a class="easyui-linkbutton" href="javascript:void(0)" onclick="javascript:alert('cancel')"
 					style="width:80px">Cancel</a>
@@ -1072,23 +1086,7 @@
 		}
 
 	}
-	//nameref树,tree是js对象数组
-	function mergeTree(tree, nameNode) {
 
-		if (nameNode.length == 0) {
-			return
-		}
-		//如果这一层已经这个节点值了
-		for (let i = 0; i < tree.length; i++) {
-			if (tree[i].text == nameNode[0]) {
-				mergeTree(tree[i].children, nameNode.slice(1))
-				return
-			}
-		}
-		tree.push({ text: nameNode[0], children: [] })
-		mergeTree(tree[tree.length - 1].children, nameNode.slice(1))
-		return
-	}
 	function getOmsMessage(OmsMessage, xml) {
 		if (OmsMessage.length > 10) {
 			getOmsMessageList(1, 10, OmsMessage, xml)
@@ -1110,7 +1108,28 @@
 	}
 
 
+	//nameref树,tree是js对象数组
+	function mergeTree(tree, nameNode) {
 
+		if (nameNode.length == 0) {
+			return
+		}
+		//如果这一层已经这个节点值了
+		for (let i = 0; i < tree.length; i++) {
+			if (tree[i].text == nameNode[0]) {
+				mergeTree(tree[i].children, nameNode.slice(1))
+				return
+			}
+		}
+		if(nameNode.length==2){
+			tree.push({ text: nameNode[0], children: [], state: "closed" })
+		}else{
+			tree.push({ text: nameNode[0], children: []})
+		}
+		
+		mergeTree(tree[tree.length - 1].children, nameNode.slice(1))
+		return
+	}
 	//分页加载一部分类别
 	function getFailureDataList(pageNumber, pageSize, failureData) {
 		//FailtureReportingfmd
