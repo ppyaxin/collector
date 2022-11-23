@@ -1,0 +1,64 @@
+[
+    {
+        "id": 1,
+        "text": "Start Page"
+    },
+    {
+        "id": 2,
+        "text": "ICD Information",
+        "children": [
+            {
+                "id": 11,
+                "text": "Member System Modeling Data"
+            },
+            {
+                "id": 11,
+                "text": "Data Load"
+            },
+            {
+                "id": 11,
+                "text": "OMS Communication Messages"
+            },
+            {
+                "id": 11,
+                "text": "Member System Status"
+            },
+            {
+                "id": 11,
+                "text": "Member System Modeling Data"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "text": "Fault Reporting",
+        "children": [
+            {
+                "id": 11,
+                "text": "Basic Info"
+            },
+            {
+                "id": 11,
+                "text": "Downstream Faults"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "text": "Failure Modeling Data"
+    },
+    {
+        "id": 3,
+        "text": "Initiated Test",
+        "children": [
+            {
+                "id": 11,
+                "text": "Initiated Basic Info"
+            },
+            {
+                "id": 11,
+                "text": "Interfering Initiated Test"
+            }
+        ]
+    }
+]

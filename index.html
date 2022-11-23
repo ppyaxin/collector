@@ -113,39 +113,13 @@
 	</div>
 	<!-- 左侧 -->
 	<div data-options="region:'west',title:'Navagation',split:true" style="width:300px;">
-		<ul id="tt" class="easyui-tree">
-			<li><span>Start Page</span></li>
-			<li>
-				<span>ICD Information</span>
-				<ul>
-					<li><span>Member System Modeling Data</span></li>
-					<li><span>Data Load</span></li>
-					<li><span>OMS Communication Messages</span></li>
-					<li><span>Member System Status</span></li>
-				</ul>
-			</li>
-			<li>
-				<span>Fault Reporting</span>
-				<ul>
-					<li><span>Basic Info</span></li>
-					<li><span>Downstream Faults</span></li>
-				</ul>
-			</li>
-			<li><span>Failure Modeling Data</span></li>
-			<li>
-				<span>Initiated Test</span>
-				<ul>
-					<li><span>Initiated Basic Info</span></li>
-					<li><span>Interfering Initiated Test</span></li>
-				</ul>
-			</li>
-		</ul>
+		<ul id="tt" class="easyui-tree" data-options="data:left_tt,method:'get',animate:true"></ul>
 	</div>
 	<!-- 中间 -->
 	<div data-options="region:'center',title:'Data Entry'" style="padding:1px;background:#eee;">
 		<!-- icd information -->
 		<div id="icdinfo" style="height:100%;width:100%;background-color: #E0ECFF;display:none">
-			<form method="post" style="padding:20px;height:100%;">
+			<form method="post" style="padding:20px">
 				<div style="margin-bottom:20px">
 					<input id="InstanceLoc" class="easyui-textbox" name="e" style="width:900px"
 						data-options="label:'ICD Instance File Location',labelWidth:200,readonly:true">
@@ -162,32 +136,37 @@
 						data-options="required:true,validType:'minLength[1]'">
 				</div>
 				<div style="margin-bottom:20px">
-					<input id="" class="easyui-textbox" name="subject" style="width:900px"
+					<input id="createtime" class="easyui-textbox" name="subject" style="width:900px"
 						data-options="label:'Data Produced',labelWidth:200,readonly:true">
 				</div>
 				<div style="margin-bottom:20px">
-					<input id="" class="easyui-textbox" name="subject" style="width:900px"
+					<input id="version" class="easyui-textbox" name="subject" style="width:900px"
 						data-options="label:'Schema Revison',labelWidth:200,readonly:true">
 				</div>
 			</form>
+			<div style="text-align: center;">
+				<a class="easyui-linkbutton" href="javascript:void(0)" onclick="icdsubmit()" style="width:100px">Submit</a>
+				<a class="easyui-linkbutton" href="javascript:void(0)" onclick="" style="width:100px">Cancel</a>
+			</div>
+
 		</div>
 		<!-- Member System Modeling Data -->
 		<div id="msmd" class="easyui-tabs " style="height:100%;width:100%;display: none;">
-			<div title="Basic Information" style="padding:20px;height:100%;">
+			<div title="Basic Information" style="padding:20px;height:90%;">
 				<form id="ff" method="post">
-					<div style="margin-bottom:20px">
+					<div style="margin-bottom:10px">
 						<input id="memName" class="easyui-textbox" name="e" style="width:800px"
 							data-options="label:'Member System Name',labelWidth:300">
 					</div>
-					<div style="margin-bottom:20px">
+					<div style="margin-bottom:10px">
 						<input id="msi" class="easyui-textbox" name="email" style="width:800px"
 							data-options="label:'Member System ID',labelWidth:300">
 					</div>
-					<div style="margin-bottom:20px">
+					<div style="margin-bottom:10px">
 						<input id="as" class="easyui-textbox" name="subject" style="width:800px"
 							data-options="label:'ATA System',labelWidth:300">
 					</div>
-					<div style="margin-bottom:20px">
+					<div style="margin-bottom:10px">
 						<select ID="Language" class="easyui-combobox" name="language" label="Language"
 							style="width:800px" data-options="label:'Protocal type',labelWidth:300,panelHeight:120">
 							<option value="ar">Arabic</option>
@@ -196,11 +175,11 @@
 							<option value="zh-cht">Chinese Traditional</option>
 						</select>
 					</div>
-					<div style="margin-bottom:20px">
+					<div style="margin-bottom:10px">
 						<input ID="msd" class="easyui-textbox" name="message" style="width: 800px;height:60px"
 							data-options="label:'Member System Description',labelWidth:300,multiline:true">
 					</div>
-					<div style="margin-bottom:20px">
+					<div style="margin-bottom:10px">
 						<span style="display:inline-block ;width:300px">Is Optional Equipment</span>
 						<input id="oe" class="easyui-radiobutton" name="1" value="Option Equipment"
 							label="Option Equipment" style="color: rgb(133,133,133);width: 15px;height: 15px;"
@@ -211,29 +190,29 @@
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Transmits Reports During Power Up</span>
-						<input id="trdpu" type="checkbox" name="accept">
+						<input id="trdpu" type="checkbox" >
 					</div>
 
 					<!-- functions -->
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Supports Fault Reporting</span>
-						<input id="accept" type="checkbox" name="accept" value="true">
+						<input id="supportFR" type="checkbox" >
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px"> Supports Initiated Test</span>
-						<input id="accept" type="checkbox" name="accept" value="true">
+						<input id="supportIT" type="checkbox">
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px"> Supports Configuration Reporting</span>
-						<input id="accept" type="checkbox" name="accept" value="true">
+						<input id="supportCR" type="checkbox">
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Supports Data Load</span>
-						<input id="accept" type="checkbox" name="accept" value="true">
+						<input id="supportDL" type="checkbox">
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Supports Fault History Retrieval</span>
-						<input id="accept" type="checkbox" name="accept" value="true">
+						<input id="supportFHR" type="checkbox"  >
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Type of Fault History Retrieval</span>
@@ -246,13 +225,17 @@
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Transmits Reports During Power Up</span>
-						<input id="accept" type="checkbox" name="accept" value="true">
+						<input id="transmitsRDRP" type="checkbox" >
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Supports Fault History Reset</span>
-						<input id="accept" type="checkbox" name="accept" value="true">
+						<input id="supportFHR" type="checkbox">
 					</div>
 				</form>
+				<div style="text-align: center;margin-bottom:20px">
+					<a class="easyui-linkbutton" href="javascript:void(0)" onclick="msmdsubmit()" style="width:100px">Submit</a>
+					<a class="easyui-linkbutton" href="javascript:void(0)" onclick="" style="width:100px">Cancel</a>
+				</div>
 			</div>
 			<div title="ARINC 429" style="overflow:auto;padding:2px;display:none;">
 
@@ -374,12 +357,22 @@
 		<div id="ttt">
 			<a href="#" class="icon-edit" onclick="$('#w').window('open')"></a>
 		</div>
+		<div id="mm" class="easyui-menu" style="width:120px;">
+			<div onclick="removeit()" data-options="iconCls:'icon-remove'">Remove</div>
+		</div>
 		<div id="OMSCommunicationMsg" class="easyui-layout" data-options="fit:true" style="height: 100%;width:100%">
 			<div data-options="region:'center',split:'true',title:'ICD Messages',tools:'#ttt'"
 				style="width: 300px;height: 100%;">
 				<div class="easyui-panel" data-options="fit:true">
 					<!-- <div data-options="region:'west'" style="width:100%"> -->
-					<ul id="omslist" class="easyui-tree" data-options="collapsed:true"></ul>
+					<ul id="omslist" class="easyui-tree" data-options="collapsed:true,onContextMenu: function(e,node){
+						e.preventDefault();
+						$(this).tree('select',node.target);
+						$('#mm').menu('show',{
+							left: e.pageX,
+							top: e.pageY
+						});
+					}"></ul>
 					<!-- </div> -->
 					<!-- <div id="rightOMS" data-options="region:'center'">
 						 每一行的信息 
@@ -549,17 +542,26 @@
 				</div>
 			</div> -->
 			<div data-options="region:'south'" style="text-align:center;height: 300px;">
-				<div id="iims" class="easyui-datalist" style="width:100%;height: 250px;margin-bottom: 5px;" data-options="	">
+				<div id="iims" class="easyui-datalist" style="width:100%;height: 250px;margin-bottom: 5px;"
+					data-options="	">
 				</div>
-				<a class="easyui-linkbutton" href="javascript:void(0)" onclick="puticd()"
-					style="width:80px">Ok</a>
-				<a class="easyui-linkbutton" href="javascript:void(0)" onclick="javascript:alert('cancel')"
+				<a class="easyui-linkbutton" href="javascript:void(0)" onclick="puticd()" style="width:80px">Ok</a>
+				<a class="easyui-linkbutton" href="javascript:void(0)" onclick="javascript: $('#w').window('close')"
 					style="width:80px">Cancel</a>
 			</div>
 		</div>
 	</div>
 </body>
 <script type="text/javascript">
+	let left_tt = [{
+		"id": 1,
+		"text": "Start Page"
+	}, {
+		"id": 2,
+		"text": "ICD Information",
+		
+	}]
+
 	function save() {
 		$.post("./writexml.php", function (result) {
 			//console.log(result)
@@ -583,7 +585,7 @@
 		$('#openxml').form({
 			url: "readxml.php",
 			success: function (data) {
-				//alert(data)
+				//alert(data)	
 				console.log(data)
 				readurl = data
 				xml = start(data)
@@ -1121,12 +1123,12 @@
 				return
 			}
 		}
-		if(nameNode.length==2){
+		if (nameNode.length == 2) {
 			tree.push({ text: nameNode[0], children: [], state: "closed" })
-		}else{
-			tree.push({ text: nameNode[0], children: []})
+		} else {
+			tree.push({ text: nameNode[0], children: [] })
 		}
-		
+
 		mergeTree(tree[tree.length - 1].children, nameNode.slice(1))
 		return
 	}
