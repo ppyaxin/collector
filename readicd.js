@@ -94,6 +94,7 @@ function makeVirtualDom(icd) {
     //console.log(A429portDom)
     // getA429portDom(A429portDom)
     let HostedFunction = icd.getElementsByTagName("HostedFunction")[0]
+    console.log(HostedFunction)
     let version = HostedFunction.getAttribute("XsdVersion")
     $("#version").textbox('setValue', version)
     let DP = icd.getElementsByTagName("DP")

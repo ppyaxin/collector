@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="readicd.js"></script>
+	<script type="text/javascript" src="failuremodeling.js"></script>
 	<style>
 		.icon {
 			width: 1.5em;
@@ -43,7 +44,7 @@
 	<div id="toptabs" data-options="region:'north',split:true" class="easyui-tabs" style="height:140px;">
 
 		<div id="hmTop" title="Home" style="padding-top: 10px; padding-left:10px;display:none;">
-			<button
+			<button onclick="javascript:$('#_easyui_tree_4').click()"
 				style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
 				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
 					<use xlink:href="#icon-chuangjianfuwu"></use>
@@ -113,7 +114,7 @@
 	</div>
 	<!-- 左侧 -->
 	<div data-options="region:'west',title:'Navagation',split:true" style="width:300px;">
-		<ul id="tt" class="easyui-tree" data-options="data:left_tt,method:'get',animate:true"></ul>
+		<ul id="tt" class="easyui-tree" data-options="data:left_tt,method:'get',url:'directory.json',animate:true"></ul>
 	</div>
 	<!-- 中间 -->
 	<div data-options="region:'center',title:'Data Entry'" style="padding:1px;background:#eee;">
@@ -145,7 +146,8 @@
 				</div>
 			</form>
 			<div style="text-align: center;">
-				<a class="easyui-linkbutton" href="javascript:void(0)" onclick="icdsubmit()" style="width:100px">Submit</a>
+				<a class="easyui-linkbutton" href="javascript:void(0)" onclick="icdsubmit()"
+					style="width:100px">Submit</a>
 				<a class="easyui-linkbutton" href="javascript:void(0)" onclick="" style="width:100px">Cancel</a>
 			</div>
 
@@ -190,13 +192,13 @@
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Transmits Reports During Power Up</span>
-						<input id="trdpu" type="checkbox" >
+						<input id="trdpu" type="checkbox">
 					</div>
 
 					<!-- functions -->
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Supports Fault Reporting</span>
-						<input id="supportFR" type="checkbox" >
+						<input id="supportFR" type="checkbox">
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px"> Supports Initiated Test</span>
@@ -212,7 +214,7 @@
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Supports Fault History Retrieval</span>
-						<input id="supportFHR" type="checkbox"  >
+						<input id="supportFHR" type="checkbox">
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Type of Fault History Retrieval</span>
@@ -225,7 +227,7 @@
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Transmits Reports During Power Up</span>
-						<input id="transmitsRDRP" type="checkbox" >
+						<input id="transmitsRDRP" type="checkbox">
 					</div>
 					<div style="margin-bottom:20px">
 						<span style="display:inline-block ;width:300px">Supports Fault History Reset</span>
@@ -233,7 +235,8 @@
 					</div>
 				</form>
 				<div style="text-align: center;margin-bottom:20px">
-					<a class="easyui-linkbutton" href="javascript:void(0)" onclick="msmdsubmit()" style="width:100px">Submit</a>
+					<a class="easyui-linkbutton" href="javascript:void(0)" onclick="msmdsubmit()"
+						style="width:100px">Submit</a>
 					<a class="easyui-linkbutton" href="javascript:void(0)" onclick="" style="width:100px">Cancel</a>
 				</div>
 			</div>
@@ -271,7 +274,6 @@
 				</div>
 			</form>
 		</div>
-
 		<!-- 左右两格的布局 -->
 		<!-- <div class="easyui-layout" data-options="fit:true" style="height: 100%;width:100%">
 				<div data-options="region:'center',split:'true',title:'Navagation'," style="width: 300px;height: 100%;">
@@ -282,7 +284,73 @@
 			</div> -->
 		<!-- Failure Modeling Data -->
 		<div id="FailureModelingData" class="easyui-layout" data-options="fit:true" style="height: 100%;width:100%">
-			<div data-options="region:'center',split:'true',title:'Navagation'," style="width: 300px;height: 100%;">
+			<div data-options="region:'center',split:'true'," class="easyui-tabs" style="width: 300px;height: 100%;">
+				<!-- 基础数据tab1 -->
+				<div title="Failure Modeling Data" style="padding:20px;display:none;">
+					<div style="margin-bottom:5px">
+						<input id="Name" class="easyui-textbox" name="e" style="width:500px"
+							data-options="label:'FIM Code',labelWidth:150">
+					</div>
+					<div style="margin-bottom:5px">
+						<input id="Type" class="easyui-textbox" name="e" style="width:500px"
+							data-options="label:'Failure Name',labelWidth:150">
+					</div>
+					<div style="margin-bottom:5px">
+						<label for="username" style="width:145px;display: inline-block;" class="label-top">Failure
+							Rate</label>
+						<input id="username" class="easyui-validatebox textbox  tb"
+							style="width:350px;height: 28px;line-height: 28px;"
+							data-options="required:true,validType:'minLength[1]'">
+					</div>
+					<div style="margin-bottom:5px">
+						<input id="Detect" class="easyui-textbox" name="e" style="width:500px"
+							data-options="label:'FMES Failure Identifier',labelWidth:150">
+					</div>
+					<div style="margin-bottom:5px">
+						<input id="Clear" class="easyui-textbox" name="e" style="width:500px"
+							data-options="label:'Failure Message',labelWidth:150">
+					</div>
+					<div style="margin-bottom:5px">
+						<input id="Clear" class="easyui-textbox" name="e" style="width:500px"
+							data-options="label:'Maintenance Text',labelWidth:150">
+					</div>
+					<div style="margin-bottom:5px">
+						<span style="display:inline-block ;width:300px"> Greater Than 2hrs</span>
+						<input id="supportCR" type="checkbox">
+					</div>
+					<div style="margin-bottom:5px">
+						<label for="username" style="width:145px;display: inline-block;" class="label-top">Maintenance
+							Time</label>
+						<input id="username" class="easyui-validatebox textbox  tb"
+							style="width:350px;height: 28px;line-height: 28px;"
+							data-options="required:true,validType:'minLength[1]'">
+					</div>
+				</div>
+				<!-- 可勾选列表tab2 -->
+				<div title="Storable Fight Phase" style="overflow:auto;padding:20px;display:none;">
+					<div style="margin-bottom:20px;">
+						<a href="#" class="easyui-linkbutton" onclick="collapseAll()">ALL</a>
+						<a href="#" class="easyui-linkbutton" onclick="expandAll()">None</a>
+					</div>
+					<div class="easyui-panel" style="padding:5px">
+						<ul id="fightPhase" class="easyui-tree"
+							data-options="data:fightPhase,animate:true,checkbox:true"></ul>
+					</div>
+				</div>
+				<!-- tab3 -->
+				<div  title="Fault Reports List" style="overflow:auto;padding:5px;display:none;">
+                    <div class="easyui-layout" style="width: 100%;height:100%">
+					<div data-options="region:'west'" style="width:300px;height: 100%;">
+
+					</div>
+					<div data-options="region:'center'" style="width:200px;height: 100%;">
+						<div id="frms" class="easyui-datalist" style="width:100%;height:100%" data-options="checkbox: true,selectOnCheck: false,
+						onBeforeSelect: function(){return false;}
+						">
+							</div>
+					</div>
+				</div>
+				</div>
 			</div>
 			<div data-options="region:'west',split:'true',title:'Navagation'" style="width: 400px;height: 100%;">
 				<div id="ppfmd" class="easyui-pagination" style="background:#efefef;border:1px solid #ccc;">
@@ -346,7 +414,6 @@
 			<div data-options="region:'west',split:'true'" style="width: 400px;height: 100%;position: relative;">
 				<div id="pp" class="easyui-pagination" style="background:#efefef;border:1px solid #ccc;">
 				</div>
-
 				<div id="FaultReporting" class="easyui-panel" style="height: 430px;width:100%">
 
 				</div>
@@ -557,9 +624,9 @@
 		"id": 1,
 		"text": "Start Page"
 	}, {
-		"id": 2,
+		"id": "test",
 		"text": "ICD Information",
-		
+
 	}]
 
 	function save() {
@@ -595,14 +662,11 @@
 	}
 
 	let fightPhase = [{
-		"id": 1,
 		"text": "Power-On"
 	}, {
-		"id": 2,
 		"text": "Engine Start"
 	},
 	{
-		"id": 3,
 		"text": "Taxi Out"
 	}, {
 		"id": 4,
@@ -723,9 +787,9 @@
 				let InitiatedTestData = FaultReporting[0].getElementsByTagName("InitiatedTestData")
 				let FlightDeckEffectData = xml.getElementsByTagName("FlightDeckEffectData")
 				let FaultReportingLabel = xml.getElementsByTagName("FaultReportingLabel")
+				makeFaultReportingList(FaultReportingData)
 				getMemberSystemModelingData(MemberSystemModelingData[0])
 				getFaultReporting(FaultReportingData)
-
 				getARINC615OADLFData(xml)
 				getFailureData(FailureData)
 				getOmsMessage(OmsMessage, xml)
@@ -733,7 +797,7 @@
 				getInitiatedTest(InitiatedTestData)
 				getFlightDeckEffectData(FlightDeckEffectData)
 				getFaultReportingLabel(FaultReportingLabel)
-
+				getReadDP(xml)
 				return xml
 			}
 		})
@@ -1132,43 +1196,7 @@
 		mergeTree(tree[tree.length - 1].children, nameNode.slice(1))
 		return
 	}
-	//分页加载一部分类别
-	function getFailureDataList(pageNumber, pageSize, failureData) {
-		//FailtureReportingfmd
-		//清空之前的后代元素
-		$("#FailtureReportingfmd").empty()
-		let len = failureData.length
-		let start = (pageNumber - 1) * pageSize
-		let end = start + pageSize
-		//console.log(pageNumber, pageSize, start, end)
-		for (let i = start; i < end; i++) {
-			let test = failureData[i].attributes[4].value
-			let FailureMessage = failureData[i].attributes[8].value
-			//let DownstreamFaultsLength = FaultReportingData[i].getElementsByTagName("DownstreamFaults").length
-			let a = $("<a href=\"#\" class=\"easyui-linkbutton l-btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").html(test +
-				'</br>' + FailureMessage)
-			$(a).click(function () {
-				console.log(failureData[i].attributes)
-				let temp = failureData[i].attributes
 
-			})
-			$("#FailtureReportingfmd").append(a)
-		}
-	}
-	function getFailureData(failureData) {
-		getFailureDataList(1, 10, failureData)
-		let len = failureData.length
-		$('#ppfmd').pagination({
-			layout: ['list', 'sep', 'first', 'prev', 'sep', 'manual', 'sep', 'next', 'last', 'sep'],
-			beforePageText: 'Page',
-			afterPageText: 'of {pages}',
-			total: len,
-			pageList: [10, 20, 50, 100],
-			onSelectPage: function (pageNumber, pageSize) {
-				getFailureDataList(pageNumber, pageSize, failureData, FlightDeckEffectData)
-			}
-		});
-	}
 
 	//分页加载一部分列表
 	function getFaultReportingList(pageNumber, pageSize, FaultReportingData) {
