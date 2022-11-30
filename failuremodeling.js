@@ -1,9 +1,9 @@
 //readmsd get dp
 let dps = {}
-let faultRepoetnameList=[]
+let faultRepoetnameList = []
+let faultRep = {}
 function getReadDP(xml) {
     let dp = xml.getElementsByTagName("DP")
-   // console.log(dp)
     for (let i = 0; i < dp.length; i++) {
         let Id = dp[i].getAttribute("Id")
         let Name = dp[i].getAttribute("Name")
@@ -16,12 +16,10 @@ function getReadDP(xml) {
 function getFailureDataList(pageNumber, pageSize, failureData) {
     //FailtureReportingfmd
     //清空之前的后代元素
-    //console.log(failureData)
     $("#FailtureReportingfmd").empty()
     let len = failureData.length
     let start = (pageNumber - 1) * pageSize
     let end = start + pageSize
-    //console.log(pageNumber, pageSize, start, end)
     for (let i = start; i < end; i++) {
         let test = failureData[i].attributes[4].value
         let FailureMessage = failureData[i].attributes[8].value
@@ -29,14 +27,55 @@ function getFailureDataList(pageNumber, pageSize, failureData) {
         let a = $("<a href=\"#\" class=\"easyui-linkbutton l-btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").html(test +
             '</br>' + FailureMessage)
         $(a).click(function () {
-            console.log(failureData[i].attributes)
-            let temp = failureData[i].attributes
 
+            let faultrep = failureData[i].getElementsByTagName("FaultReporting")
+            let arr = []
+            //右侧unchecked
+            for (let j = 0; j < faultRepoetnameList.length; j++) {
+                faultRepoetnameList[j].checked = false
+            }
+            for (let j = 0; j < faultrep.length; j++) {
+                let Confidences = faultrep[j].getAttribute("Confidences")
+                let id = faultrep[j].getAttribute("Id")
+                let Name = faultRep[id]
+                arr.push({ "Confidences": Confidences, "Name": Name })
+                for (let k = 0; k < faultRepoetnameList.length; k++) {
+                    if (faultRepoetnameList[k].text == Name) {
+                        faultRepoetnameList[k].checked = true
+
+                    }
+                }
+            }
+            $("#activeFaultRep").datagrid({ data: arr })
+
+            $("#frms").datalist({ data: faultRepoetnameList })
+            $("#frms").datalist({
+                onCheck: function (node, text) {
+                    text = text.text
+                    arr.push({ "Confidences": "1", "Name": text })
+                    $("#activeFaultRep").datagrid({ data: arr })
+                },
+                onUncheck: function (node, data) {
+                    let res = deleteArr(arr, data)
+                    arr = res
+                    $("#activeFaultRep").datagrid({ data: res })
+                }
+            })
         })
         $("#FailtureReportingfmd").append(a)
     }
 }
 
+function deleteArr(arr, data) {
+    let text = data.text
+    let res = []
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].Name != text) {
+            res.push(arr[i])
+        }
+    }
+    return res
+}
 
 function getFailureData(failureData) {
     getFailureDataList(1, 10, failureData)
@@ -53,14 +92,13 @@ function getFailureData(failureData) {
     });
 }
 
-function makeFaultReportingList(FaultReportingData){
-  console.log(FaultReportingData)
-  for(let i=0;i<FaultReportingData.length;i++){
-    let FaultReportName=FaultReportingData[i].getAttribute("FaultReportName")
-    console.log(FaultReportName)
-    faultRepoetnameList.push({text:FaultReportName})
-
-  }
-	$("#frms").datalist({ data: faultRepoetnameList })
+function makeFaultReportingList(FaultReportingData) {
+    for (let i = 0; i < FaultReportingData.length; i++) {
+        let FaultReportName = FaultReportingData[i].getAttribute("FaultReportName")
+        let FaultReportId = FaultReportingData[i].getAttribute("Id")
+        faultRepoetnameList.push({ text: FaultReportName, checked: false })
+        faultRep[FaultReportId] = FaultReportName
+    }
+    $("#frms").datalist({ data: faultRepoetnameList })
 }
 

@@ -288,40 +288,40 @@
 				<!-- 基础数据tab1 -->
 				<div title="Failure Modeling Data" style="padding:20px;display:none;">
 					<div style="margin-bottom:5px">
-						<input id="Name" class="easyui-textbox" name="e" style="width:500px"
+						<input id="" class="easyui-textbox" name="e" style="width:500px"
 							data-options="label:'FIM Code',labelWidth:150">
 					</div>
 					<div style="margin-bottom:5px">
-						<input id="Type" class="easyui-textbox" name="e" style="width:500px"
+						<input id="" class="easyui-textbox" name="e" style="width:500px"
 							data-options="label:'Failure Name',labelWidth:150">
 					</div>
 					<div style="margin-bottom:5px">
 						<label for="username" style="width:145px;display: inline-block;" class="label-top">Failure
 							Rate</label>
-						<input id="username" class="easyui-validatebox textbox  tb"
+						<input id="" class="easyui-validatebox textbox  tb"
 							style="width:350px;height: 28px;line-height: 28px;"
 							data-options="required:true,validType:'minLength[1]'">
 					</div>
 					<div style="margin-bottom:5px">
-						<input id="Detect" class="easyui-textbox" name="e" style="width:500px"
+						<input id="" class="easyui-textbox" name="e" style="width:500px"
 							data-options="label:'FMES Failure Identifier',labelWidth:150">
 					</div>
 					<div style="margin-bottom:5px">
-						<input id="Clear" class="easyui-textbox" name="e" style="width:500px"
+						<input id="" class="easyui-textbox" name="e" style="width:500px"
 							data-options="label:'Failure Message',labelWidth:150">
 					</div>
 					<div style="margin-bottom:5px">
-						<input id="Clear" class="easyui-textbox" name="e" style="width:500px"
+						<input id="" class="easyui-textbox" name="e" style="width:500px"
 							data-options="label:'Maintenance Text',labelWidth:150">
 					</div>
 					<div style="margin-bottom:5px">
 						<span style="display:inline-block ;width:300px"> Greater Than 2hrs</span>
-						<input id="supportCR" type="checkbox">
+						<input id="" type="checkbox">
 					</div>
 					<div style="margin-bottom:5px">
 						<label for="username" style="width:145px;display: inline-block;" class="label-top">Maintenance
 							Time</label>
-						<input id="username" class="easyui-validatebox textbox  tb"
+						<input id="" class="easyui-validatebox textbox  tb"
 							style="width:350px;height: 28px;line-height: 28px;"
 							data-options="required:true,validType:'minLength[1]'">
 					</div>
@@ -340,14 +340,22 @@
 				<!-- tab3 -->
 				<div  title="Fault Reports List" style="overflow:auto;padding:5px;display:none;">
                     <div class="easyui-layout" style="width: 100%;height:100%">
-					<div data-options="region:'west'" style="width:300px;height: 100%;">
-
+					<div data-options="region:'west'" style="width:400px;height: 100%;">
+						<table id="activeFaultRep" class="easyui-datagrid"
+						data-options="singleSelect:true,collapsible:true,multiSort:true">
+						<thead>
+							<tr>
+								<th data-options="field:'Name',width:250,align:'center'">Name</th>
+								<th data-options="field:'Confidences',width:50,align:'center'">Confidences</th>
+							</tr>
+						</thead>
+					</table>
 					</div>
-					<div data-options="region:'center'" style="width:200px;height: 100%;">
+					<div data-options="region:'center'" style="width:150px;height: 100%;">
 						<div id="frms" class="easyui-datalist" style="width:100%;height:100%" data-options="checkbox: true,selectOnCheck: false,
 						onBeforeSelect: function(){return false;}
 						">
-							</div>
+					   </div>
 					</div>
 				</div>
 				</div>
@@ -759,7 +767,7 @@
 				document.getElementById("initiatedTest").style.display = "block"
 				document.getElementById("itRight1").style.display = "none"
 				document.getElementById("itRight2").style.display = "block"
-
+                                                                           
 			} else {
 				document.getElementById("initiatedTest").style.display = "none"
 			}
