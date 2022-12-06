@@ -9,6 +9,7 @@ function getReadDP(xml) {
         let Name = dp[i].getAttribute("Name")
         let NameDef = dp[i].getAttribute("NameDef")
         let IdDef = dp[i].getAttribute("IdDef")
+        let DataFormat=dp[i].getAttribute("DataFormat")
     }
 }
 
@@ -99,6 +100,8 @@ function makeFaultReportingList(FaultReportingData) {
         faultRepoetnameList.push({ text: FaultReportName, checked: false })
         faultRep[FaultReportId] = FaultReportName
     }
+    $("#pcdf").datalist({ data: faultRepoetnameList })
     $("#frms").datalist({ data: faultRepoetnameList })
-}
+    console.log("faultRepoetnameList",faultRepoetnameList)
 
+}

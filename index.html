@@ -11,6 +11,7 @@
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="readicd.js"></script>
 	<script type="text/javascript" src="failuremodeling.js"></script>
+	<script type="text/javascript" src="msdchooseIcd.js"></script>
 	<style>
 		.icon {
 			width: 1.5em;
@@ -41,11 +42,11 @@
 <body class="easyui-layout">
 
 	<!-- 上面 -->
-	<div id="toptabs" data-options="region:'north',split:true" class="easyui-tabs" style="height:140px;">
+	<div id="toptabs" data-options="region:'north',split:true" class="easyui-tabs" style="height:120px;">
 
-		<div id="hmTop" title="Home" style="padding-top: 10px; padding-left:10px;display:none;">
-			<button onclick="javascript:$('#_easyui_tree_4').click()"
-				style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
+		<div id="hmTop" title="Home" style="padding-top: 5px; padding-left:10px;display:none;">
+			<button onclick="javascript:$('#_easyui_tree_49').click()"
+				style="width: 60px;height: 60px;border-color: #eef0f2;position: relative;margin: 5px;margin-left: 0;">
 				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
 					<use xlink:href="#icon-chuangjianfuwu"></use>
 				</svg>
@@ -54,7 +55,7 @@
 
 			<!-- <a href="writexml.php">下载a.jpg</a> -->
 			<button onclick="clickFile()"
-				style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
+				style="width: 60px;height: 60px;border-color: #eef0f2;position: relative;margin: 5px;margin-left: 0;">
 				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
 					<use xlink:href="#icon-dakai"></use>
 				</svg>
@@ -64,7 +65,7 @@
 				<input id="up" type="file" name="file1" accept=".xml" onchange="send(value)">
 			</form>
 			<button onclick="save()"
-				style="width: 60px;height: 70px;border-color: #eef0f2;position: relative;margin: 10px;margin-left: 0;">
+				style="width: 60px;height: 60px;border-color: #eef0f2;position: relative;margin: 5px;margin-left: 0;">
 				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
 					<use xlink:href="#icon-lingcunwei"></use>
 				</svg>
@@ -254,21 +255,21 @@
 		<!-- Data Load -->
 		<div id="dl" style="height:100%;width:100%;background-color: #E0ECFF;display:none">
 			<form method="post" style="padding:20px;height:100%;">
-				<div style="margin-bottom:20px">
+				<div style="margin-bottom:5px">
 					<input id="ProtocolType" class="easyui-textbox" name="e" style="width:900px"
 						data-options="label:'OADLF Protocal Type',labelWidth:200,readonly:true">
 				</div>
-				<div style="margin-bottom:20px">
+				<div style="margin-bottom:5px">
 					<input id="resetTime" class="easyui-textbox" name="email" style="width:900px;"
 						data-options="label:'Reset Time',labelWidth:200">
 				</div>
-				<div style="margin-bottom:20px">
+				<div style="margin-bottom:5px">
 					<input id="LoadConditionText" class="easyui-textbox" name="subject"
 						style="width:900px;word-wrap:break-word;height: 50px;"
 						data-options="label:'Load Conditional Text',labelWidth:200,multiline:true">
 				</div>
 
-				<div style="margin-bottom:20px">
+				<div style="margin-bottom:5px">
 					<input id="LoadAttachedDiscrete" class="easyui-textbox" name="subject" style="width:900px"
 						data-options="label:'Load Attached Discrete',labelWidth:200,readonly:true">
 				</div>
@@ -338,26 +339,26 @@
 					</div>
 				</div>
 				<!-- tab3 -->
-				<div  title="Fault Reports List" style="overflow:auto;padding:5px;display:none;">
-                    <div class="easyui-layout" style="width: 100%;height:100%">
-					<div data-options="region:'west'" style="width:400px;height: 100%;">
-						<table id="activeFaultRep" class="easyui-datagrid"
-						data-options="singleSelect:true,collapsible:true,multiSort:true">
-						<thead>
-							<tr>
-								<th data-options="field:'Name',width:250,align:'center'">Name</th>
-								<th data-options="field:'Confidences',width:50,align:'center'">Confidences</th>
-							</tr>
-						</thead>
-					</table>
-					</div>
-					<div data-options="region:'center'" style="width:150px;height: 100%;">
-						<div id="frms" class="easyui-datalist" style="width:100%;height:100%" data-options="checkbox: true,selectOnCheck: false,
+				<div title="Fault Reports List" style="overflow:auto;padding:5px;display:none;">
+					<div class="easyui-layout" style="width: 100%;height:100%">
+						<div data-options="region:'west'" style="width:300px;height: 100%;">
+							<table id="activeFaultRep" class="easyui-datagrid"
+								data-options="singleSelect:true,collapsible:true,multiSort:true">
+								<thead>
+									<tr>
+										<th data-options="field:'Name',width:220,align:'center'">Name</th>
+										<th data-options="field:'Confidences',width:80,align:'center'">Confidences</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div data-options="region:'center'" style="width:250px;height: 100%;">
+							<div id="frms" class="easyui-datalist" style="width:100%;height:100%" data-options="checkbox: true,selectOnCheck: false,
 						onBeforeSelect: function(){return false;}
 						">
-					   </div>
+							</div>
+						</div>
 					</div>
-				</div>
 				</div>
 			</div>
 			<div data-options="region:'west',split:'true',title:'Navagation'" style="width: 400px;height: 100%;">
@@ -371,51 +372,64 @@
 		<div id="fualtReport" class="easyui-layout" data-options="fit:true" class="easyui-tabs"
 			style="height: 100%;width:100%">
 			<!-- 右侧 -->
-			<div data-options="region:'center',split:'true'," class="easyui-tabs" style="width: 300px;height: 100%;">
-				<!-- 基础数据tab1 -->
-				<div title="Basic Data" style="padding:20px;display:none;">
-					<div style="margin-bottom:20px">
-						<input id="Name" class="easyui-textbox" name="e" style="width:700px"
-							data-options="label:'Fault Report Name',labelWidth:300">
+			<div data-options="region:'center',split:'true'," style="width: 300px;height: 100%;">
+				<div id="frRight1" class="easyui-tabs"  style="width:100%;height:100%" >
+					<!-- 基础数据tab1 -->
+					<div title="Basic Data" style="padding:20px;display:none;">
+						<div style="margin-bottom:5px">
+							<input id="Name" class="easyui-textbox" name="e" style="width:700px"
+								data-options="label:'Fault Report Name',labelWidth:300">
+						</div>
+						<div style="margin-bottom:5px">
+							<input id="Type" class="easyui-textbox" name="e" style="width:700px"
+								data-options="label:'Fault Report Type',labelWidth:300">
+						</div>
+						<div style="margin-bottom:5px">
+							<input id="Delay" class="easyui-textbox" name="e" style="width:700px"
+								data-options="label:'Fault Report Delay',labelWidth:300">
+						</div>
+						<div style="margin-bottom:5px">
+							<input id="Detect" class="easyui-textbox" name="e" style="width:700px"
+								data-options="label:'Time Delay(Detect)',labelWidth:300">
+							<span>Seconds</span>
+						</div>
+						<div style="margin-bottom:5px">
+							<input id="Clear" class="easyui-textbox" name="e" style="width:700px"
+								data-options="label:'Time Delay(Clear)',labelWidth:300">
+							<span>Seconds</span>
+						</div>
 					</div>
-					<div style="margin-bottom:20px">
-						<input id="Type" class="easyui-textbox" name="e" style="width:700px"
-							data-options="label:'Fault Report Type',labelWidth:300">
+					<!-- 可勾选列表tab2 -->
+					<div title="Storable Fight Phase" style="overflow:auto;padding:20px;display:none;">
+						<div style="margin-bottom:20px;">
+							<a href="#" class="easyui-linkbutton" onclick="collapseAll()">ALL</a>
+							<a href="#" class="easyui-linkbutton" onclick="expandAll()">None</a>
+						</div>
+						<div class="easyui-panel" style="padding:5px">
+							<ul id="fightPhase" class="easyui-tree"
+								data-options="data:fightPhase,animate:true,checkbox:true"></ul>
+						</div>
 					</div>
-					<div style="margin-bottom:20px">
-						<input id="Delay" class="easyui-textbox" name="e" style="width:700px"
-							data-options="label:'Fault Report Delay',labelWidth:300">
-					</div>
-					<div style="margin-bottom:20px">
-						<input id="Detect" class="easyui-textbox" name="e" style="width:700px"
-							data-options="label:'Time Delay(Detect)',labelWidth:300">
-						<span>Seconds</span>
-					</div>
-					<div style="margin-bottom:20px">
-						<input id="Clear" class="easyui-textbox" name="e" style="width:700px"
-							data-options="label:'Time Delay(Clear)',labelWidth:300">
-						<span>Seconds</span>
-					</div>
-				</div>
-				<!-- 可勾选列表tab2 -->
-				<div title="Storable Fight Phase" style="overflow:auto;padding:20px;display:none;">
-					<div style="margin-bottom:20px;">
-						<a href="#" class="easyui-linkbutton" onclick="collapseAll()">ALL</a>
-						<a href="#" class="easyui-linkbutton" onclick="expandAll()">None</a>
-					</div>
-					<div class="easyui-panel" style="padding:5px">
-						<ul id="fightPhase" class="easyui-tree"
-							data-options="data:fightPhase,animate:true,checkbox:true"></ul>
-					</div>
-				</div>
-				<!-- tab3 -->
-				<div title="Fight Deck Effect" style="overflow:auto;padding:20px;display:none;">
-					<div id="fde" class="easyui-datalist" style="width:100%;height:100%" data-options="
+					<!-- tab3 -->
+					<div title="Fight Deck Effect" style="overflow:auto;padding:20px;display:none;">
+						<div id="fde" class="easyui-datalist" style="width:100%;height:100%" data-options="
 					checkbox: true,
 					selectOnCheck: false,
 					onBeforeSelect: function(){return false;}
 					">
+						</div>
 					</div>
+				</div>
+
+				<div id="frRight2" style="width:100%;height:100%" >
+					<!-- tab1 -->
+					<div class="easyui-panel" title="Please Config The DownstreamFaults">
+					<div id="pcdf" class="easyui-datalist"  data-options="
+						checkbox: true,
+						selectOnCheck: false,
+						onBeforeSelect: function(){return false;}
+						">
+					</div></div>
 				</div>
 			</div>
 			<!-- 左侧 -->
@@ -520,39 +534,39 @@
 				<div id="itRight1" class="easyui-tabs">
 					<!-- 基础数据tab1 -->
 					<div title="Basic Data" style="padding:20px;display:none;">
-						<div style="margin-bottom:20px">
+						<div style="margin-bottom:5px">
 							<input id="tm" class="easyui-textbox" name="e" style="width:500px"
 								data-options="label:'Test Name',labelWidth:180">
 						</div>
-						<div style="margin-bottom:20px">
+						<div style="margin-bottom:5px">
 							<input id="tic" class="easyui-textbox" name="e" style="width:500px"
 								data-options="label:'Test Identification Code',labelWidth:180">
 						</div>
-						<div style="margin-bottom:20px">
+						<div style="margin-bottom:5px">
 							<input id="tst" class="easyui-textbox" name="e" style="width:500px"
 								data-options="label:'Test Type',labelWidth:180">
 						</div>
-						<div style="margin-bottom:20px">
+						<div style="margin-bottom:5px">
 							<input id="tdt" class="easyui-textbox" name="e" style="width:500px"
 								data-options="label:'Test Duration Time',labelWidth:180">
 							<span>Minutes</span>
 						</div>
-						<div style="margin-bottom:20px">
+						<div style="margin-bottom:5px">
 							<span style="display:inline-block ;width:170px"> Test Is Abortable</span>
 							<input id="tia" type="checkbox" name="accept" value="true">
 							<span>True</span>
 						</div>
-						<div style="margin-bottom:20px">
+						<div style="margin-bottom:5px">
 							<span style="display:inline-block ;width:170px"> Able To Test Bit Applies</span>
 							<input id="atba" type="checkbox" name="accept" value="true">
 							<span>Enable</span>
 						</div>
-						<div style="margin-bottom:20px">
+						<div style="margin-bottom:5px">
 							<span style="display:inline-block ;width:170px"> Is Interactive Test</span>
 							<input id="iit" type="checkbox" name="accept" value="true">
 							<span>Enable</span>
 						</div>
-						<div style="margin-bottom:20px">
+						<div style="margin-bottom:5px">
 							<span style="display:inline-block ;width:170px">Pass/Fail Detection Method</span>
 							<input id="auto" class="easyui-radiobutton" name="4" value="Automatic" label="Automatic"
 								style="color: rgb(133,133,133);width: 15px;height: 15px;"
@@ -668,6 +682,19 @@
 		})
 		$('#openxml').submit()
 	}
+    
+	function showTree(){
+		document.getElementById("_easyui_tree_54").style.display = "none"
+		document.getElementById("_easyui_tree_57").style.display = "none"
+		document.getElementById("_easyui_tree_58").style.display = "none"	
+		document.getElementById("_easyui_tree_51").style.display = "none"
+		document.getElementById("_easyui_tree_52").style.display = "none"	
+		document.getElementById("_easyui_tree_53").style.display = "none"
+		document.getElementById("_easyui_tree_55").style.display = "none"
+		document.getElementById("_easyui_tree_59").style.display = "none"
+
+		document.getElementById("_easyui_tree_60").style.display = "none"
+	}
 
 	let fightPhase = [{
 		"text": "Power-On"
@@ -723,6 +750,7 @@
 			if (node.text == "ICD Information") {
 				document.getElementById("icdinfo").style.display = "block"
 				$("#toptabs").tabs('select', "Edit")
+			    showTree()
 			} else {
 				document.getElementById("icdinfo").style.display = "none"
 			}
@@ -733,10 +761,17 @@
 			}
 			if (node.text == "Fault Reporting") {
 				document.getElementById("fualtReport").style.display = "block"
+				document.getElementById("frRight1").style.display = "block"
+				document.getElementById("frRight2").style.display = "none"
 			} else if (node.text == "Basic Info") {
 				document.getElementById("fualtReport").style.display = "block"
-			}
-			else {
+				document.getElementById("frRight1").style.display = "block"
+				document.getElementById("frRight2").style.display = "none"
+			}else if(node.text == "Downstream Faults") {
+				document.getElementById("fualtReport").style.display = "block"
+				document.getElementById("frRight2").style.display = "block"
+				document.getElementById("frRight1").style.display = "none"
+			}else{
 				document.getElementById("fualtReport").style.display = "none"
 			}
 			if (node.text == "Failure Modeling Data") {
@@ -757,7 +792,6 @@
 			if (node.text == "Initiated Basic Info") {
 				document.getElementById("initiatedTest").style.display = "block"
 				document.getElementById("itRight1").style.display = "block"
-				console.log("document.getElementById")
 				document.getElementById("itRight2").style.display = "none"
 			} else if (node.text == "Initiated Test") {
 				document.getElementById("initiatedTest").style.display = "block"
@@ -767,7 +801,7 @@
 				document.getElementById("initiatedTest").style.display = "block"
 				document.getElementById("itRight1").style.display = "none"
 				document.getElementById("itRight2").style.display = "block"
-                                                                           
+
 			} else {
 				document.getElementById("initiatedTest").style.display = "none"
 			}
@@ -877,9 +911,7 @@
 
 		for (let i = start; i < end; i++) {
 			let name = InitiatedTest[i].attributes[1].value
-
 			let InterferingTests = InitiatedTest[i].getElementsByTagName("InterferingTests")
-
 			let FailingFaults = InitiatedTest[i].getElementsByTagName("FailingFaults")
 			//console.log("test", InterferingTests)
 			//let DownstreamFaultsLength = FaultReportingData[i].getElementsByTagName("DownstreamFaults").length
