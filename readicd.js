@@ -114,49 +114,57 @@ function getA429portDom(A429portDom) {
     }
 }
 
-let dptree = []
-let checkedNode = []
+
+let omschecked = []
+//将上树下列表展现在icd页面(点小箭头可以插入icd的页面)
 function getDPDom(DP) {
-    //console.log(dp)
+    let dptree = []
     for (let i = 0; i < DP.length; i++) {
         let path = DP[i].getAttribute("NameDef")
         let nodes = path.split(".")
+        //这个方法可以考虑建立树形结构的时候加上是否被选中的属性
+        //建立树的时候就进行对比
         mergeTreeAndLeaf(dptree, nodes, path)
     }
     console.log(dptree)
+    //这里需要被选中
+    
+
     $("#icdlist").tree({ data: dptree })
     $("#icdlist").tree({
         onCheck: function (node, checked) {
-            // console.log("node", node, checked)
-            // if(checked){
-            //     checkedNode=node
-            // }
             let nodes = $('#icdlist').tree('getChecked');
             let leafs = []
+            console.log("nodeschecked",nodes)
+            //和之前已经有的数据进行合并(错误逻辑)
+            //将之前的树展示在上面，然后直接获得checked的节点
+            let checkedNode = omsNowTree
             for (let i = 0; i < nodes.length; i++) {
                 if (nodes[i].children.length == 0) {
                     leafs.push({ text: nodes[i].path })
                 }
                 //组成新的子树
-                mergeTree(checkedNode, nodes[i].path.split("."))
+                mergeTreeAndLeaf(checkedNode, nodes[i].path.split("."),nodes[i].path)
             }
-            // console.log(leafs)
+            omschecked = checkedNode
             $("#iims").datalist({ data: leafs })
-
-
         }
     })
 }
 
+
+
 function puticd() {
-    console.log("hhhhhhhhh", checkedNode)
+    console.log("hhhhhhhhh", omschecked)
     $('#w').window('close')
     //let data=[]
     // data.push(checkedNode)
-    $("#omslist").tree({ data: checkedNode })
+    //omsNowTree=tree
+    $("#omslist").tree({ data: omschecked })
+
 }
 
-//nameref树,tree是js对象数组
+//nameref树,tree是js对象数组，这个树节点要多一个path，可以用作页面下的属性展示
 function mergeTreeAndLeaf(tree, nameNode, path) {
     if (nameNode.length == 0) {
         return
@@ -198,13 +206,13 @@ function icdsubmit() {
     }]
     $("#tt").tree({ data: left_tt })
 }
-
+//左侧树一些不相干
 function msmdsubmit() {
     console.log("ppppppppppppp")
     let a = document.getElementById("supportFR").checked
     console.log(a)
-    if(a){
-        left_tt[1].children.push({"text": "OMS Communication Messages"})
+    if (a) {
+        left_tt[1].children.push({ "text": "OMS Communication Messages" })
         $("#tt").tree({ data: left_tt })
     }
 }

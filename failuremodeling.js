@@ -2,6 +2,7 @@
 let dps = {}
 let faultRepoetnameList = []
 let faultRep = {}
+let DataFormatLabel0 = []
 function getReadDP(xml) {
     let dp = xml.getElementsByTagName("DP")
     for (let i = 0; i < dp.length; i++) {
@@ -9,8 +10,17 @@ function getReadDP(xml) {
         let Name = dp[i].getAttribute("Name")
         let NameDef = dp[i].getAttribute("NameDef")
         let IdDef = dp[i].getAttribute("IdDef")
-        let DataFormat=dp[i].getAttribute("DataFormat")
+        let DataFormat = dp[i].getAttribute("DataFormat")
+        let Label = dp[i].getAttribute("Label")
+        if (Label == "0") {
+            DataFormatLabel0.push(dp[i])
+        }else if(Label==""){
+
+        }
     }
+    console.log("将上树下列表展现在icd页面", DataFormatLabel0)
+    //将上树下列表展现在icd页面
+    getDPDom(DataFormatLabel0)
 }
 
 //分页加载一部分类别
@@ -48,7 +58,6 @@ function getFailureDataList(pageNumber, pageSize, failureData) {
                 }
             }
             $("#activeFaultRep").datagrid({ data: arr })
-
             $("#frms").datalist({ data: faultRepoetnameList })
             $("#frms").datalist({
                 onCheck: function (node, text) {
@@ -93,6 +102,7 @@ function getFailureData(failureData) {
     });
 }
 
+
 function makeFaultReportingList(FaultReportingData) {
     for (let i = 0; i < FaultReportingData.length; i++) {
         let FaultReportName = FaultReportingData[i].getAttribute("FaultReportName")
@@ -102,6 +112,5 @@ function makeFaultReportingList(FaultReportingData) {
     }
     $("#pcdf").datalist({ data: faultRepoetnameList })
     $("#frms").datalist({ data: faultRepoetnameList })
-    console.log("faultRepoetnameList",faultRepoetnameList)
-
+    console.log("faultRepoetnameList", faultRepoetnameList)
 }

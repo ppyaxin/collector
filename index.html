@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="readicd.js"></script>
 	<script type="text/javascript" src="failuremodeling.js"></script>
 	<script type="text/javascript" src="msdchooseIcd.js"></script>
+	<script type="text/javascript" src="openFDE.js"></script>
 	<style>
 		.icon {
 			width: 1.5em;
@@ -73,12 +74,24 @@
 			</button>
 
 		</div>
-		<div id="frTop" title="Fault Report" style="overflow:auto;padding:20px;display:none;"
+		<div id="frTop" title="Fault Report" style="overflow:auto;padding-top: 5px; padding-left:10px;display:none;"
 			data-options="showHeader:true">
+			<!-- 打开fde -->
+			<button onclick="clickfdeFile()"
+				style="width: 60px;height: 60px;border-color: #eef0f2;position: relative;margin: 5px;margin-left: 0;">
+				<svg class="icon" aria-hidden="true" style="width: 1.5em;height:1.5em">
+					<use xlink:href="#icon-lingcunwei"></use>
+				</svg>
+				<span>Import FDE</span>
+			</button>
+			<form id="openfde" method="post" enctype="multipart/form-data" style="display: none;">
+				<input id="opFDE" type="file" name="file1" accept=".xml" onchange="sendfde(value)">
+			</form>
 		</div>
-		<div id="eTop" title="Edit" style="overflow:auto;padding:20px;display:none;">
+		<div id="eTop" title="Edit" style="overflow:auto;padding-top: 5px; padding-left:10px;display:none;">
+			<!-- 打开icd -->
 			<button onclick="clickicdFile()"
-				style="width:70px;height: 70px;border-color: #eef0f2;position: relative;margin: 1px;margin-left: 0;">
+				style="width:60px;height: 60px;border-color: #eef0f2;position: relative;margin: 1px;margin-left: 0;">
 				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
 					<use xlink:href="#icon-dakai"></use>
 				</svg>
@@ -90,7 +103,7 @@
 			</form>
 
 			<button onclick="clickicdclassFile()"
-				style="width:70px;height: 70px;border-color: #eef0f2;position: relative;margin: 1px;margin-left: 0;">
+				style="width:60px;height: 60px;border-color: #eef0f2;position: relative;margin: 1px;margin-left: 0;">
 				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
 					<use xlink:href="#icon-dakai"></use>
 				</svg>
@@ -334,7 +347,7 @@
 						<a href="#" class="easyui-linkbutton" onclick="expandAll()">None</a>
 					</div>
 					<div class="easyui-panel" style="padding:5px">
-						<ul id="fightPhase" class="easyui-tree"
+						<ul id="fightPhase1" class="easyui-tree"
 							data-options="data:fightPhase,animate:true,checkbox:true"></ul>
 					</div>
 				</div>
@@ -373,7 +386,7 @@
 			style="height: 100%;width:100%">
 			<!-- 右侧 -->
 			<div data-options="region:'center',split:'true'," style="width: 300px;height: 100%;">
-				<div id="frRight1" class="easyui-tabs"  style="width:100%;height:100%" >
+				<div id="frRight1" class="easyui-tabs" style="width:100%;height:100%">
 					<!-- 基础数据tab1 -->
 					<div title="Basic Data" style="padding:20px;display:none;">
 						<div style="margin-bottom:5px">
@@ -421,15 +434,16 @@
 					</div>
 				</div>
 
-				<div id="frRight2" style="width:100%;height:100%" >
+				<div id="frRight2" style="width:100%;height:100%">
 					<!-- tab1 -->
 					<div class="easyui-panel" title="Please Config The DownstreamFaults">
-					<div id="pcdf" class="easyui-datalist"  data-options="
+						<div id="pcdf" class="easyui-datalist" data-options="
 						checkbox: true,
 						selectOnCheck: false,
 						onBeforeSelect: function(){return false;}
 						">
-					</div></div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<!-- 左侧 -->
@@ -682,13 +696,13 @@
 		})
 		$('#openxml').submit()
 	}
-    
-	function showTree(){
+
+	function showTree() {
 		document.getElementById("_easyui_tree_54").style.display = "none"
 		document.getElementById("_easyui_tree_57").style.display = "none"
-		document.getElementById("_easyui_tree_58").style.display = "none"	
+		document.getElementById("_easyui_tree_58").style.display = "none"
 		document.getElementById("_easyui_tree_51").style.display = "none"
-		document.getElementById("_easyui_tree_52").style.display = "none"	
+		document.getElementById("_easyui_tree_52").style.display = "none"
 		document.getElementById("_easyui_tree_53").style.display = "none"
 		document.getElementById("_easyui_tree_55").style.display = "none"
 		document.getElementById("_easyui_tree_59").style.display = "none"
@@ -750,7 +764,7 @@
 			if (node.text == "ICD Information") {
 				document.getElementById("icdinfo").style.display = "block"
 				$("#toptabs").tabs('select', "Edit")
-			    showTree()
+				//showTree()
 			} else {
 				document.getElementById("icdinfo").style.display = "none"
 			}
@@ -763,15 +777,17 @@
 				document.getElementById("fualtReport").style.display = "block"
 				document.getElementById("frRight1").style.display = "block"
 				document.getElementById("frRight2").style.display = "none"
+				$("#toptabs").tabs('select', "Fault Report")
 			} else if (node.text == "Basic Info") {
 				document.getElementById("fualtReport").style.display = "block"
 				document.getElementById("frRight1").style.display = "block"
 				document.getElementById("frRight2").style.display = "none"
-			}else if(node.text == "Downstream Faults") {
+				$("#toptabs").tabs('select', "Fault Report")
+			} else if (node.text == "Downstream Faults") {
 				document.getElementById("fualtReport").style.display = "block"
 				document.getElementById("frRight2").style.display = "block"
 				document.getElementById("frRight1").style.display = "none"
-			}else{
+			} else {
 				document.getElementById("fualtReport").style.display = "none"
 			}
 			if (node.text == "Failure Modeling Data") {
@@ -1131,7 +1147,7 @@
 		return temp
 	}
 
-
+    let omsNowTree = []
 	function getOmsMessageList(pageNumber, pageSize, OmsMessage, xml) {
 		$("#OmsMessages").empty()
 		let len = OmsMessage.length
@@ -1183,9 +1199,13 @@
 					let type = item[j].attributes[1].value
 					type = type.replace(/\s*/g, "")
 					let nameNode = getDPRP(type, id, xml).split(".")
+					//在这里进行右上角引入icd的建树操作。开始建立全部icd列表树。并且选择已经被选中的节点
+					
 					mergeTree(tree, nameNode)
-					$("#omslist").tree({ data: tree })
+					omsNowTree=tree
 				}
+				
+				$("#omslist").tree({ data: tree })
 				console.log("tree", tree)
 			})
 			$("#OmsMessages").append(a)
@@ -1212,8 +1232,6 @@
 			}
 		});
 	}
-
-
 	//nameref树,tree是js对象数组
 	function mergeTree(tree, nameNode) {
 
