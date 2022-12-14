@@ -1,10 +1,11 @@
 //readmsd get dp
-let dps = {}
+let dps = []
 let faultRepoetnameList = []
 let faultRep = {}
-let DataFormatLabel0 = []
+
 function getReadDP(xml) {
     let dp = xml.getElementsByTagName("DP")
+    dps=dp
     for (let i = 0; i < dp.length; i++) {
         let Id = dp[i].getAttribute("Id")
         let Name = dp[i].getAttribute("Name")
@@ -18,9 +19,9 @@ function getReadDP(xml) {
 
         }
     }
-    console.log("将上树下列表展现在icd页面", DataFormatLabel0)
+   // console.log("将上树下列表展现在icd页面", DataFormatLabel0)
     //将上树下列表展现在icd页面
-    getDPDom(DataFormatLabel0)
+    //getDPDom(DataFormatLabel0)
 }
 
 //分页加载一部分类别
@@ -112,5 +113,4 @@ function makeFaultReportingList(FaultReportingData) {
     }
     $("#pcdf").datalist({ data: faultRepoetnameList })
     $("#frms").datalist({ data: faultRepoetnameList })
-    console.log("faultRepoetnameList", faultRepoetnameList)
 }

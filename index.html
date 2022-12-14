@@ -673,7 +673,6 @@
 	}
 	function clickFile() {
 		const input = document.querySelector('#up')
-		console.log(input)
 		input.click()
 	}
 	let readurl = ""
@@ -689,7 +688,6 @@
 			url: "readxml.php",
 			success: function (data) {
 				//alert(data)	
-				console.log(data)
 				readurl = data
 				xml = start(data)
 			}
@@ -865,7 +863,6 @@
 
 	function getMemberSystemModelingData(MemberSystemModelingData) {
 		let attributes = MemberSystemModelingData.attributes
-		console.log("hhhhhhhhhhhhh", attributes)
 		let a = attributes[1].value
 		$("#memName").textbox('setValue', a)
 		let msi = attributes[4].value
@@ -1073,7 +1070,6 @@
 							}
 							str[index] = temp
 						}
-						console.log(maxLen)
 						str.splice(maxLen)
 						str = bitPositionSort(str)
 					}
@@ -1147,7 +1143,8 @@
 		return temp
 	}
 
-    let omsNowTree = []
+	let omsNowTree = []
+	var DataFormatLabel0 = []
 	function getOmsMessageList(pageNumber, pageSize, OmsMessage, xml) {
 		$("#OmsMessages").empty()
 		let len = OmsMessage.length
@@ -1194,19 +1191,18 @@
 				$("#rightOMS").empty()
 				let len = 0
 				let tree = []
+				//建树
 				for (let j = 0; j < item.length; j++) {
 					let id = item[j].attributes[0].value
 					let type = item[j].attributes[1].value
 					type = type.replace(/\s*/g, "")
 					let nameNode = getDPRP(type, id, xml).split(".")
-					//在这里进行右上角引入icd的建树操作。开始建立全部icd列表树。并且选择已经被选中的节点
-					
 					mergeTree(tree, nameNode)
-					omsNowTree=tree
 				}
-				
+				omsNowTree = tree
 				$("#omslist").tree({ data: tree })
-				console.log("tree", tree)
+				//在这里进行右上角引入icd的建树操作。开始建立全部icd列表树。并且选择已经被选中的节点
+				getDPDom(dps,item)
 			})
 			$("#OmsMessages").append(a)
 		}
@@ -1324,7 +1320,6 @@
 		for (let i = 0; i < rp.length; i++) {
 			//console.log(rp[i].attributes[0],id)
 			if (rp[i].attributes[0].value == id) {
-				console.log(rp[i])
 				$('#LoadAttachedDiscrete').textbox('setValue', rp[i].attributes[2].value)
 			}
 		}
