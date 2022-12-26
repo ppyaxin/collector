@@ -54,7 +54,6 @@ function getFailureDataList(pageNumber, pageSize, failureData) {
                 for (let k = 0; k < faultRepoetnameList.length; k++) {
                     if (faultRepoetnameList[k].text == Name) {
                         faultRepoetnameList[k].checked = true
-
                     }
                 }
             }

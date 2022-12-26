@@ -63,7 +63,7 @@ function readicd(data) {
         dataType: 'xml',
         success: function (x) {
             icd = x
-            // console.log("icdicd",icd)
+            console.log("icdicd",icd)
             makeVirtualDom(icd)
             return icd
         }

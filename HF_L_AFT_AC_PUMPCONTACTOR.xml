@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--The information in this document is GE AVIC Civil Avionics Systems Company 
+Limited ('AVIAGE SYSTEMS') proprietary information and is disclosed in 
+confidence. It is the property of AVIAGE SYSTEMS (and/or third parties) and 
+must not be used, disclosed to others or reproduced without the express written 
+consent of AVIAGE SYSTEMS. If consent is given for reproduction in whole or in 
+part, this notice must appear in any such reproduction in whole or in part. 
+
+This document contains China and/or US origin technical data under applicable 
+export control laws and regulations. This technical data can be used for civil 
+only end-use and must not be transferred to Syria, Iran, North Korea, Cuba or 
+Sudan or other US denied party listed entities. 
+
+ - - - - - - - - - - - - - - - - - - - - - - - -
+
+MODEL IDENTIFIER: MBD-->
+<HostedFunction Name="HF_L_AFT_AC_PUMPCONTACTOR" Guid="a1d4bb98d-6395-49a7-8a11-11f9c4bd7d1da" NameDef="HF_AC_PUMPCONTACTORCLASS" GuidDef="acd4d7596-8b3c-48ab-a4a3-2e224ad2da6ba" XsdVersion="8.8" Hardware="L_AFT_AC_PUMPCONTACTOR">
+  <AnalogPort Name="poDISC_PumpRelayStatus" Guid="a2cf9a185-14a0-4d35-91d5-b0c9f906c5e2a" NameDef="HF_AC_PUMPCONTACTORCLASS.poDISC_PumpRelayStatus" GuidDef="afd6c61f1-51a6-4ae8-b1f0-882c5d9615c9a" Physical="L_AFT_AC_PUMPCONTACTOR.poDISC_PumpRelayStatus">
+    <AnalogDiscreteParameter Name="DISC_PumpRelayStatus" Guid="a5946eb46-ad58-475f-ad5c-b25f88f7452ca" NameDef="HF_AC_PUMPCONTACTORCLASS.DISC_PumpRelayStatus" GuidDef="a47b9e486-7605-41ab-84cd-5939237fd263a">
+      <DP Name="Status" Guid="a9e62ad9a-17df-44d2-823b-ea77935ff4e1a" NameDef="HF_AC_PUMPCONTACTORCLASS.DISC_PumpRelayStatus.Status" GuidDef="aaf8ce280-1063-4aeb-8775-c66a78e1cd4aa" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+</HostedFunction>

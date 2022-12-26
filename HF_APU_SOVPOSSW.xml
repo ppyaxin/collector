@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--The information in this document is GE AVIC Civil Avionics Systems Company 
+Limited ('AVIAGE SYSTEMS') proprietary information and is disclosed in 
+confidence. It is the property of AVIAGE SYSTEMS (and/or third parties) and 
+must not be used, disclosed to others or reproduced without the express written 
+consent of AVIAGE SYSTEMS. If consent is given for reproduction in whole or in 
+part, this notice must appear in any such reproduction in whole or in part. 
+
+This document contains China and/or US origin technical data under applicable 
+export control laws and regulations. This technical data can be used for civil 
+only end-use and must not be transferred to Syria, Iran, North Korea, Cuba or 
+Sudan or other US denied party listed entities. 
+
+ - - - - - - - - - - - - - - - - - - - - - - - -
+
+MODEL IDENTIFIER: MBD-->
+<HostedFunction Name="HF_APU_SOVPOSSW" Guid="acb7e8e88-1f01-47ba-bd23-f03f237fac54a" NameDef="HF_FUELSOVPOSSWCLASS" GuidDef="ac1291a9b-21b9-4036-9b02-abb72d282125a" XsdVersion="8.8" Hardware="APU_SOVPOSSW">
+  <AnalogPort Name="poDISC_StatusClosed" Guid="aadc5573f-28c8-4c18-afcb-7f3b2d6f26cea" NameDef="HF_FUELSOVPOSSWCLASS.poDISC_StatusClosed" GuidDef="a04d91032-f9c9-4184-b7fc-4c3a2b604946a" Physical="APU_SOVPOSSW.poDISC_StatusClosed">
+    <AnalogDiscreteParameter Name="DISC_StatusClosed" Guid="a0efe6507-e002-454a-ab57-70252ef16e95a" NameDef="HF_FUELSOVPOSSWCLASS.DISC_StatusClosed" GuidDef="af04a2ca9-8962-4a1d-a9e4-5a409b7458afa">
+      <DP Name="Status" Guid="a66b1b409-3bf4-4c81-973b-da7150a330aea" NameDef="HF_FUELSOVPOSSWCLASS.DISC_StatusClosed.Status" GuidDef="af16705c8-6e36-4f8e-b76e-0725dd960a56a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_StatusOpen" Guid="a5e84d435-5079-4cb5-8fa7-bbda1a85b015a" NameDef="HF_FUELSOVPOSSWCLASS.poDISC_StatusOpen" GuidDef="a8e82b826-6b72-483e-ba38-a178cd5511bda" Physical="APU_SOVPOSSW.poDISC_StatusOpen">
+    <AnalogDiscreteParameter Name="DISC_StatusOpen" Guid="a7634c212-a87a-4276-ae14-c08f90f33661a" NameDef="HF_FUELSOVPOSSWCLASS.DISC_StatusOpen" GuidDef="a75eb6a7b-6e72-42d1-8960-3c6a9019fb98a">
+      <DP Name="Status" Guid="a64e04028-93a4-4c03-88c9-e327d009c8b8a" NameDef="HF_FUELSOVPOSSWCLASS.DISC_StatusOpen.Status" GuidDef="adea8b0fc-a868-4a9d-8ec7-fb4a1e46859ca" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+</HostedFunction>

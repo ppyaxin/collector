@@ -1,0 +1,1394 @@
+<FlightDeckEffectImport>
+  <FlightDeckEffects FaultCode="17" FDEClass="caution" AlertID="17">
+    <FDEText>--L BLEED FAULT--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="18" FDEClass="caution" AlertID="18">
+    <FDEText>--R BLEED FAULT--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="23" FDEClass="caution" AlertID="23">
+    <FDEText>XBLEED FAIL OPEN</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="27" FDEClass="advisory" AlertID="27">
+    <FDEText>XBLEED FAIL CLSD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="28" FDEClass="caution" AlertID="28">
+    <FDEText>L PACK FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="29" FDEClass="caution" AlertID="29">
+    <FDEText>R PACK FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="34" FDEClass="advisory" AlertID="34">
+    <FDEText>TRIM AIR FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="38" FDEClass="caution" AlertID="38">
+    <FDEText>RAM AIR FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="40" FDEClass="caution" AlertID="40">
+    <FDEText>FWD EBAY OVHT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="42" FDEClass="caution" AlertID="42">
+    <FDEText>L WAI PRESS HI</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="43" FDEClass="caution" AlertID="43">
+    <FDEText>R WAI PRESS HI</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="44" FDEClass="caution" AlertID="44">
+    <FDEText>WAI TEMP LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="45" FDEClass="caution" AlertID="45">
+    <FDEText>L WAI FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="50" FDEClass="warning" AlertID="50">
+    <FDEText>CABIN POS DIFF PRESS</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="51" FDEClass="warning" AlertID="51">
+    <FDEText>CABIN NEG DIFF PRESS</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="52" FDEClass="warning" AlertID="52">
+    <FDEText>CABIN ALTITUDE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="53" FDEClass="caution" AlertID="53">
+    <FDEText>CABIN PRESS FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="59" FDEClass="advisory" AlertID="59">
+    <FDEText>RECIRC FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="62" FDEClass="advisory" AlertID="62">
+    <FDEText>FWD CARGO ISOL FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="65" FDEClass="advisory" AlertID="65">
+    <FDEText>AFT CARGO ISOL FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="68" FDEClass="caution" AlertID="68">
+    <FDEText>L + R PACK FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="70" FDEClass="caution" AlertID="70">
+    <FDEText>L + R PACK NOT ON</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="71" FDEClass="caution" AlertID="71">
+    <FDEText>FWD EBAY BLOW FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="72" FDEClass="caution" AlertID="72">
+    <FDEText>FWD EBAY EXTRAC FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="73" FDEClass="caution" AlertID="73">
+    <FDEText>MID EBAY EXTRAC FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="77" FDEClass="caution" AlertID="77">
+    <FDEText>R WAI FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="78" FDEClass="caution" AlertID="78">
+    <FDEText>APU BLEED FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="79" FDEClass="caution" AlertID="79">
+    <FDEText>MID EBAY OVHT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="80" FDEClass="caution" AlertID="80">
+    <FDEText>MID EBAY BLOW FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="114" FDEClass="advisory" AlertID="114">
+    <FDEText>VHF 1 TRANSMIT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="115" FDEClass="advisory" AlertID="115">
+    <FDEText>VHF 2 XMIT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="116" FDEClass="advisory" AlertID="116">
+    <FDEText>VHF 3 XMIT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="117" FDEClass="advisory" AlertID="117">
+    <FDEText>HF 1 XMIT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="118" FDEClass="advisory" AlertID="118">
+    <FDEText>HF 2 XMIT(optional)</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="119" FDEClass="advisory" AlertID="119">
+    <FDEText>DATALINK FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="132" FDEClass="advisory" AlertID="132">
+    <FDEText>SATCOM FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="133" FDEClass="advisory" AlertID="133">
+    <FDEText>TCP 1 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="134" FDEClass="advisory" AlertID="134">
+    <FDEText>TCP 2 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="135" FDEClass="advisory" AlertID="135">
+    <FDEText>TCP 3 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="140" FDEClass="advisory" AlertID="140">
+    <FDEText>ACP 1 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="141" FDEClass="advisory" AlertID="141">
+    <FDEText>ACP 2 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="142" FDEClass="advisory" AlertID="142">
+    <FDEText>ACP 3 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="162" FDEClass="advisory" AlertID="162">
+    <FDEText>DATALINK LOST</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="163" FDEClass="advisory" AlertID="163">
+    <FDEText>VHF DATALINK LOST</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="164" FDEClass="advisory" AlertID="164">
+    <FDEText>HF DATALINK LOST</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="165" FDEClass="advisory" AlertID="165">
+    <FDEText>SATCOM DATALINK LOST</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="166" FDEClass="advisory" AlertID="166">
+    <FDEText>CAPT PTT STUCK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="167" FDEClass="advisory" AlertID="167">
+    <FDEText>F/O PTT STUCK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="168" FDEClass="advisory" AlertID="168">
+    <FDEText>OBS PTT STUCK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="169" FDEClass="advisory" AlertID="169">
+    <FDEText>RIU 1 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="170" FDEClass="advisory" AlertID="170">
+    <FDEText>RIU 2 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="171" FDEClass="advisory" AlertID="171">
+    <FDEText>SATCOM VOICE LOST</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="195" FDEClass="warning" AlertID="195">
+    <FDEText>--EMER PWR ONLY--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="197" FDEClass="caution" AlertID="197">
+    <FDEText>MAIN BATT OVERTEMP</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="198" FDEClass="caution" AlertID="198">
+    <FDEText>APU BATT OVERTEMP</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="199" FDEClass="advisory" AlertID="199">
+    <FDEText>BATT DISCHARGING</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="200" FDEClass="caution" AlertID="200">
+    <FDEText>APU GEN FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="201" FDEClass="caution" AlertID="201">
+    <FDEText>L GEN FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="202" FDEClass="caution" AlertID="202">
+    <FDEText>L GEN DRIVE FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="203" FDEClass="caution" AlertID="203">
+    <FDEText>R GEN FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="204" FDEClass="caution" AlertID="204">
+    <FDEText>R GEN DRIVE FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="205" FDEClass="caution" AlertID="205">
+    <FDEText>--L AC BUS--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="206" FDEClass="caution" AlertID="206">
+    <FDEText>--R AC BUS--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="207" FDEClass="caution" AlertID="207">
+    <FDEText>--AC ESS BUS--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="208" FDEClass="caution" AlertID="208">
+    <FDEText>--L DC BUS--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="209" FDEClass="caution" AlertID="209">
+    <FDEText>--R DC BUS--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="210" FDEClass="caution" AlertID="210">
+    <FDEText>--L DC ESS BUS--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="211" FDEClass="caution" AlertID="211">
+    <FDEText>--R DC ESS BUS--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="212" FDEClass="caution" AlertID="212">
+    <FDEText>--DC ESS XFER BUS--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="213" FDEClass="caution" AlertID="213">
+    <FDEText>MAIN BATT FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="214" FDEClass="caution" AlertID="214">
+    <FDEText>APU BATT FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="217" FDEClass="caution" AlertID="217">
+    <FDEText>--1 PH AC BUS--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="222" FDEClass="caution" AlertID="222">
+    <FDEText>E TRU FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="223" FDEClass="advisory" AlertID="223">
+    <FDEText>LOAD SHED</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="224" FDEClass="advisory" AlertID="224">
+    <FDEText>CB TRIP</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="225" FDEClass="advisory" AlertID="225">
+    <FDEText>L TRU FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="226" FDEClass="advisory" AlertID="226">
+    <FDEText>R TRU FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="238" FDEClass="caution" AlertID="238">
+    <FDEText>RAT GEN FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="239" FDEClass="advisory" AlertID="239">
+    <FDEText>RAT GEN ON</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="249" FDEClass="advisory" AlertID="249">
+    <FDEText>FC BUS</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="250" FDEClass="advisory" AlertID="250">
+    <FDEText>TRU RIPPLE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="251" FDEClass="warning" AlertID="251">
+    <FDEText>BATT ONLY</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="276" FDEClass="warning" AlertID="276">
+    <FDEText>R ENG FIRE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="277" FDEClass="warning" AlertID="277">
+    <FDEText>L ENG FIRE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="278" FDEClass="warning" AlertID="278">
+    <FDEText>APU FIRE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="279" FDEClass="warning" AlertID="279">
+    <FDEText>FWD CGO SMOKE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="280" FDEClass="warning" AlertID="280">
+    <FDEText>AFT CGO SMOKE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="281" FDEClass="warning" AlertID="281">
+    <FDEText>MLG BAY OVHT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="282" FDEClass="caution" AlertID="282">
+    <FDEText>FWD LAV SMOKE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="283" FDEClass="caution" AlertID="283">
+    <FDEText>AFT R LAV SMOKE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="284" FDEClass="caution" AlertID="284">
+    <FDEText>AFT L LAV SMOKE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="285" FDEClass="caution" AlertID="285">
+    <FDEText>L BLEED LEAK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="286" FDEClass="caution" AlertID="286">
+    <FDEText>R BLEED LEAK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="287" FDEClass="caution" AlertID="287">
+    <FDEText>APU BLEED LEAK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="288" FDEClass="caution" AlertID="288">
+    <FDEText>WAI LEAK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="289" FDEClass="caution" AlertID="289">
+    <FDEText>L PACK LEAK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="290" FDEClass="caution" AlertID="290">
+    <FDEText>R PACK LEAK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="291" FDEClass="advisory" AlertID="291">
+    <FDEText>TRIM AIR LEAK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="292" FDEClass="advisory" AlertID="292">
+    <FDEText>FWD CGO TRIM AIR LEAK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="293" FDEClass="advisory" AlertID="293">
+    <FDEText>INERTING SYS LEAK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="294" FDEClass="caution" AlertID="294">
+    <FDEText>L ENG OVHT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="295" FDEClass="caution" AlertID="295">
+    <FDEText>R ENG OVHT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="296" FDEClass="advisory" AlertID="296">
+    <FDEText>R ENG FIRE DET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="297" FDEClass="advisory" AlertID="297">
+    <FDEText>L ENG FIRE DET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="298" FDEClass="advisory" AlertID="298">
+    <FDEText>APU FIRE DET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="299" FDEClass="advisory" AlertID="299">
+    <FDEText>MLG OVHT DET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="300" FDEClass="advisory" AlertID="300">
+    <FDEText>L BLD LEAK DET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="301" FDEClass="advisory" AlertID="301">
+    <FDEText>R BLD LEAK DET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="302" FDEClass="advisory" AlertID="302">
+    <FDEText>APU BLD LEAK DET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="303" FDEClass="advisory" AlertID="303">
+    <FDEText>WAI LEAK DET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="304" FDEClass="advisory" AlertID="304">
+    <FDEText>L PACK LEAK DET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="305" FDEClass="advisory" AlertID="305">
+    <FDEText>R PACK LEAK DET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="306" FDEClass="advisory" AlertID="306">
+    <FDEText>TRIMAIR LEAK DET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="307" FDEClass="advisory" AlertID="307">
+    <FDEText>INERT LEAK DET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="309" FDEClass="advisory" AlertID="309">
+    <FDEText>FWD CGO SMK DET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="310" FDEClass="advisory" AlertID="310">
+    <FDEText>AFT CGO SMK DET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="311" FDEClass="advisory" AlertID="311">
+    <FDEText>ENG AGENT INOP</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="312" FDEClass="advisory" AlertID="312">
+    <FDEText>APU AGENT INOP</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="313" FDEClass="advisory" AlertID="313">
+    <FDEText>CGO AGENT INOP</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="314" FDEClass="caution" AlertID="314">
+    <FDEText>FIRE SYS FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="318" FDEClass="advisory" AlertID="318">
+    <FDEText>FWD LAV SMKDET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="319" FDEClass="advisory" AlertID="319">
+    <FDEText>AFT L LAV SMKDET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="320" FDEClass="advisory" AlertID="320">
+    <FDEText>AFT R LAV SMKDET FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="341" FDEClass="warning" AlertID="341">
+    <FDEText>AP DISC</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="342" FDEClass="caution" AlertID="342">
+    <FDEText>AUTOPILOT FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="343" FDEClass="caution" AlertID="343">
+    <FDEText>AUTOTHROTTLE FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="344" FDEClass="caution" AlertID="344">
+    <FDEText>ENG TLA NOT TOGA</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="345" FDEClass="caution" AlertID="345">
+    <FDEText>FD MODE CHG</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="347" FDEClass="advisory" AlertID="347">
+    <FDEText>APPR 2 NOT AVAIL</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="348" FDEClass="advisory" AlertID="348">
+    <FDEText>NO AUTOLAND</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="350" FDEClass="advisory" AlertID="350">
+    <FDEText>FD FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="374" FDEClass="warning" AlertID="374">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="375" FDEClass="warning" AlertID="375">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="376" FDEClass="warning" AlertID="376">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="378" FDEClass="caution" AlertID="378">
+    <FDEText>FLT CTRL SEC MODE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="379" FDEClass="caution" AlertID="379">
+    <FDEText>FLT CTRL DIRECT MODE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="380" FDEClass="caution" AlertID="380">
+    <FDEText>FLT CTRL DEGRD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="381" FDEClass="caution" AlertID="381">
+    <FDEText>STAB FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="382" FDEClass="caution" AlertID="382">
+    <FDEText>FLT CTRL MIN</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="386" FDEClass="caution" AlertID="386">
+    <FDEText>STALL ADVANCE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="392" FDEClass="caution" AlertID="392">
+    <FDEText>GLD FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="393" FDEClass="caution" AlertID="393">
+    <FDEText>RUD TRIM FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="394" FDEClass="caution" AlertID="394">
+    <FDEText>L SIDESTICK FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="395" FDEClass="caution" AlertID="395">
+    <FDEText>R SIDESTICK FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="396" FDEClass="advisory" AlertID="396">
+    <FDEText>RETRACT SPD BRK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="397" FDEClass="caution" AlertID="397">
+    <FDEText>GROUND SPOILER</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="401" FDEClass="advisory" AlertID="401">
+    <FDEText>STAB AUTO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="407" FDEClass="caution" AlertID="407">
+    <FDEText>PITCH UP AUTHORITY</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="408" FDEClass="caution" AlertID="408">
+    <FDEText>PITCH DOWN AUTHORITY</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="409" FDEClass="caution" AlertID="409">
+    <FDEText>ROLL RIGHT AUTHORITY</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="410" FDEClass="caution" AlertID="410">
+    <FDEText>ROLL LEFT AUTHORITY</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="411" FDEClass="caution" AlertID="411">
+    <FDEText>YAW RIGHT AUTHORITY</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="412" FDEClass="caution" AlertID="412">
+    <FDEText>YAW LEFT AUTHORITY</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="413" FDEClass="advisory" AlertID="413">
+    <FDEText>FCS UP MODE AVAIL</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="414" FDEClass="advisory" AlertID="414">
+    <FDEText>SPD BRK FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="423" FDEClass="caution" AlertID="423">
+    <FDEText>SLATS FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="424" FDEClass="caution" AlertID="424">
+    <FDEText>FLAPS FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="425" FDEClass="advisory" AlertID="425">
+    <FDEText>SLATS SLOW</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="426" FDEClass="advisory" AlertID="426">
+    <FDEText>FLAPS SLOW</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="427" FDEClass="caution" AlertID="427">
+    <FDEText>FLAP INHIBIT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="428" FDEClass="caution" AlertID="428">
+    <FDEText>SLAT AOA INHIBIT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="429" FDEClass="advisory" AlertID="429">
+    <FDEText>FLAP PROT FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="456" FDEClass="caution" AlertID="456">
+    <FDEText>L FUEL LEVEL LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="457" FDEClass="caution" AlertID="457">
+    <FDEText>R FUEL LEVEL LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="458" FDEClass="caution" AlertID="458">
+    <FDEText>FUEL TEMP LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="459" FDEClass="caution" AlertID="459">
+    <FDEText>FUEL XFEED VLV FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="460" FDEClass="caution" AlertID="460">
+    <FDEText>FUEL IMBALANCE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="461" FDEClass="caution" AlertID="461">
+    <FDEText>L ENG FUEL SOV FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="462" FDEClass="caution" AlertID="462">
+    <FDEText>R ENG FUEL SOV FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="463" FDEClass="caution" AlertID="463">
+    <FDEText>APU FUEL SOV FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="464" FDEClass="caution" AlertID="464">
+    <FDEText>L1+L2 FUEL PUMP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="465" FDEClass="caution" AlertID="465">
+    <FDEText>R1+R2 FUEL PUMP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="466" FDEClass="caution" AlertID="466">
+    <FDEText>C1+C2 FUEL PUMP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="469" FDEClass="advisory" AlertID="469">
+    <FDEText>FUEL DC PUMP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="470" FDEClass="advisory" AlertID="470">
+    <FDEText>L1 FUEL PUMP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="471" FDEClass="advisory" AlertID="471">
+    <FDEText>L2 FUEL PUMP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="472" FDEClass="advisory" AlertID="472">
+    <FDEText>R1 FUEL PUMP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="473" FDEClass="advisory" AlertID="473">
+    <FDEText>R2 FUEL PUMP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="474" FDEClass="advisory" AlertID="474">
+    <FDEText>C1 FUEL PUMP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="475" FDEClass="advisory" AlertID="475">
+    <FDEText>C2 FUEL PUMP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="476" FDEClass="advisory" AlertID="476">
+    <FDEText>FUEL BALANCED</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="505" FDEClass="caution" AlertID="505">
+    <FDEText>HYD 1 OVHT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="506" FDEClass="caution" AlertID="506">
+    <FDEText>HYD 2 OVHT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="507" FDEClass="caution" AlertID="507">
+    <FDEText>HYD 3 OVHT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="508" FDEClass="caution" AlertID="508">
+    <FDEText>HYD AUTO CTRL FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="509" FDEClass="caution" AlertID="509">
+    <FDEText>HYD 1 TEMP HI</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="510" FDEClass="caution" AlertID="510">
+    <FDEText>HYD 2 TEMP HI</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="511" FDEClass="caution" AlertID="511">
+    <FDEText>HYD 3 TEMP HI</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="512" FDEClass="caution" AlertID="512">
+    <FDEText>--HYD 1+2 PRESS LO--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="513" FDEClass="caution" AlertID="513">
+    <FDEText>--HYD 2+3 PRESS LO--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="514" FDEClass="caution" AlertID="514">
+    <FDEText>--HYD 1+3 PRESS LO--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="515" FDEClass="caution" AlertID="515">
+    <FDEText>--HYD 1 PRESS LO  --</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="516" FDEClass="caution" AlertID="516">
+    <FDEText>--HYD 2 PRESS LO--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="517" FDEClass="caution" AlertID="517">
+    <FDEText>--HYD 3 PRESS LO--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="518" FDEClass="advisory" AlertID="518">
+    <FDEText>HYD PTU FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="519" FDEClass="caution" AlertID="519">
+    <FDEText>HYD 1 EDP SOV FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="520" FDEClass="caution" AlertID="520">
+    <FDEText>HYD 2 EDP SOV FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="521" FDEClass="advisory" AlertID="521">
+    <FDEText>HYD 1A EDP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="522" FDEClass="advisory" AlertID="522">
+    <FDEText>HYD 2A EDP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="523" FDEClass="advisory" AlertID="523">
+    <FDEText>HYD 1B EMP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="524" FDEClass="advisory" AlertID="524">
+    <FDEText>HYD 3A EMP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="525" FDEClass="advisory" AlertID="525">
+    <FDEText>HYD 3B EMP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="526" FDEClass="advisory" AlertID="526">
+    <FDEText>HYD 1 QTY LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="527" FDEClass="advisory" AlertID="527">
+    <FDEText>HYD 2 QTY LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="528" FDEClass="advisory" AlertID="528">
+    <FDEText>HYD 3 QTY LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="572" FDEClass="caution" AlertID="572">
+    <FDEText>L NAI PRESS HI</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="573" FDEClass="caution" AlertID="573">
+    <FDEText>L NAI FAIL CLSD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="575" FDEClass="caution" AlertID="575">
+    <FDEText>NAI NOT REQD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="579" FDEClass="caution" AlertID="579">
+    <FDEText>R NAI PRESS HI</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="580" FDEClass="caution" AlertID="580">
+    <FDEText>R NAI FAIL CLSD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="603" FDEClass="advisory" AlertID="603">
+    <FDEText>ICE CONDITION</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="604" FDEClass="advisory" AlertID="604">
+    <FDEText>ICE NOT DETECTED</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="605" FDEClass="caution" AlertID="605">
+    <FDEText>ICE DETECTED</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="607" FDEClass="advisory" AlertID="607">
+    <FDEText>ICE DETECTION FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="669" FDEClass="caution" AlertID="669">
+    <FDEText>L WSHLD HEAT FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="670" FDEClass="caution" AlertID="670">
+    <FDEText>L WDW HEAT FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="671" FDEClass="caution" AlertID="671">
+    <FDEText>R WSHLD HEAT FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="672" FDEClass="caution" AlertID="672">
+    <FDEText>R WDW HEAT FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="731" FDEClass="caution" AlertID="731">
+    <FDEText>NORM CHKL INCOMPLETE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="732" FDEClass="caution" AlertID="732">
+    <FDEText>ATT VOTE FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="733" FDEClass="advisory" AlertID="733">
+    <FDEText>L BAROSET NO MONITOR</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="734" FDEClass="advisory" AlertID="734">
+    <FDEText>R BAROSET NO MONITOR</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="735" FDEClass="caution" AlertID="735">
+    <FDEText>BARO SET DISAGREE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="736" FDEClass="advisory" AlertID="736">
+    <FDEText>CAPT DCP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="737" FDEClass="advisory" AlertID="737">
+    <FDEText>F/O DCP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="738" FDEClass="advisory" AlertID="738">
+    <FDEText>CAPT CCD FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="739" FDEClass="advisory" AlertID="739">
+    <FDEText>F/O CCD FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="740" FDEClass="advisory" AlertID="740">
+    <FDEText>CAPT MKB FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="741" FDEClass="advisory" AlertID="741">
+    <FDEText>F/O MKB FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="742" FDEClass="advisory" AlertID="742">
+    <FDEText>RCP FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="743" FDEClass="advisory" AlertID="743">
+    <FDEText>AURAL CANCELED</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="744" FDEClass="warning" AlertID="744">
+    <FDEText>OVERSPEED</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="746" FDEClass="advisory" AlertID="746">
+    <FDEText>SYNOPTIC FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="747" FDEClass="caution" AlertID="747">
+    <FDEText>SPEED VOTE FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="748" FDEClass="caution" AlertID="748">
+    <FDEText>ALT VOTE FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="749" FDEClass="advisory" AlertID="749">
+    <FDEText>CAPT OUTBD IDU FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="750" FDEClass="advisory" AlertID="750">
+    <FDEText>CAPT INBD IDU FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="751" FDEClass="advisory" AlertID="751">
+    <FDEText>LOWER IDU FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="752" FDEClass="advisory" AlertID="752">
+    <FDEText>F/O OUTBD IDU FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="753" FDEClass="advisory" AlertID="753">
+    <FDEText>F/O INBD IDU FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="754" FDEClass="caution" AlertID="754">
+    <FDEText>SPD DISPLAY DISAGREE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="755" FDEClass="advisory" AlertID="755">
+    <FDEText>SPD NO MONITOR</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="756" FDEClass="caution" AlertID="756">
+    <FDEText>ALT DISPLAY DISAGREE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="757" FDEClass="advisory" AlertID="757">
+    <FDEText>ALT NO MONITOR</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="758" FDEClass="caution" AlertID="758">
+    <FDEText>ATT DISPLAY DISAGREE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="759" FDEClass="advisory" AlertID="759">
+    <FDEText>ATT NO MONITOR</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="760" FDEClass="caution" AlertID="760">
+    <FDEText>L N1 DISAGREE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="761" FDEClass="advisory" AlertID="761">
+    <FDEText>L N1 NO MONITOR</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="762" FDEClass="caution" AlertID="762">
+    <FDEText>R N1 DISAGREE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="763" FDEClass="advisory" AlertID="763">
+    <FDEText>R N1 NO MONITOR</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="764" FDEClass="caution" AlertID="764">
+    <FDEText>L EGT DISAGREE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="765" FDEClass="advisory" AlertID="765">
+    <FDEText>L EGT NO MONITOR</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="766" FDEClass="caution" AlertID="766">
+    <FDEText>R EGT DISAGREE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="767" FDEClass="advisory" AlertID="767">
+    <FDEText>R EGT NO MONITOR</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="768" FDEClass="caution" AlertID="768">
+    <FDEText>PARK BRK FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="770" FDEClass="caution" AlertID="770">
+    <FDEText>PARK  BRK APPLIED</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="773" FDEClass="caution" AlertID="773">
+    <FDEText>ANTISKID OFF</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="775" FDEClass="caution" AlertID="775">
+    <FDEText>BRK NORM+ALTN FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="776" FDEClass="warning" AlertID="776">
+    <FDEText>BRK TOTAL LOSS</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="777" FDEClass="caution" AlertID="777">
+    <FDEText>BRK DEGRADED</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="778" FDEClass="caution" AlertID="778">
+    <FDEText>L BRK FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="779" FDEClass="caution" AlertID="779">
+    <FDEText>R BRK FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="780" FDEClass="caution" AlertID="780">
+    <FDEText>ANTISKID FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="782" FDEClass="caution" AlertID="782">
+    <FDEText>BRK  HOT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="783" FDEClass="warning" AlertID="783">
+    <FDEText>BRK OVERHEAT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="784" FDEClass="advisory" AlertID="784">
+    <FDEText>TIRE PRESS ABNORM</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="786" FDEClass="caution" AlertID="786">
+    <FDEText>AUTO BRK FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="791" FDEClass="caution" AlertID="791">
+    <FDEText>CAPT BRK PEDAL FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="792" FDEClass="caution" AlertID="792">
+    <FDEText>F/O BRK PEDAL FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="793" FDEClass="advisory" AlertID="793">
+    <FDEText>BRK ACC PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="795" FDEClass="advisory" AlertID="795">
+    <FDEText>BRK ALTN ACTIVE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="817" FDEClass="caution" AlertID="817">
+    <FDEText>GEAR DISAGREE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="818" FDEClass="caution" AlertID="818">
+    <FDEText>GEAR DOOR NOT CLSD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="820" FDEClass="advisory" AlertID="820">
+    <FDEText>WOW FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="824" FDEClass="caution" AlertID="824">
+    <FDEText>NW STEER FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="825" FDEClass="caution" AlertID="825">
+    <FDEText>TOWING OUT OF RANGE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="826" FDEClass="advisory" AlertID="826">
+    <FDEText>NW STEER DEGRADED</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="827" FDEClass="advisory" AlertID="827">
+    <FDEText>NW STEER OFF</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="829" FDEClass="advisory" AlertID="829">
+    <FDEText>L TILLER INOP</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="830" FDEClass="advisory" AlertID="830">
+    <FDEText>R TILLER INOP</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="832" FDEClass="caution" AlertID="832">
+    <FDEText>LG TEMP EXCEEDANCE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="833" FDEClass="advisory" AlertID="833">
+    <FDEText>NW STEER PEDAL FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="835" FDEClass="advisory" AlertID="835">
+    <FDEText>GEAR MAINT MODE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="850" FDEClass="advisory" AlertID="850">
+    <FDEText>EMER LT NOT ARMD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="884" FDEClass="caution" AlertID="884">
+    <FDEText>RNP UNABLE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="885" FDEClass="advisory" AlertID="885">
+    <FDEText>FMS MESSAGE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="886" FDEClass="caution" AlertID="886">
+    <FDEText>FMS NAV UNABLE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="887" FDEClass="advisory" AlertID="887">
+    <FDEText>FMS NOT SYNCHRONIZED</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="888" FDEClass="caution" AlertID="888">
+    <FDEText>FMS 1+2 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="891" FDEClass="advisory" AlertID="891">
+    <FDEText>GNSS INTEGRITY LOSS</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="892" FDEClass="advisory" AlertID="892">
+    <FDEText>BELOW PATH</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="894" FDEClass="caution" AlertID="894">
+    <FDEText>FUEL DISAGREE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="895" FDEClass="advisory" AlertID="895">
+    <FDEText>FUEL FLOW ENGINE L</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="896" FDEClass="advisory" AlertID="896">
+    <FDEText>FUEL FLOW ENGINE R</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="916" FDEClass="advisory" AlertID="916">
+    <FDEText>IRS 1 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="917" FDEClass="advisory" AlertID="917">
+    <FDEText>IRS 2 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="918" FDEClass="advisory" AlertID="918">
+    <FDEText>IRS 3 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="919" FDEClass="caution" AlertID="919">
+    <FDEText>IRS 1+2 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="920" FDEClass="caution" AlertID="920">
+    <FDEText>IRS 1+3 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="921" FDEClass="caution" AlertID="921">
+    <FDEText>IRS 2+3 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="923" FDEClass="advisory" AlertID="923">
+    <FDEText>IRS ATTITUDE MODE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="949" FDEClass="advisory" AlertID="949">
+    <FDEText>PROBE HEAT 1 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="950" FDEClass="advisory" AlertID="950">
+    <FDEText>PROBE HEAT 2 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="951" FDEClass="advisory" AlertID="951">
+    <FDEText>PROBE HEAT 3 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="955" FDEClass="caution" AlertID="955">
+    <FDEText>PROBE HEAT 1+2+3 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="958" FDEClass="advisory" AlertID="958">
+    <FDEText>L+R TAT HEAT FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="962" FDEClass="advisory" AlertID="962">
+    <FDEText>AOA HEAT 1+2 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="963" FDEClass="advisory" AlertID="963">
+    <FDEText>AOA HEAT 1+3 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="964" FDEClass="advisory" AlertID="964">
+    <FDEText>AOA HEAT 2+3 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="965" FDEClass="caution" AlertID="965">
+    <FDEText>AOA HEAT 1+2+3 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="968" FDEClass="advisory" AlertID="968">
+    <FDEText>PITOT 1 VOTE OUT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="969" FDEClass="advisory" AlertID="969">
+    <FDEText>PITOT 2 VOTE OUT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="970" FDEClass="advisory" AlertID="970">
+    <FDEText>PITOT 3 VOTE OUT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="971" FDEClass="advisory" AlertID="971">
+    <FDEText>STATIC PR 1 VOTE OUT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="972" FDEClass="advisory" AlertID="972">
+    <FDEText>STATIC PR 2 VOTE OUT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="973" FDEClass="advisory" AlertID="973">
+    <FDEText>STATIC PR 3 VOTE OUT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="974" FDEClass="advisory" AlertID="974">
+    <FDEText>PITOT 1+2 VOTE OUT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="975" FDEClass="advisory" AlertID="975">
+    <FDEText>PITOT 1+3 VOTE OUT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="976" FDEClass="advisory" AlertID="976">
+    <FDEText>PITOT 2+3 VOTE OUT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="977" FDEClass="advisory" AlertID="977">
+    <FDEText>STATIC PR 1+2 VOTE OUT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="978" FDEClass="advisory" AlertID="978">
+    <FDEText>STATIC PR 1+3 VOTE OUT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="979" FDEClass="advisory" AlertID="979">
+    <FDEText>STATIC PR 2+3 VOTE OUT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="982" FDEClass="advisory" AlertID="982">
+    <FDEText>TCAS OFF</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="983" FDEClass="advisory" AlertID="983">
+    <FDEText>TCAS L+R FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="984" FDEClass="advisory" AlertID="984">
+    <FDEText>CAPT TCAS RA DISPLAY</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="985" FDEClass="advisory" AlertID="985">
+    <FDEText>F/O TCAS RA DISPLAY</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="986" FDEClass="advisory" AlertID="986">
+    <FDEText>XPDR L+R FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="988" FDEClass="advisory" AlertID="988">
+    <FDEText>WXR PWS FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="989" FDEClass="advisory" AlertID="989">
+    <FDEText>WXR SYSTEM FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="990" FDEClass="advisory" AlertID="990">
+    <FDEText>TAWS RWS FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="991" FDEClass="advisory" AlertID="991">
+    <FDEText>ALT CALLOUTS FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="992" FDEClass="advisory" AlertID="992">
+    <FDEText>TAWS SYSTEM FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="993" FDEClass="advisory" AlertID="993">
+    <FDEText>TAWS TERR FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="994" FDEClass="advisory" AlertID="994">
+    <FDEText>TAWS GPWS FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="995" FDEClass="advisory" AlertID="995">
+    <FDEText>TAWS TERR OVRD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="996" FDEClass="advisory" AlertID="996">
+    <FDEText>TAWS GS CANCEL</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="997" FDEClass="advisory" AlertID="997">
+    <FDEText>TAWS FLAP OVRD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="998" FDEClass="advisory" AlertID="998">
+    <FDEText>TAWS GEAR OVRD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="999" FDEClass="advisory" AlertID="999">
+    <FDEText>CAPT PWS DISPLAY</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1000" FDEClass="advisory" AlertID="1000">
+    <FDEText>F/O PWS  DISPLAY</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1001" FDEClass="advisory" AlertID="1001">
+    <FDEText>ADS-B OUT L+R FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1002" FDEClass="advisory" AlertID="1002">
+    <FDEText>ADS-B IN L+R FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1003" FDEClass="advisory" AlertID="1003">
+    <FDEText>L TCAS  FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1004" FDEClass="advisory" AlertID="1004">
+    <FDEText>R TCAS  FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1005" FDEClass="advisory" AlertID="1005">
+    <FDEText>L XPDR FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1006" FDEClass="advisory" AlertID="1006">
+    <FDEText>R XPDR FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1017" FDEClass="advisory" AlertID="1017">
+    <FDEText>L ADS-B OUT FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1018" FDEClass="advisory" AlertID="1018">
+    <FDEText>R ADS-B OUT FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1019" FDEClass="advisory" AlertID="1019">
+    <FDEText>L ADS-B IN FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1020" FDEClass="advisory" AlertID="1020">
+    <FDEText>R ADS-B IN FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1047" FDEClass="advisory" AlertID="1047">
+    <FDEText>GPS 1 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1048" FDEClass="advisory" AlertID="1048">
+    <FDEText>GPS 2 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1049" FDEClass="advisory" AlertID="1049">
+    <FDEText>GPS 1+2 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1051" FDEClass="advisory" AlertID="1051">
+    <FDEText>SINGLE RAD ALT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1054" FDEClass="advisory" AlertID="1054">
+    <FDEText>SINGLE ILS</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1055" FDEClass="advisory" AlertID="1055">
+    <FDEText>SINGLE GBAS GLS</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1056" FDEClass="advisory" AlertID="1056">
+    <FDEText>ILS1+2 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1057" FDEClass="advisory" AlertID="1057">
+    <FDEText>GBAS GLS1+2 FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1080" FDEClass="caution" AlertID="1080">
+    <FDEText>CREW OXY PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1081" FDEClass="advisory" AlertID="1081">
+    <FDEText>OBSERVER OXY PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1082" FDEClass="caution" AlertID="1082">
+    <FDEText>OXY PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1083" FDEClass="caution" AlertID="1083">
+    <FDEText>CREW OXY PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1084" FDEClass="advisory" AlertID="1084">
+    <FDEText>OBSERVER OXY PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1085" FDEClass="caution" AlertID="1085">
+    <FDEText>CREW OXY PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1086" FDEClass="advisory" AlertID="1086">
+    <FDEText>OBSERVER OXY PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1087" FDEClass="caution" AlertID="1087">
+    <FDEText>CREW OXY PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1088" FDEClass="advisory" AlertID="1088">
+    <FDEText>OBSERVER OXY PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1089" FDEClass="caution" AlertID="1089">
+    <FDEText>CREW OXY PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1090" FDEClass="advisory" AlertID="1090">
+    <FDEText>ALL OBSR OXY PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1091" FDEClass="advisory" AlertID="1091">
+    <FDEText>SEC OBSR OXY PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1092" FDEClass="caution" AlertID="1092">
+    <FDEText>CREW OXY PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1093" FDEClass="advisory" AlertID="1093">
+    <FDEText>ALL OBSR OXY PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1094" FDEClass="advisory" AlertID="1094">
+    <FDEText>SEC OBSR OXY PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1114" FDEClass="advisory" AlertID="1114">
+    <FDEText>AUTO DEPLOY SYS FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1130" FDEClass="warning" AlertID="1130">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1131" FDEClass="warning" AlertID="1131">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1132" FDEClass="warning" AlertID="1132">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1133" FDEClass="warning" AlertID="1133">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1134" FDEClass="warning" AlertID="1134">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1135" FDEClass="warning" AlertID="1135">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1136" FDEClass="warning" AlertID="1136">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1137" FDEClass="warning" AlertID="1137">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1138" FDEClass="warning" AlertID="1138">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1139" FDEClass="warning" AlertID="1139">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1140" FDEClass="warning" AlertID="1140">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1141" FDEClass="warning" AlertID="1141">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1151" FDEClass="warning" AlertID="1151">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1153" FDEClass="warning" AlertID="1153">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1161" FDEClass="warning" AlertID="1161">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1164" FDEClass="warning" AlertID="1164">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1167" FDEClass="warning" AlertID="1167">
+    <FDEText>N/A</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1229" FDEClass="caution" AlertID="1229">
+    <FDEText>CABIN EMER CALL</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1230" FDEClass="advisory" AlertID="1230">
+    <FDEText>CABIN CALL</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1293" FDEClass="advisory" AlertID="1293">
+    <FDEText>AWCF FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1326" FDEClass="caution" AlertID="1326">
+    <FDEText>APU LIMIT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1327" FDEClass="advisory" AlertID="1327">
+    <FDEText>APU FAIL</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1359" FDEClass="caution" AlertID="1359">
+    <FDEText>DOOR NOT CLSD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1360" FDEClass="caution" AlertID="1360">
+    <FDEText>DOOR DISARMED</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1371" FDEClass="advisory" AlertID="1371">
+    <FDEText>FLIGHT LOCK FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1373" FDEClass="advisory" AlertID="1373">
+    <FDEText>CRGO DOOR PWR ENBL</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1374" FDEClass="advisory" AlertID="1374">
+    <FDEText>REFUEL DOOR NOT CLSD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1375" FDEClass="caution" AlertID="1375">
+    <FDEText>DOOR PSEU FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1392" FDEClass="caution" AlertID="1392">
+    <FDEText>--L ENG FAIL--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1393" FDEClass="caution" AlertID="1393">
+    <FDEText>--R ENG FAIL--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1394" FDEClass="caution" AlertID="1394">
+    <FDEText>L ENG NO DISPATCH</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1395" FDEClass="caution" AlertID="1395">
+    <FDEText>R ENG NO DISPATCH</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1400" FDEClass="caution" AlertID="1400">
+    <FDEText>L ENG EXCEEDANCE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1401" FDEClass="caution" AlertID="1401">
+    <FDEText>R ENG EXCEEDANCE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1402" FDEClass="caution" AlertID="1402">
+    <FDEText>L ENG THR CTRL FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1403" FDEClass="caution" AlertID="1403">
+    <FDEText>R ENG THR CTRL FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1406" FDEClass="advisory" AlertID="1406">
+    <FDEText>L ENG CLR VLV CLSD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1407" FDEClass="advisory" AlertID="1407">
+    <FDEText>R ENG CLR VLV CLSD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1410" FDEClass="caution" AlertID="1410">
+    <FDEText>L FADEC TLA FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1411" FDEClass="caution" AlertID="1411">
+    <FDEText>R FADEC TLA FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1412" FDEClass="caution" AlertID="1412">
+    <FDEText>L FADEC OVERTEMP</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1413" FDEClass="caution" AlertID="1413">
+    <FDEText>R FADEC OVERTEMP</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1414" FDEClass="caution" AlertID="1414">
+    <FDEText>L ENG START VLV OPEN</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1415" FDEClass="caution" AlertID="1415">
+    <FDEText>R ENG START VLV OPEN</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1416" FDEClass="caution" AlertID="1416">
+    <FDEText>L ENG START VLV CLSD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1417" FDEClass="caution" AlertID="1417">
+    <FDEText>R ENG START VLV CLSD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1418" FDEClass="caution" AlertID="1418">
+    <FDEText>L ENG START FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1419" FDEClass="caution" AlertID="1419">
+    <FDEText>R ENG START FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1420" FDEClass="caution" AlertID="1420">
+    <FDEText>L ENG IGN A+B FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1421" FDEClass="caution" AlertID="1421">
+    <FDEText>R ENG IGN A+B FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1426" FDEClass="warning" AlertID="1426">
+    <FDEText>L ENG THR ABOVE IDLE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1427" FDEClass="warning" AlertID="1427">
+    <FDEText>R ENG THR ABOVE IDLE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1428" FDEClass="advisory" AlertID="1428">
+    <FDEText>L ENG REV FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1429" FDEClass="advisory" AlertID="1429">
+    <FDEText>R ENG REV FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1430" FDEClass="advisory" AlertID="1430">
+    <FDEText>L ENG REV INHIBIT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1431" FDEClass="advisory" AlertID="1431">
+    <FDEText>R ENG REV INHIBIT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1442" FDEClass="advisory" AlertID="1442">
+    <FDEText>L FL HPSOV FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1443" FDEClass="advisory" AlertID="1443">
+    <FDEText>R FL HPSOV FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1444" FDEClass="warning" AlertID="1444">
+    <FDEText>L ENG OIL PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1445" FDEClass="warning" AlertID="1445">
+    <FDEText>R ENG OIL PRESS LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1446" FDEClass="advisory" AlertID="1446">
+    <FDEText>L ENG OIL QTY LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1447" FDEClass="advisory" AlertID="1447">
+    <FDEText>R ENG OIL QTY LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1448" FDEClass="caution" AlertID="1448">
+    <FDEText>L OIL FILTER BYPASS</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1449" FDEClass="caution" AlertID="1449">
+    <FDEText>R OIL FILTER BYPASS</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1454" FDEClass="caution" AlertID="1454">
+    <FDEText>L ENG OIL TEMP HI</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1455" FDEClass="caution" AlertID="1455">
+    <FDEText>R ENG OIL TEMP HI</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1456" FDEClass="caution" AlertID="1456">
+    <FDEText>L ENG OIL TEMP LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1457" FDEClass="caution" AlertID="1457">
+    <FDEText>R ENG OIL TEMP LO</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1458" FDEClass="warning" AlertID="1458">
+    <FDEText>--DUAL ENG FAIL--</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1459" FDEClass="caution" AlertID="1459">
+    <FDEText>L ENG REV COMMAND</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1460" FDEClass="caution" AlertID="1460">
+    <FDEText>R ENG REV COMMAND</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1461" FDEClass="caution" AlertID="1461">
+    <FDEText>L+R FL FILT APP BYPASS</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1462" FDEClass="caution" AlertID="1462">
+    <FDEText>L ENG ICE VLV CLSD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1463" FDEClass="caution" AlertID="1463">
+    <FDEText>R ENG ICE VLV CLSD</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1464" FDEClass="caution" AlertID="1464">
+    <FDEText>L ENG COMP CTRL FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1465" FDEClass="caution" AlertID="1465">
+    <FDEText>R ENG COMP CTRL FAULT</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1466" FDEClass="caution" AlertID="1466">
+    <FDEText>L ENG REV DUAL UNLOCK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1467" FDEClass="caution" AlertID="1467">
+    <FDEText>R ENG REV DUAL UNLOCK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1468" FDEClass="caution" AlertID="1468">
+    <FDEText>L FL FILT BYPASS</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1469" FDEClass="caution" AlertID="1469">
+    <FDEText>R FL FILT BYPASS</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1470" FDEClass="caution" AlertID="1470">
+    <FDEText>L ENG TLA NOT IDLE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1471" FDEClass="caution" AlertID="1471">
+    <FDEText>R ENG TLA NOT IDLE</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1561" FDEClass="warning" AlertID="1561">
+    <FDEText>CONFIG FLAPS</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1562" FDEClass="warning" AlertID="1562">
+    <FDEText>CONFIG SPOILERS</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1563" FDEClass="warning" AlertID="1563">
+    <FDEText>CONFIG STAB</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1564" FDEClass="warning" AlertID="1564">
+    <FDEText>CONFIG RUD TRIM</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1565" FDEClass="warning" AlertID="1565">
+    <FDEText>CONFIG PARK BRK</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1566" FDEClass="warning" AlertID="1566">
+    <FDEText>CONFIG DOORS</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1567" FDEClass="warning" AlertID="1567">
+    <FDEText>CONFIG GEAR</FDEText>
+  </FlightDeckEffects>
+  <FlightDeckEffects FaultCode="1568" FDEClass="warning" AlertID="1568">
+    <FDEText>CONFIG GEAR</FDEText>
+  </FlightDeckEffects>
+</FlightDeckEffectImport>

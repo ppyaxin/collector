@@ -121,11 +121,11 @@
 	</div>
 	<div data-options="region:'south',title:'Error',split:true" style="height:100px;"></div>
 	<!-- 右侧 -->
-	<div data-options="region:'east',title:'Tips',split:true" style="width:200px;">
+	<!-- <div data-options="region:'east',title:'Tips',split:true" style="width:200px;">
 		<span>The Data Entry Tool is used to collect Member System data based on the specific ICD version.
 			It helps supplier validate their data entry and export a MSD file.
 		</span>
-	</div>
+	</div> -->
 	<!-- 左侧 -->
 	<div data-options="region:'west',title:'Navagation',split:true" style="width:300px;">
 		<ul id="tt" class="easyui-tree" data-options="data:left_tt,method:'get',url:'directory.json',animate:true"></ul>
@@ -135,26 +135,26 @@
 		<!-- icd information -->
 		<div id="icdinfo" style="height:100%;width:100%;background-color: #E0ECFF;display:none">
 			<form method="post" style="padding:20px">
-				<div style="margin-bottom:20px">
+				<div style="margin-bottom:10px">
 					<input id="InstanceLoc" class="easyui-textbox" name="e" style="width:900px"
 						data-options="label:'ICD Instance File Location',labelWidth:200,readonly:true">
 				</div>
-				<div style="margin-bottom:20px">
+				<div style="margin-bottom:10px">
 					<input id="classLoc" class="easyui-textbox" name="email" style="width:900px;"
 						data-options="label:'ICD Class File Locaton',labelWidth:200">
 				</div>
-				<div style="margin-bottom:20px">
+				<div style="margin-bottom:10px">
 					<label for="username" style="width:195px;display: inline-block;" class="label-top">Block
 						Point</label>
 					<input id="username" class="easyui-validatebox textbox  tb"
 						style="width:700px;height: 28px;line-height: 28px;"
 						data-options="required:true,validType:'minLength[1]'">
 				</div>
-				<div style="margin-bottom:20px">
+				<div style="margin-bottom:10px">
 					<input id="createtime" class="easyui-textbox" name="subject" style="width:900px"
 						data-options="label:'Data Produced',labelWidth:200,readonly:true">
 				</div>
-				<div style="margin-bottom:20px">
+				<div style="margin-bottom:10px">
 					<input id="version" class="easyui-textbox" name="subject" style="width:900px"
 						data-options="label:'Schema Revison',labelWidth:200,readonly:true">
 				</div>
@@ -630,7 +630,7 @@
 	</div>
 
 	<!-- import icd message 从oms右侧进去 -->
-	<div id="w" class="easyui-window" title="Window Layout" data-options="iconCls:'icon-save',closed:true"
+	<div id="w" class="easyui-window" title="import ICD" data-options="iconCls:'icon-save',closed:true"
 		style="width:900px;height:700px;padding:5px;">
 		<div class="easyui-layout" data-options="fit:true">
 			<div data-options="region:'east',split:true" style="width:100%;height: 250px;">
@@ -652,6 +652,16 @@
 				<a class="easyui-linkbutton" href="javascript:void(0)" onclick="javascript: $('#w').window('close')"
 					style="width:80px">Cancel</a>
 			</div>
+		</div>
+	</div>
+	<!-- import fde 提示引入的fde条数的win小框 -->
+	<div id="fdeTipWin" class="easyui-window" title="Flight Deck Effect" data-options="iconCls:'icon-save',closed:true"
+		style="width:400px;height:150px;padding:5px;">
+		<div data-options="region:'east',split:true" style="width:100%;height: 50px;">
+			<div id="fdetipnum"></div>
+		</div>
+		<div data-options="region:'south'" style="text-align:center;height: 20px;">
+			<a id="informFDE" class="easyui-linkbutton" onclick="importFlightDeckEffect()"  style="width:80px">确定</a>
 		</div>
 	</div>
 </body>
@@ -1051,7 +1061,6 @@
 							let temp = {}
 							temp.Name = dp[k].attributes[1].value
 							temp.type = dp[k].attributes[9].value
-
 							//console.log(dp[k].attributes)
 							//str.push(temp)
 							let bitoffsetwithinDs = parseInt(dp[k].attributes[5].value) + 1
@@ -1202,7 +1211,7 @@
 				omsNowTree = tree
 				$("#omslist").tree({ data: tree })
 				//在这里进行右上角引入icd的建树操作。开始建立全部icd列表树。并且选择已经被选中的节点
-				getDPDom(dps,item)
+				getDPDom(dps, item)
 			})
 			$("#OmsMessages").append(a)
 		}
