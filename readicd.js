@@ -63,7 +63,7 @@ function readicd(data) {
         dataType: 'xml',
         success: function (x) {
             icd = x
-            console.log("icdicd",icd)
+            console.log("icdicd", icd)
             makeVirtualDom(icd)
             return icd
         }
@@ -77,7 +77,7 @@ function readclass(data) {
         url: data,
         dataType: 'xml',
         success: function (x) {
-            // console.log("icdicd",icd)
+             console.log("icdicd",icd)
             icd = x
             makeVirtualDom(icd)
             return icd
@@ -91,7 +91,9 @@ function makeVirtualDom(icd) {
     // getA429portDom(A429portDom)
     let HostedFunction = icd.getElementsByTagName("HostedFunction")[0]
     let version = HostedFunction.getAttribute("XsdVersion")
+    let documentName = HostedFunction.getAttribute("Name")
     $("#version").textbox('setValue', version)
+    $("#memName").textbox('setValue', documentName)
     let DP = icd.getElementsByTagName("DP")
     getDPDom(DP)
 }
@@ -116,10 +118,13 @@ function getDPDom(DP, checkedDP) {
     let dptree = []
     //将被选中的节点的id放进一个set中，之后如果构建icd树时候有这个id将checked属性设置为true
     let idSet = new Set()
-    for (let i = 0; i < checkedDP.length; i++) {
-        let id = checkedDP[i].getAttribute("Id")
-        idSet.add(id)
+    if (checkedDP) {
+        for (let i = 0; i < checkedDP.length; i++) {
+            let id = checkedDP[i].getAttribute("Id")
+            idSet.add(id)
+        }
     }
+
     for (let i = 0; i < DP.length; i++) {
         let path = DP[i].getAttribute("NameDef")
         let Id = DP[i].getAttribute("Id")
@@ -142,7 +147,7 @@ function getDPDom(DP, checkedDP) {
         onCheck: function (node, checked) {
             let nodes = $('#icdlist').tree('getChecked');
             let leafs = []
-            checkedNode=[]
+            checkedNode = []
             //将之前的树展示在上面，然后直接获得checked的节点
             for (let i = 0; i < nodes.length; i++) {
                 if (nodes[i].children.length == 0) {
@@ -153,12 +158,12 @@ function getDPDom(DP, checkedDP) {
             }
             $("#iims").datalist({ data: leafs })
         },
-         onUncheck: function (node, data) {
+        onUncheck: function (node, data) {
             //是否check操作一样
             let nodes = $('#icdlist').tree('getChecked');
             let leafs = []
-            
-            checkedNode=[]
+
+            checkedNode = []
             //将之前的树展示在上面，然后直接获得checked的节点
             for (let i = 0; i < nodes.length; i++) {
                 if (nodes[i].children.length == 0) {

@@ -128,7 +128,7 @@
 	</div> -->
 	<!-- 左侧 -->
 	<div data-options="region:'west',title:'Navagation',split:true" style="width:300px;">
-		<ul id="tt" class="easyui-tree" data-options="data:left_tt,method:'get',url:'directory.json',animate:true"></ul>
+		<ul id="tt" class="easyui-tree" data-options="data:left_tt,animate:true"></ul>
 	</div>
 	<!-- 中间 -->
 	<div data-options="region:'center',title:'Data Entry'" style="padding:1px;background:#eee;">
@@ -175,8 +175,13 @@
 							data-options="label:'Member System Name',labelWidth:300">
 					</div>
 					<div style="margin-bottom:10px">
-						<input id="msi" class="easyui-textbox" name="email" style="width:800px"
-							data-options="label:'Member System ID',labelWidth:300">
+						<!-- <input id="msi" class="easyui-textbox" name="email" style="width:800px"
+							data-options="label:'Member System ID',labelWidth:300"> -->
+						<label for="msi" style="width:295px;display: inline-block;" class="label-top">Member System
+							ID</label>
+						<input id="msi" class="easyui-validatebox textbox tb"
+							style="width:500px;height: 28px;line-height: 28px;"
+							data-options="required:true,validType:'minLength[1]'">
 					</div>
 					<div style="margin-bottom:10px">
 						<input id="as" class="easyui-textbox" name="subject" style="width:800px"
@@ -661,19 +666,71 @@
 			<div id="fdetipnum"></div>
 		</div>
 		<div data-options="region:'south'" style="text-align:center;height: 20px;">
-			<a id="informFDE" class="easyui-linkbutton" onclick="importFlightDeckEffect()"  style="width:80px">确定</a>
+			<a id="informFDE" class="easyui-linkbutton" onclick="importFlightDeckEffect()" style="width:80px">确定</a>
 		</div>
 	</div>
 </body>
 <script type="text/javascript">
-	let left_tt = [{
-		"id": 1,
-		"text": "Start Page"
-	}, {
-		"id": "test",
-		"text": "ICD Information",
-
-	}]
+	let left_tt = [
+		{
+			"id": 1,
+			"text": "Start Page"
+		},
+		{
+			"id": 2,
+			"text": "ICD Information",
+			"children": [
+				{
+					"id": 11,
+					"text": "Member System Modeling Data"
+				},
+				{
+					"id": 11,
+					"text": "Data Load"
+				},
+				{
+					"id": 11,
+					"text": "OMS Communication Messages"
+				},
+				{
+					"id": 11,
+					"text": "Member System Status"
+				}
+			]
+		},
+		{
+			"id": 3,
+			"text": "Fault Reporting",
+			"children": [
+				{
+					"id": 11,
+					"text": "Basic Info"
+				},
+				{
+					"id": 11,
+					"text": "Downstream Faults"
+				}
+			]
+		},
+		{
+			"id": 3,
+			"text": "Failure Modeling Data"
+		},
+		{
+			"id": 3,
+			"text": "Initiated Test",
+			"children": [
+				{
+					"id": 11,
+					"text": "Initiated Basic Info"
+				},
+				{
+					"id": 11,
+					"text": "Interfering Initiated Test"
+				}
+			]
+		}
+	]
 
 	function save() {
 		$.post("./writexml.php", function (result) {
@@ -843,7 +900,6 @@
 			success: function (x) {
 				xml = x
 				let MemberSystemModelingData = xml.getElementsByTagName("MemberSystemModelingData")
-
 				let BindingItems = MemberSystemModelingData[0].getElementsByTagName("BindingItems")
 				let OmsMessage = MemberSystemModelingData[0].getElementsByTagName("OmsMessage")
 				let StatusMessage = MemberSystemModelingData[0].getElementsByTagName("StatusMessage")
@@ -853,7 +909,7 @@
 				let InitiatedTestData = FaultReporting[0].getElementsByTagName("InitiatedTestData")
 				let FlightDeckEffectData = xml.getElementsByTagName("FlightDeckEffectData")
 				let FaultReportingLabel = xml.getElementsByTagName("FaultReportingLabel")
-				makeFaultReportingList(FaultReportingData)
+
 				getMemberSystemModelingData(MemberSystemModelingData[0])
 				getFaultReporting(FaultReportingData)
 				getARINC615OADLFData(xml)
@@ -864,6 +920,7 @@
 				getFlightDeckEffectData(FlightDeckEffectData)
 				getFaultReportingLabel(FaultReportingLabel)
 				getReadDP(xml)
+				makeFaultReportingList(FaultReportingData)
 				return xml
 			}
 		})
@@ -876,7 +933,10 @@
 		let a = attributes[1].value
 		$("#memName").textbox('setValue', a)
 		let msi = attributes[4].value
-		$("#msi").textbox('setValue', msi)
+		//设置验证框的值
+		$("#msi").val(msi)
+	    //对值进行一次验证
+        $("#msi").validatebox('validate')
 		let as = attributes[13].value
 		$("#as").textbox('setValue', as)
 		let msd = attributes[5].value
