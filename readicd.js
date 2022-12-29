@@ -243,12 +243,44 @@ function icdsubmit() {
     }]
     $("#tt").tree({ data: left_tt })
 }
-//左侧树一些不相干
+//member system model data 里面点击submit
 function msmdsubmit() {
-    let a = document.getElementById("supportFR").checked
-    if (a) {
-        left_tt[1].children.push({ "text": "OMS Communication Messages" })
-        $("#tt").tree({ data: left_tt })
+    // let a = document.getElementById("supportFR").checked
+    // if (a) {
+    //     left_tt[1].children.push({ "text": "OMS Communication Messages" })
+    //     $("#tt").tree({ data: left_tt })
+    // }
+    $("#OmsMessages").empty()
+    if(document.getElementById("supportFR").checked){
+        let len=0
+        a = $("<a href=\"#\" class=\"easyui-linkbutton  l-btn l-btn-small easyui-fluid\" style=\"width: 100%;padding:5px;word-wrap:break-word;position: relative;\">" +
+        "<div style=\" display: flex;justify-content: space-between;\">" +
+        "<div style=\"width: 300px;\">" + "Member Syetem Status"+
+        "</br>" + "Item Count:" + len + "</div>" +
+        "<div style=\"width: 50px;\">" +
+        "<svg class=\"icon\" aria-hidden=\"true\" style=\"height: 30px;line-height:30px;\">" +
+        "<use xlink:href=\"#icon-xiangzuo\"color=\"#32cd32\">" + "</use>" +
+        "</svg>" +
+        "</div>" +
+        "</div>" +
+        "</a>")
+        $("#OmsMessages").append(a)
     }
+    // .push({ "text": "OMS Communication Messages" })
+    left_tt[1].children=[
+        {
+            "id": 11,
+            "text": "Member System Modeling Data"
+        }, 
+        {
+            "id": 12,
+            "text": "OMS Communication Messages"
+        },
+        {
+            "id": 13,
+            "text": "Member System Status"
+        },
+    ]
+    $("#tt").tree({ data: left_tt })
 }
 

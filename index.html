@@ -13,6 +13,7 @@
 	<script type="text/javascript" src="failuremodeling.js"></script>
 	<script type="text/javascript" src="msdchooseIcd.js"></script>
 	<script type="text/javascript" src="openFDE.js"></script>
+	<script type="text/javascript" src="changeFaultPeport.js"></script>
 	<style>
 		.icon {
 			width: 1.5em;
@@ -184,8 +185,12 @@
 							data-options="required:true,validType:'minLength[1]'">
 					</div>
 					<div style="margin-bottom:10px">
-						<input id="as" class="easyui-textbox" name="subject" style="width:800px"
-							data-options="label:'ATA System',labelWidth:300">
+						<!-- <input id="as" class="easyui-textbox" name="subject" style="width:800px"
+							data-options="label:'ATA System',labelWidth:300"> -->
+						<label for="as" style="width:295px;display: inline-block;" class="label-top">ATA System</label>
+						<input id="as" class="easyui-validatebox textbox tb"
+							style="width:500px;height: 28px;line-height: 28px;"
+							data-options="required:true,validType:'minLength[1]'">
 					</div>
 					<div style="margin-bottom:10px">
 						<select ID="Language" class="easyui-combobox" name="language" label="Language"
@@ -197,8 +202,13 @@
 						</select>
 					</div>
 					<div style="margin-bottom:10px">
-						<input ID="msd" class="easyui-textbox" name="message" style="width: 800px;height:60px"
-							data-options="label:'Member System Description',labelWidth:300,multiline:true">
+						<!-- <input ID="msd" class="easyui-textbox" name="message" style="width: 800px;height:60px"
+							data-options="label:'Member System Description',labelWidth:300,multiline:true"> -->
+						<label for="msd" style="width:295px;display: inline-block;" class="label-top">Member System
+							Description</label>
+						<input id="msd" class="easyui-validatebox textbox tb"
+							style="width:500px;height: 28px;line-height: 28px;"
+							data-options="required:true,validType:'minLength[1]'">
 					</div>
 					<div style="margin-bottom:10px">
 						<span style="display:inline-block ;width:300px">Is Optional Equipment</span>
@@ -387,11 +397,15 @@
 			</div>
 		</div>
 		<!-- fualt Report -->
+		<!-- 右上角保存 -->
+		<div id="saveFaultReport">
+			<a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-ok'" onclick="saveFaultReport()"></a>
+		</div>
 		<div id="fualtReport" class="easyui-layout" data-options="fit:true" class="easyui-tabs"
 			style="height: 100%;width:100%">
 			<!-- 右侧 -->
 			<div data-options="region:'center',split:'true'," style="width: 300px;height: 100%;">
-				<div id="frRight1" class="easyui-tabs" style="width:100%;height:100%">
+				<div id="frRight1" data-options="tools:'#saveFaultReport'" class="easyui-tabs" style="width:100%;height:100%">
 					<!-- 基础数据tab1 -->
 					<div title="Basic Data" style="padding:20px;display:none;">
 						<div style="margin-bottom:5px">
@@ -438,7 +452,6 @@
 						</div>
 					</div>
 				</div>
-
 				<div id="frRight2" style="width:100%;height:100%">
 					<!-- tab1 -->
 					<div class="easyui-panel" title="Please Config The DownstreamFaults">
@@ -461,7 +474,7 @@
 			</div>
 		</div>
 		<!-- OMS Communication Message -->
-		<!-- ttt -->
+		<!-- 右上角的小蜡笔-->
 		<div id="ttt">
 			<a href="#" class="icon-edit" onclick="$('#w').window('open')"></a>
 		</div>
@@ -679,56 +692,6 @@
 		{
 			"id": 2,
 			"text": "ICD Information",
-			"children": [
-				{
-					"id": 11,
-					"text": "Member System Modeling Data"
-				},
-				{
-					"id": 11,
-					"text": "Data Load"
-				},
-				{
-					"id": 11,
-					"text": "OMS Communication Messages"
-				},
-				{
-					"id": 11,
-					"text": "Member System Status"
-				}
-			]
-		},
-		{
-			"id": 3,
-			"text": "Fault Reporting",
-			"children": [
-				{
-					"id": 11,
-					"text": "Basic Info"
-				},
-				{
-					"id": 11,
-					"text": "Downstream Faults"
-				}
-			]
-		},
-		{
-			"id": 3,
-			"text": "Failure Modeling Data"
-		},
-		{
-			"id": 3,
-			"text": "Initiated Test",
-			"children": [
-				{
-					"id": 11,
-					"text": "Initiated Basic Info"
-				},
-				{
-					"id": 11,
-					"text": "Interfering Initiated Test"
-				}
-			]
 		}
 	]
 
@@ -741,6 +704,7 @@
 	function clickFile() {
 		const input = document.querySelector('#up')
 		input.click()
+
 	}
 	let readurl = ""
 	// function init(){
@@ -757,23 +721,72 @@
 				//alert(data)	
 				readurl = data
 				xml = start(data)
+				left_tt = [
+					{
+						"id": 1,
+						"text": "Start Page"
+					},
+					{
+						"id": 2,
+						"text": "ICD Information",
+						"children": [
+							{
+								"id": 11,
+								"text": "Member System Modeling Data"
+							},
+							{
+								"id": 11,
+								"text": "Data Load"
+							},
+							{
+								"id": 11,
+								"text": "OMS Communication Messages"
+							},
+							{
+								"id": 11,
+								"text": "Member System Status"
+							}
+						]
+					},
+					{
+						"id": 3,
+						"text": "Fault Reporting",
+						"children": [
+							{
+								"id": 11,
+								"text": "Basic Info"
+							},
+							{
+								"id": 11,
+								"text": "Downstream Faults"
+							}
+						]
+					},
+					{
+						"id": 3,
+						"text": "Failure Modeling Data"
+					},
+					{
+						"id": 4,
+						"text": "Initiated Test",
+						"children": [
+							{
+								"id": 11,
+								"text": "Initiated Basic Info"
+							},
+							{
+								"id": 11,
+								"text": "Interfering Initiated Test"
+							}
+						]
+					}
+				]
+				$("#tt").tree({ data: left_tt })
 			}
 		})
 		$('#openxml').submit()
 	}
 
-	function showTree() {
-		document.getElementById("_easyui_tree_54").style.display = "none"
-		document.getElementById("_easyui_tree_57").style.display = "none"
-		document.getElementById("_easyui_tree_58").style.display = "none"
-		document.getElementById("_easyui_tree_51").style.display = "none"
-		document.getElementById("_easyui_tree_52").style.display = "none"
-		document.getElementById("_easyui_tree_53").style.display = "none"
-		document.getElementById("_easyui_tree_55").style.display = "none"
-		document.getElementById("_easyui_tree_59").style.display = "none"
-
-		document.getElementById("_easyui_tree_60").style.display = "none"
-	}
 
 	let fightPhase = [{
 		"text": "Power-On"
@@ -925,9 +938,6 @@
 			}
 		})
 	}
-
-
-
 	function getMemberSystemModelingData(MemberSystemModelingData) {
 		let attributes = MemberSystemModelingData.attributes
 		let a = attributes[1].value
@@ -935,12 +945,19 @@
 		let msi = attributes[4].value
 		//设置验证框的值
 		$("#msi").val(msi)
-	    //对值进行一次验证
-        $("#msi").validatebox('validate')
+		//对值进行一次验证
+		$("#msi").validatebox('validate')
 		let as = attributes[13].value
-		$("#as").textbox('setValue', as)
+		//设置验证框的值
+		$("#as").val(as)
+		//对值进行一次验证
+		$("#as").validatebox('validate')
 		let msd = attributes[5].value
-		$("#msd").textbox('setValue', msd)
+		//设置验证框的值
+		$("#msd").val(as)
+		//对值进行一次验证
+		$("#msd").validatebox('validate')
+		//$("#msd").textbox('setValue', msd)
 		//document.getElementById("iit").checked = strtoBool(temp[9].value)
 		//  automatic
 		if (attributes[9].value == "false") {
@@ -975,7 +992,6 @@
 			let num = FlightDeckEffectsType[i].attributes[0].value
 			let FDEClass = FlightDeckEffectsType[i].attributes[2].value
 			let FDEText = FlightDeckEffectsType[i].getElementsByTagName("FDEText")[0].innerHTML
-
 			let temp = {}
 			temp.text = num + "&nbsp" + FDEText + "&nbsp" + FDEClass
 			str.push(temp)

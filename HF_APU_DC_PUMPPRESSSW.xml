@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--The information in this document is GE AVIC Civil Avionics Systems Company 
+Limited ('AVIAGE SYSTEMS') proprietary information and is disclosed in 
+confidence. It is the property of AVIAGE SYSTEMS (and/or third parties) and 
+must not be used, disclosed to others or reproduced without the express written 
+consent of AVIAGE SYSTEMS. If consent is given for reproduction in whole or in 
+part, this notice must appear in any such reproduction in whole or in part. 
+
+This document contains China and/or US origin technical data under applicable 
+export control laws and regulations. This technical data can be used for civil 
+only end-use and must not be transferred to Syria, Iran, North Korea, Cuba or 
+Sudan or other US denied party listed entities. 
+
+ - - - - - - - - - - - - - - - - - - - - - - - -
+
+MODEL IDENTIFIER: MBD-->
+<HostedFunction Name="HF_APU_DC_PUMPPRESSSW" Guid="aa9377df8-c87f-470e-bbde-1c237cdf42d8a" NameDef="HF_DC_FUELPUMPPRESSSWCLASS" GuidDef="a37f16465-b993-462b-bc60-29423520e942a" XsdVersion="8.8" Hardware="APU_DC_PUMPPRESSSW">
+  <AnalogPort Name="poDISC_PumpStatus" Guid="ad55d9a48-edc3-46d2-a5b6-cdc1f8b9267ea" NameDef="HF_DC_FUELPUMPPRESSSWCLASS.poDISC_PumpStatus" GuidDef="a1ec653ca-fe55-43e7-869d-603f6c3ed4a4a" Physical="APU_DC_PUMPPRESSSW.poDISC_PumpStatus">
+    <AnalogDiscreteParameter Name="DISC_PumpStatus" Guid="a78691d5e-dafa-439b-b195-991b16946851a" NameDef="HF_DC_FUELPUMPPRESSSWCLASS.DISC_PumpStatus" GuidDef="a501d93bb-7ee1-47ad-8427-85e325bf5bf2a">
+      <DP Name="Status" Guid="ad0dd86bf-5913-4cc0-b580-8b6aded5b2e8a" NameDef="HF_DC_FUELPUMPPRESSSWCLASS.DISC_PumpStatus.Status" GuidDef="a02f7b990-38e2-4d9d-b4c0-5dfa7a1ed161a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+</HostedFunction>

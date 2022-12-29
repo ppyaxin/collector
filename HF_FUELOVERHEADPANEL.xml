@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--The information in this document is GE AVIC Civil Avionics Systems Company 
+Limited ('AVIAGE SYSTEMS') proprietary information and is disclosed in 
+confidence. It is the property of AVIAGE SYSTEMS (and/or third parties) and 
+must not be used, disclosed to others or reproduced without the express written 
+consent of AVIAGE SYSTEMS. If consent is given for reproduction in whole or in 
+part, this notice must appear in any such reproduction in whole or in part. 
+
+This document contains China and/or US origin technical data under applicable 
+export control laws and regulations. This technical data can be used for civil 
+only end-use and must not be transferred to Syria, Iran, North Korea, Cuba or 
+Sudan or other US denied party listed entities. 
+
+ - - - - - - - - - - - - - - - - - - - - - - - -
+
+MODEL IDENTIFIER: MBD-->
+<HostedFunction Name="HF_FUELOVERHEADPANEL" Guid="aff7409dc-0997-48f0-aded-3db2df7e4be3a" NameDef="HF_FUELOVERHEADPANELCLASS" GuidDef="a21ba25a7-e102-4a4a-bff7-d69b44408616a" XsdVersion="8.8" Hardware="FUELOVERHEADPANEL">
+  <AnalogPort Name="poDISC_CPump1OffA" Guid="a673e7be7-76e5-433e-bd17-42b1a446dce8a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_CPump1OffA" GuidDef="ae8c23207-67ae-441b-a816-2df8073ba3dfa" Physical="FUELOVERHEADPANEL.poDISC_CPump1OffA">
+    <AnalogDiscreteParameter Name="DISC_CPump1OffA" Guid="ae66c1df9-c666-440c-8a9c-f6c4c9055073a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump1OffA" GuidDef="ae0799139-64c4-4cc4-a6fd-22c696b362c8a">
+      <DP Name="Status" Guid="af124f993-5804-498d-9a8c-41051ac290e3a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump1OffA.Status" GuidDef="a1df9896c-1d49-4c4a-8130-a2a0ffe1d2c2a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_CPump1OffB" Guid="a7c7ed706-60c4-42a9-829f-96c378e03b8da" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_CPump1OffB" GuidDef="afb4275c3-4bd2-451c-b701-b1f3d82347a1a" Physical="FUELOVERHEADPANEL.poDISC_CPump1OffB">
+    <AnalogDiscreteParameter Name="DISC_CPump1OffB" Guid="a6c124ec0-e83e-46dc-a93e-833ba3b8f55aa" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump1OffB" GuidDef="a7ad44441-d226-4ff1-8a38-f68e62a57ef9a">
+      <DP Name="Status" Guid="a35dc146a-06c2-480e-a442-3b299dcf8360a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump1OffB.Status" GuidDef="a9079a756-ae28-4ca6-9fad-1812f235f6b5a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_CPump1OnA" Guid="a44098b91-70e3-4d0e-803e-30b81d633808a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_CPump1OnA" GuidDef="a78ddffaa-2b76-487f-afb7-4b76b724f29ea" Physical="FUELOVERHEADPANEL.poDISC_CPump1OnA">
+    <AnalogDiscreteParameter Name="DISC_CPump1OnA" Guid="a22e75082-2448-4396-b8db-6acfc733a6dca" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump1OnA" GuidDef="a192506f6-9982-42b2-8ee7-1cd81a0f75f2a">
+      <DP Name="Status" Guid="a3e6e4add-bbfe-415a-ae82-8a91067547ffa" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump1OnA.Status" GuidDef="aa0c81ed0-549d-4316-ac97-3544b4ac5f35a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_CPump1OnB" Guid="a43303fb5-70a5-4a50-a2a9-8a8761ea2d7fa" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_CPump1OnB" GuidDef="ae595cc03-5e1d-4b75-88f2-6b89c049895ba" Physical="FUELOVERHEADPANEL.poDISC_CPump1OnB">
+    <AnalogDiscreteParameter Name="DISC_CPump1OnB" Guid="a56f74cc4-df81-4dc7-b12f-fefa3933d4eaa" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump1OnB" GuidDef="ab57b80b0-199c-4b61-8c68-5e52666472b5a">
+      <DP Name="Status" Guid="aef0a477e-228b-46c3-9d15-0d2159a8ba8da" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump1OnB.Status" GuidDef="a3bb5bbc6-d039-44f0-adba-f2a64f9c7a6ea" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_CPump2OffA" Guid="a2251fe35-e2b5-4a9d-a2a8-86839b25efcaa" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_CPump2OffA" GuidDef="a83cfc898-8488-419f-91dd-3d25799d84afa" Physical="FUELOVERHEADPANEL.poDISC_CPump2OffA">
+    <AnalogDiscreteParameter Name="DISC_CPump2OffA" Guid="ad9cd0fac-b764-4e30-8d7d-10f00d1845b7a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump2OffA" GuidDef="a6782bee7-7329-41e0-9f46-d9d97f627ea6a">
+      <DP Name="Status" Guid="a41badb7d-1c3e-4f2e-b1c8-61645292fab7a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump2OffA.Status" GuidDef="a5c760bc9-9789-4a0f-be6c-31836f9a084aa" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_CPump2OffB" Guid="ae5d91dfb-cd37-4a5d-8870-0c799a0fff16a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_CPump2OffB" GuidDef="aa746bd41-f82d-47fb-bac3-f9456a4794fca" Physical="FUELOVERHEADPANEL.poDISC_CPump2OffB">
+    <AnalogDiscreteParameter Name="DISC_CPump2OffB" Guid="aacd436fe-2d10-4b28-ba8f-fc9be6509528a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump2OffB" GuidDef="aa591fdcb-0f17-4bc9-a043-941f1b3e92fca">
+      <DP Name="Status" Guid="a2b066a99-54bc-463b-9fe9-cbb1ae055f49a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump2OffB.Status" GuidDef="a028096b3-a8e7-4840-a731-6ba3c53fa3d2a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_CPump2OnA" Guid="a7d077b29-e380-4b04-b582-f6744440244fa" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_CPump2OnA" GuidDef="a8bd469a6-9b95-41b4-aca3-985277ecea6aa" Physical="FUELOVERHEADPANEL.poDISC_CPump2OnA">
+    <AnalogDiscreteParameter Name="DISC_CPump2OnA" Guid="a975cce0f-a9c8-4fdb-8ce0-81e22d7a26c4a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump2OnA" GuidDef="ab77edab8-a6a6-4597-90c5-f5f69c16abcaa">
+      <DP Name="Status" Guid="a06e30ad4-19e1-46a3-ad6e-3aba5119e206a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump2OnA.Status" GuidDef="ac87d677a-e536-455d-9a82-2255cd90852aa" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_CPump2OnB" Guid="aa983107a-fd87-4452-8f9f-4cfd060f3f98a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_CPump2OnB" GuidDef="a5e3ba4f1-6224-45db-89a1-2cb0b093233da" Physical="FUELOVERHEADPANEL.poDISC_CPump2OnB">
+    <AnalogDiscreteParameter Name="DISC_CPump2OnB" Guid="ade14def8-8414-4219-a426-0b087a64f105a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump2OnB" GuidDef="aa43dc31c-dd0c-40d2-9da5-b151fd99ec2aa">
+      <DP Name="Status" Guid="a318dda29-e5fd-43e7-a86d-59e1ea8b45cfa" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_CPump2OnB.Status" GuidDef="a7f22696e-ffa8-48cb-99a1-4c3c8d9ef38ba" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_DCPumpOffA" Guid="a54f98c89-a64f-4477-be29-ff3a70108603a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_DCPumpOffA" GuidDef="ab31c7d95-7e20-4177-a86e-49d5734bde17a" Physical="FUELOVERHEADPANEL.poDISC_DCPumpOffA">
+    <AnalogDiscreteParameter Name="DISC_DCPumpOffA" Guid="aa80517d4-d558-4f41-9ac4-6fe97eb3d426a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_DCPumpOffA" GuidDef="a4fd0e89c-4e9e-4532-915d-bf1d54ec6129a">
+      <DP Name="Status" Guid="a89db286e-2205-4418-a149-3cac40553024a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_DCPumpOffA.Status" GuidDef="ae5cebf36-3601-47f0-bcee-126a73099d9fa" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_DCPumpOffB" Guid="a5f1282c6-29dc-4bfd-85b0-05f37059ed38a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_DCPumpOffB" GuidDef="a4a02ca46-2f20-4be2-bdd6-2ba5a052d618a" Physical="FUELOVERHEADPANEL.poDISC_DCPumpOffB">
+    <AnalogDiscreteParameter Name="DISC_DCPumpOffB" Guid="a0ef93687-8843-4cca-a798-670c36499beea" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_DCPumpOffB" GuidDef="afaf01636-855b-41e9-9cac-43526e192398a">
+      <DP Name="Status" Guid="aff839e4e-51aa-4983-b22f-bccf289ed13ba" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_DCPumpOffB.Status" GuidDef="a608a4615-a9bc-4a8e-8f60-0abe5b0aaf3fa" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_DCPumpOnA" Guid="a907b44c5-d12b-4fe2-928d-aee59d0a2f37a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_DCPumpOnA" GuidDef="a2acf6979-09e2-47d9-87ca-1fe8ecdc7bd0a" Physical="FUELOVERHEADPANEL.poDISC_DCPumpOnA">
+    <AnalogDiscreteParameter Name="DISC_DCPumpOnA" Guid="ac26f97e1-bf18-4f5a-a407-639dedd65f31a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_DCPumpOnA" GuidDef="aaf5fde8c-beca-470e-b424-2560b67a1b72a">
+      <DP Name="Status" Guid="a6058e37e-8b1e-451a-b1da-f6f9053b20cfa" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_DCPumpOnA.Status" GuidDef="adb373878-ed53-450f-b517-5683a7d2f560a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_DCPumpOnB" Guid="a4bb6d4b4-2167-4980-9018-86d46ed9b3efa" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_DCPumpOnB" GuidDef="adc87b04a-9a17-4a0b-830a-9d36c7780772a" Physical="FUELOVERHEADPANEL.poDISC_DCPumpOnB">
+    <AnalogDiscreteParameter Name="DISC_DCPumpOnB" Guid="a55169632-4b40-40e6-9bd5-d98c8c46f2b0a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_DCPumpOnB" GuidDef="ac6db2957-5631-4a43-8fa0-7e700bf65468a">
+      <DP Name="Status" Guid="aa7bf63c0-03ba-4a11-b8f0-eeda5bf31134a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_DCPumpOnB.Status" GuidDef="a218c7671-cee0-4187-aea3-9303ab368701a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_LPump1OffA" Guid="a23da4a5c-b75c-46eb-98cb-d3e1e1dd78eca" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_LPump1OffA" GuidDef="a70c8071b-531d-4d69-9803-061fa1498716a" Physical="FUELOVERHEADPANEL.poDISC_LPump1OffA">
+    <AnalogDiscreteParameter Name="DISC_LPump1OffA" Guid="a00c34672-14ba-4835-8731-ca4d7d3263afa" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump1OffA" GuidDef="a8eb24c13-7ab3-4f5c-b357-d0c7582eaa1fa">
+      <DP Name="Status" Guid="ac096fd49-5f3d-44fb-aa93-66369a603c12a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump1OffA.Status" GuidDef="aa9940acb-5c28-48ed-bb4c-ead644558206a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_LPump1OffB" Guid="ada843175-fd2e-4cf7-b482-02e50d3d6917a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_LPump1OffB" GuidDef="a57a556c1-6192-4f3c-8362-0004f26b3ce8a" Physical="FUELOVERHEADPANEL.poDISC_LPump1OffB">
+    <AnalogDiscreteParameter Name="DISC_LPump1OffB" Guid="a65593db3-d093-469f-a520-c071e94e9e48a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump1OffB" GuidDef="a7548cc1f-5785-448a-95ec-390615240bb3a">
+      <DP Name="Status" Guid="ada1f6dd3-6b1f-4d79-a19a-109fda00f003a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump1OffB.Status" GuidDef="a5e26f911-e73c-4190-85bb-d177c7c0af85a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_LPump1OnA" Guid="a14f1f389-c03d-4fb5-928c-e428df3e7b16a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_LPump1OnA" GuidDef="a0f9dba21-ecdd-4fcc-8e8d-3da4bd25bfbda" Physical="FUELOVERHEADPANEL.poDISC_LPump1OnA">
+    <AnalogDiscreteParameter Name="DISC_LPump1OnA" Guid="a8aa044ca-bda2-4876-a031-bc175994e340a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump1OnA" GuidDef="ad16ff1b5-b3cc-4ea2-9ad8-43a5c746dea2a">
+      <DP Name="Status" Guid="a2e8477c0-ec6e-4a04-a248-d42452a5ef39a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump1OnA.Status" GuidDef="a22863abf-b0f5-4bac-8da6-312047d2453aa" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_LPump1OnB" Guid="a8bf3169d-660d-4b66-88b8-a9853ffa3686a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_LPump1OnB" GuidDef="a02708853-8a1b-4acc-9a09-e3c842d3509aa" Physical="FUELOVERHEADPANEL.poDISC_LPump1OnB">
+    <AnalogDiscreteParameter Name="DISC_LPump1OnB" Guid="a97591917-002e-4462-a664-8be9074f5593a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump1OnB" GuidDef="aae273068-902f-4643-bffb-1be311855656a">
+      <DP Name="Status" Guid="a1821a1e3-0657-4f78-99df-4cf9ae85564ba" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump1OnB.Status" GuidDef="aab729abc-68ae-4489-812f-2b94264b1db2a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_LPump2OffA" Guid="a598b1965-f4bc-41bc-8a8e-754b462d3e4fa" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_LPump2OffA" GuidDef="a3cb66967-b864-4354-9852-12c28c07f601a" Physical="FUELOVERHEADPANEL.poDISC_LPump2OffA">
+    <AnalogDiscreteParameter Name="DISC_LPump2OffA" Guid="a27640874-0219-40b5-a9b3-5c6cebe896f7a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump2OffA" GuidDef="a83fa05d0-f7a8-41ef-b0af-625827d16633a">
+      <DP Name="Status" Guid="aaed962b5-0c36-48d7-941f-637d42513d87a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump2OffA.Status" GuidDef="a985c3687-9c23-4690-a3ea-a87448b31eaea" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_LPump2OffB" Guid="acefcbdfa-7eb0-4eac-b2e3-db74a701a806a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_LPump2OffB" GuidDef="af2ae10f9-0a33-47d1-9e07-686c8cee718ca" Physical="FUELOVERHEADPANEL.poDISC_LPump2OffB">
+    <AnalogDiscreteParameter Name="DISC_LPump2OffB" Guid="a8e90cd4b-619c-4b07-b3ee-21ac33c5ef7fa" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump2OffB" GuidDef="ae5ccb1a8-eded-4eb0-a114-7856553abc9ea">
+      <DP Name="Status" Guid="aa8907303-70e3-44da-91f4-1ba86d8475e5a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump2OffB.Status" GuidDef="a368014ac-b716-42da-9418-a05152013645a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_LPump2OnA" Guid="aeca16614-3151-4778-94ce-2e49649dcdb8a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_LPump2OnA" GuidDef="a5412593e-831b-40c3-ac12-a99bbc48ae6da" Physical="FUELOVERHEADPANEL.poDISC_LPump2OnA">
+    <AnalogDiscreteParameter Name="DISC_LPump2OnA" Guid="a2696de0b-c24f-454b-8a3b-fe3fd0eb8065a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump2OnA" GuidDef="aab26ecb2-774e-4fa8-b147-fb47f97ad2b2a">
+      <DP Name="Status" Guid="a693abe5e-73d9-4d9c-b6eb-bd340d263154a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump2OnA.Status" GuidDef="ab349dda9-991c-4691-8c53-6fd00fe2c89ca" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_LPump2OnB" Guid="a184e2886-2b87-418d-9893-b20d73d8ca33a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_LPump2OnB" GuidDef="a7e2b267e-3ea2-4cbf-8412-672e6d66d0c9a" Physical="FUELOVERHEADPANEL.poDISC_LPump2OnB">
+    <AnalogDiscreteParameter Name="DISC_LPump2OnB" Guid="abfee95a1-3c2a-4875-93fa-6c5b3ef94b54a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump2OnB" GuidDef="a39005b8a-23a0-4f3e-9f97-e5406f30b5caa">
+      <DP Name="Status" Guid="a034ad78e-c71b-4278-ac2e-a792415b03a8a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_LPump2OnB.Status" GuidDef="a92d7e008-39df-4145-ac20-fd118de9b05fa" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_RPump1OffA" Guid="a8ea20e2c-0938-4b48-8d2a-a6ecd513a9c4a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_RPump1OffA" GuidDef="ac336f598-04e8-44fa-8c47-d2b0fc4e4bf8a" Physical="FUELOVERHEADPANEL.poDISC_RPump1OffA">
+    <AnalogDiscreteParameter Name="DISC_RPump1OffA" Guid="a25b3ccdf-851f-4d10-8fb6-c2ed0bd7879ca" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump1OffA" GuidDef="a689dc3fd-2973-4b43-898d-20b8afd4af5ba">
+      <DP Name="Status" Guid="a241585fe-6876-4507-9678-4737a634a1f9a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump1OffA.Status" GuidDef="a4d327067-6ae8-45b5-8afe-f0df689285b3a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_RPump1OffB" Guid="a51a25b7f-7344-4d9c-8098-91a6e1536f76a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_RPump1OffB" GuidDef="aab91b126-9589-41ee-bb25-e90f4c474680a" Physical="FUELOVERHEADPANEL.poDISC_RPump1OffB">
+    <AnalogDiscreteParameter Name="DISC_RPump1OffB" Guid="a3694e820-2fd7-41cd-b95f-b023893a67c7a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump1OffB" GuidDef="a251d8694-1b75-41c2-a93c-f1a8bfbb6268a">
+      <DP Name="Status" Guid="a940f823e-80f5-4ac5-b391-8187fb4e9685a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump1OffB.Status" GuidDef="a0b9466ff-0e05-431f-9520-71d9a65c4972a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_RPump1OnA" Guid="a7b6fa710-cf56-4288-9d00-25f815e11a8ea" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_RPump1OnA" GuidDef="acf02198d-6f21-4e4f-abba-bef4e76e9fc2a" Physical="FUELOVERHEADPANEL.poDISC_RPump1OnA">
+    <AnalogDiscreteParameter Name="DISC_RPump1OnA" Guid="a1a8a51ad-b991-492c-ae55-bbd10b7fbd23a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump1OnA" GuidDef="a170cf917-e357-486a-a468-ee7668ef60cba">
+      <DP Name="Status" Guid="a6d99a93b-926d-4a23-bde3-5ad04f944f69a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump1OnA.Status" GuidDef="ac2b53218-573f-45dc-a1db-e64a14fca2efa" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_RPump1OnB" Guid="a685a81c7-f41c-44e3-80f2-8cd69635c3e6a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_RPump1OnB" GuidDef="af378d35e-1408-45a4-85db-08ee153a5fbba" Physical="FUELOVERHEADPANEL.poDISC_RPump1OnB">
+    <AnalogDiscreteParameter Name="DISC_RPump1OnB" Guid="afb238c42-ce2a-4b34-9828-cb28ecbb22b1a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump1OnB" GuidDef="a49d033e6-be50-42a3-a4ac-c958612cad5ca">
+      <DP Name="Status" Guid="a5e989025-01fe-4896-8055-281979891a6da" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump1OnB.Status" GuidDef="a63e50e58-c418-4281-8e4b-180eaf5b332aa" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_RPump2OffA" Guid="a37feeb81-6eaf-46e5-bb42-11a2946c0183a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_RPump2OffA" GuidDef="aa15e79ad-442f-4109-9853-5935ac0facd5a" Physical="FUELOVERHEADPANEL.poDISC_RPump2OffA">
+    <AnalogDiscreteParameter Name="DISC_RPump2OffA" Guid="a952700e0-6851-4204-ae3a-d86bd1d58401a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump2OffA" GuidDef="ab80dab29-0abd-41da-82c5-e5c97a8f298aa">
+      <DP Name="Status" Guid="a5a4f90c3-4a4e-4781-9584-ffef7be94006a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump2OffA.Status" GuidDef="a463e97c4-b997-449e-b4af-9947bce44547a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_RPump2OffB" Guid="a4311ce37-549e-415e-a7e8-9366a8c0e786a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_RPump2OffB" GuidDef="a44a1f913-1fa5-4c47-af20-a0d2eebac099a" Physical="FUELOVERHEADPANEL.poDISC_RPump2OffB">
+    <AnalogDiscreteParameter Name="DISC_RPump2OffB" Guid="a4a397dec-d223-47bb-9d9a-b4c378319b90a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump2OffB" GuidDef="ac571aa27-2c29-46c3-8f87-e8d81934d4ada">
+      <DP Name="Status" Guid="a1a3a481b-6093-4c7f-93ec-6b2c114ddceca" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump2OffB.Status" GuidDef="a4ca030d6-5cf4-44e2-9334-e73774768678a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_RPump2OnA" Guid="ab263f53c-81f5-466a-b6f5-911f3d860c3aa" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_RPump2OnA" GuidDef="a65d07025-215e-4e68-8413-07bb6356e512a" Physical="FUELOVERHEADPANEL.poDISC_RPump2OnA">
+    <AnalogDiscreteParameter Name="DISC_RPump2OnA" Guid="a56ba5627-2789-4fb5-87ec-0517526cae42a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump2OnA" GuidDef="a573761d7-7df7-4f58-8c88-99c888f35ed1a">
+      <DP Name="Status" Guid="aff0ff380-e4ff-478e-bd66-c4b96ae0f1afa" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump2OnA.Status" GuidDef="a4a5abe08-9292-4a1d-9139-e4a2af9f87d0a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_RPump2OnB" Guid="a21f46bd0-691b-4ca2-884c-5824dbb9a04da" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_RPump2OnB" GuidDef="af9355eac-542e-41aa-86f7-bea62ace927ba" Physical="FUELOVERHEADPANEL.poDISC_RPump2OnB">
+    <AnalogDiscreteParameter Name="DISC_RPump2OnB" Guid="ae3be1966-f669-4924-adcf-6b285f18c202a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump2OnB" GuidDef="a5b898d20-0439-48d5-be5c-55ca3b601beda">
+      <DP Name="Status" Guid="a27c1c411-9652-4572-aef5-45ccb7439ecda" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_RPump2OnB.Status" GuidDef="a65c72000-e5c3-4567-ad99-aef1ed85a304a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_XfeedSOVClosedA" Guid="aec639349-524b-4d82-8cbe-363d33f833e0a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_XfeedSOVClosedA" GuidDef="a728d49e2-980b-48b6-88b5-dc8630cf0c1ea" Physical="FUELOVERHEADPANEL.poDISC_XfeedSOVClosedA">
+    <AnalogDiscreteParameter Name="DISC_XfeedSOVClosedA" Guid="a6d14bd9b-2e48-48a2-ba2f-05a4fe5eafd9a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_XfeedSOVClosedA" GuidDef="af4a0b5b0-fce5-4652-8188-e45dfc50e856a">
+      <DP Name="Status" Guid="a064eeaab-02cd-4313-98a5-6e1bab6e6c38a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_XfeedSOVClosedA.Status" GuidDef="a55c3ab4d-0cbc-46d4-9d7d-7fd5cded610ea" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_XfeedSOVClosedB" Guid="ac648d52c-fa6f-4531-be63-af349e110ab4a" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_XfeedSOVClosedB" GuidDef="accbab8a5-3605-4f39-a86c-8031deb84f0fa" Physical="FUELOVERHEADPANEL.poDISC_XfeedSOVClosedB">
+    <AnalogDiscreteParameter Name="DISC_XfeedSOVClosedB" Guid="a15e13e19-dab7-4ff7-aaf5-6b17d3284e2fa" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_XfeedSOVClosedB" GuidDef="af7933ade-8568-4efb-8547-45bd81e89630a">
+      <DP Name="Status" Guid="a83fb2299-6879-476d-aeee-8fb09b09a706a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_XfeedSOVClosedB.Status" GuidDef="aa72aedc7-71b2-4412-a0cb-46bf97070d0da" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_XfeedSOVOpenA" Guid="af5c0e7e9-d631-4a8e-ba24-08624bb8169ba" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_XfeedSOVOpenA" GuidDef="ab063e371-d09f-407a-85dd-8390a77ee84ba" Physical="FUELOVERHEADPANEL.poDISC_XfeedSOVOpenA">
+    <AnalogDiscreteParameter Name="DISC_XfeedSOVOpenA" Guid="a38164de9-2110-4adc-9b8e-fe26eab052eea" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_XfeedSOVOpenA" GuidDef="aa6d28258-ef2c-4a27-a6f4-121cb3353dd1a">
+      <DP Name="Status" Guid="a1440e68a-56f5-4dad-808e-bdff1ece404aa" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_XfeedSOVOpenA.Status" GuidDef="a02f8d94a-19f9-4d89-bacb-84f5c0ad4e1da" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_XfeedSOVOpenB" Guid="af021690e-3872-46e5-906f-7c181c30f19fa" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_XfeedSOVOpenB" GuidDef="a9b387743-aa02-4633-b988-d0b836652828a" Physical="FUELOVERHEADPANEL.poDISC_XfeedSOVOpenB">
+    <AnalogDiscreteParameter Name="DISC_XfeedSOVOpenB" Guid="a74491db8-4941-43d5-8de9-915f568be1baa" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_XfeedSOVOpenB" GuidDef="aebfef442-3ce3-490c-acd2-d3ff577de484a">
+      <DP Name="Status" Guid="aa9cc9433-3a34-48f4-b460-87a0c950b9d8a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_XfeedSOVOpenB.Status" GuidDef="af00e0e6d-0836-47ea-9b9d-64084c88bfb5a" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+  <AnalogPort Name="poDISC_OVERRIDEPUMP_MODESEL" Guid="ac8c90740-55d9-44d0-87c0-0b711e128cbca" NameDef="HF_FUELOVERHEADPANELCLASS.poDISC_OVERRIDEPUMP_MODESEL" GuidDef="a690e6d63-d78d-4ec5-ba79-7dda145b2deea" Physical="FUELOVERHEADPANEL.poDISC_OVERRIDEPUMP_MODESEL">
+    <AnalogDiscreteParameter Name="DISC_OVERRIDEPUMP_MODESEL" Guid="a22e71efb-4272-46e0-9828-ea59d4bf7ce5a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_OVERRIDEPUMP_MODESEL" GuidDef="a64ce6db9-7d43-4301-9d9d-3b79db095e55a">
+      <DP Name="Status" Guid="a6d3d0700-51f2-40a8-bfb4-a6e67dfa32d1a" NameDef="HF_FUELOVERHEADPANELCLASS.DISC_OVERRIDEPUMP_MODESEL.Status" GuidDef="a44b0d9ff-e8a2-4d6b-8fe8-83418807cc7ca" />
+    </AnalogDiscreteParameter>
+  </AnalogPort>
+</HostedFunction>
