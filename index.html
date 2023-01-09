@@ -397,10 +397,10 @@
 			</div>
 		</div>
 		<!-- fualt Report -->
-		<!-- 右上角保存 -->
+		<!-- fault report basic右上角保存 -->
 		<div id="saveFaultReport">
 			<a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-ok'"
-				onclick="saveFaultReport()"></a>
+				onclick="javascript: $('#changeFault').window('open')"></a>
 		</div>
 		<div id="fualtReport" class="easyui-layout" data-options="fit:true" class="easyui-tabs"
 			style="height: 100%;width:100%">
@@ -444,23 +444,25 @@
 								data-options="data:fightPhase,animate:true,checkbox:true"></ul>
 						</div>
 					</div>
-					<!-- tab3 -->
+					<!-- fight deck effect -->
 					<div title="Fight Deck Effect" style="overflow:auto;padding:20px;display:none;">
 						<div id="fde" class="easyui-datalist" style="width:100%;height:100%" data-options="
-					checkbox: true,
-					selectOnCheck: false,
-					onBeforeSelect: function(){return false;}
-					">
+					       checkbox: true,
+					       selectOnCheck: false,
+					       onBeforeSelect: function(){return false;}
+					      ">
 						</div>
 					</div>
 				</div>
 				<div id="frRight2" style="width:100%;height:100%">
 					<!-- tab1 -->
-					<div class="easyui-panel" title="Please Config The DownstreamFaults">
+					<div class="easyui-panel" title="Please Config The DownstreamFaults"
+						data-options="	tools:'#saveFaultReportDownstream'">
 						<div id="pcdf" class="easyui-datalist" data-options="
 						checkbox: true,
 						selectOnCheck: false,
-						onBeforeSelect: function(){return false;}
+						onBeforeSelect: function(){return false;},
+					
 						">
 						</div>
 					</div>
@@ -473,6 +475,10 @@
 				<div id="FaultReporting" class="easyui-panel" style="height: 430px;width:100%">
 				</div>
 			</div>
+		</div>
+		<!-- fault report downstream右上角保存 -->
+		<div id="saveFaultReportDownstream">
+			<a href="#" class="icon-ok" onclick="javascript: $('#changeDownFault').window('open')"></a>
 		</div>
 		<!-- OMS Communication Message -->
 		<!-- 右上角的小蜡笔-->
@@ -683,6 +689,27 @@
 			<a id="informFDE" class="easyui-linkbutton" onclick="importFlightDeckEffect()" style="width:80px">确定</a>
 		</div>
 	</div>
+	<!-- 修改故障报告 -->
+	<div id="changeFault" class="easyui-window" title="Flight Deck Effect"
+		data-options="iconCls:'icon-save',closed:true" style="width:400px;height:150px;padding:5px;">
+		<div data-options="region:'east',split:true" style="width:100%;height: 50px;">
+			<span> 是否确定修改故障报告？</span>
+		</div>
+		<div data-options="region:'south'" style="text-align:center;height: 20px;">
+			<a id="" class="easyui-linkbutton" onclick="saveFaultReport()" style="width:80px">确定</a>
+		</div>
+	</div>
+
+	<!-- 修改下游关联故障报告 -->
+	<div id="changeDownFault" class="easyui-window" title="Save DownstreamFaults"
+		data-options="iconCls:'icon-save',closed:true" style="width:400px;height:150px;padding:5px;">
+		<div data-options="region:'east',split:true" style="width:100%;height: 50px;">
+			<span> 是否确定修改下游故障？</span>
+		</div>
+		<div data-options="region:'south'" style="text-align:center;height: 20px;">
+			<a id="" class="easyui-linkbutton" onclick="saveDownStreamFaultReport()" style="width:80px">确定</a>
+		</div>
+	</div>
 </body>
 <script type="text/javascript">
 	let left_tt = [
@@ -790,11 +817,15 @@
 
 
 	let fightPhase = [{
+		"id": 1,
 		"text": "Power-On"
+
 	}, {
+		"id": 2,
 		"text": "Engine Start"
 	},
 	{
+		"id": 3,
 		"text": "Taxi Out"
 	}, {
 		"id": 4,
@@ -906,20 +937,21 @@
 
 	//开始加载xml
 	let msd = {}
-    //在全局获取出msd
-	function getMsd(m){
-       msd=m
+	//在全局获取出msd
+	function getMsd(m) {
+		msd = m
 	}
 
+
 	function start(url) {
-		
+
 		$.ajax({
 			type: 'GET',
 			url: url,
 			dataType: 'xml',
 			success: function (x) {
 				xml = x
-                getMsd(x)
+				getMsd(x)
 				let MemberSystemModelingData = msd.getElementsByTagName("MemberSystemModelingData")
 				let BindingItems = MemberSystemModelingData[0].getElementsByTagName("BindingItems")
 				let OmsMessage = MemberSystemModelingData[0].getElementsByTagName("OmsMessage")
@@ -930,7 +962,7 @@
 				let InitiatedTestData = FaultReporting[0].getElementsByTagName("InitiatedTestData")
 				let FlightDeckEffectData = msd.getElementsByTagName("FlightDeckEffectData")
 				let FaultReportingLabel = msd.getElementsByTagName("FaultReportingLabel")
-                  
+
 				getMemberSystemModelingData(MemberSystemModelingData[0])
 				getFaultReporting(FaultReportingData)
 				getARINC615OADLFData(msd)
@@ -947,6 +979,11 @@
 			}
 		})
 	}
+
+	//在全局取出故障报告
+	//let FaultReportingDataList = msd.getElementsByTagName("FaultReportingData")
+	//console.log("FaultReportingData",msd)
+
 	function getMemberSystemModelingData(MemberSystemModelingData) {
 		let attributes = MemberSystemModelingData.attributes
 		let a = attributes[1].value
@@ -1212,7 +1249,6 @@
 	}
 	//获取所有rp或者dp或者a429，组成id name键值对
 	function getRPdpa429(dataName, id, xml) {
-
 		let data = xml.getElementsByTagName(dataName)
 		let temp = {}
 		//let text=[]
@@ -1231,7 +1267,6 @@
 			"</svg>" +
 			"</div>" +
 			"</div >")
-
 		$("#rightOMS").append(b)
 		return temp
 	}
@@ -1345,8 +1380,8 @@
 		return
 	}
 
-    let changedFaultReportId = ""
-	//分页加载一部分列表
+	let changedFaultReportId = ""
+	//分页加载一部分故障报告的列表
 	function getFaultReportingList(pageNumber, pageSize, FaultReportingData) {
 		//清空之前的后代元素
 		$("#FaultReporting").empty()
@@ -1357,7 +1392,8 @@
 		//console.log(pageNumber, pageSize, start, end)
 		for (let i = start; i < end; i++) {
 			let test = FaultReportingData[i].attributes[4].value
-			let DownstreamFaultsLength = FaultReportingData[i].getElementsByTagName("DownstreamFaults").length
+			let DownstreamFaults = FaultReportingData[i].getElementsByTagName("DownstreamFaults")
+			let DownstreamFaultsLength = DownstreamFaults.length
 			let a = $("<a href=\"#\" class=\"easyui-linkbutton l-btn l-btn-small easyui-fluid\"  style=\"width: 100%;padding:5px;word-wrap:break-word;\" ></a>").html(test +
 				'</br>' + DownstreamFaultsLength + '&nbsp' + 'DownstreamFaults')
 			$(a).click(function () {
@@ -1365,9 +1401,9 @@
 				let temp = FaultReportingData[i].attributes
 				let id = temp[0].value
 				changedFaultReportId = id
-				console.log("changedFaultReportId",changedFaultReportId)
-			    //将id传出来，以确定修改xml的时候修改的是哪一个
-			    $("#Name").textbox('setValue', temp[4].value)
+				console.log("changedFaultReportId", changedFaultReportId)
+				//将id传出来，以确定修改xml的时候修改的是哪一个
+				$("#Name").textbox('setValue', temp[4].value)
 				$("#Detect").textbox('setValue', temp[5].value)
 				$("#Clear").textbox('setValue', temp[6].value)
 				$("#Delay").textbox('setValue', temp[7].value)
@@ -1380,6 +1416,25 @@
 				}
 				//easyui数据绑定方式
 				$("#fightPhase").tree({ data: fightPhase })
+
+				//清空downstreamfault
+				for (let j = 0; j < faultRepoetnameList.length; j++) {
+					faultRepoetnameList[j].checked = false
+				}
+				//更新downstreamfault页面
+				//console.log(faultRepoetnameList)
+				$("#pcdf").datalist({ data: faultRepoetnameList })
+				//绑定downstreamfault,来自于failuremodeing
+				for (let k = 0; k < DownstreamFaults.length; k++) {
+					for (let j = 0; j < faultRepoetnameList.length; j++) {
+						if (DownstreamFaults[k].getAttribute("Id") == faultRepoetnameList[j].id) {
+							faultRepoetnameList[j].checked = true
+                            //在界面上进行勾选
+							$("#pcdf").datalist('selectRow',j)
+							break
+						}
+					}
+				}
 
 			})
 			$("#FaultReporting").append(a)
@@ -1422,7 +1477,7 @@
 			}
 		}
 		//console.log("ARINC615OADLFData", ARINC615OADLFData, resetTime)
-	}	
+	}
 	function numSorter(a, b) {
 		a = parseFloat(a);
 		b = parseFloat(b);

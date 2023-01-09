@@ -1,7 +1,9 @@
 //readmsd get dp
 let dps = []
+//用于downstreamfault，将添加上一些键值对，包括text，checked，id
 let faultRepoetnameList = []
 let faultRep = {}
+
 
 function getReadDP(xml) {
     let dp = xml.getElementsByTagName("DP")
@@ -57,6 +59,7 @@ function getFailureDataList(pageNumber, pageSize, failureData) {
                     }
                 }
             }
+            console.log("datalist(getChecked)",$("#frms").datalist('getChecked'))
             $("#activeFaultRep").datagrid({ data: arr })
             $("#frms").datalist({ data: faultRepoetnameList })
             $("#frms").datalist({
@@ -102,12 +105,12 @@ function getFailureData(failureData) {
     });
 }
 
-
 function makeFaultReportingList(FaultReportingData) {
+    faultReportList = FaultReportingData
     for (let i = 0; i < FaultReportingData.length; i++) {
         let FaultReportName = FaultReportingData[i].getAttribute("FaultReportName")
         let FaultReportId = FaultReportingData[i].getAttribute("Id")
-        faultRepoetnameList.push({ text: FaultReportName, checked: false })
+        faultRepoetnameList.push({ text: FaultReportName, checked: false,id:FaultReportId })
         faultRep[FaultReportId] = FaultReportName
     }
     $("#pcdf").datalist({ data: faultRepoetnameList })
