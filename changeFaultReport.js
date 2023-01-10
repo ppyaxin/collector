@@ -63,14 +63,34 @@ function saveDownStreamFaultReport() {
     //将点击到的某个故障报告和故障报告列表做对比，找到xml中的故障报告
     for (let i = 0; i < FaultReportingData.length; i++) {
         if (changedFaultReportId == FaultReportingData[i].getAttribute("Id")) {
-           //获取屏幕上已经被选择到的下游故障报告
+            //获取屏幕上已经被选择到的下游故障报告
             //downstreamfault 获取目前页面上被选中的下游错误
             //getChecked方法似乎只能返回手动操作的
-            let nodes = $('#pcdf').datalist('getData');
+            let nodes = $('#pcdf').datalist('getChecked');
             console.log("nodesnodes", nodes)
-           //删除现在的xml 对象中下游故障报告
-           //将现在的故障报告进行写入
-           break
+
+            //删除现在的xml 对象中下游故障报告
+            let DownstreamFaults = FaultReportingData[i].getElementsByTagName("DownstreamFaults")
+            let DownstreamFaultsLen = DownstreamFaults.length
+            for (let j = 0; j < DownstreamFaultsLen; j++) {
+                FaultReportingData[i].removeChild(DownstreamFaults[0]);
+            }
+
+
+            //将现在的故障报告进行写入
+            //对节点进行依次写入
+            for (let j = 0; j < nodes.length; j++) {
+                //创建xml节点
+                let downfault = msd.createElement("DownstreamFaults")
+                downfault.setAttribute("Id",nodes[j].id)
+                //MessageType="DP" Label="0"
+                downfault.setAttribute("MessageType","DP")
+                downfault.setAttribute("Label","0")
+                //将xml节点进行写入
+                FaultReportingData[i].appendChild(downfault)
+            }
+              console.log("FaultReportingData[i]",FaultReportingData[i])
+            break
         }
     }
 }

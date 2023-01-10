@@ -14,6 +14,7 @@
 	<script type="text/javascript" src="msdchooseIcd.js"></script>
 	<script type="text/javascript" src="openFDE.js"></script>
 	<script type="text/javascript" src="changeFaultReport.js"></script>
+	<script type="text/javascript" src="exportMsd.js"></script>
 	<style>
 		.icon {
 			width: 1.5em;
@@ -88,6 +89,19 @@
 			<form id="openfde" method="post" enctype="multipart/form-data" style="display: none;">
 				<input id="opFDE" type="file" name="file1" accept=".xml" onchange="sendfde(value)">
 			</form>
+
+			<!-- 导出msd -->
+			<button onclick="clickExportFile()"
+				style="width: 60px;height: 60px;border-color: #eef0f2;position: absolute;margin: 5px;right: 0;">
+				<svg class="icon" aria-hidden="true" style="width: 1.5em;height:1.5em">
+					<use xlink:href="#icon-lingcunwei"></use>
+				</svg>
+				<span>Export Msd</span>
+			</button>
+			<form id="exportmsd" method="post" enctype="multipart/form-data" style="display: none;">
+				<input id="opFDE" type="file" name="file1" accept=".xml" onchange="">
+			</form>
+
 		</div>
 		<div id="eTop" title="Edit" style="overflow:auto;padding-top: 5px; padding-left:10px;display:none;">
 			<!-- 打开icd -->
@@ -1421,6 +1435,9 @@
 				for (let j = 0; j < faultRepoetnameList.length; j++) {
 					faultRepoetnameList[j].checked = false
 				}
+				// $("#pcdf").datalist('checkRow', 0)
+				// let test =$("#pcdf").datalist('getChecked')
+				// console.log("$datalist('selectRow', 0)",test)
 				//更新downstreamfault页面
 				//console.log(faultRepoetnameList)
 				$("#pcdf").datalist({ data: faultRepoetnameList })
@@ -1429,13 +1446,14 @@
 					for (let j = 0; j < faultRepoetnameList.length; j++) {
 						if (DownstreamFaults[k].getAttribute("Id") == faultRepoetnameList[j].id) {
 							faultRepoetnameList[j].checked = true
-                            //在界面上进行勾选
-							$("#pcdf").datalist('selectRow',j)
+							//在界面上进行勾选
+							$("#pcdf").datalist('checkRow', j)
 							break
 						}
 					}
 				}
-
+				//let test =$("#pcdf").datalist('getChecked')
+				//console.log(test)
 			})
 			$("#FaultReporting").append(a)
 		}
