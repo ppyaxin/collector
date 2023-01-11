@@ -450,9 +450,17 @@
 								data-options="label:'Fault Report Name',labelWidth:300">
 						</div>
 						<div style="margin-bottom:5px">
-							<input id="Type" class="easyui-textbox" name="e" style="width:700px"
-								data-options="label:'Fault Report Type',labelWidth:300">
+							<select id="protocalType" class="easyui-combobox" name="language" label="Language"
+								style="width:700px" data-options="label:'Protocal type',labelWidth:300,panelHeight:120">
+								<option value="ar">Internal</option>
+								<option value="bg">Input Freshness</option>
+								<option value="ca">Input Validity</option>
+								<option value="zh-cht">Output Freshness</option>
+								<option value="zh-cht">Output Validity</option>
+								<option value="zh-cht">Input Range</option>
+							</select>
 						</div>
+
 						<div style="margin-bottom:5px">
 							<input id="Delay" class="easyui-textbox" name="e" style="width:700px"
 								data-options="label:'Fault Report Delay',labelWidth:300">
@@ -1074,9 +1082,9 @@
 			let FDEClass = FlightDeckEffectsType[i].attributes[2].value
 			let FDEText = FlightDeckEffectsType[i].getElementsByTagName("FDEText")[0].innerHTML
 			let temp = {}
+			temp.number=num
 			temp.text = num + "&nbsp" + FDEText + "&nbsp" + FDEClass
 			str.push(temp)
-
 		}
 		//console.log("............", str)
 		$("#fde").datalist({ data: str })
@@ -1442,6 +1450,7 @@
 				$("#Detect").textbox('setValue', temp[5].value)
 				$("#Clear").textbox('setValue', temp[6].value)
 				$("#Delay").textbox('setValue', temp[7].value)
+				$('#protocalType').combobox('setValue',temp[9].value)
 				let StorableFlightPhasesActiveFault = FaultReportingData[i].getElementsByTagName("StorableFlightPhasesActiveFault")
 
 				for (let j = 0; j < StorableFlightPhasesActiveFault.length; j++) {
@@ -1507,7 +1516,6 @@
 		$("#LoadConditionText").textbox('setValue', LoadConditionText)
 		let LoaderAttachedDiscrete = temp.getElementsByTagName("LoaderAttachedDiscrete")[0]
 		let id = LoaderAttachedDiscrete.attributes[0].value
-
 		let rp = xml.getElementsByTagName("RP")
 		//console.log('33333333', rp,id)
 		for (let i = 0; i < rp.length; i++) {
