@@ -40,6 +40,13 @@
 		.IcdMessageRef:hover {
 			background-color: #E0ECFF;
 		}
+
+		.button-click {
+			background: #eaf2ff;
+			color: #000000;
+			border: 1px solid #b7d2ff;
+			filter: none;
+		}
 	</style>
 </head>
 
@@ -68,18 +75,25 @@
 			<form id="openxml" method="post" enctype="multipart/form-data" style="display: none;">
 				<input id="up" type="file" name="file1" accept=".xml" onchange="send(value)">
 			</form>
-			<button onclick="save()"
+			<!-- <button onclick="save()"
 				style="width: 60px;height: 60px;border-color: #eef0f2;position: relative;margin: 5px;margin-left: 0;">
 				<svg class="icon" aria-hidden="true" style="width: 2.5em;height:2.5em">
 					<use xlink:href="#icon-lingcunwei"></use>
 				</svg>
 				<span>Saveas</span>
+			</button> -->
+			<!-- 导出msd -->
+			<button onclick="clickExportFile()"
+				style="width: 60px;height: 60px;border-color: #eef0f2;position: absolute;margin: 5px;right: 0;">
+				<svg class="icon" aria-hidden="true" style="width: 1.5em;height:1.5em">
+					<use xlink:href="#icon-lingcunwei"></use>
+				</svg>
+				<span>Export Msd</span>
 			</button>
-
 		</div>
 		<div id="frTop" title="Fault Report" style="overflow:auto;padding-top: 5px; padding-left:10px;display:none;"
 			data-options="showHeader:true">
-			
+
 			<!-- 打开fde -->
 			<button onclick="clickfdeFile()"
 				style="width: 60px;height: 60px;border-color: #eef0f2;position: relative;margin: 5px;margin-left: 0;">
@@ -100,9 +114,6 @@
 				</svg>
 				<span>Export Msd</span>
 			</button>
-			<form id="exportmsd" method="post" enctype="multipart/form-data" style="display: none;">
-				<input id="opFDE" type="file" name="file1" accept=".xml" onchange="">
-			</form>
 
 		</div>
 		<div id="eTop" title="Edit" style="overflow:auto;padding-top: 5px; padding-left:10px;display:none;">
@@ -126,17 +137,25 @@
 				</svg>
 				<span>class</span>
 			</button>
-
 			<form id="openclass" method="post" enctype="multipart/form-data" style="display: none;">
 				<input id="icdclass" type="file" name="file1" accept=".xml" onchange="sendicdclass(value)">
 			</form>
+
+			<!-- 导出msd -->
+			<button onclick="clickExportFile()"
+				style="width: 60px;height: 60px;border-color: #eef0f2;position: absolute;margin: 5px;right: 0;">
+				<svg class="icon" aria-hidden="true" style="width: 1.5em;height:1.5em">
+					<use xlink:href="#icon-lingcunwei"></use>
+				</svg>
+				<span>Export Msd</span>
+			</button>
 		</div>
 		<div id="itTop" title="Initiated Test" style="overflow:auto;padding:20px;display:none;">
 		</div>
 		<div id="fTop" title="Failure" style="overflow:auto;padding:20px;display:none;">
 		</div>
 	</div>
-	<div data-options="region:'south',title:'Error',split:true" style="height:100px;"></div>
+	<!-- <div data-options="region:'south',title:'Error',split:true" style="height:100px;"></div> -->
 	<!-- 右侧 -->
 	<!-- <div data-options="region:'east',title:'Tips',split:true" style="width:200px;">
 		<span>The Data Entry Tool is used to collect Member System data based on the specific ICD version.
@@ -1454,6 +1473,7 @@
 						}
 					}
 				}
+
 				//let test =$("#pcdf").datalist('getChecked')
 				//console.log(test)
 			})
